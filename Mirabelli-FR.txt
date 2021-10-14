@@ -1,0 +1,5 @@
+1)The system shall collect the forms taken by the user and suggest new ones.
+
+2)The system shall provide a database to store all the filled forms. 
+
+3)The system shall provide a home page for each user.
