@@ -1,3 +1,4 @@
 1.	As a user, I want anonymity, so I feel free to express myself.
 2.	As a psychologist, I want to access the forms that users are subjected, so that I can do my own analysis.
-3.	As a user, I want to get to know the people working on the same personal goal as me, so that I can compare my progress with them.
+3.	As a user, I want to get to know the people working on the same personal goal as me, 
+	so that I can compare my progress with them.

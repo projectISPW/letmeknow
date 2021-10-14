@@ -1,6 +1,6 @@
 1.The system shall assign, in the signup phase, a userid* for every user.
 2.The system shall provide a single database to collect all the userforms.
-3.The program shall include research bar for the personal goal.
+3.The system shall provide a research bar for the personal goal.
 
 
 
