@@ -1,3 +1,5 @@
-As a user, I want to find new people through specific key words, so that I can find the user that fits my research.
-As a psychologist, I want to submit new forms, So that I can give the users more accurate results.
-As a user, I want to retake the form, So I can always keep my profile updated.
+1)As a user, I want to find new people through specific key words, so that I can find the user that fits my research.
+
+2)As a psychologist, I want to submit new forms, So that I can give the users more accurate results.
+
+3)As a user, I want to retake the form, So I can always keep my profile updated.
