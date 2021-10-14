@@ -1,0 +1,7 @@
+### Olenic-User Stories ###
+
+1)As a user, I want to select the personal characteristics of my interest, so I can search for people according to my preferences.
+
+2)As an insecure person, I want to do more than 2 weekly modules, so that I can understand myself better.
+
+3)As a sociable person, I want to meet as many people as possible, so that I can have more personal experience.
