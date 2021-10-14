@@ -1,0 +1,7 @@
+### Olenic-Functional Requirements ###
+
+1)The system shall provide a protected sensitive data management and access control management.
+
+2)The system shall include an instant message service between two people only.
+
+3)The system shall provide a search system using keywords and checkboxes.
