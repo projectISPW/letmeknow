@@ -773,28 +773,6 @@
 							"subViews": [
 								{
 									"_type": "EdgeLabelView",
-									"_id": "AAAAAAF80Z8yCC61oSY=",
-									"_parent": {
-										"$ref": "AAAAAAF80Z8x/i60a30="
-									},
-									"model": {
-										"$ref": "AAAAAAF80Z8x/i6zREk="
-									},
-									"font": "Arial;13;0",
-									"left": 158,
-									"top": 558,
-									"width": 208.8125,
-									"height": 13,
-									"alpha": -1.4512756427347038,
-									"distance": 68.30812543175226,
-									"hostEdge": {
-										"$ref": "AAAAAAF80Z8x/i60a30="
-									},
-									"edgePosition": 1,
-									"text": "after 15 mins of inactivity"
-								},
-								{
-									"_type": "EdgeLabelView",
 									"_id": "AAAAAAF80Z8yCC62WPE=",
 									"_parent": {
 										"$ref": "AAAAAAF80Z8x/i60a30="
@@ -846,9 +824,6 @@
 							"lineStyle": 3,
 							"points": "416:476;328:544;345:631",
 							"showVisibility": true,
-							"nameLabel": {
-								"$ref": "AAAAAAF80Z8yCC61oSY="
-							},
 							"stereotypeLabel": {
 								"$ref": "AAAAAAF80Z8yCC62WPE="
 							},
@@ -978,17 +953,17 @@
 										"$ref": "AAAAAAF80aS04C9A8jk="
 									},
 									"font": "Arial;13;0",
-									"left": 424,
-									"top": 328,
-									"width": 141.6669921875,
+									"left": 344,
+									"top": 327,
+									"width": 347.62939453125,
 									"height": 13,
-									"alpha": 0.4688290854003414,
-									"distance": 18.973665961010276,
+									"alpha": 2.4126139509342996,
+									"distance": 7.810249675906654,
 									"hostEdge": {
 										"$ref": "AAAAAAF80aS04C9Bjzg="
 									},
 									"edgePosition": 1,
-									"text": "tap[button==save]/"
+									"text": "tap[button==save] / Save credentials and display login page "
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -1176,7 +1151,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 1024,
+											"left": 976,
 											"top": -384,
 											"height": 13
 										},
@@ -1187,11 +1162,11 @@
 												"$ref": "AAAAAAF80appZi+MzkE="
 											},
 											"font": "Arial;13;1",
-											"left": 717,
+											"left": 693,
 											"top": 375,
 											"width": 174.80810546875,
 											"height": 13,
-											"text": "write form page"
+											"text": "on form subission page"
 										},
 										{
 											"_type": "LabelView",
@@ -1201,7 +1176,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 1024,
+											"left": 976,
 											"top": -384,
 											"width": 88,
 											"height": 13,
@@ -1215,14 +1190,14 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 1024,
+											"left": 976,
 											"top": -384,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 712,
+									"left": 688,
 									"top": 368,
 									"width": 184.80810546875,
 									"height": 25,
@@ -1242,7 +1217,7 @@
 							],
 							"font": "Arial;13;0",
 							"containerChangeable": true,
-							"left": 712,
+							"left": 688,
 							"top": 368,
 							"width": 184.80810546875,
 							"height": 41,
@@ -1270,8 +1245,8 @@
 										"$ref": "AAAAAAF80aw8/C+sBaY="
 									},
 									"font": "Arial;13;0",
-									"left": 456,
-									"top": 384,
+									"left": 455,
+									"top": 383,
 									"width": 205.4482421875,
 									"height": 13,
 									"alpha": 1.1674657309699235,
@@ -1333,7 +1308,7 @@
 								"$ref": "AAAAAAF80WW5f1wGxK0="
 							},
 							"lineStyle": 3,
-							"points": "515:423;552:408;711:395",
+							"points": "515:423;552:408;687:396",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAF80aw8/C+u+JE="
@@ -1741,17 +1716,17 @@
 										"$ref": "AAAAAAF81uCgWpS9KBM="
 									},
 									"font": "Arial;13;0",
-									"left": 424,
+									"left": 376,
 									"top": 344,
-									"width": 141.6669921875,
+									"width": 249.32958984375,
 									"height": 13,
-									"alpha": 1.2924240453007672,
-									"distance": 24.166091947189145,
+									"alpha": 1.539198101922807,
+									"distance": 22.360679774997898,
 									"hostEdge": {
 										"$ref": "AAAAAAF81uCgWpS+6Ps="
 									},
 									"edgePosition": 1,
-									"text": "tap[button==backButton]"
+									"text": "tap[button==backButton]/ Discard changes "
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -1899,7 +1874,7 @@
 								"$ref": "AAAAAAF80appZi+L4cc="
 							},
 							"lineStyle": 3,
-							"points": "725:409;640:432;593:436",
+							"points": "713:409;640:432;593:436",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAF81uWrb5ThpIA="
@@ -1994,7 +1969,7 @@
 								"$ref": "AAAAAAF80appZi+L4cc="
 							},
 							"lineStyle": 3,
-							"points": "725:409;640:432;593:436",
+							"points": "713:409;640:432;593:436",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAF81udGxJUCGek="
@@ -2216,9 +2191,9 @@
 										"$ref": "AAAAAAF81v3l5pY7rpk="
 									},
 									"font": "Arial;13;0",
-									"left": 175,
+									"left": 173,
 									"top": 543,
-									"width": 173.67822265625,
+									"width": 177.2900390625,
 									"height": 13,
 									"alpha": -1.673107346613709,
 									"distance": 66.27216610312357,
@@ -2226,7 +2201,7 @@
 										"$ref": "AAAAAAF81v3l5pY8Ygo="
 									},
 									"edgePosition": 1,
-									"text": "tap[clcickedOnLogout==True ]"
+									"text": "tap[clcickedOnLogout==True ]/"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -2480,6 +2455,30 @@
 							"propertyLabel": {
 								"$ref": "AAAAAAF82/7z3b1EFOE="
 							}
+						},
+						{
+							"_type": "UMLTextView",
+							"_id": "AAAAAAF84UpySe8DClE=",
+							"_parent": {
+								"$ref": "AAAAAAF80WGkNltOM7k="
+							},
+							"font": "Arial;13;0",
+							"left": 168,
+							"top": 568,
+							"width": 60,
+							"height": 15
+						},
+						{
+							"_type": "UMLTextView",
+							"_id": "AAAAAAF84Uqir+8GBCA=",
+							"_parent": {
+								"$ref": "AAAAAAF80WGkNltOM7k="
+							},
+							"font": "Arial;13;0",
+							"left": 240,
+							"top": 576,
+							"width": 60,
+							"height": 15
 						}
 					]
 				}
@@ -2571,7 +2570,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF80WGkNltNFpc="
 					},
-					"name": "write form page"
+					"name": "on form subission page"
 				},
 				{
 					"_type": "UMLAction",
@@ -2803,7 +2802,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF80WGkNltNFpc="
 					},
-					"name": "tap[button==save]/",
+					"name": "tap[button==save] / Save credentials and display login page ",
 					"source": {
 						"$ref": "AAAAAAF80WV57Vvpu/E="
 					},
@@ -3073,7 +3072,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF80WGkNltNFpc="
 					},
-					"name": "tap[button==backButton]",
+					"name": "tap[button==backButton]/ Discard changes ",
 					"source": {
 						"$ref": "AAAAAAF80WV57Vvpu/E="
 					},
@@ -3197,7 +3196,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF80WGkNltNFpc="
 					},
-					"name": "tap[clcickedOnLogout==True ]",
+					"name": "tap[clcickedOnLogout==True ]/",
 					"source": {
 						"$ref": "AAAAAAF80WW5f1wEa+E="
 					},
