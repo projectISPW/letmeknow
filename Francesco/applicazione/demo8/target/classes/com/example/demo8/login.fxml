@@ -24,7 +24,7 @@
 
     <Label fx:id="welcomeText" />
    <Label fx:id="labPassword" layoutX="32.0" layoutY="310.0" onDragDetected="#nascondilabel" onInputMethodTextChanged="#nascondilabel" prefHeight="49.0" prefWidth="354.0" styleClass="Label" text="  Password" textFill="#280c0c" translateY="-50.0" />
-    <Button fx:id="butHello" onAction="#nascondilabel" prefHeight="59.0" prefWidth="177.0" styleClass="Button" stylesheets="@Login.css" text="Login" textFill="#fffafa" />
+    <Button fx:id="butHello" onAction="#switchToScene2" prefHeight="59.0" prefWidth="177.0" styleClass="Button" stylesheets="@Login.css" text="Login" textFill="#fffafa" />
    <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="329.0" layoutY="324.0" pickOnBounds="true" preserveRatio="true" translateX="120.0" translateY="-180.0" x="329.0" y="324.0">
       <image>
          <Image url="@img_1.png" />
