@@ -10,7 +10,7 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
 
-public class HelloController {
+public class LoginController {
     @FXML
     private Label labPassword,labUser;
     @FXML
