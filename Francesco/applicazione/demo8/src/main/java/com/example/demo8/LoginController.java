@@ -54,20 +54,21 @@ public class LoginController {
         root=loader.load();
         String username= labUser.getText();
         String password= labPassword.getText();
-        if(username=="")
+        if(username.equals(""))
         {
                 System.out.println("inserisci una stringa ");
-                //conaìsum EVENTO
+                event.consume();
+        }else {
+
+
+            SignupController.displayName(username);
+            SignupController.displayPassword(labPassword);
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setTitle("signup");
+            stage.setScene(scene);
+            stage.show();
         }
-
-
-        SignupController.displayName(username);
-        SignupController.displayPassword(labPassword);
-        stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-        scene=new Scene(root);
-        stage.setTitle("signup");
-        stage.setScene(scene);
-        stage.show();
     }
 
 }
