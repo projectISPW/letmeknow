@@ -52,16 +52,15 @@ public class LoginController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("signup.fxml"));
 
         root=loader.load();
-        String username= labUser.getText();
-        String password= labPassword.getText();
-        if(username.equals(""))
+
+        if(labUser.getText().equals("") || labPassword.getText().equals(""))
         {
                 System.out.println("inserisci una stringa ");
                 event.consume();
         }else {
 
 
-            SignupController.displayName(username);
+            SignupController.displayName(labUser);
             SignupController.displayPassword(labPassword);
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
