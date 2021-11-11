@@ -6,10 +6,13 @@
     -fx-border-radius: 15px;
     -fx-background-radius: 18px;
 }
+
 .Back_Row{
-    -fx-background-color: #377DFF;
+    -fx-background-image: url("back_row.png");
+    -fx-color: #377DFF;
     -fx-border-radius:50px;
     -fx-background-radius:50px;
+
 }
 .Label{
     -fx-background-color: #F2F2F2;
