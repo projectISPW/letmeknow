@@ -9,6 +9,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -24,7 +26,9 @@ public class LoginController {
     private Scene scene;
     private Parent root;
     @FXML
-    private Label labPassword,labUser;
+    private PasswordField labPassword;
+    @FXML
+    private TextField labUser;
     @FXML
     private Button butHello;
     @FXML
@@ -44,7 +48,19 @@ public class LoginController {
     }
     @FXML
     protected void switchToScene2(ActionEvent event) throws IOException {
-        root=FXMLLoader.load(getClass().getResource("signup.fxml"));
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("signup.fxml"));
+
+        root=loader.load();
+        String username= labUser.getText();
+        if(username=="")
+        {
+                System.out.println("inserisci una stringa ");
+                //conaìsum EVENTO
+        }
+
+
+        SignupController.displayName(username);
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
         stage.setTitle("signup");
