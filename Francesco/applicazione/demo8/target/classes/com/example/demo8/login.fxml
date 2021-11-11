@@ -36,5 +36,5 @@
       </font>
    </Hyperlink>
    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="or" translateY="-90.0" />
-   <Hyperlink styleClass="hiperlink" text="signup here" textFill="#377dff" translateY="-100.0" />
+   <Hyperlink onAction="#switchToScene2" styleClass="hiperlink" text="signup here" textFill="#377dff" translateY="-100.0" />
 </VBox>

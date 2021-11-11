@@ -6,6 +6,11 @@
     -fx-border-radius: 15px;
     -fx-background-radius: 18px;
 }
+.Back_Row{
+    -fx-background-color: #377DFF;
+    -fx-border-radius:50px;
+    -fx-background-radius:50px;
+}
 .Label{
     -fx-background-color: #F2F2F2;
     -fx-border-radius: 18px;
@@ -30,7 +35,19 @@
     -fx-font-style:normal;
     -fx-font-weight: 200;
     -fx-font-size:18px;
-
+}
+.textSubTitle{
+    -fx-font-family:"Gill Sans MT";
+    -fx-font-style:normal;
+    -fx-font-weight: bold;
+    -fx-font-size:22px;
+}
+.textContent{
+    -fx-font-family:"Gill Sans MT";
+    -fx-font-style:normal;
+    -fx-font-weight: bold;
+    -fx-font-size:12px;
+    -fx-text-inner-color: red;
 }
 .eye{
     -fx-scale-x:329px;
@@ -39,4 +56,7 @@
 .hiperlink{
     -fx-color-label-visible: red;
     -fx-font-size:13 px;
+}
+.backrow{
+
 }
