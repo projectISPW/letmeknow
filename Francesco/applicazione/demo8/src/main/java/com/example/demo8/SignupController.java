@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -20,6 +21,12 @@ public class SignupController
     protected static void displayName(String username){
 
         System.out.println("Prompt Username: "+username);
+    }
+
+    @FXML
+    protected static void displayPassword(PasswordField pw){
+
+        System.out.println("Prompt Password: "+pw.getText());
     }
 
     @FXML

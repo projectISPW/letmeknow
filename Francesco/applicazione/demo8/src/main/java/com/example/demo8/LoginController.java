@@ -53,6 +53,7 @@ public class LoginController {
 
         root=loader.load();
         String username= labUser.getText();
+        String password= labPassword.getText();
         if(username=="")
         {
                 System.out.println("inserisci una stringa ");
@@ -61,6 +62,7 @@ public class LoginController {
 
 
         SignupController.displayName(username);
+        SignupController.displayPassword(labPassword);
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
         stage.setTitle("signup");
