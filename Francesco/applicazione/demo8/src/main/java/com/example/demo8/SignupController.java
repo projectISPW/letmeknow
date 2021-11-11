@@ -15,6 +15,13 @@ public class SignupController
     private Stage stage;
     private Scene scene;
     private Parent root;
+
+    @FXML
+    protected static void displayName(String username){
+
+        System.out.println("Prompt Username: "+username);
+    }
+
     @FXML
     protected void switchToScene1(ActionEvent event) throws IOException {
         root= FXMLLoader.load(getClass().getResource("login.fxml"));
