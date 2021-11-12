@@ -12,7 +12,7 @@
    <children>
       <Button mnemonicParsing="false" onAction="#switchToScene1" prefHeight="30.0" prefWidth="30.0" styleClass="Back_Row" translateX="40.0" translateY="120.0" />
       <Text fill="#377dff" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textTitle" text="Let me know" translateX="110.0" translateY="80.0" />
-      <ImageView fitHeight="21.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true" translateX="50.0" translateY="50.0">
+      <ImageView accessibleRole="HYPERLINK" fitHeight="21.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true" translateX="50.0" translateY="50.0">
          <image>
             <Image url="@back_row.png" />
          </image>
