@@ -11,7 +11,6 @@
     -fx-border-radius:50px;
     -fx-background-radius:50px;
     -fx-background-image: url('Photo/back_row1.png');
-    -fx-border-image-repeat:initial ;
 }
 .Label{
     -fx-background-color: #F2F2F2;
