@@ -31,7 +31,7 @@ public class RecoverPswdController
     }
 
     @FXML
-    protected void switchToScene1(ActionEvent event) throws IOException {
+    protected void backToLogin(ActionEvent event) throws IOException {
         root= FXMLLoader.load(getClass().getResource("login.fxml"));
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);

@@ -1,14 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.letmeknow.Signup"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="736.0" prefWidth="407.0" stylesheets="@Login.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.letmeknow.SignupController">
+   <children>
+      <Button mnemonicParsing="false" onAction="#backToLogin" styleClass="Back_Row" translateY="40.0" />
+      <Text fill="#243443" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textSubTitle" text="Signup" translateX="170.0" translateY="10.0" />
+      <Text fill="#243443" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signup" text="Chose password:" translateX="130.0" translateY="30.0" />
+      <Label text="label per controllo password" translateX="130.0" translateY="90.0" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signup" text="About your traits:" translateX="30.0" translateY="110.0" />
+      <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="354.0" promptText="#Lovely#Quite#Hardworking#Ambicius" styleClass="textField" translateX="30.0" translateY="120.0" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Chose your values:" translateX="30.0" translateY="140.0">
+         <styleClass>
+            <String fx:value="textContent_signup" />
+            <String fx:value="te" />
+         </styleClass></Text>
+      <Slider majorTickUnit="1.0" max="5.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="14.0" prefWidth="150.0" showTickLabels="true" translateX="210.0" translateY="240.0" value="5.0" />
+      <Slider majorTickUnit="1.0" max="5.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="14.0" prefWidth="150.0" showTickLabels="true" translateX="210.0" translateY="190.0" value="5.0" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: 100;" styleClass="param" text="Emotional:" translateX="80.0" translateY="130.0" />
+      <Slider blockIncrement="1.0" majorTickUnit="1.0" max="5.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="14.0" prefWidth="150.0" showTickLabels="true" translateX="210.0" translateY="110.0" value="5.0" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="param" text="Lively:" translateX="80.0" translateY="130.0" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="param" text="Positive:" translateX="80.0" translateY="140.0" />
+      <Hyperlink styleClass="hiperlink_signup" text="Tap here to take the form " textFill="#3e09a9" translateX="100.0" translateY="170.0" />
+      <Text fill="#377dff" opacity="0.7" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signup" text="Chose your goal:" translateX="30.0" translateY="200.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Button mnemonicParsing="false" onAction="#Save" styleClass="Button" stylesheets="@Login.css" text="Save account" translateX="165.0" translateY="280.0" />
+      <ImageView fitHeight="17.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true" translateX="330.0" translateY="110.0">
+         <image>
+            <Image url="@Photo/signup/img_1.png" />
+         </image>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color opacity="0.38013699650764465" />
+               </color>
+            </DropShadow>
+         </effect>
+      </ImageView>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="or " translateX="200.0" translateY="270.0" />
+      <Hyperlink onAction="#backToLogin" styleClass="hiperlink" text="Log in here " translateX="172.0" translateY="270.0" />
+      <TextField layoutX="354.0" layoutY="49.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="354.0" promptText="i want to become a better person" style="-fx-opacity: 0.5;" styleClass="textField" translateX="30.0" translateY="140.0" />
+      <PasswordField maxWidth="-Infinity" prefHeight="50.0" prefWidth="182.0" promptText="password" styleClass="textField" translateX="20.0" translateY="-360.0" />
+      <PasswordField maxWidth="-Infinity" prefHeight="50.0" prefWidth="182.0" promptText="confirm password" styleClass="textField" translateX="210.0" translateY="-410.0" />
+   </children>
+</VBox>
