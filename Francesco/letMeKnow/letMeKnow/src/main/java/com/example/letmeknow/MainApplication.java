@@ -21,6 +21,7 @@ public class MainApplication extends Application {
         Parent root=FXMLLoader.load(getClass().getResource("login.fxml"));
         stage.setScene(new Scene(root));
         stage.setTitle("Login");
+        stage.setResizable(false);
         stage.show();
     }
 
