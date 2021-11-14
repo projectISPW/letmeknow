@@ -35,9 +35,9 @@
          </font>
       </Text>
       <Text layoutX="239.0" layoutY="352.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textSubSubTitle" text="Work On :" wrappingWidth="211.39027404785156" />
-      <ImageView fitHeight="208.0" fitWidth="146.0" layoutX="8.0" layoutY="355.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="213.0" fitWidth="173.0" layoutX="3.0" layoutY="338.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Photo/homepage/img_1.png" />
+            <Image url="@Photo/homepage/img_4.png" />
          </image>
 
       </ImageView>
@@ -49,7 +49,7 @@
          </font>
       </Text>
       <Label layoutX="248.0" layoutY="371.0" prefHeight="26.0" prefWidth="82.0" styleClass="textHomePage" text="#character" />
-      <Button layoutX="228.0" layoutY="517.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="164.0" style="-fx-font-size: 18px;" styleClass="Button" text="Edit Profile" />
+      <Button layoutX="228.0" layoutY="517.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="164.0" style="-fx-font-size: 18px;" styleClass="Button" text="Edit Profile" textFill="#f2f2f2" />
       <FontAwesomeIcon fill="#377dff" glyphName="HOME" layoutX="186.0" layoutY="730.0" size="60" />
       <FontAwesomeIcon fill="#377dff" glyphName="BARS" layoutX="46.0" layoutY="720.0" opacity="0.5" size="25" />
       <FontAwesomeIcon fill="#377dff" glyphName="COMMENT_ALT" layoutX="339.3999938964844" layoutY="720.0" opacity="0.5" size="30" />

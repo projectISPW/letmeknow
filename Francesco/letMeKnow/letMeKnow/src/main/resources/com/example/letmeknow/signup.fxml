@@ -39,13 +39,13 @@
       <Slider fx:id="em2" blockIncrement="1.0" majorTickUnit="1.0" max="5.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="14.0" prefWidth="150.0" showTickLabels="true" translateX="210.0" translateY="140.0" value="5.0" />
       <Text fx:id="li2" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="param" text="Lively:" translateX="80.0" translateY="150.0" />
       <Text fx:id="po2" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="param" text="Positive:" translateX="80.0" translateY="160.0" />
-      <Hyperlink styleClass="hiperlink_signup" text="Tap here to take the form " textFill="#3e09a9" translateX="100.0" translateY="180.0" />
-      <Text fill="#377dff" opacity="0.7" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signup" text="Chose your goal:" translateX="30.0" translateY="200.0">
+      <Hyperlink styleClass="hiperlink_signup" translateX="100.0" translateY="180.0" />
+      <Text fill="#377dff" opacity="0.7" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signup" text="Chose your goal:" translateX="30.0" translateY="190.0">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <Button mnemonicParsing="false" onAction="#Save" styleClass="Button" stylesheets="@Login.css" text="Save account" translateX="165.0" translateY="260.0" />
+      <Button mnemonicParsing="false" onAction="#Save" styleClass="Button" stylesheets="@Login.css" text="Save account" translateX="165.0" translateY="250.0" />
       <ImageView fitHeight="17.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true" translateX="330.0" translateY="110.0">
          <image>
             <Image url="@Photo/signup/img_1.png" />
@@ -58,11 +58,16 @@
             </DropShadow>
          </effect>
       </ImageView>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="or " translateX="200.0" translateY="250.0" />
-      <Hyperlink onAction="#backToLogin" styleClass="hiperlink" text="Log in here " translateX="172.0" translateY="240.0" />
-      <TextField layoutX="354.0" layoutY="49.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="370.0" promptText="i want to become a better person" style="-fx-opacity: 0.5;" styleClass="textField" translateX="20.0" translateY="120.0" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="or " translateX="200.0" translateY="230.0" />
+      <Hyperlink onAction="#backToLogin" styleClass="hiperlink" text="Log in here " translateX="172.0" translateY="230.0" />
+      <TextField layoutX="354.0" layoutY="49.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="370.0" promptText="i want to become a better person" style="-fx-opacity: 0.5;" styleClass="textField" translateX="20.0" translateY="110.0" />
       <PasswordField maxWidth="-Infinity" prefHeight="50.0" prefWidth="182.0" promptText="password" styleClass="textField" translateX="20.0" translateY="-340.0" />
       <PasswordField maxWidth="-Infinity" prefHeight="50.0" prefWidth="182.0" promptText="confirm password" styleClass="textField" translateX="210.0" translateY="-390.0" />
       <Text fill="#243443" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signup" text="Chose password:" translateX="130.0" translateY="-570.0" />
+      <Hyperlink onAction="#backToLogin" style="-fx-font-size: 18;" styleClass="hiperlink_signup" text="Tap here to take te form" translateX="100.0" translateY="-120.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Hyperlink>
    </children>
 </VBox>
