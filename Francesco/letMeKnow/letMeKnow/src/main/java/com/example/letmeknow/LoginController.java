@@ -32,18 +32,20 @@ public class LoginController {
     @FXML
     protected void switchToSignup(ActionEvent event) throws IOException {
         root=FXMLLoader.load(getClass().getResource("signup.fxml"));
-        stage.setTitle("Signup");
+
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
+        stage.setTitle("Signup");
         stage.setScene(scene);
         stage.show();
     }
     @FXML
     protected void switchToRecoverPswd(ActionEvent event) throws IOException {
         root=FXMLLoader.load(getClass().getResource("recoverpassword.fxml"));
-        stage.setTitle("RecoverPassword");
+
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
+        stage.setTitle("RecoverPassword");
         stage.setScene(scene);
         stage.show();
     }

@@ -25,18 +25,20 @@ public class InitialChatController {
     @FXML
     protected void goToChat(ActionEvent event) throws IOException {
         root= FXMLLoader.load(getClass().getResource("chat.fxml"));
-        stage.setTitle("Chat");
+
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
+        stage.setTitle("Chat");
         stage.setScene(scene);
         stage.show();
     }
     @FXML
     protected void goToSearch(ActionEvent event) throws IOException {
         root= FXMLLoader.load(getClass().getResource("search.fxml"));
-        stage.setTitle("Search");
+
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
+        stage.setTitle("Search");
         stage.setScene(scene);
         stage.show();
     }
