@@ -30,6 +30,17 @@ public class SearchController {
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
         stage.setScene(scene);
+        stage.setTitle("What do you need? ");
+        stage.show();
+    }
+    @FXML
+    protected void goResult(ActionEvent event) throws IOException {
+        root= FXMLLoader.load(getClass().getResource("resultSearch.fxml"));
+        stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+        scene=new Scene(root);
+        stage.setTitle("your matching results");
+        stage.setScene(scene);
+        stage.setTitle("Home");
         stage.show();
     }
 }

@@ -18,6 +18,7 @@ public class InitialChatController {
     protected void goToHome(ActionEvent event) throws IOException {
         root= FXMLLoader.load(getClass().getResource("homepage.fxml"));
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setTitle("Homepage ");
         scene=new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -25,7 +26,6 @@ public class InitialChatController {
     @FXML
     protected void goToChat(ActionEvent event) throws IOException {
         root= FXMLLoader.load(getClass().getResource("chat.fxml"));
-
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
         stage.setTitle("Chat");
@@ -35,7 +35,6 @@ public class InitialChatController {
     @FXML
     protected void goToSearch(ActionEvent event) throws IOException {
         root= FXMLLoader.load(getClass().getResource("search.fxml"));
-
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
         stage.setTitle("Search");

@@ -2,6 +2,7 @@
   <library name="fontawesomefx-8.2">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../../../../fontawesomefx-8.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../fontawesomefx-8.2.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

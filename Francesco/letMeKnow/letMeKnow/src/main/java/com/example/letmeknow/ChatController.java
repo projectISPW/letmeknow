@@ -18,6 +18,7 @@ public class ChatController {
     protected void goToHome(ActionEvent event) throws IOException {
         root= FXMLLoader.load(getClass().getResource("homepage.fxml"));
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setTitle("Home");
         scene=new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -26,8 +27,10 @@ public class ChatController {
     protected void goBack(ActionEvent event) throws IOException {
         root= FXMLLoader.load(getClass().getResource("initialSearchAndChat.fxml"));
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setTitle("What you want to do ? ");
         scene=new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
+
 }

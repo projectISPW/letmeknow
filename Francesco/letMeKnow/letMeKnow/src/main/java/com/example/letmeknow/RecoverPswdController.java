@@ -36,6 +36,7 @@ public class RecoverPswdController
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
         stage.setScene(scene);
+        stage.setTitle("Login");
         stage.show();
     }
 

@@ -48,12 +48,19 @@ public class LoginController {
         stage.show();
     }
     @FXML
+    protected void switchToPsicologistHome(ActionEvent event) throws IOException {
+        root=FXMLLoader.load(getClass().getResource("PsicologistHome.fxml"));
+        stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+        scene=new Scene(root);
+        stage.setTitle("Home");
+        stage.setScene(scene);
+        stage.show();
+    }
+    @FXML
     protected void switchToHome(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("homepage.fxml"));
         root=loader.load();
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-
         if(labUser.getText().equals("") || labPassword.getText().equals(""))
         {
             //Alert Dialog Message per campi email e password vuoti
