@@ -9,8 +9,5 @@
         <module name="letMeKnow" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="letMeKnow" target="16" />
-    </bytecodeTargetLevel>
   </component>
 </project>
