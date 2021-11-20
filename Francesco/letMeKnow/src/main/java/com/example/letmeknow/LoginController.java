@@ -71,7 +71,7 @@ public class LoginController {
 
             if(alert.showAndWait().get()==ButtonType.OK) {
                 System.out.println("Prompt: Empty Fields Alert");
-                event.consume();
+                event.consume();//ciao
             }
         }else if(labUser.getText().equals("psicologo") ){
             FXMLLoader loader = new FXMLLoader(getClass().getResource("PsicologistHome.fxml"));
