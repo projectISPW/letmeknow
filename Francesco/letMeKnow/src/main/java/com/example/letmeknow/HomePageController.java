@@ -6,6 +6,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Slider;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -14,6 +17,20 @@ public class HomePageController {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    //Image im1= new Image(getClass().getResourceAsStream("val0.png"));
+    @FXML
+    private ImageView Sl3;
+    @FXML
+    private ImageView Sl2;
+    @FXML
+    private ImageView Sl1;
+    /*
+    @FXML
+    protected void  sl(ActionEvent event) throws IOException {
+        System.out.println(Sl1.getImage());
+        //Sl1.setImage(im1);
+        //Sl3.setImage(com.example.letmeknow.Photo.homepage.val0.png);
+    }*/
     @FXML
     protected void goToChat(ActionEvent event) throws IOException {
         root= FXMLLoader.load(getClass().getResource("InitialSearchAndChat.fxml"));
@@ -23,6 +40,7 @@ public class HomePageController {
         stage.setTitle("What you need ? ");
         stage.show();
     }
+
     @FXML
     protected void editProfile(ActionEvent event) throws IOException {
         root=FXMLLoader.load(getClass().getResource("editProfile.fxml"));
@@ -34,7 +52,7 @@ public class HomePageController {
     }
     @FXML
     protected void goToSettings(ActionEvent event) throws IOException {
-        root=FXMLLoader.load(getClass().getResource("settings1.fxml"));
+        root=FXMLLoader.load(getClass().getResource("settings.fxml"));
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
         stage.setScene(scene);

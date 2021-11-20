@@ -11,6 +11,18 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="736.0" prefWidth="414.0" stylesheets="@Login.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.letmeknow.SettingsController">
    <children>
+      <Button layoutX="267.0" layoutY="683.0" mnemonicParsing="false" onAction="#goToChat" prefHeight="52.0" prefWidth="146.0" styleClass="button_bar">
+         <graphic>
+            <FontAwesomeIcon fill="#377dff" glyphName="PAPER_PLANE" opacity="0.5" size="20" />
+         </graphic></Button>
+      <Button layoutX="-83.0" layoutY="-10.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="146.0" styleClass="button_bar" translateX="75.0" translateY="692.0">
+         <graphic>
+            <FontAwesomeIcon fill="#377dff" glyphName="SLIDERS" opacity="0.5" size="25" />
+         </graphic></Button>
+      <Button layoutX="133.0" layoutY="683.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="142.0" styleClass="button_bar">
+         <graphic>
+            <FontAwesomeIcon fill="#377dff" glyphName="HOME" size="60" />
+         </graphic></Button>
       <FontAwesomeIcon glyphName="WIFI" layoutX="331.0" layoutY="21.0" size="20" />
       <ImageView fitHeight="41.0" fitWidth="32.0" layoutX="371.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
 
@@ -53,12 +65,13 @@
       <Line endX="301.5000305175781" endY="14.0" layoutX="90.0" layoutY="242.0" startX="-64.0000228881836" startY="13.999998092651367" styleClass="line" />
       <Text layoutX="60.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit profile" />
       <Text layoutX="60.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit  password" />
-      <Text layoutX="60.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Change password" />
+      <Text layoutX="60.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Change Language" />
       <Text layoutX="60.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Leave a review" />
       <ImageView fitHeight="41.0" fitWidth="32.0" layoutX="372.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Photo/battery.png" />
          </image>
       </ImageView>
+
    </children>
 </AnchorPane>
