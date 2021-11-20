@@ -23,7 +23,6 @@ public class SignUpPsychController {
         stage.setScene(scene);
         stage.show();
     }
-
     @FXML
     protected void Save(ActionEvent event) throws IOException {
         backToLogin(event);

@@ -9,13 +9,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="736.0" prefWidth="414.0" stylesheets="@Login.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.letmeknow.HomePageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="736.0" prefWidth="414.0" stylesheets="@Login.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.letmeknow.SettingsController">
    <children>
       <FontAwesomeIcon glyphName="WIFI" layoutX="331.0" layoutY="21.0" size="20" />
       <ImageView fitHeight="41.0" fitWidth="32.0" layoutX="371.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../../../../../../Desktop/applicazionefra/letMeKnow/src/main/resources/com/example/letmeknow/Photo/battery.png" />
-         </image>
+
       </ImageView>
       <FontAwesomeIcon glyphName="SIGNAL" layoutX="290.0" layoutY="18.0" size="20" />
       <Text layoutX="141.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textSubTitle" text="Settings " wrappingWidth="187.39027404785156">
@@ -34,15 +32,15 @@
             <FontAwesomeIcon fill="#377dff" glyphName="SLIDERS" opacity="0.5" size="25" />
          </graphic>
       </Button>
-      <Button layoutX="133.0" layoutY="683.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="142.0" styleClass="button_bar">
+      <Button layoutX="133.0" layoutY="683.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="52.0" prefWidth="142.0" styleClass="button_bar">
          <graphic>
-            <FontAwesomeIcon fill="#377dff" glyphName="HOME" size="60" />
+            <FontAwesomeIcon fill="#377dff" glyphName="HOME" onDragDetected="#goToHome" size="60" text="" />
          </graphic>
       </Button>
       <Line endX="349.9999694824219" endY="13.999998092651367" layoutX="64.0" layoutY="-14.0" startX="-64.0000228881836" startY="13.999998092651367" styleClass="line" translateY="682.0" />
-      <Button layoutX="22.0" layoutY="43.0" mnemonicParsing="false" onAction="#backToLogin" prefHeight="30.0" prefWidth="35.0" styleClass="Back_Row">
+      <Button layoutX="22.0" layoutY="43.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="30.0" prefWidth="35.0" styleClass="Back_Row">
          <graphic>
-            <FontAwesomeIcon fill="WHITE" glyphName="ARROW_LEFT" size="20" />
+            <FontAwesomeIcon fill="WHITE" glyphName="ARROW_LEFT" onDragDetected="#goToHome" size="20" />
          </graphic>
       </Button>
       <FontAwesomeIcon glyphName="USER" layoutX="32.0" layoutY="138.0" size="20" />
@@ -57,5 +55,10 @@
       <Text layoutX="60.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit  password" />
       <Text layoutX="60.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Change password" />
       <Text layoutX="60.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Leave a review" />
+      <ImageView fitHeight="41.0" fitWidth="32.0" layoutX="372.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Photo/battery.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

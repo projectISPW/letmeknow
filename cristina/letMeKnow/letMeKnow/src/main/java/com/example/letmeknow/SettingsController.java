@@ -22,4 +22,15 @@ public class SettingsController {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-    }}
+    }
+    @FXML
+    protected void goToChat(ActionEvent event) throws IOException {
+        root= FXMLLoader.load(getClass().getResource("InitialSearchAndChat.fxml"));
+        stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+        scene=new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("What you need ? ");
+        stage.show();
+    }
+
+}

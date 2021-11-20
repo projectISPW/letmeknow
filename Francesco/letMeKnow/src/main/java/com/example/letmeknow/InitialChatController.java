@@ -43,7 +43,7 @@ public class InitialChatController {
     }
     @FXML
     protected void goToSettings(ActionEvent event) throws IOException {
-        root=FXMLLoader.load(getClass().getResource("settings1.fxml"));
+        root=FXMLLoader.load(getClass().getResource("settings.fxml"));
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
         stage.setScene(scene);
