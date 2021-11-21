@@ -15,7 +15,7 @@
             <graphic>
                 <FontAwesomeIcon fill="#377dff" glyphName="SEARCH" size="50" />
             </graphic></Button>
-        <Button layoutX="-83.0" layoutY="-10.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="146.0" styleClass="button_bar" translateX="75.0" translateY="692.0">
+        <Button layoutX="-83.0" layoutY="-10.0" mnemonicParsing="false" onAction="#goToPersonalForm" prefHeight="44.0" prefWidth="146.0" styleClass="button_bar" translateX="75.0" translateY="692.0">
             <graphic>
                 <FontAwesomeIcon fill="#377dff" glyphName="SLIDERS" opacity="0.5" size="25" />
             </graphic></Button>

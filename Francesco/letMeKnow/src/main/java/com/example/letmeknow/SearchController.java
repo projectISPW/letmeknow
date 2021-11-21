@@ -34,6 +34,15 @@ public class SearchController {
         stage.show();
     }
     @FXML
+    protected void goToPersonalForm(ActionEvent event) throws IOException {
+        root= FXMLLoader.load(getClass().getResource("personalForm.fxml"));
+        stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+        scene=new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("Yor result");
+        stage.show();
+    }
+    @FXML
     protected void goResult(ActionEvent event) throws IOException {
         root= FXMLLoader.load(getClass().getResource("resultSearch.fxml"));
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
