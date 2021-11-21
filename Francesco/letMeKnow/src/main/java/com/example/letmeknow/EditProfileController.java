@@ -31,4 +31,14 @@ public class EditProfileController {
         stage.setScene(scene);
         stage.setTitle("What you need ? ");
         stage.show();
-    }}
+    }
+    @FXML
+    protected void takeTheForm(ActionEvent event) throws IOException {
+        root= FXMLLoader.load(getClass().getResource("takeForm.fxml"));
+        stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setTitle("Homepage ");
+        scene=new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+}

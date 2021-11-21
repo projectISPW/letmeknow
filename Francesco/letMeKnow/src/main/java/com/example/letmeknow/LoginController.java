@@ -43,7 +43,7 @@ public class LoginController {
     }
     @FXML
     protected void switchToPsicologistHome(ActionEvent event) throws IOException {
-        root=FXMLLoader.load(getClass().getResource("PsicologistHome.fxml"));
+        root=FXMLLoader.load(getClass().getResource("psicologistHome.fxml"));
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
         stage.setTitle("Home");
@@ -74,7 +74,7 @@ public class LoginController {
                 event.consume();//ciao
             }
         }else if(labUser.getText().equals("psicologo") ){
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("PsicologistHome.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("psicologistHome.fxml"));
             root=loader.load();
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             RecoverPswdController.displayName(labUser);

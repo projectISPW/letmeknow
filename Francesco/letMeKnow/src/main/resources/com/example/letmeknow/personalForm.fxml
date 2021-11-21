@@ -3,6 +3,7 @@
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import java.lang.String?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -63,11 +64,16 @@
             <Image url="@Photo/editProfile/img_1.png" />
          </image>
       </ImageView>
-      <Button layoutX="35.0" layoutY="390.0" mnemonicParsing="false" opacity="0.75" prefHeight="52.0" prefWidth="353.0" text="FORM 4">
-         <styleClass>
-            <String fx:value="Button" />
-            <String fx:value="textSubFormTitle" />
-         </styleClass>
-      </Button>
+      <ImageView fitHeight="41.0" fitWidth="32.0" layoutX="371.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Photo/battery.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="35.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="hiperlink_signup" text="9.31" />
+      <Hyperlink layoutX="135.0" layoutY="396.0" onAction="#takeTheForm" style="-fx-font-size: 25;" styleClass="hiperlink_signup" text="take a form ">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Hyperlink>
     </children>
 </AnchorPane>
