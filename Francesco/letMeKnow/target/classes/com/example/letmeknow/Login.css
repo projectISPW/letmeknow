@@ -136,6 +136,11 @@
     -fx-font-weight: bold;
     -fx-font-size:18px;
 }
+.textSubFormTitle{
+    -fx-font-style:normal;
+    -fx-font-weight: bold;
+    -fx-font-size:18px;
+}
 .textContent{
     -fx-font-family:"Gill Sans MT";
     -fx-font-style:normal;
@@ -200,8 +205,8 @@
 }
 .square{
     -fx-border-width: 1px;
-    -fx-background-radius: 100px;
-    fx-background-radius: 100px;
+    /*-fx-background-radius: 100px;
+    fx-background-radius: 100px;*/
     -fx-font-family: "Work Sans";
     -fx-border-color: rgba(170, 176, 183, 0.44);
     -fx-font-size:16px;

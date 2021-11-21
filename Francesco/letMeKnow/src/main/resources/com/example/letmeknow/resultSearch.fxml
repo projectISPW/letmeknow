@@ -126,6 +126,6 @@
          </graphic>
       </Button>
       <Button layoutX="63.0" layoutY="528.0" mnemonicParsing="false" opacity="0.76" prefHeight="50.0" prefWidth="306.0" style="-fx-font-size: 20;" styleClass="Button" text="Load other users" textFill="WHITE" />
-      <FontAwesomeIcon fill="WHITE" glyphName="CLOUD" layoutX="322.0" layoutY="563.0" size="25" />
+      <FontAwesomeIcon fill="WHITE" glyphName="INBOX" layoutX="322.0" layoutY="563.0" size="25" />
     </children>
 </AnchorPane>

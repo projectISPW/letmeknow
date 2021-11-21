@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
@@ -37,25 +39,21 @@
       <Slider blockIncrement="1.0" layoutY="-31.0" majorTickUnit="1.0" max="5.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="14.0" prefWidth="150.0" showTickLabels="true" translateX="210.0" translateY="140.0" value="5.0" />
       <Text layoutY="5.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="param" text="Humor:" translateX="80.0" translateY="150.0" />
       <Text layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="param" text="Positivity:" translateX="80.0" translateY="160.0" />
-      <Text layoutX="30.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textSubSubTitle" text="Personality Traits :" wrappingWidth="187.39027404785156" />
+      <Text layoutX="30.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textSubSubTitle" text="Personality Traits :" wrappingWidth="187.39027404785156" />
       <Text fill="#6a94b7" layoutX="83.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #6a94b7;" styleClass="textHomePage">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <Text layoutX="239.0" layoutY="352.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textSubSubTitle" text="Work On :" wrappingWidth="211.39027404785156" />
+      <Text layoutX="256.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textSubSubTitle" text="Work On :" wrappingWidth="92.39027404785156" />
       <ImageView fitHeight="181.0" fitWidth="146.0" layoutX="14.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true">
 
       </ImageView>
-      <Label layoutX="30.0" layoutY="263.0" styleClass="textHomePage" text="#Calm#honest#creative" />
-      <Label alignment="CENTER" layoutX="160.0" layoutY="361.0" prefHeight="118.0" prefWidth="250.0" styleClass="square" text="i want to be&#10;a better person" textAlignment="CENTER" />
-      <Text layoutX="253.0" layoutY="468.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12px;" styleClass="param" text="by: 21/10/2021">
-         <font>
-            <Font size="11.0" />
-         </font>
-      </Text>
-      <Label layoutX="248.0" layoutY="371.0" prefHeight="26.0" prefWidth="82.0" styleClass="textHomePage" text="#character" />
-      <Button layoutX="228.0" layoutY="517.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="164.0" style="-fx-font-size: 18px;" styleClass="Button" text="Save Profile" textFill="#f2f2f2" />
+      <Label layoutX="30.0" layoutY="263.0" styleClass="textHomePage" />
+      <Button layoutX="228.0" layoutY="517.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="164.0" style="-fx-font-size: 18px;" styleClass="Button" text="Save Profile" textFill="#f2f2f2">
+         <padding>
+            <Insets right="30.0" />
+         </padding></Button>
       <FontAwesomeIcon glyphName="SIGNAL" layoutX="290.0" layoutY="18.0" size="20" />
       <ImageView fitHeight="41.0" fitWidth="32.0" layoutX="371.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
 
@@ -64,7 +62,7 @@
       <Text layoutX="35.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="hiperlink_signup" text="9.31" />
       <ImageView fitHeight="181.0" fitWidth="146.0" layoutX="18.0" layoutY="345.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Photo/homepage/img_4.png" />
+            <Image url="@Photo/editProfile/img.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="41.0" fitWidth="32.0" layoutX="371.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
@@ -77,5 +75,17 @@
             <FontAwesomeIcon fill="WHITE" glyphName="ARROW_LEFT" size="20" />
          </graphic>
       </Button>
+      <TextField layoutX="185.0" layoutY="356.0" prefHeight="127.0" prefWidth="220.0" promptText="i want to be a better person" styleClass="textField">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor></TextField>
+      <TextField layoutX="184.0" layoutY="354.0" prefHeight="31.0" prefWidth="220.0" promptText="#character" styleClass="textHomePage" />
+      <TextField layoutX="322.0" layoutY="457.0" prefHeight="25.0" prefWidth="82.0" promptText="21/10/2021" />
+      <Hyperlink layoutX="261.0" layoutY="208.0" text="take a form ">
+         <font>
+            <Font size="18.0" />
+         </font></Hyperlink>
+      <TextField layoutX="30.0" layoutY="269.0" prefHeight="25.0" prefWidth="329.0" promptText="#Calm#honest#creative" />
+      <FontAwesomeIcon fill="WHITE" glyphName="SAVE" layoutX="350.0" layoutY="563.0" size="30" />
    </children>
 </AnchorPane>

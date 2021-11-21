@@ -24,6 +24,15 @@ public class InitialChatController {
         stage.show();
     }
     @FXML
+    protected void goToPersonalForm(ActionEvent event) throws IOException {
+        root= FXMLLoader.load(getClass().getResource("personalForm.fxml"));
+        stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+        scene=new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("Your result ");
+        stage.show();
+    }
+    @FXML
     protected void goToChat(ActionEvent event) throws IOException {
         root= FXMLLoader.load(getClass().getResource("chat.fxml"));
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
