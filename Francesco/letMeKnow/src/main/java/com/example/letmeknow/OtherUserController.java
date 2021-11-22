@@ -39,7 +39,7 @@ public class OtherUserController {
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
         stage.setScene(scene);
-        stage.setTitle("Yor result");
+        stage.setTitle("Your form");
         stage.show();
     }
     @FXML

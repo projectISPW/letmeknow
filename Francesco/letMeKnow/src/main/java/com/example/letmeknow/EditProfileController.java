@@ -45,7 +45,7 @@ public class EditProfileController {
     protected void takeTheForm(ActionEvent event) throws IOException {
         root= FXMLLoader.load(getClass().getResource("takeForm.fxml"));
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setTitle("Homepage ");
+        stage.setTitle("Your form ");
         scene=new Scene(root);
         stage.setScene(scene);
         stage.show();

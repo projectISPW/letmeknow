@@ -18,6 +18,7 @@ public class TakeFormController {
     protected void goBack(ActionEvent event) throws IOException {
         root= FXMLLoader.load(getClass().getResource("personalForm.fxml"));
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setTitle("Your form");
         scene=new Scene(root);
         stage.setScene(scene);
         stage.show();

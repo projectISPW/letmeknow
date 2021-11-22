@@ -10,24 +10,33 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class ChatController {
+public class ResultSearchController {
     private Stage stage;
     private Scene scene;
     private Parent root;
+
     @FXML
-    protected void goToHome(ActionEvent event) throws IOException {
-        root= FXMLLoader.load(getClass().getResource("homepage.fxml"));
+    protected void goBack(ActionEvent event) throws IOException {
+        root=FXMLLoader.load(getClass().getResource("search.fxml"));
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setTitle("Home");
         scene=new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
     @FXML
-    protected void goBack(ActionEvent event) throws IOException {
-        root= FXMLLoader.load(getClass().getResource("initialSearchAndChat.fxml"));
+    protected void goHomeOtr(ActionEvent event) throws IOException {
+        root=FXMLLoader.load(getClass().getResource("homepageOther.fxml"));
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setTitle("What you want to do ? ");
+        stage.setTitle("Visit");
+        scene=new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    @FXML
+    protected void goChat(ActionEvent event) throws IOException {
+        root=FXMLLoader.load(getClass().getResource("chat.fxml"));
+        stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setTitle("Chat");
         scene=new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -39,6 +48,15 @@ public class ChatController {
         scene=new Scene(root);
         stage.setScene(scene);
         stage.setTitle("Yor form");
+        stage.show();
+    }
+    @FXML
+    protected void goToHome(ActionEvent event) throws IOException {
+        root= FXMLLoader.load(getClass().getResource("homepage.fxml"));
+        stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setTitle("Homepage");
+        scene=new Scene(root);
+        stage.setScene(scene);
         stage.show();
     }
 

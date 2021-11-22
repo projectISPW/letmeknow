@@ -45,9 +45,19 @@ public class PersonalFormController {
     protected void takeTheForm(ActionEvent event) throws IOException {
         root= FXMLLoader.load(getClass().getResource("takeForm.fxml"));
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setTitle("Homepage ");
+        stage.setTitle("take the form ");
         scene=new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
+    @FXML
+    protected void urResult(ActionEvent event) throws IOException {
+        root= FXMLLoader.load(getClass().getResource("resultForm.fxml"));
+        stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setTitle("Your Result ");
+        scene=new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
 }

@@ -29,7 +29,7 @@ public class InitialChatController {
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
         stage.setScene(scene);
-        stage.setTitle("Your result ");
+        stage.setTitle("Your form ");
         stage.show();
     }
     @FXML

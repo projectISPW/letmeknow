@@ -47,7 +47,7 @@ public class HomePageController {
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
         stage.setScene(scene);
-        stage.setTitle("Yor result");
+        stage.setTitle("Yor form");
         stage.show();
     }
 

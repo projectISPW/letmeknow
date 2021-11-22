@@ -10,35 +10,35 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class ResultController {
+public class ResultFormController {
     private Stage stage;
     private Scene scene;
     private Parent root;
-
+    @FXML
+    protected void goToHome(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("homepage.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Home");
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
     @FXML
     protected void goBack(ActionEvent event) throws IOException {
-        root=FXMLLoader.load(getClass().getResource("search.fxml"));
+        root= FXMLLoader.load(getClass().getResource("personalForm.fxml"));
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setTitle("What you want to do ? ");
         scene=new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
     @FXML
-    protected void goHomeOtr(ActionEvent event) throws IOException {
-        root=FXMLLoader.load(getClass().getResource("homepageOther.fxml"));
+    protected void goToChat(ActionEvent event) throws IOException {
+        root= FXMLLoader.load(getClass().getResource("InitialSearchAndChat.fxml"));
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setTitle("Visit");
         scene=new Scene(root);
         stage.setScene(scene);
-        stage.show();
-    }
-    @FXML
-    protected void goChat(ActionEvent event) throws IOException {
-        root=FXMLLoader.load(getClass().getResource("chat.fxml"));
-        stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setTitle("Chat");
-        scene=new Scene(root);
-        stage.setScene(scene);
+        stage.setTitle("What you need ? ");
         stage.show();
     }
     @FXML
@@ -50,14 +50,4 @@ public class ResultController {
         stage.setTitle("Yor result");
         stage.show();
     }
-    @FXML
-    protected void goToHome(ActionEvent event) throws IOException {
-        root= FXMLLoader.load(getClass().getResource("homepage.fxml"));
-        stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setTitle("Homepage");
-        scene=new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
 }
