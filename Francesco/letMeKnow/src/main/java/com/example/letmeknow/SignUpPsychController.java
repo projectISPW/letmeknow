@@ -27,4 +27,13 @@ public class SignUpPsychController {
     protected void Save(ActionEvent event) throws IOException {
         backToLogin(event);
     }
+    @FXML
+    protected void switchToPsicologistHome(ActionEvent event) throws IOException {
+        root=FXMLLoader.load(getClass().getResource("psicologistHome.fxml"));
+        stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+        scene=new Scene(root);
+        stage.setTitle("Home");
+        stage.setScene(scene);
+        stage.show();
+    }
 }
