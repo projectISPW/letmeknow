@@ -71,7 +71,7 @@
                         <Font size="24.0" />
                      </font>
                   </Button>
-                  <Text fill="#7836ea" layoutX="108.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textSubSubTitle" text="Perfavore rispondi sinceramente, e riscopri te stesso attraverso i test, ti sorpenderai dei tuoi risultati !" textAlignment="RIGHT" wrappingWidth="251.23201370239258">
+                  <Text fill="#7836ea" layoutX="108.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textSubSubTitle" text="Please answer truthfully, and rediscover your true self through these tests. You'll be amazed by your results!" textAlignment="RIGHT" wrappingWidth="251.23201370239258">
                      <font>
                         <Font name="System Bold" size="11.0" />
                      </font>
