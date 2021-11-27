@@ -4,31 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b52256e9-2d80-41ff-9254-a70824f438f9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Francesco/letMeKnow/src/main/resources/com/example/letmeknow/Photo/homepage/clessidra.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Francesco/letMeKnow/src/main/resources/com/example/letmeknow/Photo/homepage/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Francesco/letMeKnow/src/main/resources/com/example/letmeknow/Photo/homepage/img_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Francesco/letMeKnow/src/main/resources/com/example/letmeknow/Photo/search/img.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Francesco/letMeKnow/src/main/resources/com/example/letmeknow/homepage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Francesco/letMeKnow/src/main/resources/com/example/letmeknow/homepage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Francesco/letMeKnow/src/main/resources/com/example/letmeknow/homepageOther.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Francesco/letMeKnow/src/main/resources/com/example/letmeknow/homepageOther.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Francesco/letMeKnow/src/main/resources/com/example/letmeknow/initialSearchAndChat.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Francesco/letMeKnow/src/main/resources/com/example/letmeknow/initialSearchAndChat.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Francesco/letMeKnow/src/main/resources/com/example/letmeknow/personalForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Francesco/letMeKnow/src/main/resources/com/example/letmeknow/personalForm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Francesco/letMeKnow/src/main/resources/com/example/letmeknow/resultSearch.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Francesco/letMeKnow/src/main/resources/com/example/letmeknow/resultSearch.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Francesco/letMeKnow/target/classes/com/example/letmeknow/homepage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Francesco/letMeKnow/target/classes/com/example/letmeknow/homepage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Francesco/letMeKnow/target/classes/com/example/letmeknow/homepageOther.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Francesco/letMeKnow/target/classes/com/example/letmeknow/homepageOther.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Francesco/letMeKnow/target/classes/com/example/letmeknow/initialSearchAndChat.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Francesco/letMeKnow/target/classes/com/example/letmeknow/initialSearchAndChat.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Francesco/letMeKnow/target/classes/com/example/letmeknow/personalForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Francesco/letMeKnow/target/classes/com/example/letmeknow/personalForm.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="83fddcd6-cb90-447c-9159-ab75eefa9a65" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectId" id="21ESWmazIIOnDqEV1OiyoO90WSv" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="21JVqV2mipjYg5o4vxiC8qTSndN" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -37,22 +28,74 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../letMeKnowCris" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/com/example/letmeknow/Photo/editProfile" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\progetto\letmeknow\Francesco\letMeKnow\src\main\resources\com\example\letmeknow\Photo\editProfile" />
+      <recent name="C:\progetto\letmeknow\Francesco\letMeKnow\src\main\java\com\example\letmeknow" />
+      <recent name="C:\progetto\letmeknow\Francesco\letMeKnow\src\main\resources\com\example\letmeknow" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="MainApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.letmeknow.MainApplication" />
+      <module name="letMeKnow" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.letmeknow.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b52256e9-2d80-41ff-9254-a70824f438f9" name="Changes" comment="" />
-      <created>1637504787741</created>
+      <changelist id="83fddcd6-cb90-447c-9159-ab75eefa9a65" name="Changes" comment="" />
+      <created>1637659372575</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1637504787741</updated>
-      <workItem from="1637504789145" duration="110000" />
-      <workItem from="1637504932587" duration="101000" />
+      <updated>1637659372575</updated>
+      <workItem from="1637659374986" duration="192000" />
+      <workItem from="1637660103339" duration="1700000" />
+      <workItem from="1637662280772" duration="1129000" />
+      <workItem from="1637681013129" duration="1878000" />
+      <workItem from="1637702214942" duration="319000" />
+      <workItem from="1637745874761" duration="752000" />
+      <workItem from="1637746787166" duration="28000" />
+      <workItem from="1637747924792" duration="628000" />
+      <workItem from="1637748840200" duration="181000" />
+      <workItem from="1637853047592" duration="584000" />
+      <workItem from="1637874122304" duration="553000" />
+      <workItem from="1638012847797" duration="117000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
