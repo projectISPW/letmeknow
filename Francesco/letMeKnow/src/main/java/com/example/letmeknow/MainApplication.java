@@ -1,5 +1,6 @@
 package com.example.letmeknow;
 
+import controller.wordCheck;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
@@ -53,6 +54,7 @@ public class MainApplication extends Application {
 
 
     public static void main(String[] args) {
-                launch();
+        launch();
+
     }
 }
