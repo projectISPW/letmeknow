@@ -57,7 +57,7 @@ public class ChatController {
         inputmsg.setText("");
         textmsg.setTextFill(Color.WHITE);
         textmsg.setFont(Font.font("Gill Sans MT",FontWeight.BOLD,18));
-        textmsg.setTranslateX(125);
+        textmsg.setTranslateX(100);
         textmsg.setTranslateY(ystart);
         textmsg.setMinWidth(500);
         textmsg.setMaxWidth(300);
