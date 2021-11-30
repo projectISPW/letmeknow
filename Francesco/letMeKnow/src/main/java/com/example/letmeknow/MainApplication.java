@@ -17,7 +17,7 @@ import java.io.IOException;
 public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        Parent root=FXMLLoader.load(getClass().getResource("login.fxml"));
+        Parent root=FXMLLoader.load(getClass().getResource("chat.fxml"));
         stage.setScene(new Scene(root));
         stage.setTitle("Login");
         stage.setResizable(false);
