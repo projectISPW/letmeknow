@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="736.0" prefWidth="414.0" stylesheets="@Login.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ChatController">
+    <children>
+        <FontAwesomeIcon glyphName="WIFI" layoutX="331.0" layoutY="22.0" size="20" />
+        <ImageView fitHeight="41.0" fitWidth="32.0" layoutX="371.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@Photo/battery.png" />
+            </image>
+        </ImageView>
+        <FontAwesomeIcon glyphName="SIGNAL" layoutX="290.0" layoutY="18.0" size="20" />
+        <Button layoutX="267.0" layoutY="683.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="146.0" styleClass="button_bar">
+            <graphic>
+                <FontAwesomeIcon fill="#377dff" glyphName="PAPER_PLANE" opacity="0.5" size="20" />
+            </graphic></Button>
+        <Button layoutX="-83.0" layoutY="-10.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="146.0" styleClass="button_bar" translateX="75.0" translateY="692.0">
+            <graphic>
+                <FontAwesomeIcon fill="#377dff" glyphName="SLIDERS" opacity="0.5" size="25" />
+            </graphic></Button>
+        <Button layoutX="133.0" layoutY="683.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="142.0" styleClass="button_bar">
+            <graphic>
+                <FontAwesomeIcon fill="#377dff" glyphName="HOME" size="60" />
+            </graphic></Button>
+        <Line endX="349.9999694824219" endY="13.999998092651367" layoutX="64.0" layoutY="-14.0" startX="-64.0000228881836" startY="13.999998092651367" styleClass="line" translateY="682.0" />
+        <Text layoutX="156.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textSubTitle" wrappingWidth="187.39027404785156">
+            <font>
+                <Font size="36.0" />
+            </font></Text>
+
+        <Button layoutX="267.0" layoutY="683.0" mnemonicParsing="false" onAction="#goBack" prefHeight="52.0" prefWidth="146.0" styleClass="button_bar">
+            <graphic>
+                <FontAwesomeIcon fill="#377dff" glyphName="PAPER_PLANE" size="50" />
+            </graphic></Button>
+        <Button layoutX="-83.0" layoutY="-10.0" mnemonicParsing="false" onAction="#goToPersonalForm" prefHeight="44.0" prefWidth="146.0" styleClass="button_bar" translateX="75.0" translateY="692.0">
+            <graphic>
+                <FontAwesomeIcon fill="#377dff" glyphName="SLIDERS" opacity="0.5" size="25" />
+            </graphic></Button>
+        <Button layoutX="133.0" layoutY="683.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="52.0" prefWidth="142.0" styleClass="button_bar">
+            <graphic>
+                <FontAwesomeIcon fill="#377dff" glyphName="HOME" opacity="0.5" size="20" />
+            </graphic></Button>
+        <Line endX="349.9999694824219" endY="13.999998092651367" layoutX="64.0" layoutY="-14.0" startX="-64.0000228881836" startY="13.999998092651367" styleClass="line" translateY="682.0" />
+        <Button layoutX="321.0" layoutY="38.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="58.0" styleClass="Back_Row">
+            <graphic>
+                <FontAwesomeIcon fill="#fff6f6" glyphName="USER" size="40" text="" wrappingWidth="35.19999999999993">
+                    <effect>
+                        <InnerShadow />
+                    </effect>
+                </FontAwesomeIcon>
+            </graphic></Button>
+        <Text layoutX="90.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" styleClass="textContent_signup" text="User #8536759" wrappingWidth="235.39027404785156" />
+        <Circle fill="#2dca8c" layoutX="368.0" layoutY="88.0" radius="6.0" stroke="#2dca8c" strokeType="INSIDE" />
+        <Button layoutX="10.0" layoutY="32.0" mnemonicParsing="false" onAction="#goBack" prefHeight="30.0" prefWidth="35.0" styleClass="Back_Row">
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="ARROW_LEFT" size="15" strokeWidth="0.5" />
+            </graphic>
+        </Button>
+        <Text layoutX="35.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="hiperlink_signup" text="9.31" />
+      <ScrollPane fx:id="scrollpane" layoutX="4.0" layoutY="105.0" prefHeight="457.0" prefWidth="410.0">
+         <content>
+            <AnchorPane fx:id="messaggi" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="3208.0" prefWidth="380.0" stylesheets="@Login.css">
+               <children>
+                  <Label layoutY="25.0" prefHeight="58.0" prefWidth="256.0" styleClass="recived_message" text="Hey hey hey... How are you?">
+                     <font>
+                        <Font name="Berlin Sans FB" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="125.0" layoutY="115.0" prefHeight="58.0" prefWidth="256.0" styleClass="send_message" text="Hey, I am fine! Wbu ? &#10;" textFill="WHITE">
+                     <font>
+                        <Font name="Berlin Sans FB" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="2.0" layoutY="207.0" prefHeight="58.0" prefWidth="297.0" styleClass="recived_message" text="Same! How was the weekend?">
+                     <font>
+                        <Font name="Berlin Sans FB" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="125.0" layoutY="298.0" prefHeight="58.0" prefWidth="256.0" styleClass="send_message" stylesheets="@Login.css" text=" Nice, i went to the movies">
+                     <font>
+                        <Font name="Berlin Sans FB" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="2.0" layoutY="387.0" prefHeight="58.0" prefWidth="278.0" styleClass="recived_message" text="What's the name of the film ?">
+                     <font>
+                        <Font name="Berlin Sans FB" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="2.0" layoutY="476.0" prefHeight="58.0" prefWidth="256.0" styleClass="recived_message" text="How it was?&#10;">
+                     <font>
+                        <Font name="Berlin Sans FB" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="-3.0" layoutY="566.0" prefHeight="2533.0" prefWidth="383.0" styleClass="send_message" stylesheets="@Login.css" text="I watched It,that was the plot,&#10;In October 1988, twelve-year-old &#10;Bill Denbrough crafts a paper &#10;sailboat for &#10;Georgie, his six-year-old brother. &#10;Georgie sails the boat along the rainy &#10;streets of small town Derry, Maine, only to &#10;have it fall down a storm drain. &#10;As he attempts to retrieve it, Georgie &#10;sees a clown in the drain, who introduces&#10;himself as &quot;Pennywise the Dancing &#10;Clown&quot;. Pennywise entices Georgie to &#10;come closer, then bites his arm off and &#10;drags him into the sewer.&#10;&#10;The following summer, Bill and his &#10;friends Richie Tozier, Eddie Kaspbrak, &#10;and Stan Uris run afoul of older bullies &#10;Henry Bowers, Belch Huggins, &#10;Patrick Hockstetter, and Victor Criss. &#10;Bill, still haunted by Georgie's &#10;disappearance, &#10;calculates that his brother's body may &#10;have washed up in a marshy wasteland &#10;called the Barrens. He recruits his &#10;friends to investigate, believing Georgie&#10; may still be alive. Ben Hanscom, one &#10;of Bill's new classmates, learns that &#10;unexplained tragedies and child &#10;disappearances have plagued the town &#10;for centuries. Targeted by Bowers' gang,&#10; Ben flees into the Barrens and meets &#10;Bill's group. They find the sneaker of a &#10;missing girl named Betty Ripsom, while &#10;Patrick is killed by Pennywise while &#10;searching the sewers for Ben.&#10;&#10;Beverly Marsh, a girl bullied over her &#10;rumored promiscuity, also joins the &#10;group; both Bill and Ben develop &#10;feelings for her. Later, the group &#10;befriends orphan Mike Hanlon after &#10;rescuing him from Bowers. Each &#10;member of the group has encountered &#10;terrifying manifestations of the same &#10;menacing clown who attacked Georgie: &#10;a headless undead boy (Ben), a sink that&#10; spews blood only children can see &#10;(Beverly), a diseased and rotting leper &#10;(Eddie), a disturbing painting coming &#10;alive (Stan), Mike's parents burning alive&#10; (Mike), and a frightening phantom of &#10;Georgie (Bill). Now calling themselves &#10;&quot;The Losers Club&quot;, they realize they&#10; are all being stalked by the same entity,&#10; which they refer to as &quot;It&quot;.&#10; They determine that It appears as&#10; their individual worst fears, awakening &#10;every 27 years to feed on the children &#10;of Derry before resuming hibernation, &#10;and moves about by using the sewer &#10;lines, which all lead to an old stone well &#10;hidden under an abandoned house on &#10;Neibolt Street.&#10;&#10;After Pennywise attacks them,&#10; the group ventures to the house to&#10; confront It, only to be separated and &#10;terrorized. As Pennywise gloats to Bill&#10; about Georgie, the Losers regroup and&#10; Beverly impales Pennywise through the &#10;head, forcing the clown to retreat. The &#10;group flees the house and begins to splinter,&#10; with only Bill and Beverly resolute in &#10;fighting It.&#10;&#10;Weeks later, after Beverly confronts &#10;and incapacitates her sexually abusive &#10;father, Pennywise abducts her. The &#10;Losers Club reassembles and returns to&#10; the abandoned house to rescue her. &#10;Bowers, who has murdered his abusive&#10; father after being driven insane by It, &#10;attacks the group; Mike fights back and pushes &#10;Bowers down the well, apparently killing&#10; him. The Losers descend into the sewers&#10; and find It's underground lair, &#10;which contains a mountain of decayed &#10;circus props and children's belongings, &#10;around which the bodies of It's child &#10;victims float in mid-air. Beverly, now &#10;catatonic after being exposed to bright &#10;lights inside It's gaping mouth, is &#10;restored to consciousness when Ben &#10;kisses her. Bill encounters Georgie, but&#10; recognizes that he is It in disguise. &#10;As Pennywise, It takes Bill hostage, &#10;offering to spare the others and go into&#10;hibernation if they let It feed on Bill. &#10;The Losers reject this, battling with It &#10;while overcoming their various fears. It &#10;is eventually defeated and retreats &#10;deeper into the sewers, with Bill &#10;declaring that It will starve during its &#10;hibernation. After finding the remnants&#10; of Georgie's raincoat, Bill finally comes&#10; to terms with his brother's death, with&#10; his friends comforting him.&#10;&#10;As summer ends, Beverly informs &#10;the group of a vision she had while &#10;catatonic, where she saw them fighting&#10; It again as adults. The Losers swear a &#10;blood oath that they will return to Derry&#10; as adults if It returns. After the others&#10; make their goodbyes and disperse, &#10;Beverly and Bill discuss her leaving the &#10;next day to live with her aunt in &#10;Portland. Before she leaves, Bill reveals &#10;his feelings and they kiss.">
+                     <font>
+                        <Font name="Berlin Sans FB" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="lastmsg" prefHeight="58.0" prefWidth="278.0" styleClass="recived_message" text="Omg it must be so scary." translateY="3132.0">
+                     <font>
+                        <Font name="Berlin Sans FB" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <TextArea fx:id="inputmsg" layoutX="1.0" layoutY="561.0" prefHeight="120.0" prefWidth="365.0" promptText="Message ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextArea>
+      <Button layoutX="362.0" layoutY="562.0" minWidth="42.0" mnemonicParsing="false" onAction="#sendMSG" prefHeight="120.0" prefWidth="54.0" styleClass="button_pen">
+         <graphic>
+            <FontAwesomeIcon glyphName="PENCIL_SQUARE_ALT" opacity="0.5" size="30" text="" wrappingWidth="30.0" />
+         </graphic>
+      </Button>
+
+
+    </children>
+</AnchorPane>
