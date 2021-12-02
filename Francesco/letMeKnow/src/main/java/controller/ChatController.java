@@ -30,11 +30,11 @@ public class ChatController {
     ScrollPane scrollpane;
     String wordTemp;
     int goAhead=30;
-    private Double ystart ;
-    private wordCheck ciao=new wordCheck(goAhead);
+    WordCheck textBean=new WordCheck(goAhead);
+    Double ystart ;
     private int high;
 
-    private Label textmsg;
+    Label textmsg;
     private Factory factory=new Factory();
     private PageMenu controller= factory.createPageMenu();
     @FXML
@@ -52,7 +52,7 @@ public class ChatController {
     @FXML
     protected void sendMSG(){
         ystart = lastmsg.getTranslateY()+89+high*18;
-        wordTemp=wordCheck.check(inputmsg.getText());
+        wordTemp=textBean.check(inputmsg.getText());
         textmsg=new Label(wordTemp);
         inputmsg.setText("");
         textmsg.setTextFill(Color.WHITE);
@@ -65,7 +65,7 @@ public class ChatController {
         textmsg.setBackground(new Background(new BackgroundFill(Color.rgb(55, 125, 255, 0.69),new CornerRadii(18.0),new Insets(-5.0))));
         messaggi.getChildren().add(textmsg);
         lastmsg=textmsg;
-        high=wordCheck.contaInvio(wordTemp);
+        high=textBean.contaInvio(wordTemp);
         messaggi.setPrefHeight(textmsg.getTranslateY()+high*18+89);
     }
 }
