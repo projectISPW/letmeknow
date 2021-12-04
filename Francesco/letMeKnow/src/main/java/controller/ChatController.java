@@ -32,7 +32,9 @@ public class ChatController {
     int goAhead=30;
     WordCheck textBean=new WordCheck(goAhead);
     Double ystart ;
-    private int high;
+    int htext;
+    Integer hspacing= 80;
+    int high=1;//ultimo messaggio altezza 1
 
     Label textmsg;
     private Factory factory=new Factory();
@@ -49,25 +51,31 @@ public class ChatController {
     protected void goToPersonalForm(ActionEvent event) throws IOException {
         controller.switchToPersonalForm(event);
     }
+
     @FXML
     protected void sendMSG(){
-        ystart = lastmsg.getTranslateY()+89+90*high;
-
+        scrollpane.fitToHeightProperty().set(true);
+        ystart = lastmsg.getTranslateY()+hspacing+htext*high;
+        hspacing=80;
+        //25 padding superiore |high numero linee testo | 25 padding inferiore | 30 spaziatura
         wordTemp=textBean.check(inputmsg.getText());
-        textmsg=new Label(wordTemp);
-        inputmsg.setText("");
+        textmsg=new Label(wordTemp);// prende il testo con gli invio
+        inputmsg.setText("");//resetto la textField
+        //design
         textmsg.setTextFill(Color.WHITE);
         textmsg.setFont(Font.font("Gill Sans MT",FontWeight.BOLD,18));
         textmsg.setTranslateX(100);
         textmsg.setTranslateY(ystart);
         textmsg.setMinWidth(500);
         textmsg.setMaxWidth(300);
-        textmsg.setMinHeight(58);
+        textmsg.setMinHeight(60);
         textmsg.setBackground(new Background(new BackgroundFill(Color.rgb(55, 125, 255, 0.69),new CornerRadii(18.0),new Insets(-5.0))));
         messaggi.getChildren().add(textmsg);
         lastmsg=textmsg;
         high=textBean.contaInvio(wordTemp);
-        System.out.println("Prompt High: "+high);
-        messaggi.setPrefHeight(textmsg.getTranslateY()+high*80+89);
+        hspacing=textBean.highText(wordTemp);
+        System.out.println("high space:"+hspacing);
+        messaggi.setPrefHeight(textmsg.getTranslateY()+high*htext+hspacing);
+        scrollpane.setVvalue(1.0);
     }
 }
