@@ -51,7 +51,8 @@ public class ChatController {
     }
     @FXML
     protected void sendMSG(){
-        ystart = lastmsg.getTranslateY()+89+high*18;
+        ystart = lastmsg.getTranslateY()+89+90*high;
+
         wordTemp=textBean.check(inputmsg.getText());
         textmsg=new Label(wordTemp);
         inputmsg.setText("");
@@ -66,6 +67,7 @@ public class ChatController {
         messaggi.getChildren().add(textmsg);
         lastmsg=textmsg;
         high=textBean.contaInvio(wordTemp);
-        messaggi.setPrefHeight(textmsg.getTranslateY()+high*18+89);
+        System.out.println("Prompt High: "+high);
+        messaggi.setPrefHeight(textmsg.getTranslateY()+high*80+89);
     }
 }
