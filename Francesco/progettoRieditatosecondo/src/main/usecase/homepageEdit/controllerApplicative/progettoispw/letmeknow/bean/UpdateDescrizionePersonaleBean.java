@@ -1,0 +1,19 @@
+package progettoispw.letmeknow.bean;
+
+import progettoispw.letmeknow.controller.UpdateDescrizionePersonaleController;
+
+public class UpdateDescrizionePersonaleBean {
+    private String userid;
+    private String newStr;
+    private UpdateDescrizionePersonaleController controller;
+    public UpdateDescrizionePersonaleBean (String user){
+        userid=user;
+    }
+    public void entryValue(String Value){
+        newStr=Value;
+        controller= new UpdateDescrizionePersonaleController(userid,newStr);
+    }
+    public String getNewStr(){
+        return newStr;
+    }
+}

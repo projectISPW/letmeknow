@@ -41,7 +41,7 @@ public class WordCheck {
         int len=inputText.length();
         float val=len/3000;
         int valInt=(int)val;
-        System.out.println(valInt);
+        System.out.println(val);
         switch(valInt){
             case 0: return 80+len;
             case 1:return len-450;

@@ -1,0 +1,13 @@
+
+K
+java:S2209"5Change this instance-reference to a static reference.(»öÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(Şüû
+S	java:S106"9Replace this use of System.out or System.err by a logger.(¶µÌÊøÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(…ÚÑş
+P
+java:S2209"5Change this instance-reference to a static reference.(ÛŠñ°şÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(Ë½ëŸıÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ñ¿Ş´
+S	java:S106&"9Replace this use of System.out or System.err by a logger.(ØÛƒøÿÿÿÿ
+w
+java:S1488"aImmediately return this expression instead of assigning it to the temporary variable "obiettivo".(‡ÃŠ¾

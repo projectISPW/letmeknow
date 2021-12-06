@@ -1,0 +1,10 @@
+
+d	java:S116	"ORename this field "Data" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßšîÀ
+n
+java:S1450"SRemove the "anno" field and declare it as a local variable in the relevant methods.(ò›²»ÿÿÿÿÿ
+k
+java:S1450"URemove the "giorno" field and declare it as a local variable in the relevant methods.(—ƒ¾Ò
+n
+java:S1450"SRemove the "mese" field and declare it as a local variable in the relevant methods.(…·ìçøÿÿÿÿ
+@
+java:S1197"*Move the array designators [] to the type.(üðŒó

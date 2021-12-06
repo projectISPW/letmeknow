@@ -1,0 +1,4 @@
+
+{
+java:S1450"YRemove the "controller" field and declare it as a local variable in the relevant methods.(ƒ’Τώÿÿÿÿ8ϋμ†Ω/
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘ή„

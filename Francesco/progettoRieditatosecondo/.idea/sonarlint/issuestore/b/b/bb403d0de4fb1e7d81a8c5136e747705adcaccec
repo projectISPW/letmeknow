@@ -1,0 +1,5 @@
+
+Q	java:S1257"<This block of commented-out lines of code should be removed.(‡ÙÌÓ
+]
+java:S1192$"GDefine a constant instead of duplicating this literal "123456" 5 times.(“¬ôÆ
+b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(µ«Ò
