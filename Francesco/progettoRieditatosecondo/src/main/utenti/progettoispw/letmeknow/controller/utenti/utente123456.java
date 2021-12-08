@@ -16,7 +16,8 @@ public class utente123456 implements Utente{
         }
         if (i == true) {
             obbPersonale.setObiettivo("I want to become a better person");
-            obbPersonale.setData(new Date(2022,8,1));
+            //obbPersonale.setData(new Date(2022,8,1));
+            obbPersonale.setData(new Integer[]{1,8,2020});
             obbPersonale.setTag("#character");
             i=false;
         }
@@ -37,7 +38,7 @@ public class utente123456 implements Utente{
     public String getObiettivo(){
        // System.out.println("nel database :"+obbPersonale.getObiettivo() );
         return obbPersonale.getObiettivo();}
-    public Date getData(){return obbPersonale.getData();}
+    public Integer[] getData(){return obbPersonale.getData();}
     public String getTag(){return obbPersonale.getTag();}
     public void setDescrizione(String input){
         descrPersonale=input;
@@ -49,7 +50,7 @@ public class utente123456 implements Utente{
         //obbPersonale.getStatus();
         return input;
     }
-    public void setData(Date value){
+    public void setData(Integer [] value){
         obbPersonale.setData(value);
 
     }

@@ -7,7 +7,7 @@ import java.util.Date;
 public class UpdateObiettivoPersonaleController {
     private String userid;
     private utente123456 utente ;
-    public UpdateObiettivoPersonaleController(String user, String obbInput , String tagInput, Date scadenzaInput) {
+    public UpdateObiettivoPersonaleController(String user, String obbInput , String tagInput, Integer [] scadenzaInput) {
         this.userid = user;
         utente=new utente123456(userid);
         utente.setObbPersonale(obbInput);

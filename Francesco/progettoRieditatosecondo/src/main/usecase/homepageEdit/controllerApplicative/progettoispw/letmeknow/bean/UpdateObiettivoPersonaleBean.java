@@ -1,13 +1,8 @@
 package progettoispw.letmeknow.bean;
-
-
-import progettoispw.letmeknow.controller.ObiettivoPersonaleController;
 import progettoispw.letmeknow.controller.UpdateObiettivoPersonaleController;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 public class UpdateObiettivoPersonaleBean {
     private String userid;
@@ -15,7 +10,7 @@ public class UpdateObiettivoPersonaleBean {
     private String newTag;
     private String newScadenza;
     SimpleDateFormat dateParser=new SimpleDateFormat("yyyy/MM/dd");
-    private Date data;
+    private Integer [] data={0,0,0};
     private int anno;
     private int mese;
     private int giorno;
@@ -42,36 +37,48 @@ public class UpdateObiettivoPersonaleBean {
         }
         if(ValueData!=""){
             newScadenza=ValueData;
-            data=dateParser.parse(ValueData);
-
+            //data=dateParser.parse(ValueData);
+            int end=newScadenza.indexOf("/");
+            data[0]=giorno=(Integer.parseInt(newScadenza.substring(0,end)));
+            int beg=end;
+            end=newScadenza.indexOf("/",end+1);
+            data[1]=mese=(Integer.parseInt(newScadenza.substring(beg+1,end)));
+            beg=end;
+            end=newScadenza.length();
+            data[2]=anno=(Integer.parseInt(newScadenza.substring(beg+1,end)));
+            System.out.println("prima iniziailizzazione data "+giorno+"-"+mese+"-"+anno);
         }
         else{
             data=padre.exitData();
         }
     }
 
-    public Date checkData(Date data){
-        if(cal.YEAR == data.getYear()  || data.getYear()==(cal.YEAR+1)){
-            return data;
+    public Integer[] checkData(Integer [] date){
+        if(cal.get(Calendar.YEAR)== date[2]  || data[2]==(cal.get(Calendar.YEAR)+1)){
+            if(data[1]>((cal.get(Calendar.MONTH)+6)%12)) {
+                System.out.println("errore mensile");
+                return createData();
+            }
+            return date;
         }
         else{
-            System.err.println(" NEL UPDATE Non puoi tornare indietro nel tempo attento all Anno  ");
+            System.out.println("errore annuale");
             return createData();
         }
 
 
     }
-    public Date createData(){
-        if(Calendar.MONTH<6){
-            return (new Date( (cal.YEAR),cal.MONTH+6,cal.DAY_OF_MONTH));
+    public Integer[] createData(){
+        if(cal.get(Calendar.MONTH)<6){
+            return (new Integer[] {cal.get(Calendar.DAY_OF_MONTH),cal.get(Calendar.MONTH)+6,cal.get(Calendar.YEAR)});
         }
         else{
-            return (new Date((cal.YEAR) +1,(cal.MONTH+6)%12,cal.DAY_OF_MONTH));
+            return (new Integer[] {cal.get(Calendar.DAY_OF_MONTH),(cal.get(Calendar.MONTH)+6)%12,cal.get(Calendar.YEAR)+1});
         }
     }
     public void entryValue(String ValueObb,String ValueTag, String ValueData) throws ParseException {
         check(ValueObb,ValueTag,ValueData);
-        checkData(data);
+        data=checkData(data);
         controller= new UpdateObiettivoPersonaleController(userid,newObb,newTag,data );
     }
 

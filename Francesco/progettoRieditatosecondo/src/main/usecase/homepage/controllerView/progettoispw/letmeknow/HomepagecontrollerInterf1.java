@@ -51,10 +51,9 @@ public class HomepagecontrollerInterf1 {
         ObiettivoPersonaleBean obb=new ObiettivoPersonaleBean("123456");
         goal.setText(obb.exitObiettivo());
         tag.setText(obb.exitTag());
-        Date data ;
-        data=obb.exitData();
-        date.setText(data.toString());
-        //date.setText(" "+data.getYear()+"-"+data.getMonth()+"-"+data.getDay());
+        listaValori=obb.exitData();
+        //date.setText(data.toString());
+        date.setText(" "+listaValori[0]+"-"+listaValori[1]+"-"+listaValori[2]);
     }
     public void  setSlider(ImageView image,int val){
         //ho fatto il controllo sintattico nel bean

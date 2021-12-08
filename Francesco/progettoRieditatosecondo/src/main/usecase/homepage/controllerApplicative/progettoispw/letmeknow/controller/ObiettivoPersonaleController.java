@@ -14,8 +14,9 @@ public class ObiettivoPersonaleController {
         //System.out.println("nel controller dell homepage:"+user.getObiettivo());
         return user.getObiettivo();
     }
-    public Date tornaData(){
+    public Integer[] tornaData(){
         utente123456 user =new utente123456(userid);
+        //System.out.println(user.getData().getYear());
         return user.getData();
     }
     public String tornaTag(){

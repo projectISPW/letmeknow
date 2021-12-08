@@ -44,10 +44,10 @@ public class homepagecEditcontrollerInterf1 {
         ObiettivoPersonaleBean obb=new ObiettivoPersonaleBean("123456");
         goal.setPromptText(obb.exitObiettivo());
         tag.setPromptText(obb.exitTag());
-        Date data = null;
-        data=obb.exitData();
-        System.out.println("in view "+data);
-        date.setPromptText(data.toString());
+
+        listaValori=obb.exitData();
+        //System.out.println("in view "+data.getYear());
+        date.setPromptText(" "+listaValori[0]+"-"+listaValori[1]+"-"+listaValori[2]);
     }
     public void  setSlider(ImageView image,int val){
         //ho fatto il controllo sintattico nel bean
@@ -62,7 +62,6 @@ public class homepagecEditcontrollerInterf1 {
         String outText;
         UpdateObiettivoPersonaleBean obiettivo=new UpdateObiettivoPersonaleBean("123456");
         obiettivo.entryValue(goal.getText(), tag.getText(),date.getText());
-
         UpdateDescrizionePersonaleBean descrizione = new UpdateDescrizionePersonaleBean("123456");
         descrizione.entryValue(personalDescription.getText());
         initialize();
