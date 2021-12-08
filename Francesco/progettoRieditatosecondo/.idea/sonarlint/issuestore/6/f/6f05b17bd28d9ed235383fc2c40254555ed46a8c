@@ -1,4 +1,10 @@
 
-{
-java:S1450"YRemove the "controller" field and declare it as a local variable in the relevant methods.(˜ƒ’Ôşÿÿÿÿ8Šûì†Ù/
+t
+java:S1450"YRemove the "controller" field and declare it as a local variable in the relevant methods.(˜ƒ’Ôşÿÿÿÿ
+p
+java:S1450"URemove the "newStr" field and declare it as a local variable in the relevant methods.(éË¼­şÿÿÿÿ
+J
+java:S1066"/Merge this if statement with the enclosing one.(ª•ÔÇùÿÿÿÿ
 f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘Ş„
+W
+java:S4973"<Strings and Boxed types should be compared using "equals()".(çŸİĞüÿÿÿÿ

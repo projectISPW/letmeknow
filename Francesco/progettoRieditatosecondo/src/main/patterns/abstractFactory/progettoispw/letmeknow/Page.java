@@ -20,7 +20,7 @@ public class Page {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle(title);
-        System.out.println(stage);
+        //System.out.println(stage);
         stage.show();
     }
 

@@ -10,10 +10,10 @@ public class UpdateDescrizionePersonaleBean {
         userid=user;
     }
     public void entryValue(String Value){
-        newStr=Value;
-        controller= new UpdateDescrizionePersonaleController(userid,newStr);
-    }
-    public String getNewStr(){
-        return newStr;
+        if(Value!=""){
+            if(Value.toCharArray()[0]=='#'){
+            newStr=Value;
+            controller= new UpdateDescrizionePersonaleController(userid,newStr);
+        }}
     }
 }

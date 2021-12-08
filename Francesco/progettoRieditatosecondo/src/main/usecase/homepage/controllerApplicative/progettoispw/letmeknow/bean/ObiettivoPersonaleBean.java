@@ -2,41 +2,35 @@ package progettoispw.letmeknow.bean;
 import progettoispw.letmeknow.controller.ObiettivoPersonaleController;
 
 import java.util.Calendar;
+import java.util.Date;
 
 
 public class ObiettivoPersonaleBean {
-    private String userid;
+    protected String userid;
     private ObiettivoPersonaleController controller;
+    private UpdateObiettivoPersonaleBean controllerUpdate;
     public ObiettivoPersonaleBean (String user){
         this.userid=user;
     }
     public String exitObiettivo(){
         controller=new ObiettivoPersonaleController(userid);
         String obiettivo= controller.tornaObiettivo();
+        //System.out.println("nel bean dell homepage:"+obiettivo);
         return obiettivo;
-    }public Integer[] exitData(){
+    }public Date exitData(){
         //possibile controllo con la data giornaliera
         controller=new ObiettivoPersonaleController(userid);
-        Integer [] data=controller.tornaData();
-        if(data[0]+1<Calendar.getInstance().YEAR){
-            System.err.println("Non puoi tornare indietro nel tempo ");
+        Date data=controller.tornaData();
+        if(data.getYear()<Calendar.YEAR){
+            System.err.println("Obiettivo scaduto, da piu di un anno, aggiorna il tuo obiettivo ");
         }
-        if(data[1]>12 || data[1]<0){
-            System.out.println(data[0]+"mese "+data[1]+"giorno "+data[2]);
-            System.err.println("hai inserito un mese sbagliato");
-        }else if(data[1]>(Calendar.getInstance().MONTH+6)%12){
-            System.err.println("hai immesso un periodo troppo lungo");
-        }
-        if(data[1]>31 || data[1]<0){
-            System.err.println("hai inserito un giorno sbagliato");
+        if(data.getMonth()>Calendar.MONTH && data.getYear()==Calendar.YEAR){
+            System.err.println("Obiettivo scaduto, da piu di un mese, aggiorna il tuo obiettivo");
         }
         return data;
     }public String exitTag(){
         controller=new ObiettivoPersonaleController(userid);
         String tag=controller.tornaTag();
-        if(tag.toCharArray()[0]!='#'){
-            System.err.println("this is nont a tag");
-        }
         return tag;
     }
 }

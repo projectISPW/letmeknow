@@ -1,0 +1,10 @@
+
+K
+java:S2440!")Remove this instantiation of "WordCheck".(ÏâÊ¹ùÿÿÿÿ8îº¨¡Ù/
+Q
+java:S2209="5Change this instance-reference to a static reference.(ù››W8ûº¨¡Ù/
+W
+java:S2209K"5Change this instance-reference to a static reference.(£â€ÿýÿÿÿÿ8…»¨¡Ù/
+W
+java:S2209L"5Change this instance-reference to a static reference.(íœ‚˜þÿÿÿÿ8†»¨¡Ù/
+U	java:S106M"9Replace this use of System.out or System.err by a logger.(ÔÆ­þ8ˆ»¨¡Ù/

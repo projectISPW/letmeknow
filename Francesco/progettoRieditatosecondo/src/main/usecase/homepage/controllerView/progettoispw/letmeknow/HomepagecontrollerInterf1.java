@@ -13,6 +13,7 @@ import progettoispw.letmeknow.bean.SliderBean;
 import progettoispw.letmeknow.bean.*;
 
 import java.io.IOException;
+import java.util.Date;
 
 
 public class HomepagecontrollerInterf1 {
@@ -50,9 +51,10 @@ public class HomepagecontrollerInterf1 {
         ObiettivoPersonaleBean obb=new ObiettivoPersonaleBean("123456");
         goal.setText(obb.exitObiettivo());
         tag.setText(obb.exitTag());
-        listaValori=obb.exitData();
-        text="by :"+listaValori[0]+"/"+listaValori[1]+"/"+listaValori[2];
-        date.setText(text);
+        Date data ;
+        data=obb.exitData();
+        date.setText(data.toString());
+        //date.setText(" "+data.getYear()+"-"+data.getMonth()+"-"+data.getDay());
     }
     public void  setSlider(ImageView image,int val){
         //ho fatto il controllo sintattico nel bean

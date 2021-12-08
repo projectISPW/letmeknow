@@ -1,21 +1,16 @@
 package progettoispw.letmeknow.controller.utenti;
 
-public class ObiettivoPersonale {
-    private String obiettivo;
-    private Integer giorno;
-    private Integer mese;
-    private Integer anno;
-    private  String tag;
-    private Integer [] Data={0,0,0};
-    public ObiettivoPersonale(String string){
-        obiettivo=string;
-    }
-    public void setData(Integer data[]){
-        //costruttore prende data da formato italiano e porta a inglese
-        Data[2]=giorno=data[2];
-        Data[1]=mese=data[1];
-        Data[0]=anno=data[0];
+import java.util.Date;
 
+public class ObiettivoPersonale {
+    static String obiettivo;
+    static  String tag;
+    static Date data;
+    public void setObiettivo(String string){
+        this.obiettivo=string;
+    }
+    public void setData(Date dataInp){
+       data=dataInp;
     }
     public void setTag(String string){
         tag=string;
@@ -23,11 +18,13 @@ public class ObiettivoPersonale {
     public String getObiettivo(){
         return obiettivo;
     }
-    public Integer[] getData(){
-        return Data;
+    public Date getData(){
+        return data;
     }
     public String getTag(){
         return tag;
     }
-
+    public void getStatus(){
+        System.out.println("il tuo obiettivo personale:"+obiettivo+"\ni tuoi tag:"+tag+"\nla tua scadenza:"+data.getYear()+"/"+data.getMonth()+"/"+data.getDay());
+    }
 }

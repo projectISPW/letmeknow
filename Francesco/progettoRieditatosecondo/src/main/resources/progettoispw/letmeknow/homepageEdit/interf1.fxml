@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Hyperlink?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Line?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="736.0" prefWidth="414.0" stylesheets="@interf1.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="progettoispw.letmeknow.homepagecEditcontrollerInterf1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="736.0" prefWidth="414.0" stylesheets="@interf1.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="progettoispw.letmeknow.homepagecEditcontrollerInterf1">
     <children>
         <Button layoutX="267.0" layoutY="683.0" mnemonicParsing="false" onAction="#goToChat" prefHeight="52.0" prefWidth="146.0" styleClass="button_bar">
             <graphic>
@@ -82,7 +77,7 @@
                 <Cursor fx:constant="DEFAULT" />
             </cursor></TextField>
         <TextField fx:id="tag" layoutX="184.0" layoutY="354.0" prefHeight="31.0" prefWidth="220.0" promptText="#character" styleClass="textHomePage" />
-        <TextField fx:id="date" layoutX="324.0" layoutY="458.0" prefHeight="25.0" prefWidth="82.0" promptText="21/10/2021" />
+        <TextField fx:id="date" layoutX="205.0" layoutY="458.0" prefHeight="26.0" prefWidth="201.0" promptText="21/10/2021" />
         <Hyperlink layoutX="248.0" layoutY="208.0" onAction="#takeTheForm" styleClass="hiperlink_signup" text="take a form ">
             <font>
                 <Font size="18.0" />

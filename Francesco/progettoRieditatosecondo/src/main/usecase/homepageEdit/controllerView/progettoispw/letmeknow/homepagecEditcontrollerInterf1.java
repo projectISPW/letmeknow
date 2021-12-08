@@ -6,12 +6,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import progettoispw.letmeknow.bean.DescrizionePersonaleBean;
-import progettoispw.letmeknow.bean.ObiettivoPersonaleBean;
-import progettoispw.letmeknow.bean.SliderBean;
-import progettoispw.letmeknow.bean.UpdateDescrizionePersonaleBean;
+import progettoispw.letmeknow.bean.*;
+import progettoispw.letmeknow.controller.UpdateObiettivoPersonaleController;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.util.Date;
 
 public class homepagecEditcontrollerInterf1 {
     Factory factory =new Factory();
@@ -44,9 +44,10 @@ public class homepagecEditcontrollerInterf1 {
         ObiettivoPersonaleBean obb=new ObiettivoPersonaleBean("123456");
         goal.setPromptText(obb.exitObiettivo());
         tag.setPromptText(obb.exitTag());
-        listaValori=obb.exitData();
-        text="by :"+listaValori[0]+"/"+listaValori[1]+"/"+listaValori[2];
-        date.setPromptText(text);
+        Date data = null;
+        data=obb.exitData();
+        System.out.println("in view "+data);
+        date.setPromptText(data.toString());
     }
     public void  setSlider(ImageView image,int val){
         //ho fatto il controllo sintattico nel bean
@@ -57,13 +58,18 @@ public class homepagecEditcontrollerInterf1 {
         image.setImage(immagine);
     }
     @FXML
-    public void saveChanges(){
-        UpdateDescrizionePersonaleBean descrizione=new UpdateDescrizionePersonaleBean("123456");
-        descrizione.entryValue(personalDescription.getText());
-        DescrizionePersonaleBean descrizione1=new DescrizionePersonaleBean("123456");
-        String text=descrizione1.exitValue();
-        personalDescription.setPromptText(text);
+    public void saveChanges() throws ParseException {
+        String outText;
+        UpdateObiettivoPersonaleBean obiettivo=new UpdateObiettivoPersonaleBean("123456");
+        obiettivo.entryValue(goal.getText(), tag.getText(),date.getText());
 
+        UpdateDescrizionePersonaleBean descrizione = new UpdateDescrizionePersonaleBean("123456");
+        descrizione.entryValue(personalDescription.getText());
+        initialize();
+        personalDescription.setText("");
+        goal.setText("");
+        tag.setText("");
+        date.setText("");
     }
 
 

@@ -1,10 +1,18 @@
 
-d	java:S116	"ORename this field "Data" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßšîÀ
-n
-java:S1450"SRemove the "anno" field and declare it as a local variable in the relevant methods.(ò›²»ÿÿÿÿÿ
-k
-java:S1450"URemove the "giorno" field and declare it as a local variable in the relevant methods.(—ƒ¾Ò
-n
-java:S1450"SRemove the "mese" field and declare it as a local variable in the relevant methods.(…·ìçøÿÿÿÿ
-@
-java:S1197"*Move the array designators [] to the type.(üğŒó
+Q
+java:S2696
+"6Make the enclosing method "static" or remove this set.(ú†Ğğüÿÿÿÿ
+P
+java:S2209
+"5Change this instance-reference to a static reference.(ú†Ğğüÿÿÿÿ
+L
+java:S2696"6Make the enclosing method "static" or remove this set.(•¦·ï
+K
+java:S2696"6Make the enclosing method "static" or remove this set.(¿¥‰
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ªˆôûÿÿÿÿ
+J
+java:S1874"/Remove this use of "getYear"; it is deprecated.(ªˆôûÿÿÿÿ
+K
+java:S1874"0Remove this use of "getMonth"; it is deprecated.(ªˆôûÿÿÿÿ
+P
+java:S1874".Remove this use of "getDay"; it is deprecated.(ªˆôûÿÿÿÿ8ñäœÏÙ/

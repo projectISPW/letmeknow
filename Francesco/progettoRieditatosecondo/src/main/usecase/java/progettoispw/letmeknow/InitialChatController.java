@@ -22,11 +22,11 @@ public class InitialChatController {
     }
     @FXML
     protected void goToChat(ActionEvent event) throws IOException {
-        controller.switchTo("chat.fxml",event,"Chat");
+        controller.switchTo("chat/interf1.fxml",event,"Chat");
     }
     @FXML
     protected void goToSearch(ActionEvent event) throws IOException {
-        controller.switchTo("search.fxml",event,"Search");
+        controller.switchTo("search/interf1.fxml",event,"Search");
     }
 
 }

@@ -1,13 +1,16 @@
 
+V	java:S125"<This block of commented-out lines of code should be removed.(©Áªşÿÿÿÿ
+D
+java:S1874"/Remove this use of "getYear"; it is deprecated.(‰®Á}
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ìÚüúÿÿÿÿ
 K
-java:S2209"5Change this instance-reference to a static reference.(»öÿ
-N	java:S106"9Replace this use of System.out or System.err by a logger.(Şüû
-S	java:S106"9Replace this use of System.out or System.err by a logger.(¶µÌÊøÿÿÿÿ
-N	java:S106"9Replace this use of System.out or System.err by a logger.(…ÚÑş
-P
-java:S2209"5Change this instance-reference to a static reference.(ÛŠñ°şÿÿÿÿ
-S	java:S106"9Replace this use of System.out or System.err by a logger.(Ë½ëŸıÿÿÿÿ
-N	java:S106"9Replace this use of System.out or System.err by a logger.(ñ¿Ş´
-S	java:S106&"9Replace this use of System.out or System.err by a logger.(ØÛƒøÿÿÿÿ
+java:S1874"0Remove this use of "getMonth"; it is deprecated.(¿Ãã’øÿÿÿÿ
+Q
+java:S1874"/Remove this use of "getYear"; it is deprecated.(¿Ãã’øÿÿÿÿ8»¼ÂÑÙ/
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ñ„§£
+I
+java:S1068"4Remove this unused "controllerUpdate" private field.(¬«‹[
 w
-java:S1488"aImmediately return this expression instead of assigning it to the temporary variable "obiettivo".(‡ÃŠ¾
+java:S1488"aImmediately return this expression instead of assigning it to the temporary variable "obiettivo".(‡ÃŠ¾
+x
+java:S1488!"[Immediately return this expression instead of assigning it to the temporary variable "tag".(ãÚ¿”8–œªÑÙ/

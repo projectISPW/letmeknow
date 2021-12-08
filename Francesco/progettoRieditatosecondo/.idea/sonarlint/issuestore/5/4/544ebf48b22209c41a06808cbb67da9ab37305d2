@@ -1,3 +1,53 @@
 
-X
-java:S2094"BRemove this empty class, write its code or make it an "interface".(ëÎÆì
+n
+java:S1450"YRemove the "controller" field and declare it as a local variable in the relevant methods.(„®”w
+u
+java:S1450"ZRemove the "newScadenza" field and declare it as a local variable in the relevant methods.(åŠúúÿÿÿÿ
+N	java:S106#"9Replace this use of System.out or System.err by a logger.(Ø¸Ù
+K
+java:S22096"5Change this instance-reference to a static reference.(ÏÏÃó
+E
+java:S18746"/Remove this use of "getYear"; it is deprecated.(ÏÏÃó
+E
+java:S18746"/Remove this use of "getYear"; it is deprecated.(ÏÏÃó
+K
+java:S22096"5Change this instance-reference to a static reference.(ÏÏÃó
+N	java:S106:"9Replace this use of System.out or System.err by a logger.(Ä“×Ù
+G
+java:S1874B",Remove this use of "Date"; it is deprecated.(Ö ·Íÿÿÿÿÿ
+P
+java:S2209B"5Change this instance-reference to a static reference.(Ö ·Íÿÿÿÿÿ
+P
+java:S2209B"5Change this instance-reference to a static reference.(Ö ·Íÿÿÿÿÿ
+P
+java:S2209B"5Change this instance-reference to a static reference.(Ö ·Íÿÿÿÿÿ
+B
+java:S1874E",Remove this use of "Date"; it is deprecated.(€¸Šõ
+K
+java:S2209E"5Change this instance-reference to a static reference.(€¸Šõ
+K
+java:S2209E"5Change this instance-reference to a static reference.(€¸Šõ
+K
+java:S2209E"5Change this instance-reference to a static reference.(€¸Šõ
+v
+java:S1128"[Remove this unused import 'progettoispw.letmeknow.controller.ObiettivoPersonaleController'.(õ¦›ûþÿÿÿÿ
+J
+java:S1068"/Remove this unused "newScadenza" private field.(åŠúúÿÿÿÿ
+>
+java:S1068"(Remove this unused "anno" private field.(¦¤¾¬
+>
+java:S1068"(Remove this unused "mese" private field.(ç¥›Þ
+@
+java:S1068"*Remove this unused "giorno" private field.(¶ÓÌ–
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘ü¹©ùÿÿÿÿ
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘ü¹©ùÿÿÿÿ
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘ü¹©ùÿÿÿÿ
+f	java:S117H"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ØŠ½‰
+f	java:S117H"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ØŠ½‰
+f	java:S117H"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ØŠ½‰
+R
+java:S4973"<Strings and Boxed types should be compared using "equals()".(„î™‹
+R
+java:S4973!"<Strings and Boxed types should be compared using "equals()".(òåß§
+R
+java:S4973+"<Strings and Boxed types should be compared using "equals()".(Å…
