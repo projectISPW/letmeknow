@@ -21,16 +21,16 @@ public class LoginController {
     @FXML
     protected void switchToSignup(ActionEvent event) throws IOException{
         //controller.switchTo("signup.fxml",event,"Signup");
-        controller.goTo("signup",event);
+        controller.switchTo("signup/interf1.fxml",event,"Signup");
     }
     @FXML
     protected void switchToRecoverPswd(ActionEvent event) throws IOException {
-        controller.switchTo("recoverpassword.fxml",event,"recover password");
+        controller.switchTo("recoverpassword/interf1.fxml",event,"Recover password");
         //controller.goTo("recover password",event);
     }
     @FXML
     protected void switchToSignUpPsych(ActionEvent event) throws IOException {
-        controller.switchTo("signUpPsych.fxml",event,"Signup");
+        controller.switchTo("signupPsicologist/interf1.fxml",event,"Signup");
     }
     @FXML
     protected void switchToHome(ActionEvent event) throws IOException {
@@ -48,10 +48,10 @@ public class LoginController {
         }else if(labUser.getText().equals("psicologo") ){
             PsicologistHomeController.displayName(labUser);
             PsicologistHomeController.displayPassword(labPassword);
-            controller.switchTo("psicologistHome.fxml",event,"Home");
+            controller.switchTo("psicologistHome/interf1.fxml",event,"Home");
         }else {
             HomepagecontrollerInterf1.displayName(labUser);
             HomepagecontrollerInterf1.displayPassword(labPassword);
-            controller.switchTo("homepage.fxml",event,"Home");
+            controller.switchTo("homepage/interf1.fxml",event,"Home");
         }
     }}

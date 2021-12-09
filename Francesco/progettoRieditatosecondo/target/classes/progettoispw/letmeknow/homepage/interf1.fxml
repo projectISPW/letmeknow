@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.*?>
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="736.0" prefWidth="414.0" stylesheets="@interf1.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="progettoispw.letmeknow.HomepagecontrollerInterf1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="736.0" prefWidth="414.0" stylesheets="@interf1.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="progettoispw.letmeknow.HomepagecontrollerInterf1">
    <children>
       <Button layoutX="267.0" layoutY="683.0" mnemonicParsing="false" onAction="#goToChat" prefHeight="52.0" prefWidth="146.0" styleClass="button_bar">
          <graphic>
@@ -57,7 +60,10 @@
          <padding>
             <Insets left="20.0" />
          </padding></Label>
-      <Label fx:id="goal" alignment="CENTER" layoutX="185.0" layoutY="356.0" prefHeight="127.0" prefWidth="220.0" styleClass="textField" textAlignment="CENTER" />
+      <Label fx:id="goal" alignment="CENTER" layoutX="185.0" layoutY="356.0" prefHeight="127.0" prefWidth="220.0" styleClass="textField" textAlignment="CENTER">
+         <padding>
+            <Insets top="25.0" />
+         </padding></Label>
       <Label fx:id="tag" layoutX="244.0" layoutY="362.0" prefHeight="26.0" prefWidth="82.0" styleClass="textHomePage" />
       <Button layoutX="228.0" layoutY="517.0" mnemonicParsing="false" onAction="#editProfile" prefHeight="70.0" prefWidth="164.0" style="-fx-font-size: 18px;" styleClass="Button" text="Edit Profile" textFill="#f2f2f2" />
       <FontAwesomeIcon glyphName="SIGNAL" layoutX="290.0" layoutY="18.0" size="20" />
@@ -75,6 +81,6 @@
       <ImageView fx:id="positivitySlider" fitHeight="50.0" fitWidth="155.0" layoutX="213.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="humorSlider" fitHeight="50.0" fitWidth="155.0" layoutX="211.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="empathySlider" fitHeight="50.0" fitWidth="155.0" layoutX="209.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="date" layoutX="211.0" layoutY="458.0" prefHeight="26.0" prefWidth="195.0" style="-fx-font-size: 12px; -fx-border-radius: 0px; -fx-background-color: white;" styleClass="square" textAlignment="CENTER" />
+      <Label fx:id="date" layoutX="296.0" layoutY="469.0" prefHeight="26.0" prefWidth="112.0" style="-fx-font-size: 12px; -fx-border-radius: 0px; -fx-background-color: white;" styleClass="square" textAlignment="CENTER" />
    </children>
 </AnchorPane>

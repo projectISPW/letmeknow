@@ -11,26 +11,15 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class PersonalFormController {
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
+    Factory factory=new Factory();
+    Page controller = factory.createPage();
     @FXML
     protected void goToSettings(ActionEvent event) throws IOException {
-        root=FXMLLoader.load(getClass().getResource("settings.fxml"));
-        stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-        scene=new Scene(root);
-        stage.setScene(scene);
-        stage.setTitle("Settings");
-        stage.show();
+        controller.switchTo("settings/interf1.fxml",event,"Settings");
     }
     @FXML
     protected void goToChat(ActionEvent event) throws IOException {
-        root= FXMLLoader.load(getClass().getResource("InitialSearchAndChat.fxml"));
-        stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-        scene=new Scene(root);
-        stage.setScene(scene);
-        stage.setTitle("What you need ? ");
-        stage.show();
+        controller.switchTo("initialSearchAndChat/interf1.fxml",event,"What do you need ? ");
     }
     @FXML
     protected void goToHome(ActionEvent event) throws IOException {
@@ -43,21 +32,27 @@ public class PersonalFormController {
     }
     @FXML
     protected void takeTheForm(ActionEvent event) throws IOException {
-        root= FXMLLoader.load(getClass().getResource("takeForm.fxml"));
-        stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setTitle("take the form ");
-        scene=new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        controller.switchTo("formToTake/interf1.fxml",event,"homepage");
     }
     @FXML
     protected void urResult(ActionEvent event) throws IOException {
-        root= FXMLLoader.load(getClass().getResource("resultForm.fxml"));
-        stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setTitle("Your Result ");
-        scene=new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+       controller.switchTo("")
     }
 
 }
+
+
+
+/*bean da implementare ---------
+-RENDERE CLICCABILI I SOLI MODULI A CUI HO RISPOSTO
+-
+
+
+
+
+
+
+
+
+
+ */

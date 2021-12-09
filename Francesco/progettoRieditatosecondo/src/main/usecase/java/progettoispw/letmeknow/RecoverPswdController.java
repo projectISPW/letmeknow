@@ -25,7 +25,7 @@ public class RecoverPswdController
     @FXML
     protected void backToLogin(ActionEvent event) throws IOException {
         //controller.switchTo("login.fxml",event,"Login");
-        controller.goTo("login",event);
+        controller.switchTo("login/interf1.fxml",event,"Login");
     }
 
 }

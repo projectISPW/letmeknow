@@ -27,7 +27,8 @@ public class ChatController {
     ScrollPane scrollpane;
     String wordTemp;
     int goAhead=30;
-    WordCheck textBean=new WordCheck(goAhead);
+    int delta=10;
+    WordCheck textBean=new WordCheck(delta,goAhead);
     Double ystart ;
     int htext;
     Integer hspacing= 80;

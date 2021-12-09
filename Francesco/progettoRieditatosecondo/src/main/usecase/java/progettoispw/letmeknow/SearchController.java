@@ -1,4 +1,4 @@
-package controller;
+package progettoispw.letmeknow;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

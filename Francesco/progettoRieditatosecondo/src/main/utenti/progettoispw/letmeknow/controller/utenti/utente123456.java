@@ -5,23 +5,26 @@ import java.util.Date;
 public class utente123456 implements Utente{
     static Boolean i=true;
     private String numeroUtente="123456";
-    static Integer empatia=5;
-    static Integer umorismo=4;
-    static Integer positivita=3;
-    static String descrPersonale="#Calm#honest#creative";
+    static Integer empatia;
+    static Integer umorismo;
+    static Integer positivita;
+    static String descrPersonale;
     static ObiettivoPersonale obbPersonale=new ObiettivoPersonale();
     public utente123456(String input){
         if(input!=numeroUtente ){
             System.err.println("utente non corrispondente");
         }
-        if (i == true) {
+        if ((input == numeroUtente && i)) {
+            empatia=5;
+            umorismo=4;
+            positivita=3;
+            descrPersonale="#Calm#honest#creative";
             obbPersonale.setObiettivo("I want to become a better person");
             //obbPersonale.setData(new Date(2022,8,1));
             obbPersonale.setData(new Integer[]{1,8,2020});
             obbPersonale.setTag("#character");
             i=false;
         }
-
     }
     public int getEmpatia(){
         return empatia;
@@ -58,6 +61,4 @@ public class utente123456 implements Utente{
         obbPersonale.setTag(input);
         //obbPersonale.getStatus();
     }
-
-
 }

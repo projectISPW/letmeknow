@@ -1,20 +1,26 @@
 
-9
-java:S3010"Remove this assignment of "i".(†åÌ°úÿÿÿÿ
-S	java:S106"9Replace this use of System.out or System.err by a logger.(°şÌíúÿÿÿÿ
-=
-java:S1125"'Remove the unnecessary boolean literal.(è¯Ó¾
-V	java:S125"<This block of commented-out lines of code should be removed.(èÕŒéÿÿÿÿÿ
-Q	java:S125'"<This block of commented-out lines of code should be removed.(õ•õ¿
-Q
-java:S2696,"6Make the enclosing method "static" or remove this set.(«’óúÿÿÿÿ
-V	java:S125-"<This block of commented-out lines of code should be removed.(“Ÿ¡Âÿÿÿÿÿ
-P	java:S1251"<This block of commented-out lines of code should be removed.(³ªÜ,
-V	java:S125;"<This block of commented-out lines of code should be removed.(ô­õûÿÿÿÿ
-H
-java:S1128"+Remove this unused import 'java.util.Date'.(¸…¼ü8¿´­áÙ/
-g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Ç£ˆßûÿÿÿÿ
+?
+java:S3010"$Remove this assignment of "empatia".(±öûÿÿÿÿ
 @
-java:S5411"*Use the primitive boolean expression here.(è¯Ó¾
+java:S3010"%Remove this assignment of "umorismo".(ì…Ûşÿÿÿÿ
+B
+java:S3010"'Remove this assignment of "positivita".(š’àüÿÿÿÿ
+F
+java:S3010"+Remove this assignment of "descrPersonale".(®Û¶Øøÿÿÿÿ
+9
+java:S3010"Remove this assignment of "i".(†åÌ°úÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(°şÌíúÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(èÕŒéÿÿÿÿÿ
+Q	java:S125*"<This block of commented-out lines of code should be removed.(õ•õ¿
+Q
+java:S2696/"6Make the enclosing method "static" or remove this set.(«’óúÿÿÿÿ
+V	java:S1250"<This block of commented-out lines of code should be removed.(“Ÿ¡Âÿÿÿÿÿ
+P	java:S1254"<This block of commented-out lines of code should be removed.(³ªÜ,
+V	java:S125>"<This block of commented-out lines of code should be removed.(ô­õûÿÿÿÿ
+A
+java:S1128"+Remove this unused import 'java.util.Date'.(¸…¼ü
+g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Ç£ˆßûÿÿÿÿ
 W
 java:S4973"<Strings and Boxed types should be compared using "equals()".(”’°‡ÿÿÿÿÿ
+W
+java:S4973"<Strings and Boxed types should be compared using "equals()".(ÂÈûøÿÿÿÿ

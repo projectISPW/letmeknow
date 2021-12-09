@@ -3,11 +3,12 @@ package progettoispw.letmeknow;
 public class WordCheck {
     static  int goAhead;
     static int contAhead;
-    static int delta=10;
-    public WordCheck(int val){
-        goAhead=30;
+    static int delta;
+    public WordCheck(int deltaInput,int goAheadInput){
+        delta=deltaInput;
+        goAhead=goAheadInput;
     }
-    static  String check(String inputText) {
+    public static  String check(String inputText) {
         String add;
         String before;
         for (int k = goAhead-delta,count =goAhead-delta; k < inputText.length(); k = k+1) {
@@ -25,7 +26,7 @@ public class WordCheck {
                 count++;
             }
         }
-        System.out.println(inputText);
+        //System.out.println(inputText);
         return  inputText;
     }
     static Integer contaInvio(String inputText){
@@ -41,13 +42,23 @@ public class WordCheck {
         int len=inputText.length();
         float val=len/3000;
         int valInt=(int)val;
-        System.out.println(val);
-        switch(valInt){
-            case 0: return 80+len;
-            case 1:return len-450;
-            default:return len;
-        }
+       // System.out.println(val);
+        switch(valInt) {
+            case 0:
+                return 80 + len;
+            case 1:
+                return len - 450;
+
+            default:
+                return len;
+
+        }}
+    public static boolean checkString(String inputText){
+        if(inputText.length()>goAhead*3){
+            return false ;
+        }return true;
     }
+
 
 }
 //abcdefghilmnopqrstuvz123456789

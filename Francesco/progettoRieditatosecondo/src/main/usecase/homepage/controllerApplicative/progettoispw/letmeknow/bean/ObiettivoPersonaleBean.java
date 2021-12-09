@@ -1,4 +1,5 @@
 package progettoispw.letmeknow.bean;
+import progettoispw.letmeknow.WordCheck;
 import progettoispw.letmeknow.controller.ObiettivoPersonaleController;
 
 import java.util.Calendar;
@@ -8,7 +9,7 @@ import java.util.Date;
 public class ObiettivoPersonaleBean {
     protected String userid;
     private ObiettivoPersonaleController controller;
-    private UpdateObiettivoPersonaleBean controllerUpdate;
+    private WordCheck checkStr=new WordCheck(3,20);
     public ObiettivoPersonaleBean (String user){
         this.userid=user;
     }
@@ -16,7 +17,10 @@ public class ObiettivoPersonaleBean {
         controller=new ObiettivoPersonaleController(userid);
         String obiettivo= controller.tornaObiettivo();
         //System.out.println("nel bean dell homepage:"+obiettivo);
-        return obiettivo;
+        if(checkStr.checkString(obiettivo)==false){
+             System.err.println("è possibile che vada fuori la label ");
+        }
+        return obiettivo=checkStr.check(obiettivo);
     }public Integer[] exitData(){
         //possibile controllo con la data giornaliera
         controller=new ObiettivoPersonaleController(userid);
