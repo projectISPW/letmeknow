@@ -26,7 +26,7 @@ public class ChatController {
     @FXML
     ScrollPane scrollpane;
     String wordTemp;
-    int goAhead=30;
+    int goAhead=25;
     int delta=10;
     WordCheck textBean=new WordCheck(delta,goAhead);
     Double ystart ;

@@ -23,12 +23,7 @@ public class PersonalFormController {
     }
     @FXML
     protected void goToHome(ActionEvent event) throws IOException {
-        root= FXMLLoader.load(getClass().getResource("homepage/interf1.fxml"));
-        stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setTitle("Homepage ");
-        scene=new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        controller.switchTo("home/interf1.fxml",event,"Home");
     }
     @FXML
     protected void takeTheForm(ActionEvent event) throws IOException {
@@ -36,7 +31,7 @@ public class PersonalFormController {
     }
     @FXML
     protected void urResult(ActionEvent event) throws IOException {
-       controller.switchTo("")
+       controller.switchTo("formResult/interf1.fxml",event,"Your result");
     }
 
 }
