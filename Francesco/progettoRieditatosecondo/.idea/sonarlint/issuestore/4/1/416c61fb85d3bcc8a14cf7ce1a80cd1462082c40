@@ -1,0 +1,8 @@
+
+c	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡£ø
+h	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÊË’Éıÿÿÿÿ
+Q	java:S125!"<This block of commented-out lines of code should be removed.(¶åù†
+t
+java:S2142%"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€
+R
+java:S4973""<Strings and Boxed types should be compared using "equals()".(³©ÀŞ

@@ -2,19 +2,19 @@ package progettoispw.letmeknow.controller;
 import progettoispw.letmeknow.controller.utenti.*;
 public class SliderController {
     private String userid;
+    private utente123456 User ;
     public SliderController(String user){
         this.userid=user;
+        User =new utente123456(userid);
     }
     public int tornaValoriEmpatia(){
-        utente123456 user =new utente123456(userid);
-        return user.getEmpatia();
+        //System.out.println(User.getEmpatia());
+        return User.getEmpatia();
     }
     public int tornaValoriUmorismo(){
-       utente123456 user =new utente123456(userid);
-        return user.getUmorismo();
+        return User.getUmorismo();
     }
     public int tornaValoriPositivita(){
-        utente123456 user =new utente123456(userid);
-        return user.getPositivita();
+        return User.getPositivita();
     }
 }

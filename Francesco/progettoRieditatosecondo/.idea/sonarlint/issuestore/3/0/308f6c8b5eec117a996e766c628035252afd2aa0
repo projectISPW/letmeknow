@@ -1,22 +1,0 @@
-
-K
-java:S2440")Remove this instantiation of "WordCheck".(Ÿ»Ô„ÿÿÿÿÿ8¾£âùÙ/
-S
-java:S1854"=Remove this useless assignment to local variable "obiettivo".(ò¬ö
-V	java:S125"<This block of commented-out lines of code should be removed.(©Áªşÿÿÿÿ
-<
-java:S1125"'Remove the unnecessary boolean literal.(©´î
-Q
-java:S2209"5Change this instance-reference to a static reference.(©´î8Ä£âùÙ/
-S	java:S106"9Replace this use of System.out or System.err by a logger.(×Ğ²Ÿıÿÿÿÿ
-R
-java:S2209"5Change this instance-reference to a static reference.(ò¬ö8Æ£âùÙ/
-V	java:S125"<This block of commented-out lines of code should be removed.(øÀÚáùÿÿÿÿ
-S	java:S106"9Replace this use of System.out or System.err by a logger.(ìÚüúÿÿÿÿ
-N	java:S106!"9Replace this use of System.out or System.err by a logger.(ñ„§£
-H
-java:S1128"+Remove this unused import 'java.util.Date'.(¸…¼ü8Í£âùÙ/
-D
-java:S1121".Extract the assignment out of this expression.(ò¬ö
-q
-java:S1488&"[Immediately return this expression instead of assigning it to the temporary variable "tag".(ãÚ¿”

@@ -1,8 +1,6 @@
 package progettoispw.letmeknow.controller.utenti;
 
-import java.util.Date;
-
-public class utente123456 implements Utente{
+public class utente123456 implements Utente1 {
     static Boolean i=true;
     private String numeroUtente="123456";
     static Integer empatia;
@@ -38,27 +36,44 @@ public class utente123456 implements Utente{
     public String getDescrizione(){
         return descrPersonale;
     }
-    public String getObiettivo(){
-       // System.out.println("nel database :"+obbPersonale.getObiettivo() );
-        return obbPersonale.getObiettivo();}
+    public String getObiettivo(){ return obbPersonale.getObiettivo();}
     public Integer[] getData(){return obbPersonale.getData();}
     public String getTag(){return obbPersonale.getTag();}
     public void setDescrizione(String input){
         descrPersonale=input;
-        //System.out.println("nuova descr personale :"+ descrPersonale);
     }
     public String setObbPersonale(String input){
         obbPersonale.setObiettivo(input);
-        //System.out.println("nuovo obiettivo personale :"+ obbPersonale.getObiettivo());
-        //obbPersonale.getStatus();
         return input;
     }
     public void setData(Integer [] value){
         obbPersonale.setData(value);
-
     }
     public void setTag(String input){
         obbPersonale.setTag(input);
-        //obbPersonale.getStatus();
+    }
+    int somma=0,indice=0;
+    public void setEmpatia(double ...input){
+        for(double f :input){
+            ++indice;
+            somma+=f;
+        }
+        empatia=(int)(somma+empatia)/indice+1;
+    }
+    public void setUmorismo(double ... input){
+        somma=0;indice=0;
+        for(double f :input){
+            ++indice;
+            somma+=f;
+        }
+        umorismo=(int)(somma+umorismo)/indice+1;
+    }
+    public void setPositivita(double ... input){
+        somma=0;indice=0;
+        for(double f :input){
+            ++indice;
+            somma+=f;
+        }
+        umorismo=(int)(somma+positivita)/indice+1;
     }
 }

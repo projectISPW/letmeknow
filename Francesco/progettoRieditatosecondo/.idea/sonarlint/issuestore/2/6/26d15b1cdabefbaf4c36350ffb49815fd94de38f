@@ -1,16 +1,0 @@
-
-S	java:S106%"9Replace this use of System.out or System.err by a logger.(«åô»şÿÿÿÿ
-N	java:S106("9Replace this use of System.out or System.err by a logger.(£Œµ
-V	java:S1257"<This block of commented-out lines of code should be removed.(ˆÇÛşÿÿÿÿ
-Q	java:S125>"<This block of commented-out lines of code should be removed.(‡ÙÌÓ
-Z
-java:S1128"=Remove this unused import 'javafx.collections.FXCollections'.(´¶²Æ8ÈŠ¹áÙ/
-v
-java:S1128
-"TRemove this unnecessary import: same package classes are always implicitly imported.(ìºçáıÿÿÿÿ8ÈŠ¹áÙ/
-q
-java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(Äî•¼8ÈŠ¹áÙ/
-H
-java:S1128"+Remove this unused import 'java.util.Date'.(¸…¼ü8ÉŠ¹áÙ/
-]
-java:S1192+"GDefine a constant instead of duplicating this literal "123456" 3 times.(“¬ôÆ

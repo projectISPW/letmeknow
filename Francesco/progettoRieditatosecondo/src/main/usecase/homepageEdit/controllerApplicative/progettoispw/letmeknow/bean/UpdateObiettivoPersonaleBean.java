@@ -46,7 +46,8 @@ public class UpdateObiettivoPersonaleBean {
             beg=end;
             end=newScadenza.length();
             data[2]=anno=(Integer.parseInt(newScadenza.substring(beg+1,end)));
-            System.out.println("prima iniziailizzazione data "+giorno+"-"+mese+"-"+anno);
+            //System.out.println("prima iniziailizzazione data "+giorno+"-"+mese+"-"+anno);
+            data=checkData(data);
         }
         else{
             data=padre.exitData();
@@ -56,13 +57,13 @@ public class UpdateObiettivoPersonaleBean {
     public Integer[] checkData(Integer [] date){
         if(cal.get(Calendar.YEAR)== date[2]  || data[2]==(cal.get(Calendar.YEAR)+1)){
             if(data[1]>((cal.get(Calendar.MONTH)+6)%12)) {
-                System.out.println("errore mensile");
+                System.err.println("errore mensile");
                 return createData();
             }
             return date;
         }
         else{
-            System.out.println("errore annuale");
+            System.err.println("errore annuale");
             return createData();
         }
 
@@ -78,7 +79,7 @@ public class UpdateObiettivoPersonaleBean {
     }
     public void entryValue(String ValueObb,String ValueTag, String ValueData) throws ParseException {
         check(ValueObb,ValueTag,ValueData);
-        data=checkData(data);
+
         controller= new UpdateObiettivoPersonaleController(userid,newObb,newTag,data );
     }
 

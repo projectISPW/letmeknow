@@ -3,18 +3,17 @@ import progettoispw.letmeknow.WordCheck;
 import progettoispw.letmeknow.controller.ObiettivoPersonaleController;
 
 import java.util.Calendar;
-import java.util.Date;
 
 
 public class ObiettivoPersonaleBean {
     protected String userid;
     private ObiettivoPersonaleController controller;
-    private WordCheck checkStr=new WordCheck(3,20);
     public ObiettivoPersonaleBean (String user){
         this.userid=user;
+        controller=new ObiettivoPersonaleController(userid);
     }
     public String exitObiettivo(){
-        controller=new ObiettivoPersonaleController(userid);
+        WordCheck checkStr=new WordCheck(3,20);
         String obiettivo= controller.tornaObiettivo();
         //System.out.println("nel bean dell homepage:"+obiettivo);
         if(checkStr.checkString(obiettivo)==false){
@@ -23,7 +22,6 @@ public class ObiettivoPersonaleBean {
         return obiettivo=checkStr.check(obiettivo);
     }public Integer[] exitData(){
         //possibile controllo con la data giornaliera
-        controller=new ObiettivoPersonaleController(userid);
         Integer [] data=controller.tornaData();
         //if(data.getYear()<Calendar.YEAR){
         if(data[2]<Calendar.getInstance().get(Calendar.YEAR)){
@@ -34,8 +32,10 @@ public class ObiettivoPersonaleBean {
         }
         return data;
     }public String exitTag(){
-        controller=new ObiettivoPersonaleController(userid);
+        WordCheck checkStr=new WordCheck(3,20);
         String tag=controller.tornaTag();
+        tag=checkStr.check1(tag,"\n");
+        tag=checkStr.check(tag);
         return tag;
     }
 }

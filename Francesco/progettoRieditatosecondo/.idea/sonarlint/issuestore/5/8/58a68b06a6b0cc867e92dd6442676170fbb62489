@@ -1,2 +1,15 @@
 
-P	java:S125"<This block of commented-out lines of code should be removed.(ãï’
+d	java:S116"PRename this field "MUTEX" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿÚÿr
+<
+java:S1948"'Make "MUTEX" transient or serializable.(ÿÚÿr
+Q
+java:S2696"6Make the enclosing method "static" or remove this set.(”–‘ýÿÿÿÿ
+=
+java:S3010""Remove this assignment of "alive".(ñ—ÙÕýÿÿÿÿ
+Q	java:S125"<This block of commented-out lines of code should be removed.(ÄŸÃú
+>
+java:S1068")Remove this unused "MUTEX" private field.(ÿÚÿr
+B
+java:S1068
+",Remove this unused "saveList" private field.(ÿ…þ¸
+a	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Äá¶c

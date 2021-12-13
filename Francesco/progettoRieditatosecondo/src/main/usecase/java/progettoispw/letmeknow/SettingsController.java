@@ -16,19 +16,21 @@ public class SettingsController implements Initializable {
     @FXML
     private ComboBox<String> comb;
     @FXML
+    protected void goBack(ActionEvent event) throws IOException {
+        controller.backTo(event);
+    }
+    @FXML
     protected void goEditProf(ActionEvent event) throws IOException {
         controller.switchTo("homepageEdit/interf1.fxml", event,"Homepage");
     }
 
     @FXML
     protected void goToLogin(ActionEvent event) throws IOException {
-        controller.goTo("login", event);
+        controller.switchTo("login/interf1.fxml",event,"Login");
     }
-
     @FXML
     protected void goToHome(ActionEvent event) throws IOException {
         controller.switchToHome(event);
-
     }
     @FXML
     protected void goToChat(ActionEvent event) throws IOException {
@@ -36,7 +38,7 @@ public class SettingsController implements Initializable {
     }
     @FXML
     protected void switchToRecoverPswd(ActionEvent event) throws IOException {
-       controller.goTo("recover password",event);
+       controller.switchTo("recoverPassword/interf1.fxml",event,"recover password");
     }
     @FXML
     protected void goToPersonalForm(ActionEvent event) throws IOException {

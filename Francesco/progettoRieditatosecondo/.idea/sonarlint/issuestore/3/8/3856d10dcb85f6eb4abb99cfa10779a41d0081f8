@@ -1,0 +1,12 @@
+
+V	java:S125"<This block of commented-out lines of code should be removed.(—™Ù¹øÿÿÿÿ
+N
+java:S1128"3Remove this unused import 'javafx.fxml.FXMLLoader'.(À‡ô³úÿÿÿÿ
+D
+java:S1128".Remove this unused import 'javafx.scene.Node'.(ÑÖ¬ï
+F
+java:S1128"0Remove this unused import 'javafx.scene.Parent'.(²ä¡È
+E
+java:S1128"/Remove this unused import 'javafx.scene.Scene'.(Õü²
+J
+java:S1128	"/Remove this unused import 'javafx.stage.Stage'.(æÄ¸²úÿÿÿÿ

@@ -7,10 +7,10 @@ public class DescrizionePersonaleController {
     private utente123456 utente ;
     public DescrizionePersonaleController(String user){
         this.userid=user;
+        utente=new utente123456(userid);
     }
     public String tornaDescrizione(){
         String exit;
-        utente=new utente123456(userid);
         exit= utente.getDescrizione();
         return exit;
     }

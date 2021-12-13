@@ -18,14 +18,14 @@ public class RecoverPswdController
 
     @FXML
     protected static void displayPassword(PasswordField pw){
-
         System.out.println("Prompt Password: "+pw.getText());
     }
 
     @FXML
     protected void backToLogin(ActionEvent event) throws IOException {
-        //controller.switchTo("login.fxml",event,"Login");
-        controller.switchTo("login/interf1.fxml",event,"Login");
+        //controller.switchTo("login",event);
+        //controller.switchTo("login/interf1.fxml",event,"Login");
+        controller.backTo(event);
     }
 
 }

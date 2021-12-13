@@ -8,10 +8,17 @@ public class WordCheck {
         delta=deltaInput;
         goAhead=goAheadInput;
     }
+    public WordCheck(){
+        delta=goAhead=-1;
+    }
     public static  String check(String inputText) {
         String add;
         String before;
         for (int k = goAhead-delta,count =goAhead-delta; k < inputText.length(); k = k+1) {
+            if(inputText.toCharArray()[k]=='\n'){
+                count=0;
+                //System.out.println("gia andato a capo");
+            }
             if (count==goAhead){
                 add = inputText.substring(k);
                 before = inputText.substring(0, k);
@@ -29,7 +36,27 @@ public class WordCheck {
         //System.out.println(inputText);
         return  inputText;
     }
+    public static String check1(String inputText,String immetti){
+        String add;
+        String before;
+        int count=-1;
+        int start=inputText.indexOf('#');
+        int k=0;
+        for(char c : inputText.toCharArray()){
+            if(c=='#' && k!=start)
+            {
+                    add = inputText.substring(k);
+                    before = inputText.substring(0, k);
+                    //System.out.println(add+","+before);
+                    inputText = before + immetti + add;
+                    ++k;
+
+            }++k;
+        }
+        return inputText;
+    }
     static Integer contaInvio(String inputText){
+
         contAhead=1;
         for(char c : inputText.toCharArray()){
             if(c=='\n'){
@@ -38,21 +65,14 @@ public class WordCheck {
         }
         return contAhead;
     }
-    static Integer highText(String inputText){
-        int len=inputText.length();
-        float val=len/3000;
-        int valInt=(int)val;
-       // System.out.println(val);
-        switch(valInt) {
-            case 0:
-                return 80 + len;
-            case 1:
-                return len - 450;
-
-            default:
-                return len;
-
-        }}
+    static double highText(String inputText) {
+        int linee= contaInvio(inputText);
+        System.out.println(linee);
+        if(linee>4){
+            return linee* 21;
+        }
+        return 60;
+    }
     public static boolean checkString(String inputText){
         if(inputText.length()>goAhead*3){
             return false ;

@@ -1,7 +1,0 @@
-
-N	java:S106%"9Replace this use of System.out or System.err by a logger.(ï¤Œ¯
-S	java:S106)"9Replace this use of System.out or System.err by a logger.(µ™¡Òÿÿÿÿÿ
-C
-java:S1604"(Make this anonymous inner class a lambda(ùë²¥þÿÿÿÿ
-k
-java:S3655""PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ŸªÍäùÿÿÿÿ

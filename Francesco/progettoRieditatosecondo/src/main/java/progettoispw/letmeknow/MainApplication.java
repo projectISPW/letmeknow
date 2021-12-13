@@ -21,7 +21,6 @@ public class MainApplication extends Application {
         stage.setTitle("Login");
         stage.setResizable(false);
 
-
         //Alert in fase di uscita dall'applicazione
         stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
             @Override

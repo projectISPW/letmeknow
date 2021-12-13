@@ -13,9 +13,10 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.util.Date;
 
+import static java.lang.Thread.sleep;
+
 public class homepagecEditcontrollerInterf1 {
-    Factory factory =new Factory();
-    PageMenu controller= factory.createPageMenu();
+    private PageMenu controller= new PageMenu();    
     @FXML
     private ImageView empathySlider;
     @FXML
@@ -32,6 +33,7 @@ public class homepagecEditcontrollerInterf1 {
     private TextField date;
     @FXML
     private Button save;
+
     public void initialize(){
         SliderBean sliderVal=new SliderBean("123456");
         Integer [] listaValori=sliderVal.exitValue();
@@ -44,9 +46,8 @@ public class homepagecEditcontrollerInterf1 {
         ObiettivoPersonaleBean obb=new ObiettivoPersonaleBean("123456");
         goal.setPromptText(obb.exitObiettivo());
         tag.setPromptText(obb.exitTag());
-
         listaValori=obb.exitData();
-        //System.out.println("in view "+data.getYear());
+        //System.out.println("in view "+text);
         date.setPromptText(" "+listaValori[0]+"-"+listaValori[1]+"-"+listaValori[2]);
     }
     public void  setSlider(ImageView image,int val){
@@ -57,40 +58,44 @@ public class homepagecEditcontrollerInterf1 {
         Image immagine=new Image(getClass().getResourceAsStream(url));
         image.setImage(immagine);
     }
+    UpdateObiettivoPersonaleBean obiettivo=new UpdateObiettivoPersonaleBean("123456");
+    UpdateDescrizionePersonaleBean descrizione = new UpdateDescrizionePersonaleBean("123456");
     @FXML
     public void saveChanges() throws ParseException {
-        String outText;
-        UpdateObiettivoPersonaleBean obiettivo=new UpdateObiettivoPersonaleBean("123456");
         obiettivo.entryValue(goal.getText(), tag.getText(),date.getText());
-        UpdateDescrizionePersonaleBean descrizione = new UpdateDescrizionePersonaleBean("123456");
         descrizione.entryValue(personalDescription.getText());
-        initialize();
         personalDescription.setText("");
         goal.setText("");
         tag.setText("");
         date.setText("");
+        try {
+            sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        initialize();
     }
-
-
-
-
-
-
-
+    public void off() {
+        descrizione.setOff();
+    }
     @FXML
     protected void goToHome(ActionEvent event) throws IOException {
+        off();
         controller.switchToHome(event);
     }
     @FXML
     protected void goToChat(ActionEvent event) throws IOException {
+        off();
         controller.switchToChat(event);
     }
     @FXML
     protected void goToPersonalForm(ActionEvent event) throws IOException {
+        off();
         controller.switchToPersonalForm(event);
     }
     @FXML
     protected void takeTheForm(ActionEvent event) throws IOException {
+        off();
         controller.switchTo("formToTake/interf1.fxml",event,"fill the form");
     }
 }

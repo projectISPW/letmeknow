@@ -1,18 +1,36 @@
 package progettoispw.letmeknow.controller.utenti;
-/*
-public class utenteSerialized {
-    static String userid;
-    static String [] listUser={"123456","246810",};
-    private utente;
-    public void utenteSerialized(String userid){
-        boolean i=false;
-        while(i!=true){
-           i= utente("123456");
-           if(i==true){
 
-           }
-        }
+import java.io.Serializable;
+import java.util.List;
+
+public class utenteSerialized implements Serializable {
+    static salvaUtente [] statArray=null;
+    private final Object MUTEX =new Object();
+    static int i=0;
+    private List <salvaUtente> saveList;
+    static boolean alive=false;
+    public void attachArr(salvaUtente user){
+        statArray[i]=user;
     }
+    int indice=-1;
+    boolean presente=true;
+    public utenteSerialized(){
+        alive=true;
+         /*while(alive){
+           for(int i=0;i< statArray.length;i++){
+                indice=saveList.indexOf(statArray[i]);
+                if(i>0){
+                    for(salvaUtente user : saveList){
+                        if(statArray[i]==user){
+                            presente=true;
+                        }
+                    }
+                    if(presente==false){
+                        saveList.attach(statArray[i]);
+                    }
+                }
 
+            }*/
+
+    }
 }
-*/

@@ -1,16 +1,0 @@
-
-2
-java:S1118"Hide this public constructor.(‰œ¢
-=
-java:S3010""Remove this assignment of "delta".(¤·…ûÿÿÿÿ
-?
-java:S3010	"$Remove this assignment of "goAhead".(Š­ê‡úÿÿÿÿ
-Q	java:S125"<This block of commented-out lines of code should be removed.(öÒ·›
-V	java:S125-"<This block of commented-out lines of code should be removed.(íı²¹üÿÿÿÿ
-c
-java:S11269"AReplace this if-then-else statement by a single return statement.(¡ğˆšÿÿÿÿÿ8í£ÓùÙ/
-r	java:S127"XRefactor the code in order to not assign to this loop counter from within the loop body.(¢™Œ½üÿÿÿÿ
-r	java:S127"XRefactor the code in order to not assign to this loop counter from within the loop body.(¢™Œ½üÿÿÿÿ
-r	java:S127"XRefactor the code in order to not assign to this loop counter from within the loop body.(ëæûÿÿÿÿÿ
-W
-java:S2184+"ACast one of the operands of this division operation to a "float".(Öœ§

@@ -49,13 +49,13 @@
       </Button>
       <Button layoutX="133.0" layoutY="683.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="52.0" prefWidth="142.0" styleClass="button_bar">
          <graphic>
-            <FontAwesomeIcon fill="#377dff" glyphName="COG" onDragDetected="#goToHome" size="55" />
+            <FontAwesomeIcon fill="#377dff" glyphName="COG" size="55" />
          </graphic>
       </Button>
       <Line endX="349.9999694824219" endY="13.999998092651367" layoutX="64.0" layoutY="-14.0" startX="-64.0000228881836" startY="13.999998092651367" styleClass="line" translateY="682.0" />
-      <Button layoutX="22.0" layoutY="43.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="30.0" prefWidth="35.0" styleClass="Back_Row">
+      <Button layoutX="22.0" layoutY="43.0" mnemonicParsing="false" onAction="#goBack" prefHeight="30.0" prefWidth="35.0" styleClass="Back_Row">
          <graphic>
-            <FontAwesomeIcon fill="WHITE" glyphName="ARROW_LEFT" onDragDetected="#goToHome" size="20" />
+            <FontAwesomeIcon fill="WHITE" glyphName="ARROW_LEFT" onDragDetected="#goBack" size="20" />
          </graphic>
       </Button>
       <FontAwesomeIcon glyphName="USER" layoutX="32.0" layoutY="138.0" size="20" />
@@ -84,7 +84,7 @@
       <Hyperlink layoutX="57.0" layoutY="225.0" onAction="#goToLogin" styleClass="hiperlink_signup" text="Sign out" />
       <ImageView fitHeight="41.0" fitWidth="32.0" layoutX="371.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Photo/battery.png" />
+            <Image url="@../photo/battery.png" />
          </image>
       </ImageView>
 

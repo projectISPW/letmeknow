@@ -1,5 +1,4 @@
 package progettoispw.letmeknow.bean;
-
 import progettoispw.letmeknow.controller.DescrizionePersonaleController;
 
 public class DescrizionePersonaleBean {

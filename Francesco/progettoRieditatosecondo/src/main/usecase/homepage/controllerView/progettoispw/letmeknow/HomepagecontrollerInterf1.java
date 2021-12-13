@@ -17,8 +17,7 @@ import java.util.Date;
 
 
 public class HomepagecontrollerInterf1 {
-    private Factory factory=new Factory();
-    private PageMenu controller= factory.createPageMenu();
+    private PageMenu controller= new PageMenu();
     @FXML
     private ImageView empathySlider;
     @FXML

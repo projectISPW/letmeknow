@@ -11,8 +11,7 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 
 public class LoginController {
-    private Factory factory=new Factory();
-    private Page controller= factory.createPage();
+    private Page controller= new Page();
     @FXML
     private PasswordField labPassword;
     @FXML
@@ -22,11 +21,12 @@ public class LoginController {
     protected void switchToSignup(ActionEvent event) throws IOException{
         //controller.switchTo("signup.fxml",event,"Signup");
         controller.switchTo("signup/interf1.fxml",event,"Signup");
+        //controller.goTo("signup",event);
     }
     @FXML
     protected void switchToRecoverPswd(ActionEvent event) throws IOException {
         controller.switchTo("recoverpassword/interf1.fxml",event,"Recover password");
-        //controller.goTo("recover password",event);
+        //controller.switchTo("recover password",event);
     }
     @FXML
     protected void switchToSignUpPsych(ActionEvent event) throws IOException {
