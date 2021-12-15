@@ -16,7 +16,7 @@ import java.util.Date;
 import static java.lang.Thread.sleep;
 
 public class homepagecEditcontrollerInterf1 {
-    private PageMenu controller= new PageMenu();    
+    private PageMenu controller= new PageMenu();
     @FXML
     private ImageView empathySlider;
     @FXML
@@ -33,17 +33,17 @@ public class homepagecEditcontrollerInterf1 {
     private TextField date;
     @FXML
     private Button save;
-
+    private String userid="0123456";
     public void initialize(){
-        SliderBean sliderVal=new SliderBean("123456");
+        SliderBean sliderVal=new SliderBean(userid);
         Integer [] listaValori=sliderVal.exitValue();
         setSlider(empathySlider,listaValori[0]);
         setSlider(humorSlider,listaValori[1]);
         setSlider(positivitySlider,listaValori[2]);
-        DescrizionePersonaleBean descrizione=new DescrizionePersonaleBean("123456");
+        DescrizionePersonaleBean descrizione=new DescrizionePersonaleBean(userid);
         String text=descrizione.exitValue();
         personalDescription.setPromptText(text);
-        ObiettivoPersonaleBean obb=new ObiettivoPersonaleBean("123456");
+        ObiettivoPersonaleBean obb=new ObiettivoPersonaleBean(userid);
         goal.setPromptText(obb.exitObiettivo());
         tag.setPromptText(obb.exitTag());
         listaValori=obb.exitData();
@@ -58,8 +58,8 @@ public class homepagecEditcontrollerInterf1 {
         Image immagine=new Image(getClass().getResourceAsStream(url));
         image.setImage(immagine);
     }
-    UpdateObiettivoPersonaleBean obiettivo=new UpdateObiettivoPersonaleBean("123456");
-    UpdateDescrizionePersonaleBean descrizione = new UpdateDescrizionePersonaleBean("123456");
+    UpdateObiettivoPersonaleBean obiettivo=new UpdateObiettivoPersonaleBean(userid);
+    UpdateDescrizionePersonaleBean descrizione = new UpdateDescrizionePersonaleBean(userid);
     @FXML
     public void saveChanges() throws ParseException {
         obiettivo.entryValue(goal.getText(), tag.getText(),date.getText());

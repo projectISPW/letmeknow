@@ -2,6 +2,7 @@ module progettoispw.letmeknow {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.desktop;
+    requires java.sql;
 
 
     opens progettoispw.letmeknow to javafx.fxml;

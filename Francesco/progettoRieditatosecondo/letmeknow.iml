@@ -20,7 +20,6 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/patterns/observer" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/formToTake/controllerApplicative" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/patterns/singleton" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/patterns/singleton" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -40,5 +39,6 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-commons:1.7.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-engine:5.7.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-engine:1.7.1" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-8.0.25" level="project" />
   </component>
 </module>

@@ -1,14 +1,14 @@
 package progettoispw.letmeknow.controller.utenti;
 
-public class utente123456 implements Utente1 {
+public class Utente implements Utente1 {
     static Boolean i=true;
     private String numeroUtente="123456";
     static Integer empatia;
     static Integer umorismo;
     static Integer positivita;
     static String descrPersonale;
-    static ObiettivoPersonale obbPersonale=new ObiettivoPersonale();
-    public utente123456(String input){
+    static Goal obbPersonale=new Goal();
+    public Utente(String input){
         if(input!=numeroUtente ){
             System.err.println("utente non corrispondente");
         }
@@ -17,11 +17,11 @@ public class utente123456 implements Utente1 {
             umorismo=4;
             positivita=3;
             descrPersonale="#Calm#honest#creative";
-            obbPersonale.setObiettivo("I want to become a better person");
+            /*obbPersonale.setObiettivo("I want to become a better person");
             //obbPersonale.setData(new Date(2022,8,1));
             obbPersonale.setData(new Integer[]{1,8,2020});
             obbPersonale.setTag("#character");
-            i=false;
+            i=false;*/
         }
     }
     public int getEmpatia(){

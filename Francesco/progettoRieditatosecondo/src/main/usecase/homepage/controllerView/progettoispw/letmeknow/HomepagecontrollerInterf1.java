@@ -17,6 +17,7 @@ import java.util.Date;
 
 
 public class HomepagecontrollerInterf1 {
+    private String userid="0123456";
     private PageMenu controller= new PageMenu();
     @FXML
     private ImageView empathySlider;
@@ -39,15 +40,15 @@ public class HomepagecontrollerInterf1 {
         System.out.println("Prompt Password: "+pw.getText());
     }
     public void initialize(){
-        SliderBean sliderVal=new SliderBean("123456");
+        SliderBean sliderVal=new SliderBean(userid);
         Integer [] listaValori=sliderVal.exitValue();
         setSlider(empathySlider,listaValori[0]);
         setSlider(humorSlider,listaValori[1]);
         setSlider(positivitySlider,listaValori[2]);
-        DescrizionePersonaleBean descrizione=new DescrizionePersonaleBean("123456");
+        DescrizionePersonaleBean descrizione=new DescrizionePersonaleBean(userid);
         String text=descrizione.exitValue();
         personalDescription.setText(text);
-        ObiettivoPersonaleBean obb=new ObiettivoPersonaleBean("123456");
+        ObiettivoPersonaleBean obb=new ObiettivoPersonaleBean(userid);
         goal.setText(obb.exitObiettivo());
         tag.setText(obb.exitTag());
         listaValori=obb.exitData();

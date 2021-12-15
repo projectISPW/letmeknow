@@ -2,17 +2,27 @@ package progettoispw.letmeknow.controller.utenti;
 
 import java.util.Date;
 
-public class ObiettivoPersonale {
-    static String obiettivo;
-    static  String tag;
+public class Goal {
+    private  String obiettivo;
+    private   String tag;
     //static Date data;
-    static Integer[] data;
+    private  Integer[] data=new Integer[3];
     public void setObiettivo(String string){
-        this.obiettivo=string;
+        obiettivo=string;
     }
     //public void setData(Date dataInp){       data=dataInp;    }
     public void setData(Integer [] arr){
         data=arr;
+    }
+    public void setData(String input){
+        int end=input.indexOf("-");
+        data[2]=(Integer.parseInt(input.substring(0,end)));
+        int beg=end;
+        end=input.indexOf("-",end+1);
+        data[1]=(Integer.parseInt(input.substring(beg+1,end)));
+        beg=end;
+        end=input.length();
+        data[0]=(Integer.parseInt(input.substring(beg+1,end)));
     }
     public void setTag(String string){
         tag=string;

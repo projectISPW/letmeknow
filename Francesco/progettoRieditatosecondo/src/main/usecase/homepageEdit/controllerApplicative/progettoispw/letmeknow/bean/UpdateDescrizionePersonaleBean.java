@@ -6,20 +6,25 @@ import static java.lang.Thread.sleep;
 
 public class UpdateDescrizionePersonaleBean {
     private String userid;
-    private UpdateDescrizionePersonaleController controller=new UpdateDescrizionePersonaleController(userid);;
-    Thread tUp=new Thread(controller);
+    private UpdateDescrizionePersonaleController controller;
+    Thread tUp;
     public UpdateDescrizionePersonaleBean (String user){
-        tUp.start();
+
         userid=user;
+        controller=new UpdateDescrizionePersonaleController(userid);
+        tUp=new Thread(controller);
+        tUp.start();
     }
     public void setOff(){
         controller.Off();
+        tUp.stop();
     }
     public void entryValue(String Value){
         if(Value!=""){
             //if(Value.toCharArray()[0]=='#'){
             try {
                 controller.setString(Value);
+
             } catch (Exception e) {
                 e.printStackTrace();
             }

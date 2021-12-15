@@ -1,17 +1,17 @@
 package progettoispw.letmeknow.controller;
 
-import progettoispw.letmeknow.controller.utenti.utente123456;
+import progettoispw.letmeknow.controller.utenti.SalvaUtente;
+import progettoispw.letmeknow.controller.utenti.Utente;
 
 public class DescrizionePersonaleController {
     private String userid;
-    private utente123456 utente ;
+    private SalvaUtente utente ;
     public DescrizionePersonaleController(String user){
         this.userid=user;
-        utente=new utente123456(userid);
+        utente=new SalvaUtente(userid);
+        utente.dataHomeUsr();
     }
     public String tornaDescrizione(){
-        String exit;
-        exit= utente.getDescrizione();
-        return exit;
+        return utente.getDescrizione();
     }
 }
