@@ -14,7 +14,7 @@ public class Goal {
     public void setData(Integer [] arr){
         data=arr;
     }
-    public void setData(String input){
+    public void setStrData(String input){
         int end=input.indexOf("-");
         data[2]=(Integer.parseInt(input.substring(0,end)));
         int beg=end;
@@ -23,6 +23,10 @@ public class Goal {
         beg=end;
         end=input.length();
         data[0]=(Integer.parseInt(input.substring(beg+1,end)));
+    }
+    public String getDataStr_American(){
+        String convert=""+data[2]+"-"+data[1]+"-"+data[0];
+        return convert;
     }
     public void setTag(String string){
         tag=string;

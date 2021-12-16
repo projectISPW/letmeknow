@@ -7,6 +7,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 import progettoispw.letmeknow.Factory;
 import progettoispw.letmeknow.PageMenu;
 import progettoispw.letmeknow.bean.SliderBean;
@@ -15,9 +16,11 @@ import progettoispw.letmeknow.bean.*;
 import java.io.IOException;
 import java.util.Date;
 
+import static java.lang.Thread.sleep;
+
 
 public class HomepagecontrollerInterf1 {
-    private String userid="0123456";
+    static String userid;
     private PageMenu controller= new PageMenu();
     @FXML
     private ImageView empathySlider;
@@ -33,13 +36,16 @@ public class HomepagecontrollerInterf1 {
     private Label goal;
     @FXML
     private Label date;
-    protected static void displayName(TextField username){
-        System.out.println("Prompt Username: "+username.getText());
+    @FXML
+    private Text userName;
+
+    public void displayName(String username){
+        userid=username;
+        System.out.println("Prompt Username: "+userid);
     }
-    protected static void displayPassword(PasswordField pw){
-        System.out.println("Prompt Password: "+pw.getText());
-    }
-    public void initialize(){
+
+    public void initialize() throws InterruptedException {
+        userName.setText("User"+userid);
         SliderBean sliderVal=new SliderBean(userid);
         Integer [] listaValori=sliderVal.exitValue();
         setSlider(empathySlider,listaValori[0]);
@@ -55,6 +61,7 @@ public class HomepagecontrollerInterf1 {
         //date.setText(data.toString());
         date.setText(" "+listaValori[0]+"-"+listaValori[1]+"-"+listaValori[2]);
     }
+
     public void  setSlider(ImageView image,int val){
         //ho fatto il controllo sintattico nel bean
         String url="photo/val";

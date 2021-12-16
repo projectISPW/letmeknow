@@ -21,19 +21,29 @@ public class SalvaUtente extends SalvaUtenteMeta{
             }
         } catch (SQLException throwables) {
             //throwables.printStackTrace();
-            System.out.println("exeption occurred 1");
+            System.err.println("exeption occurred 1");
         }catch (ClassNotFoundException e) {
             //e.printStackTrace();
-            System.out.println("exeption occurred 2");
+            System.err.println("exeption occurred 2");
         }
     }
     public boolean checkUtente (String pswdInput){
         return password.equals(pswdInput);
     }
-    public void abscessType (String pswdInput) {
+    public String abscessType (String pswdInput) {
         if (checkUtente(pswdInput)) {
-           if(type.equals("usr")) dataHomeUsr();
+            if(type.equals("usr")) {
+                dataHomeUsr();
+                return "usr";
+            }
+            else if (type.equals("psy")){
+                return "psy";
+            }
+            else {
+                return "uncorrect log " ;
+            }
         }
+        return "uncorrect log ";
     }
     private int pos;
     private int hum;
@@ -55,14 +65,15 @@ public class SalvaUtente extends SalvaUtenteMeta{
                 obbPersonale=rst.getString(GOAL);
                 personalObb.setObiettivo(obbPersonale);
                 personalObb.setTag(tag);
-                personalObb.setData(data);
+                personalObb.setStrData(data);
                 personalDescrip =rst.getString(DES);
                 return ;
             }
         }catch (SQLException throwables) {
             throwables.printStackTrace();
-        }finally {
             return ;
+        }finally {
+
         }
     }
     public int getEmp(){
@@ -81,10 +92,10 @@ public class SalvaUtente extends SalvaUtenteMeta{
     public String getObiettivo(){ return personalObb.getObiettivo();}
     public Integer[] getData(){return personalObb.getData();}
     public void setPersonalDes(String newS)  {
-       try{userData.setDescription(userid,newS);}
-       catch (SQLException throwables) {
-           throwables.printStackTrace();
-       }
+        try{userData.setDescription(userid,newS);}
+        catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
     public void setPersonalGoal(String newS)  {
         try{
@@ -106,9 +117,8 @@ public class SalvaUtente extends SalvaUtenteMeta{
     }
     public void setPersonalData(Integer [] value)  {
         try{
-            String convert=""+value[2]+"-"+value[1]+"-"+value[0];
-            personalObb.setData(convert);
-            userData.setData(userid,convert);}
+            personalObb.setData(value);
+            userData.setData(userid,personalObb.getDataStr_American());}
         catch (SQLException throwables) {
             throwables.printStackTrace();
         }

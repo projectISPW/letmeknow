@@ -33,7 +33,7 @@
             <Font size="36.0" />
          </font></Text>
 
-      <Text layoutX="129.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signup" text="User #7853789" wrappingWidth="187.39027404785156" />
+      <Text fx:id="userName" layoutX="129.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signup" text="User #7853789" wrappingWidth="187.39027404785156" />
       <Text layoutY="-28.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: 100;" styleClass="param" text="Empathy:" translateX="80.0" translateY="150.0" />
       <Text layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="param" text="Humor:" translateX="80.0" translateY="150.0" />
       <Text layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="param" text="Potitivity:" translateX="80.0" translateY="160.0" />

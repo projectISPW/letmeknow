@@ -19,6 +19,12 @@ public class Query {
         stmt.executeUpdate(sql);
        return ;
     }
+    public static void setDataQuery(Statement stmt, String iduser ,String edit)throws SQLException {
+        String sql=String.format(" UPDATE `utenti` SET `by` = '%s' WHERE (`userid` = '%s');",edit,iduser);
+        System.out.println(sql);
+        stmt.executeUpdate(sql);
+        return ;
+    }
     public static int inserisciAlbum(Statement stmt, String iduser, String password ,String email) throws SQLException  {
         String insertStatement = String.format("INSERT INTO utenti (AlbumId, Titolo, Artista, Anno) VALUES (%s,'%s','%s',%s)");
         System.out.println(insertStatement);

@@ -20,6 +20,8 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/patterns/observer" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/formToTake/controllerApplicative" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/patterns/singleton" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/login/controllerApplicative" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/login/controllerView" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />

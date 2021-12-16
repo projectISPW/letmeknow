@@ -7,10 +7,11 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import progettoispw.letmeknow.bean.LoginBean;
 
 import java.io.IOException;
 
-public class LoginController {
+public class LoginControllerInterf1 {
     private Page controller= new Page();
     @FXML
     private PasswordField labPassword;
@@ -45,13 +46,22 @@ public class LoginController {
                 System.out.println("Prompt: Empty Fields Alert");
                 event.consume();
             }
-        }else if(labUser.getText().equals("psicologo") ){
-            PsicologistHomeController.displayName(labUser);
-            PsicologistHomeController.displayPassword(labPassword);
-            controller.switchTo("psicologistHome/interf1.fxml",event,"Home");
         }else {
-            HomepagecontrollerInterf1.displayName(labUser);
-            HomepagecontrollerInterf1.displayPassword(labPassword);
-            controller.switchTo("homepage/interf1.fxml",event,"Home");
+            LoginBean bean=new LoginBean(labUser.getText(),labPassword.getText());
+            String log = bean.exitValue();
+            switch(log){
+                case "usr":{
+                    HomepagecontrollerInterf1.userid=labUser.getText();
+                    controller.switchTo("homepage/interf1.fxml",event,"Home");
+                    HomepagecontrollerInterf1 home=new HomepagecontrollerInterf1();
+                    home.displayName("0123456");
+                    return;
+                }
+                case "psy":{
+                    controller.switchTo("homepagePsicologist/interf1.fxml",event,"Home");
+                    PsicologistHomeController home=new PsicologistHomeController();
+                    home.displayName("psicologo");
+                }
+            }
         }
     }}

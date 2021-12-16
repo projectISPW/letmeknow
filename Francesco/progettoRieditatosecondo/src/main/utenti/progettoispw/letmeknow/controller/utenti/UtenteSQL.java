@@ -38,7 +38,7 @@ public class UtenteSQL {
         return;
     }
     public void setData( String userid, String data) throws SQLException {
-        setDescriptionQuery(stmt,userid,"by",data);
+        setDataQuery(stmt,userid,data);
         return;
     }
 

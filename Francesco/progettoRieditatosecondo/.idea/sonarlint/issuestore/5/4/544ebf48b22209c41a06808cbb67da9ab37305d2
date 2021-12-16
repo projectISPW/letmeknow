@@ -1,0 +1,30 @@
+
+i
+java:S1450"SRemove the "anno" field and declare it as a local variable in the relevant methods.(¦¤¾¬
+n
+java:S1450"YRemove the "controller" field and declare it as a local variable in the relevant methods.(„®”w
+k
+java:S1450"URemove the "giorno" field and declare it as a local variable in the relevant methods.(¶ÓÌ–
+i
+java:S1450"SRemove the "mese" field and declare it as a local variable in the relevant methods.(ç¥›Ş
+u
+java:S1450"ZRemove the "newScadenza" field and declare it as a local variable in the relevant methods.(åŠúúÿÿÿÿ
+Œ
+java:S1130"qRemove the declaration of thrown exception 'java.text.ParseException', as it cannot be thrown from method's body.(‘ü¹©ùÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(Ø¸Ù
+V	java:S125("<This block of commented-out lines of code should be removed.(”êÕøúÿÿÿÿ
+V	java:S1251"<This block of commented-out lines of code should be removed.(£Ñôşÿÿÿÿ
+S	java:S106<"9Replace this use of System.out or System.err by a logger.(†¤”şûÿÿÿÿ
+N	java:S106B"9Replace this use of System.out or System.err by a logger.(•Åœ›
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘ü¹©ùÿÿÿÿ
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘ü¹©ùÿÿÿÿ
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘ü¹©ùÿÿÿÿ
+f	java:S117P"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ØŠ½‰
+f	java:S117P"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ØŠ½‰
+f	java:S117P"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ØŠ½‰
+R
+java:S4973"<Strings and Boxed types should be compared using "equals()".(„î™‹
+R
+java:S4973"<Strings and Boxed types should be compared using "equals()".(òåß§
+R
+java:S4973&"<Strings and Boxed types should be compared using "equals()".(Å…
