@@ -3,17 +3,18 @@ import javafx.event.ActionEvent;
 
 import java.io.IOException;
 public  class PageMenu extends Page {
-    public void switchToSettings(ActionEvent event)throws IOException {
+
+    public void switchToSettings(ActionEvent event){
         back(event);
         this.switchTo("settings/interf1.fxml",event,"Settings");
     }
-    public void switchToChat(ActionEvent event)throws IOException{
+    public void switchToChat(ActionEvent event){
         this.switchTo("initialSearchAndChat/interf1.fxml",event,"your result");
     }
-    public void switchToPersonalForm(ActionEvent event)throws IOException{
+    public void switchToPersonalForm(ActionEvent event){
         this.switchTo("formCollectionResults/interf1.fxml",event,"your result");
     }
-    public void switchToHome(ActionEvent event)throws IOException{
+    public void switchToHome(ActionEvent event){
         this.switchTo("homepage/interf1.fxml",event,"Homepage");
     }
 

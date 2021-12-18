@@ -19,6 +19,6 @@ public class PsicologistHomeController {
     }
     @FXML
     protected void backToLogin(ActionEvent event) throws IOException {
-        controller.switchTo("login.fxml",event,"Login");
+        controller.backTo(event);
     }
 }

@@ -1,16 +1,16 @@
 package progettoispw.letmeknow.bean;
 import progettoispw.letmeknow.WordCheck;
-import progettoispw.letmeknow.controller.ObiettivoPersonaleController;
+import progettoispw.letmeknow.controller.HomepageController;
 
 import java.util.Calendar;
 
 
 public class ObiettivoPersonaleBean {
     protected String userid;
-    private ObiettivoPersonaleController controller;
+    private HomepageController controller;
     public ObiettivoPersonaleBean (String user){
         this.userid=user;
-        controller=new ObiettivoPersonaleController(userid);
+        controller=new HomepageController();
     }
     public String exitObiettivo(){
         WordCheck checkStr=new WordCheck(3,20);

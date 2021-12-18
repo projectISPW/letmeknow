@@ -2,13 +2,13 @@ package progettoispw.letmeknow.bean;
 import progettoispw.letmeknow.controller.*;
 public class SliderBean {
     private String userid;
-    private SliderController controller;
+    private HomepageController controller;
     public SliderBean (String user){
         this.userid=user;
     }
     public Integer [] exitValue(){
         Integer valori []={0,0,0};
-        controller=new SliderController(userid);
+        controller=new HomepageController();
         //valori[0]=1;  valori[1]=1; valori[2]=1;
         valori[0]=controller.tornaValoriEmpatia();
         valori[1]=controller.tornaValoriUmorismo();

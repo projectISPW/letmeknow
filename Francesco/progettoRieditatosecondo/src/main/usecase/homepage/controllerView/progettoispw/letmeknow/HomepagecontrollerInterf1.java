@@ -12,11 +12,8 @@ import progettoispw.letmeknow.Factory;
 import progettoispw.letmeknow.PageMenu;
 import progettoispw.letmeknow.bean.SliderBean;
 import progettoispw.letmeknow.bean.*;
-
+import progettoispw.letmeknow.HomepagecontrollerInterf1;
 import java.io.IOException;
-import java.util.Date;
-
-import static java.lang.Thread.sleep;
 
 
 public class HomepagecontrollerInterf1 {
@@ -38,14 +35,10 @@ public class HomepagecontrollerInterf1 {
     private Label date;
     @FXML
     private Text userName;
-
-    public void displayName(String username){
-        userid=username;
-        System.out.println("Prompt Username: "+userid);
-    }
-
+    HomepageBean bh=new HomepageBean();
     public void initialize() throws InterruptedException {
-        userName.setText("User"+userid);
+        userid= bh.getUserId();
+        userName.setText("User : "+userid);
         SliderBean sliderVal=new SliderBean(userid);
         Integer [] listaValori=sliderVal.exitValue();
         setSlider(empathySlider,listaValori[0]);

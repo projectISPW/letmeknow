@@ -73,12 +73,24 @@ public class WordCheck {
         }
         return 60;
     }
-    public static boolean checkString(String inputText){
+    public  boolean checkString(String inputText){
         if(inputText.length()>goAhead*3){
             return false ;
         }return true;
     }
-
-
+    public  String checkLen(String inputText,int lenMax){
+        return inputText= inputText.substring(0,lenMax)+"...";
+    }
+    public  String checkAhead(String inputText){
+        int k=0;
+        if(inputText==null)return null;
+        for(char c : inputText.toCharArray()){
+            if(c=='\n')
+            {
+                inputText.toCharArray()[k]=' ';
+            }++k;
+        }
+        return inputText;
+    }
 }
 //abcdefghilmnopqrstuvz123456789

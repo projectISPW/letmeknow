@@ -3,13 +3,11 @@ package progettoispw.letmeknow.bean;
 import progettoispw.letmeknow.controller.FormToTakeStatusController;
 
 public class FormToTakeStatusBean {
-    String userid;
     String formid;
     FormToTakeStatusController controller;
-    public FormToTakeStatusBean(String inputuserid,String inputformid){
-        userid=inputuserid;
+    public FormToTakeStatusBean(String inputformid){
         formid=inputformid;
-        controller=new FormToTakeStatusController(userid,formid);
+        controller=new FormToTakeStatusController(formid);
     }
     public boolean[] exitStatus(){
         return controller.getResponse();

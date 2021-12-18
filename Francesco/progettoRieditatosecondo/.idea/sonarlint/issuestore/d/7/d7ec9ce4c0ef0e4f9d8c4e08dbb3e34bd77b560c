@@ -1,0 +1,18 @@
+
+p
+java:S1450"URemove the "userID" field and declare it as a local variable in the relevant methods.(³ ûÁÿÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(ùÌ•åøÿÿÿÿ
+Q	java:S125"<This block of commented-out lines of code should be removed.(Š£âÐ
+Q	java:S125$"<This block of commented-out lines of code should be removed.(ÁÓ°
+=
+java:S1125,"'Remove the unnecessary boolean literal.(³Ç©÷
+‡
+java:S1130:"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ÀÛ«¨øÿÿÿÿ
+7	java:S131K""Add a default case to this switch.(•Õ”Å
+Q	java:S125M"<This block of commented-out lines of code should be removed.(íˆ¡
+E
+java:S1068"*Remove this unused "userID" private field.(³ ûÁÿÿÿÿÿ
+a
+java:S1301K"KReplace this "switch" statement by "if" statements to increase readability.(•Õ”Å
+k
+java:S3655B"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ŸªÍäùÿÿÿÿ

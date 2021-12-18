@@ -1,0 +1,38 @@
+
+i
+java:S1450"SRemove the "data" field and declare it as a local variable in the relevant methods.(àÁá´
+v
+java:S1450"[Remove the "obbPersonale" field and declare it as a local variable in the relevant methods.(øšèøÿÿÿÿÿ
+h
+java:S1450"RRemove the "tag" field and declare it as a local variable in the relevant methods.(šàÆ¯
+P
+java:S1161":Add the "@Override" annotation above this method signature(¼ç³‡
+1
+java:S3626&"Remove this redundant jump.(ûÁÝ…
+>	java:S108'")Either remove or fill this block of code.(Úîø›
+P
+java:S1161+":Add the "@Override" annotation above this method signature(‚§ÆŠ
+P
+java:S1161.":Add the "@Override" annotation above this method signature(œµ‹¿
+U
+java:S11611":Add the "@Override" annotation above this method signature(¾˜¿¸úÿÿÿÿ
+P
+java:S11614":Add the "@Override" annotation above this method signature(ì©µÿ
+U
+java:S11617":Add the "@Override" annotation above this method signature(Ú²ÛÕüÿÿÿÿ
+U
+java:S11618":Add the "@Override" annotation above this method signature(Šõ—ïøÿÿÿÿ
+U
+java:S1161<":Add the "@Override" annotation above this method signature(ý¸“Ñüÿÿÿÿ
+U
+java:S1161=":Add the "@Override" annotation above this method signature(êÚ¤Êýÿÿÿÿ
+P
+java:S1161C":Add the "@Override" annotation above this method signature(‚‡ÐÚ
+P
+java:S1161L":Add the "@Override" annotation above this method signature(üËÍ’
+U
+java:S1161U":Add the "@Override" annotation above this method signature(ŸÐÓÐüÿÿÿÿ
+F
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
+H
+java:S1128"-Remove this unused import 'java.util.Vector'.(ÿŒ¸Áÿÿÿÿÿ

@@ -8,7 +8,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.Slider;
-
 import progettoispw.letmeknow.bean.FormToTakeStatusBean;
 
 import java.io.IOException;
@@ -23,15 +22,15 @@ public class takeformControllerInterf1  {
     ProgressBar progressBar;
     private PageMenu controller= new PageMenu();
     private Vector<Slider> sl;
-    private boolean [] values={true,true,true,true,true,true};
-    private boolean [] locked={false,false,false,false,false,false};
-    private int [] response={-1,-1,-1,-1,-1,-1};
+    private boolean [] values;
+    private boolean [] locked;
+    private int [] response;
     private void attach(Slider slider){
         this.sl.add(slider);
     }
     double progress=0;
     int indice=-1;
-    FormToTakeStatusBean startStatus=new FormToTakeStatusBean("123456","form1");
+    FormToTakeStatusBean startStatus=new FormToTakeStatusBean("form1");
     public boolean[] not(boolean []bool){
         boolean [] currbool=new boolean[6];
         for(int i=0;i< bool.length;i++){
@@ -40,21 +39,23 @@ public class takeformControllerInterf1  {
         }
         return currbool;
     }
-    public void initialize(){
+    public takeformControllerInterf1(){
         response=startStatus.exitValStatus();
         locked=startStatus.exitStatus();
         values=not(locked);
         progress= startStatus.getComplete()*0.17;
-        progressBar.setProgress(progress);
-        Label[] labels= new Label[]{lb1, lb2, lb3, lb4, lb5, lb6};
-        progressBar.setStyle("-fx-accent:#7836ea;");
         sl=new Vector<Slider> ();
+    }
+    public void initialize(){
         attach(sl1);
         attach(sl2);
         attach(sl3);
         attach(sl4);
         attach(sl5);
         attach(sl6);
+        Label[] labels= new Label[]{lb1, lb2, lb3, lb4, lb5, lb6};
+        progressBar.setProgress(progress);
+        progressBar.setStyle("-fx-accent:#7836ea;");
         for(Slider slider :sl){
             indice=sl.indexOf(slider);
             if(response[indice]!=-1){

@@ -1,7 +1,6 @@
 package progettoispw.letmeknow.bean;
-import progettoispw.letmeknow.controller.UpdateObiettivoPersonaleController;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import progettoispw.letmeknow.controller.EditProfileController;
+
 import java.util.Calendar;
 
 public class UpdateObiettivoPersonaleBean {
@@ -9,18 +8,23 @@ public class UpdateObiettivoPersonaleBean {
     private String newObb;
     private String newTag;
     private String newScadenza;
-    SimpleDateFormat dateParser=new SimpleDateFormat("yyyy/MM/dd");
-    private Integer [] data={0,0,0};
-    private int anno;
-    private int mese;
-    private int giorno;
-    private Calendar cal=Calendar.getInstance();
-    private ObiettivoPersonaleBean padre=new ObiettivoPersonaleBean("123456");
-    private UpdateObiettivoPersonaleController controller;
-    public UpdateObiettivoPersonaleBean(String user) {
-        userid=user;
+    private Integer [] data;
+    private Calendar cal;
+    private ObiettivoPersonaleBean padre;
+    private EditProfileController controller;
+    public String getUserid() {
+        return userid;
     }
-    public void check(String ValueObb,String ValueTag, String ValueData) throws ParseException {
+
+    public UpdateObiettivoPersonaleBean() {
+        controller=new EditProfileController();
+        userid= controller.getUserID();
+        data=new Integer[]{0,0,0};
+        cal=Calendar.getInstance();
+        padre=new ObiettivoPersonaleBean(userid);
+        controller=new EditProfileController();
+    }
+    public void check(String ValueObb,String ValueTag, String ValueData) {
         if(ValueObb!="")newObb=ValueObb;
         else {
             newObb =padre.exitObiettivo();
@@ -39,15 +43,16 @@ public class UpdateObiettivoPersonaleBean {
             newScadenza=ValueData;
             //data=dateParser.parse(ValueData);
             int end=newScadenza.indexOf("/");
-            data[0]=giorno=(Integer.parseInt(newScadenza.substring(0,end)));
+            data[0]=(Integer.parseInt(newScadenza.substring(0,end)));
             int beg=end;
             end=newScadenza.indexOf("/",end+1);
-            data[1]=mese=(Integer.parseInt(newScadenza.substring(beg+1,end)));
+            data[1]=(Integer.parseInt(newScadenza.substring(beg+1,end)));
             beg=end;
             end=newScadenza.length();
-            data[2]=anno=(Integer.parseInt(newScadenza.substring(beg+1,end)));
+            data[2]=(Integer.parseInt(newScadenza.substring(beg+1,end)));
             //System.out.println("prima iniziailizzazione data "+giorno+"-"+mese+"-"+anno);
             data=checkData(data);
+
         }
         else{
             data=padre.exitData();
@@ -77,10 +82,9 @@ public class UpdateObiettivoPersonaleBean {
             return (new Integer[] {cal.get(Calendar.DAY_OF_MONTH),(cal.get(Calendar.MONTH)+6)%12,cal.get(Calendar.YEAR)+1});
         }
     }
-    public void entryValue(String ValueObb,String ValueTag, String ValueData) throws ParseException {
+    public void entryValue(String ValueObb,String ValueTag, String ValueData) {
         check(ValueObb,ValueTag,ValueData);
-
-        controller= new UpdateObiettivoPersonaleController(userid,newObb,newTag,data );
+        controller.setGoal(newObb,newTag,data);
     }
 
 }

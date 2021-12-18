@@ -1,0 +1,27 @@
+
+¸
+java:S1845"¡Rename field "userid" to prevent any misunderstanding/clash with field "USERID" defined in superclass "progettoispw.letmeknow.controller.utenti.SalvaUtenteMeta".(ïÓ§…
+Á
+java:S1845"¥Rename field "password" to prevent any misunderstanding/clash with field "PASSWORD" defined in superclass "progettoispw.letmeknow.controller.utenti.SalvaUtenteMeta".(œãë­úÿÿÿÿ
+¹
+java:S1845	"Rename field "type" to prevent any misunderstanding/clash with field "TYPE" defined in superclass "progettoispw.letmeknow.controller.utenti.SalvaUtenteMeta".(–î†ûÿÿÿÿ
+±
+java:S18455"›Rename field "pos" to prevent any misunderstanding/clash with field "POS" defined in superclass "progettoispw.letmeknow.controller.utenti.SalvaUtenteMeta".(®æŒ$
+·
+java:S18456"›Rename field "hum" to prevent any misunderstanding/clash with field "HUM" defined in superclass "progettoispw.letmeknow.controller.utenti.SalvaUtenteMeta".(Ì„Åáùÿÿÿÿ
+·
+java:S18457"›Rename field "emp" to prevent any misunderstanding/clash with field "EMP" defined in superclass "progettoispw.letmeknow.controller.utenti.SalvaUtenteMeta".(ëòıºşÿÿÿÿ
+²
+java:S1845:"›Rename field "tag" to prevent any misunderstanding/clash with field "TAG" defined in superclass "progettoispw.letmeknow.controller.utenti.SalvaUtenteMeta".(šàÆ¯
+i
+java:S1450;"SRemove the "data" field and declare it as a local variable in the relevant methods.(àÁá´
+v
+java:S14509"[Remove the "obbPersonale" field and declare it as a local variable in the relevant methods.(øšèøÿÿÿÿÿ
+h
+java:S1450:"RRemove the "tag" field and declare it as a local variable in the relevant methods.(šàÆ¯
+S	java:S106("9Replace this use of System.out or System.err by a logger.(±‚ò¬ûÿÿÿÿ
+S	java:S106,"9Replace this use of System.out or System.err by a logger.(ã¶–×úÿÿÿÿ
+1
+java:S3626O"Remove this redundant jump.(ûÁİ…
+>	java:S108P")Either remove or fill this block of code.(Úîø›
+]	java:S125b"<This block of commented-out lines of code should be removed.(Üòúˆùÿÿÿÿ8ññØæÜ/

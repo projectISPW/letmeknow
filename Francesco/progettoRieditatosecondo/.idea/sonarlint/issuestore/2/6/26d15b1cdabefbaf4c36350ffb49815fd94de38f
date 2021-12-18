@@ -1,0 +1,25 @@
+
+ç
+java:S1130'"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(Öô˚¿
+L
+java:S2696("6Make the enclosing method "static" or remove this set.(°”ûç
+V	java:S1256"<This block of commented-out lines of code should be removed.(èà«€˛ˇˇˇˇ
+Q	java:S125>"<This block of commented-out lines of code should be removed.(áŸÃ”
+á
+java:S1130D"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(Ù›ô÷˝ˇˇˇˇ
+á
+java:S1130I"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(á∞Ç√˛ˇˇˇˇ
+Ç
+java:S1130N"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(Ë˙“Â
+Å
+java:S1130R"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(∂§§/
+S
+java:S1128"=Remove this unused import 'javafx.collections.FXCollections'.(¥∂≤∆
+U
+java:S1128"?Remove this unused import 'javafx.scene.control.PasswordField'.(Í˙¥À
+Q
+java:S1128";Remove this unused import 'javafx.scene.control.TextField'.(®¢§∂
+o
+java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(Ï∫Á·˝ˇˇˇˇ
+j
+java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(ƒÓïº

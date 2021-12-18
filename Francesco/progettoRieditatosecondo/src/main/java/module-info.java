@@ -11,7 +11,7 @@ module progettoispw.letmeknow {
     opens progettoispw.letmeknow.photo to javafx.fxml;
 
     //exports progettoispw.letmeknow.viewcontroller;
-   // opens progettoispw.letmeknow.viewcontroller to javafx.fxml;
+    // opens progettoispw.letmeknow.viewcontroller to javafx.fxml;
     //exports progettoispw.letmeknow;
     //opens progettoispw.letmeknow to javafx.fxml;
 }

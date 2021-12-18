@@ -1,13 +1,24 @@
 
-N	java:S106&"9Replace this use of System.out or System.err by a logger.(Ô§åØ
-S	java:S106*"9Replace this use of System.out or System.err by a logger.(µô°“ˇˇˇˇˇ
 è
-java:S11303"yRemove the declaration of thrown exception 'java.lang.ClassNotFoundException', as it cannot be thrown from method's body.(∂πÂ«
+java:S1130:"yRemove the declaration of thrown exception 'java.lang.ClassNotFoundException', as it cannot be thrown from method's body.(∂πÂ«
 Ñ
-java:S11303"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(∂πÂ«
-Q	java:S1255"<This block of commented-out lines of code should be removed.(Ù‚ñ∑
-Q	java:S1257"<This block of commented-out lines of code should be removed.(…ù∏ÿ
-C
-java:S1604"(Make this anonymous inner class a lambda(˘Î≤•˛ˇˇˇˇ
+java:S1130:"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(∂πÂ«
+]	java:S125<"<This block of commented-out lines of code should be removed.(‚π⁄–˘ˇˇˇˇ8¶óáÁ‹/
+i
+java:S1128"NRemove this unused import 'progettoispw.letmeknow.controller.ControllerClass'.(ïÒƒÅ˝ˇˇˇˇ
 k
-java:S3655#"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ü™Õ‰˘ˇˇˇˇ
+java:S1128"URemove this unused import 'progettoispw.letmeknow.controller.resultSearchController'.(”Ω˙◊
+i
+java:S1128"LRemove this unused import 'progettoispw.letmeknow.controller.search.Search'.(ªÃﬁÎ8¶óáÁ‹/
+`
+java:S1128"JRemove this unused import 'progettoispw.letmeknow.controller.utenti.Goal'.(ë¨ñ¶
+l
+java:S1128"QRemove this unused import 'progettoispw.letmeknow.controller.utenti.SalvaUtente'.(ÿâ”∑˛ˇˇˇˇ
+e
+java:S1128"ORemove this unused import 'progettoispw.letmeknow.controller.utenti.UtenteUsr'.(€‹Úî
+H
+java:S1128"-Remove this unused import 'java.util.Vector'.(ˇå∏¡ˇˇˇˇˇ
+C
+java:S1604#"(Make this anonymous inner class a lambda(˘Î≤•˛ˇˇˇˇ
+k
+java:S3655*"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ü™Õ‰˘ˇˇˇˇ

@@ -18,20 +18,25 @@ public class Page {
     static String title1;
     protected Parent root;
     public void back(ActionEvent event){
-        stage1=(Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene1=((Node) event.getSource()).getScene();
-        title1= stage1.getTitle();
+            stage1 = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene1 = ((Node) event.getSource()).getScene();
+            title1 = stage1.getTitle();
     }
-    public void switchTo(String name, ActionEvent event, String title) throws IOException {
-        back(event);
-        root = FXMLLoader.load(getClass().getResource(name));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.setTitle(title);
-        stage.show();
+    public void switchTo(String name, ActionEvent event, String title) {
+        try {
+            back(event);
+            root = FXMLLoader.load(getClass().getResource(name));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle(title);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("non sono riuscito a caricare l'interfaccia"+name);
+        }
     }
-    public void backTo(ActionEvent event)throws IOException{
+    public void backTo(ActionEvent event){
         stage=stage1;
         scene=scene1;
         stage.setScene(scene);

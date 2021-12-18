@@ -12,16 +12,23 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/homepage/controllerView" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/homepage/controllerView/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/utenti" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/utenti/user1" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/formToTake/controllerView" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/homepageEdit/controllerApplicative" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/homepageEdit/controllerView" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/patterns/observer" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/formToTake/controllerApplicative" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/patterns/singleton" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/login/controllerApplicative" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/login/controllerView" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/database" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/database/user1" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/search/controllerApplicative" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/search/controllerView" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/patterns/Factory" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/resultSearch/controllerApplicative" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/resultSearch/controllerView" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/searchResults/controllerApplicative" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/searchResults/controllerView" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/usecasePKG" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
