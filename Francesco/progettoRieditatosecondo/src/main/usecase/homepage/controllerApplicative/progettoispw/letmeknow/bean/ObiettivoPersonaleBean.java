@@ -6,10 +6,8 @@ import java.util.Calendar;
 
 
 public class ObiettivoPersonaleBean {
-    protected String userid;
     private HomepageController controller;
-    public ObiettivoPersonaleBean (String user){
-        this.userid=user;
+    public ObiettivoPersonaleBean (){
         controller=new HomepageController();
     }
     public String exitObiettivo(){

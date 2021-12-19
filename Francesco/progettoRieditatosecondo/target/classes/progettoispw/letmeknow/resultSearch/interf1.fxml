@@ -39,7 +39,7 @@
             </graphic></Button>
         <Line endX="349.9999694824219" endY="13.999998092651367" layoutX="64.0" layoutY="-14.0" startX="-64.0000228881836" startY="13.999998092651367" styleClass="line" translateY="682.0" />
       <Text layoutX="35.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="hiperlink_signup" text="9.31" />
-      <Button layoutX="65.0" layoutY="71.0" mnemonicParsing="false" onAction="#goBack" prefHeight="30.0" prefWidth="35.0" styleClass="Back_Row">
+      <Button layoutX="30.0" layoutY="71.0" mnemonicParsing="false" onAction="#goBack" prefHeight="30.0" prefWidth="35.0" styleClass="Back_Row">
          <graphic>
             <FontAwesomeIcon fill="WHITE" glyphName="ARROW_LEFT" size="20" />
          </graphic>
@@ -53,7 +53,7 @@
                   <Font size="36.0" />
                </font>
             </Text>
-            <Button layoutY="7.583984375" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row">
+            <Button fx:id="butt4" layoutY="7.583984375" mnemonicParsing="false" onAction="#visit4" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row">
                <graphic>
                   <FontAwesomeIcon fill="WHITE" glyphName="USER" size="40" strokeWidth="0.5" wrappingWidth="29.942844480276108" />
                </graphic>
@@ -79,7 +79,7 @@
                   <Font size="36.0" />
                </font>
             </Text>
-            <Button layoutY="7.583984375" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row">
+            <Button fx:id="butt3" layoutY="7.583984375" mnemonicParsing="false" onAction="#visit3" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row">
                <graphic>
                   <FontAwesomeIcon fill="WHITE" glyphName="USER" size="40" strokeWidth="0.5" wrappingWidth="29.942844480276108" />
                </graphic>
@@ -104,7 +104,7 @@
                   <Font size="36.0" />
                </font>
             </Text>
-            <Button layoutY="7.583984375" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row">
+            <Button fx:id="butt2" layoutY="7.583984375" mnemonicParsing="false" onAction="#visit2" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row">
                <graphic>
                   <FontAwesomeIcon fill="WHITE" glyphName="USER" size="40" strokeWidth="0.5" wrappingWidth="29.942844480276108" />
                </graphic>
@@ -129,7 +129,7 @@
                   <Font size="36.0" />
                </font>
             </Text>
-            <Button layoutY="7.583984375" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row">
+            <Button fx:id="butt1" layoutY="7.583984375" mnemonicParsing="false" onAction="#visit1" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row">
                <graphic>
                   <FontAwesomeIcon fill="WHITE" glyphName="USER" size="40" strokeWidth="0.5" wrappingWidth="29.942844480276108" />
                </graphic>

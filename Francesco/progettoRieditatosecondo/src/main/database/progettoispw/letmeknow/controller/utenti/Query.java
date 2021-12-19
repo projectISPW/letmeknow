@@ -12,19 +12,19 @@ public class Query {
     }
     protected void setDescriptionQuery(Statement stmt, String iduser ,String what,String edit)throws SQLException {
         String sql=String.format(" UPDATE  utenti\n set %s='%s'\n WHERE userid = '%s' ;\n",what,edit,iduser);
-        System.out.println(sql);
+        //System.out.println(sql);
         stmt.executeUpdate(sql);
        return ;
     }
     protected void setDataQuery(Statement stmt, String iduser ,String edit)throws SQLException {
         String sql=String.format(" UPDATE `utenti` SET `by` = '%s' WHERE (`userid` = '%s');",edit,iduser);
-        System.out.println(sql);
+        //System.out.println(sql);
         stmt.executeUpdate(sql);
         return ;
     }
     protected int inserisciAlbum(Statement stmt, String iduser, String password ,String email) throws SQLException  {
         String insertStatement = String.format("INSERT INTO utenti (AlbumId, Titolo, Artista, Anno) VALUES (%s,'%s','%s',%s)");
-        System.out.println(insertStatement);
+        //System.out.println(insertStatement);
         return stmt.executeUpdate(insertStatement);
     }
 }

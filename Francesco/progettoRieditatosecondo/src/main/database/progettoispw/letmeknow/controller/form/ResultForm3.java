@@ -11,9 +11,9 @@ public class ResultForm3 {
                     rispostedate=new boolean[]{false,false,false,false,false,false};
                     ++i;
                 }
-                for(int i=0;i<6;i++){
+                /*for(int i=0;i<6;i++){
                     System.out.printf("nuovo valore in [%d] %s pari a %d \n", i,rispostedate[i] ? "true" : "false",valoripassati[i]);
-                }
+                }*/
             }
         }
     public boolean[] getRisposteDate (){

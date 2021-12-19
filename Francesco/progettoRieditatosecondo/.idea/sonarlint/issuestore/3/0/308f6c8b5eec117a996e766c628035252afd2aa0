@@ -1,0 +1,15 @@
+
+S
+java:S1854"=Remove this useless assignment to local variable "obiettivo".(ò¬ö
+V	java:S125"<This block of commented-out lines of code should be removed.(©Áªşÿÿÿÿ
+<
+java:S1125"'Remove the unnecessary boolean literal.(©´î
+K
+java:S2209"5Change this instance-reference to a static reference.(ò¬ö
+V	java:S125"<This block of commented-out lines of code should be removed.(øÀÚáùÿÿÿÿ
+P
+java:S2209#"5Change this instance-reference to a static reference.(µÕ”‚üÿÿÿÿ
+P
+java:S2209$"5Change this instance-reference to a static reference.(¤ˆ‹şÿÿÿÿ
+D
+java:S1121".Extract the assignment out of this expression.(ò¬ö

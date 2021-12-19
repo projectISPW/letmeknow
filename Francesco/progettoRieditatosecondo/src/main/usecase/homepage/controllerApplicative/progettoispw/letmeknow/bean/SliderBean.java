@@ -3,9 +3,6 @@ import progettoispw.letmeknow.controller.*;
 public class SliderBean {
     private String userid;
     private HomepageController controller;
-    public SliderBean (String user){
-        this.userid=user;
-    }
     public Integer [] exitValue(){
         Integer valori []={0,0,0};
         controller=new HomepageController();
@@ -15,7 +12,7 @@ public class SliderBean {
         valori[2]=controller.tornaValoriPositivita();
         for(int i =0;i<2;i++){
             if(valori[i]>5 || valori[i]<1){
-                System.out.println("error occurred");
+            System.err.println("error occurred");
             }
         }
         return valori;

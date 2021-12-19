@@ -20,7 +20,7 @@ public class beanResultSearch {
         for(innerUsers usr : actual){
             indice=actual.indexOf(usr);
             arrStr[indice]=usr.get("description");
-            System.out.println("About me: in bean " +arrStr[indice]);
+            //System.out.println("About me: in bean " +arrStr[indice]);
         }
         return arrStr;
     }
@@ -39,5 +39,8 @@ public class beanResultSearch {
             arrStr[indice]=usr.get("userid");
         }
         return arrStr;
+    }
+    public void touched(String user){
+        controller.who(user);
     }
 }

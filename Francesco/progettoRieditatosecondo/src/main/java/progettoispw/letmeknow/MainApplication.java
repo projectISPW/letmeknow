@@ -11,7 +11,9 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import progettoispw.letmeknow.bean.VisitBean;
 import progettoispw.letmeknow.controller.ControllerClass;
+import progettoispw.letmeknow.controller.VisitController;
 import progettoispw.letmeknow.controller.resultSearchController;
 import progettoispw.letmeknow.controller.search.Search;
 import progettoispw.letmeknow.controller.utenti.Goal;
@@ -56,23 +58,26 @@ public class MainApplication extends Application {
     }
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
-        launch();
-        //Search ricerca;
-        /*//SalvaUtente utente=new SalvaUtente("psicologo");
+
+        //SalvaUtente utente=new SalvaUtente("psicologo");
+        /*Search ricerca;
         ControllerClass factory=new ControllerClass();
+        //factory.controllerUser("123456");
         factory.controllerUsers();
         ricerca=factory.getSearch();
         ricerca.setAffinity(0);
         Integer [] arr={1,1,1};
-        ricerca.parametricSetSearch(arr);
+        ricerca.parametricSetSearch(arr);*/
+        launch();
         //ricerca.parametricSetSearch(arr);
         //ricerca.parametricSearch();
         //ricerca.goalSearch("#fair");
         //ricerca.goalSearch("#courage");
        // utente.setPersonalDes("mi piace il cocomero ");
-        resultSearchController controller=new resultSearchController(4);*/
-
-
+        /*resultSearchController controller=new resultSearchController(4);
+        controller.who("0123456");
+        VisitBean visitctrl=new VisitBean();
+        System.out.println(visitctrl.getUserId());*/
 
 
 

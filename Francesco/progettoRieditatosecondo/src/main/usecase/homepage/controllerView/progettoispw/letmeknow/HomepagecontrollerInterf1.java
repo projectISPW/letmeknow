@@ -14,40 +14,46 @@ import progettoispw.letmeknow.bean.SliderBean;
 import progettoispw.letmeknow.bean.*;
 import progettoispw.letmeknow.HomepagecontrollerInterf1;
 import java.io.IOException;
-
+/*
+-cambiare foto clessidra se obiettivo scaduto
+-possibilita di mettere slider che bloccano il proprio valore invece che lasciare l'image view
+ */
 
 public class HomepagecontrollerInterf1 {
-    static String userid;
-    private PageMenu controller= new PageMenu();
+    private String userid;
+    protected PageMenu controller= new PageMenu();
     @FXML
-    private ImageView empathySlider;
+    protected ImageView empathySlider;
     @FXML
-    private ImageView humorSlider;
+    protected ImageView humorSlider;
     @FXML
-    private ImageView positivitySlider;
+    protected ImageView positivitySlider;
     @FXML
-    private Label personalDescription;
+    protected Label personalDescription;
     @FXML
-    private Label tag;
+    protected Label tag;
     @FXML
-    private Label goal;
+    protected Label goal;
     @FXML
-    private Label date;
+    protected Label date;
     @FXML
-    private Text userName;
-    HomepageBean bh=new HomepageBean();
+    protected Text userName;
+    private HomepageBean id=new HomepageBean();
+    public HomepagecontrollerInterf1(){
+        id=new HomepageBean();
+        userid= id.getUserId();
+    }
     public void initialize() throws InterruptedException {
-        userid= bh.getUserId();
         userName.setText("User : "+userid);
-        SliderBean sliderVal=new SliderBean(userid);
+        SliderBean sliderVal=new SliderBean();
         Integer [] listaValori=sliderVal.exitValue();
         setSlider(empathySlider,listaValori[0]);
         setSlider(humorSlider,listaValori[1]);
         setSlider(positivitySlider,listaValori[2]);
-        DescrizionePersonaleBean descrizione=new DescrizionePersonaleBean(userid);
+        DescrizionePersonaleBean descrizione=new DescrizionePersonaleBean();
         String text=descrizione.exitValue();
         personalDescription.setText(text);
-        ObiettivoPersonaleBean obb=new ObiettivoPersonaleBean(userid);
+        ObiettivoPersonaleBean obb=new ObiettivoPersonaleBean();
         goal.setText(obb.exitObiettivo());
         tag.setText(obb.exitTag());
         listaValori=obb.exitData();

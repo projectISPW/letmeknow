@@ -29,6 +29,8 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/searchResults/controllerApplicative" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/searchResults/controllerView" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/usecasePKG" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/visit/controllerApplicative" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/visit/controllerView" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />

@@ -21,7 +21,7 @@ public class UpdateObiettivoPersonaleBean {
         userid= controller.getUserID();
         data=new Integer[]{0,0,0};
         cal=Calendar.getInstance();
-        padre=new ObiettivoPersonaleBean(userid);
+        padre=new ObiettivoPersonaleBean();
         controller=new EditProfileController();
     }
     public void check(String ValueObb,String ValueTag, String ValueData) {

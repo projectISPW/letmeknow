@@ -47,15 +47,15 @@ public class homepagecEditcontrollerInterf1 {
     public void initialize() throws InterruptedException {
         userid= obiettivo.getUserid();
         userName.setText("User : "+userid);
-        SliderBean sliderVal=new SliderBean(userid);
+        SliderBean sliderVal=new SliderBean();
         Integer [] listaValori=sliderVal.exitValue();
         home.setSlider(empathySlider,listaValori[0]);
         home.setSlider(humorSlider,listaValori[1]);
         home.setSlider(positivitySlider,listaValori[2]);
-        DescrizionePersonaleBean descrizione=new DescrizionePersonaleBean(userid);//della Homepage
+        DescrizionePersonaleBean descrizione=new DescrizionePersonaleBean();//della Homepage
         String text=descrizione.exitValue();
         personalDescription.setPromptText(text);
-        ObiettivoPersonaleBean obb=new ObiettivoPersonaleBean(userid);//della homepage
+        ObiettivoPersonaleBean obb=new ObiettivoPersonaleBean();//della homepage
         goal.setPromptText(obb.exitObiettivo());
         tag.setPromptText(obb.exitTag());
         listaValori=obb.exitData();

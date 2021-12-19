@@ -17,6 +17,7 @@ public class Search extends SalvaUtenteMeta {
     private ResultSet rst;
     private Sliders slider;
     private Vector<UtenteUsr> foundList;
+    private UtenteUsr touched;
     public Search(String who) {
         try {
             foundList= new Vector <UtenteUsr>();
@@ -58,7 +59,7 @@ public class Search extends SalvaUtenteMeta {
         try {
             Integer[] array = slider.getAll();
             rst = searchData.search4All(userid, array[0], array[1], array[2]);
-            System.out.println("parametric search");
+           // System.out.println("parametric search");
             while (rst.next()) {
                 String usr = rst.getString(USERID);
                 System.out.println(usr);
@@ -74,7 +75,7 @@ public class Search extends SalvaUtenteMeta {
     public boolean goalSearch(String goal) {
         try {
             rst = searchData.searchGoal(userid,goal);
-            System.out.println("goal search");
+            //System.out.println("goal search");
             while (rst.next()) {
                 String usr = rst.getString(USERID);
                 System.out.println(usr);
@@ -105,6 +106,15 @@ public class Search extends SalvaUtenteMeta {
     }
     public Vector<UtenteUsr> getVector(){
         return foundList;
+    }
+
+    public void setTouched(String uid) {
+        //System.out.println("utente cliccato" +uid);
+        this.touched = new UtenteUsr(uid);
+    }
+
+    public UtenteUsr getTouched() {
+        return touched;
     }
 }
 

@@ -18,6 +18,7 @@ public class Page {
     static String title1;
     protected Parent root;
     public void back(ActionEvent event){
+            System.out.println(title1);
             stage1 = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene1 = ((Node) event.getSource()).getScene();
             title1 = stage1.getTitle();
@@ -33,7 +34,7 @@ public class Page {
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("non sono riuscito a caricare l'interfaccia"+name);
+            System.err.println("non sono riuscito a caricare l'interfaccia"+name);
         }
     }
     public void backTo(ActionEvent event){

@@ -47,4 +47,7 @@ public class resultSearchController {
         }
         return count;
     }
+    public void who(String usr){
+        factory.getSearch().setTouched(usr);
+    }
 }

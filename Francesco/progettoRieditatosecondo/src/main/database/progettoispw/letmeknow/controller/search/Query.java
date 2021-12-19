@@ -15,7 +15,7 @@ public class Query {
            String sql = String.format("SELECT userid,'%s' " +
                    "FROM utenti " +
                    "WHERE type='usr' and '%s'>=%d and userid != '%s'", what, what, value, iduser);
-           System.out.println(sql);
+           //System.out.println(sql);
            return stmt.executeQuery(sql);
        }catch (SQLException throwables) {
            System.err.println("errore durante la searchVal");

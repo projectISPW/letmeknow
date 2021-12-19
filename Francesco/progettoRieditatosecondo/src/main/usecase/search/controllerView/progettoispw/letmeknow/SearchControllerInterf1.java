@@ -50,7 +50,6 @@ public class SearchControllerInterf1 {
     Label[] labels;
     public void initialize(){
         labels= new Label[]{lb1, lb2, lb3,lb4};
-        progressBar.setStyle("-fx-accent:#7836ea;");
         sl=new Vector<Slider>();
         attach(empSL);
         attach(humSL);

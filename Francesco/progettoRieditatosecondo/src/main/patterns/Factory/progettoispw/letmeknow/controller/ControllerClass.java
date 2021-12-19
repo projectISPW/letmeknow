@@ -24,11 +24,11 @@ public class ControllerClass {
         }
     }
     public  UtenteUsr getUserUSR(){
-        //userU=new UtenteUsr("1234567");
+        //userU=new UtenteUsr("123456");
         return  userU;
     }
     public void  controllerUsers(){//la istanzia il controller della login
-        //userU=getUserUSR();
+        //userU=new UtenteUsr("123456");
         userRes =new Search(userU.getUserid());
     }
     public  Search getSearch(){

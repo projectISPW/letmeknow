@@ -25,6 +25,7 @@ public class ResultSearchControllerInterf1 {
     Text goal1,goal2,goal3,goal4;
     Text [] vGoal;
     String [] strGoal=new String[4];
+
     int nval=4;
     public void initialize(){
         beanResultSearch bean=new beanResultSearch(nval);
@@ -55,10 +56,6 @@ public class ResultSearchControllerInterf1 {
         controller.switchTo("search/interf1.fxml",event,"Search");
     }
     @FXML
-    protected void goHomeOtr(ActionEvent event) throws IOException {
-        controller.switchTo("homepageOthers/interf1.fxml",event,"Visit");
-    }
-    @FXML
     protected void goChat(ActionEvent event) throws IOException {
         controller.switchTo("homepageOthers/interf1.fxml",event,"Chat");
     }
@@ -70,20 +67,28 @@ public class ResultSearchControllerInterf1 {
     protected void goToHome(ActionEvent event) throws IOException {
         controller.switchToHome(event);
     }
+    protected void visit(ActionEvent event,int i){
+        if(group[i].getOpacity()==1){
+            bean.touched(strUid[i]);
+            controller.switchTo("homepageOthers/interf1.fxml",event,"Visit");
+        }
+    }
+    @FXML
+    protected void visit1(ActionEvent event){
+        visit(event,0);
+    }
+    @FXML
+    protected void visit2(ActionEvent event){
+        visit(event,1);
+    }
+    @FXML
+    protected void visit3(ActionEvent event){
+        visit(event,2);
+    }
+    @FXML
+    protected void visit4(ActionEvent event){
+        visit(event,3);
+    }
+
 
 }
-/*
-
-
-
-
-
-
-visita altro profilo
-
-
-
-
-
-
- */
