@@ -17,16 +17,10 @@ Esrc/main/database/progettoispw/letmeknow/controller/search/Query.java,a\a\aa15
 Ksrc/main/database/progettoispw/letmeknow/controller/utenti/SalvaUtente.java,8\e\8e362fa360ad1e974aee01401179056f2b9342ad
 y
 Isrc/main/database/progettoispw/letmeknow/controller/utenti/UtenteUsr.java,9\7\97aa440f74cb16d700b7918eca9d37bd770a0d48
-k
-;src/main/usecase/java/progettoispw/letmeknow/WordCheck.java,4\3\437dd68b6e4cc6bff1bee01f3b5c2906c91980cc
 £
 ssrc/main/usecase/homepageEdit/controllerApplicative/progettoispw/letmeknow/bean/UpdateDescrizionePersonaleBean.java,6\f\6f05b17bd28d9ed235383fc2c40254555ed46a8c
 ó
 gsrc/main/usecase/formToTake/controllerApplicative/progettoispw/letmeknow/bean/FormToTakeStatusBean.java,d\4\d42bc8ef62879f199d12f6040082a3bd15def67b
-è
-_src/main/usecase/resultSearch/controllerApplicative/progettoispw/letmeknow/bean/innerUsers.java,e\1\e13f205c92e935674b8fe1545406b3bb2bbcdec3
-£
-ssrc/main/usecase/formToTake/controllerApplicative/progettoispw/letmeknow/controller/FormToTakeStatusController.java,8\6\864bc7bfbb72c9f6d4b42a5f289b664a4b7b3bf3
 †
 psrc/main/usecase/homepageEdit/controllerApplicative/progettoispw/letmeknow/controller/EditProfileController.java,3\4\343205132390bfad35ab31299c374f0832df3e14
 à
@@ -35,8 +29,6 @@ Xsrc/main/usecase/login/controllerView/progettoispw/letmeknow/LoginControllerInt
 Ysrc/main/usecase/search/controllerApplicative/progettoispw/letmeknow/bean/searchBean.java,2\a\2acca96e06c443d627be0964e6306fb51755ed5a
 u
 Esrc/main/usecase/java/progettoispw/letmeknow/OtherUserController.java,d\0\d00530ce24dd1deaf64ba2dd6020014122b67479
-ó
-gsrc/main/usecase/homepage/controllerApplicative/progettoispw/letmeknow/bean/ObiettivoPersonaleBean.java,3\0\308f6c8b5eec117a996e766c628035252afd2aa0
 ã
 [src/main/usecase/homepage/controllerApplicative/progettoispw/letmeknow/bean/SliderBean.java,0\7\077001c3c7bd888a49ad28eb31a2995748c4ed32
 ô
@@ -51,3 +43,11 @@ qsrc/main/usecase/homepageEdit/controllerApplicative/progettoispw/letmeknow/bean
 esrc/main/usecase/resultSearch/controllerApplicative/progettoispw/letmeknow/bean/beanResultSearch.java,9\d\9dc6757b7f118a492a1f8614f101d3e995e4b855
 °
 qsrc/main/usecase/resultSearch/controllerApplicative/progettoispw/letmeknow/controller/resultSearchController.java,5\9\59eaead37ea3f86988e39b53de9b360cfc5b512c
+i
+9src/main/java/progettoispw/letmeknow/MainApplication.java,b\4\b4ea8f36ec0b1c2c64d0530d95547727e22bbb93
+Ä
+Psrc/main/patterns/Factory/progettoispw/letmeknow/controller/ControllerClass.java,5\d\5d4095505ed3d7af9370223a3b588b718ac4887f
+Ö
+Usrc/main/usecase/chat/controllerApplicative/progettoispw/letmeknow/bean/ChatBean.java,6\5\65d9bb30d8a57940783af5cefe8c52afb3e358d7
+Ü
+Vsrc/main/usecase/chat/controllerView/progettoispw/letmeknow/ChatControllerInterf1.java,3\e\3e92f7ccbc28b568dc2e1c15beafdc692f49d4ac

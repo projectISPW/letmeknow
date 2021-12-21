@@ -1,17 +1,18 @@
 package progettoispw.letmeknow;
 
 public class WordCheck {
-    static  int goAhead;
-    static int contAhead;
-    static int delta;
-    public WordCheck(int deltaInput,int goAheadInput){
+    private  int goAhead;
+    private int contAhead;
+    private int delta;
+    private String text;
+    public WordCheck(int deltaInput, int goAheadInput){
         delta=deltaInput;
         goAhead=goAheadInput;
     }
     public WordCheck(){
         delta=goAhead=-1;
     }
-    public static  String check(String inputText) {
+    public  String check(String inputText) {
         String add;
         String before;
         for (int k = goAhead-delta,count =goAhead-delta; k < inputText.length(); k = k+1) {
@@ -34,9 +35,10 @@ public class WordCheck {
             }
         }
         //System.out.println(inputText);
+        text=inputText;
         return  inputText;
     }
-    public static String check1(String inputText,String immetti){
+    public String check1(String inputText,String immetti){
         String add;
         String before;
         int count=-1;
@@ -55,8 +57,7 @@ public class WordCheck {
         }
         return inputText;
     }
-    static Integer contaInvio(String inputText){
-
+    public Integer contaInvio(String inputText){
         contAhead=1;
         for(char c : inputText.toCharArray()){
             if(c=='\n'){
@@ -65,9 +66,15 @@ public class WordCheck {
         }
         return contAhead;
     }
-    static double highText(String inputText) {
+    public double highText() {
+        int linee= contaInvio(text);
+        if(linee>4){
+            return linee* 21;
+        }
+        return 60;
+    }
+    public double highText(String inputText) {
         int linee= contaInvio(inputText);
-        System.out.println(linee);
         if(linee>4){
             return linee* 21;
         }

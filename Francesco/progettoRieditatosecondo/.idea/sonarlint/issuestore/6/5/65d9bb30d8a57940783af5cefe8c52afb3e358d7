@@ -1,0 +1,6 @@
+
+€
+java:S1149"eReplace the synchronized class "Vector" by an unsynchronized one such as "ArrayList" or "LinkedList".(ð™¿Àýÿÿÿÿ
+P	java:S125%"<This block of commented-out lines of code should be removed.(¶»ó'
+D
+java:S1068")Remove this unused "index" private field.(íä¾Üúÿÿÿÿ

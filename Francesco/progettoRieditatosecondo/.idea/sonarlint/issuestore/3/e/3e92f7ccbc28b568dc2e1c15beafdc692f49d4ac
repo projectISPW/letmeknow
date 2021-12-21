@@ -1,0 +1,15 @@
+
+q
+java:S1450"VRemove the "message" field and declare it as a local variable in the relevant methods.(Ð©ìéÿÿÿÿÿ
+=
+java:S3010$""Remove this assignment of "alive".(ñ—ÙÕýÿÿÿÿ
+’
+java:S1130-"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(ö±Ÿ‘þÿÿÿÿ
+‡
+java:S1130E"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(˜Ç€Öþÿÿÿÿ
+‚
+java:S1130I"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ûéø‰
+‡
+java:S1130M"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(‡°‚Ãþÿÿÿÿ
+U
+java:S1128"3Remove this unused import 'javafx.geometry.Insets'.(›¨µðûÿÿÿÿ8°ÓÉàÝ/

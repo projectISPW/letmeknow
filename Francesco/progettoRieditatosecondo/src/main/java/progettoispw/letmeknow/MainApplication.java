@@ -11,18 +11,10 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-import progettoispw.letmeknow.bean.VisitBean;
-import progettoispw.letmeknow.controller.ControllerClass;
-import progettoispw.letmeknow.controller.VisitController;
-import progettoispw.letmeknow.controller.resultSearchController;
-import progettoispw.letmeknow.controller.search.Search;
-import progettoispw.letmeknow.controller.utenti.Goal;
-import progettoispw.letmeknow.controller.utenti.SalvaUtente;
-import progettoispw.letmeknow.controller.utenti.UtenteUsr;
+import progettoispw.letmeknow.controller.ChatController;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.Vector;
 
 public class MainApplication extends Application {
     @Override
@@ -57,35 +49,10 @@ public class MainApplication extends Application {
         stage.show();
     }
 
-    public static void main(String[] args) throws ClassNotFoundException, SQLException {
-
-        //SalvaUtente utente=new SalvaUtente("psicologo");
-        /*Search ricerca;
-        ControllerClass factory=new ControllerClass();
-        //factory.controllerUser("123456");
-        factory.controllerUsers();
-        ricerca=factory.getSearch();
-        ricerca.setAffinity(0);
-        Integer [] arr={1,1,1};
-        ricerca.parametricSetSearch(arr);*/
+    public static void main(String[] args) throws ClassNotFoundException, SQLException, InterruptedException {
         launch();
-        //ricerca.parametricSetSearch(arr);
-        //ricerca.parametricSearch();
-        //ricerca.goalSearch("#fair");
-        //ricerca.goalSearch("#courage");
-       // utente.setPersonalDes("mi piace il cocomero ");
-        /*resultSearchController controller=new resultSearchController(4);
-        controller.who("0123456");
-        VisitBean visitctrl=new VisitBean();
-        System.out.println(visitctrl.getUserId());*/
-
-
-
-
-
-
-
-
-
+        /*ChatControllerInterf1 view =new ChatControllerInterf1();
+        view.recivemsgArr();
+        view.sendMSG("basta test ");*/
     }
 }

@@ -1,26 +1,0 @@
-
-=
-java:S3010""Remove this assignment of "delta".(¤·…ûÿÿÿÿ
-?
-java:S3010	"$Remove this assignment of "goAhead".(Š­ê‡úÿÿÿÿ
-8
-java:S3010""Remove this assignment of "delta".(÷‚Õğ
-:
-java:S3010"$Remove this assignment of "goAhead".(÷‚Õğ
-Q	java:S125"<This block of commented-out lines of code should be removed.(ÌÕ±Ä
-Q	java:S125$"<This block of commented-out lines of code should be removed.(öÒ·›
-E
-java:S1481*"*Remove this unused "count" local variable.(×Çëıüÿÿÿÿ
-V	java:S1252"<This block of commented-out lines of code should be removed.(ß´ùøÿÿÿÿ
-\
-java:S1126M"AReplace this if-then-else statement by a single return statement.(¡ğˆšÿÿÿÿÿ
-X
-java:S1854R"=Remove this useless assignment to local variable "inputText".(­àµÁùÿÿÿÿ
-I
-java:S1121R".Extract the assignment out of this expression.(­àµÁùÿÿÿÿ
-r	java:S127"XRefactor the code in order to not assign to this loop counter from within the loop body.(¢™Œ½üÿÿÿÿ
-r	java:S127"XRefactor the code in order to not assign to this loop counter from within the loop body.(¢™Œ½üÿÿÿÿ
-r	java:S127"XRefactor the code in order to not assign to this loop counter from within the loop body.(¢™Œ½üÿÿÿÿ
-r	java:S127!"XRefactor the code in order to not assign to this loop counter from within the loop body.(ëæûÿÿÿÿÿ
-c
-java:S2184H"HCast one of the operands of this multiplication operation to a "double".(ÊÙÎÖøÿÿÿÿ

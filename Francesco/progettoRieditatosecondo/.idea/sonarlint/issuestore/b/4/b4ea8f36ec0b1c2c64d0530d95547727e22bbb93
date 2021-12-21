@@ -1,0 +1,14 @@
+
+”
+java:S11304"yRemove the declaration of thrown exception 'java.lang.ClassNotFoundException', as it cannot be thrown from method's body.(ýÚ«œýÿÿÿÿ
+‰
+java:S11304"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(ýÚ«œýÿÿÿÿ
+’
+java:S11304"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(ýÚ«œýÿÿÿÿ
+V	java:S1256"<This block of commented-out lines of code should be removed.(ß–Š„üÿÿÿÿ
+h
+java:S1128"MRemove this unused import 'progettoispw.letmeknow.controller.ChatController'.(®‘£øÿÿÿÿ
+C
+java:S1604"(Make this anonymous inner class a lambda(ùë²¥þÿÿÿÿ
+k
+java:S3655$"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ŸªÍäùÿÿÿÿ

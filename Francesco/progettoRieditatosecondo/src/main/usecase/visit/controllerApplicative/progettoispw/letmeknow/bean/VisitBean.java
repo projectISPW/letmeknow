@@ -1,10 +1,7 @@
 package progettoispw.letmeknow.bean;
 
 import progettoispw.letmeknow.WordCheck;
-import progettoispw.letmeknow.controller.HomepageController;
 import progettoispw.letmeknow.controller.VisitController;
-
-import java.util.Calendar;
 
 public class VisitBean {
     VisitController controller;

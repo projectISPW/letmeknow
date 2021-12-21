@@ -1,13 +1,16 @@
 package progettoispw.letmeknow.controller;
 
+import progettoispw.letmeknow.controller.chat.Messages;
 import progettoispw.letmeknow.controller.search.Search;
 import progettoispw.letmeknow.controller.utenti.SalvaUtente;
 import progettoispw.letmeknow.controller.utenti.UtentePsy;
 import progettoispw.letmeknow.controller.utenti.UtenteUsr;
+
 public class ControllerClass {
     static   UtenteUsr userU;
     static  UtentePsy userP;
     static Search userRes;
+    static Messages  chat;
     private String userID;
     public void  controllerUser(String userid){//la istanzia il controller della login
         userU=null;
@@ -24,7 +27,7 @@ public class ControllerClass {
         }
     }
     public  UtenteUsr getUserUSR(){
-        //userU=new UtenteUsr("123456");
+       // userU=new UtenteUsr("1234567");
         return  userU;
     }
     public void  controllerUsers(){//la istanzia il controller della login
@@ -33,5 +36,12 @@ public class ControllerClass {
     }
     public  Search getSearch(){
         return  userRes;
+    }
+    public void controllerChat(){
+       // userU=new UtenteUsr("1234567");
+        chat=new Messages("1234567");
+    }
+    public Messages getChat(){
+        return chat;
     }
 }

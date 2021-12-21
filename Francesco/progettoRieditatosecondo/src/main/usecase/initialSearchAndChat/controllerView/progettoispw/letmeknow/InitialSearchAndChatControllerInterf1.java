@@ -1,0 +1,32 @@
+package progettoispw.letmeknow;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+
+import java.io.IOException;
+
+public class InitialSearchAndChatControllerInterf1 {
+    private PageMenu controller ;
+
+    @FXML
+    protected void goToHome(ActionEvent event) throws IOException {
+        controller.switchToHome(event);
+    }
+    @FXML
+    protected void goToPersonalForm(ActionEvent event) throws IOException {
+        controller.switchToPersonalForm(event);
+    }
+    @FXML
+    protected void goToSettings(ActionEvent event) throws IOException {
+        controller.switchToSettings(event);
+    }
+    @FXML
+    protected void goToChat(ActionEvent event) throws IOException {
+        controller.switchTo("chat/interf1.fxml",event,"Chat");
+    }
+    @FXML
+    protected void goToSearch(ActionEvent event) throws IOException {
+        controller.switchTo("search/interf1.fxml",event,"Search");
+    }
+
+}
