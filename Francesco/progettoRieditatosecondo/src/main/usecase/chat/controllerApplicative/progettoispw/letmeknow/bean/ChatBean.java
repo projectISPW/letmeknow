@@ -1,22 +1,25 @@
 package progettoispw.letmeknow.bean;
 
 
+import progettoispw.letmeknow.ChatControllerInterf1;
 import progettoispw.letmeknow.controller.ChatController;
 import progettoispw.letmeknow.controller.chat.Message;
 
 import java.util.Vector;
 
-public class ChatBean {
+import static java.lang.Thread.sleep;
+
+public class ChatBean{
     private ChatController controller;
     private Vector<Message> chat;
     private Integer index;
     private String with;
-
-    public ChatBean(){
+    public ChatBean() throws InterruptedException {
         controller=new ChatController();
         with= controller.getWith() ;
         index=0;
     }
+
     public String getWith(){
         return with;
     }

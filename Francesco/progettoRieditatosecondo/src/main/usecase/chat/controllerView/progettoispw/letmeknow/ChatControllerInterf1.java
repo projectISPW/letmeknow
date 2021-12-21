@@ -2,7 +2,6 @@ package progettoispw.letmeknow;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
@@ -14,11 +13,9 @@ import java.io.IOException;
 
 import static java.lang.Thread.sleep;
 
-public class ChatControllerInterf1  {
+public class ChatControllerInterf1 extends Thread {
     @FXML
     AnchorPane messaggi;
-    @FXML
-    Label lastmsg;
     @FXML
     TextArea inputmsg;
     @FXML
@@ -29,19 +26,16 @@ public class ChatControllerInterf1  {
     private String [] message;
     private CSS graphic;
     Label textmsg;
-    Thread thread;
     public ChatControllerInterf1() throws InterruptedException {
         bean=new ChatBean();
         graphic=new CSS();
-        alive=true;
     }
     @FXML
-    protected void sendMsg(ActionEvent event ) throws InterruptedException {
+    protected void sendMsg() throws InterruptedException {
         bean.newMsg(inputmsg.getText());
         recivemsgArr();
     }
 
-    static boolean alive=true;
     public void  recivemsgArr() throws InterruptedException {
             bean.getChat();
             message = bean.getMSG();
@@ -61,10 +55,10 @@ public class ChatControllerInterf1  {
             System.out.println("*********************************");
 
     }
-
     public void  initialize() throws InterruptedException {
            recivemsgArr();
     }
+
     @FXML
     protected void goToHome(ActionEvent event) throws IOException {
         controller.switchToHome(event);
@@ -77,6 +71,4 @@ public class ChatControllerInterf1  {
     protected void goToPersonalForm(ActionEvent event) throws IOException {
         controller.switchToPersonalForm(event);
     }
-
-
 }
