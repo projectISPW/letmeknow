@@ -32,7 +32,7 @@ public class ControllerClass {
     }
     public void  controllerUsers(){//la istanzia il controller della login
         //userU=new UtenteUsr("123456");
-        userRes =new Search(userU.getUserid());
+        userRes =new Search("1234567");
     }
     public  Search getSearch(){
         return  userRes;

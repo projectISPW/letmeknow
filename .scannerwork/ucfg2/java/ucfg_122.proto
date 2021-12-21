@@ -1,0 +1,43 @@
+
+Dcontroller.WordCheck#highText(Ljava/lang/String;)Ljava/lang/Integer;[
+QC:/progetto/letmeknow/Francesco/letMeKnow/src/main/java/controller/WordCheck.java( (("1*Ç
+2[
+QC:/progetto/letmeknow/Francesco/letMeKnow/src/main/java/controller/WordCheck.java0 0("e
+[
+QC:/progetto/letmeknow/Francesco/letMeKnow/src/main/java/controller/WordCheck.java0 0(
+""*Ç
+3[
+QC:/progetto/letmeknow/Francesco/letMeKnow/src/main/java/controller/WordCheck.java/ /(""e
+[
+QC:/progetto/letmeknow/Francesco/letMeKnow/src/main/java/controller/WordCheck.java/ /("
+""*Ç
+4[
+QC:/progetto/letmeknow/Francesco/letMeKnow/src/main/java/controller/WordCheck.java. .(""e
+[
+QC:/progetto/letmeknow/Francesco/letMeKnow/src/main/java/controller/WordCheck.java. .("
+""*í
+1[
+QC:/progetto/letmeknow/Francesco/letMeKnow/src/main/java/controller/WordCheck.java) )(²¯
+[
+QC:/progetto/letmeknow/Francesco/letMeKnow/src/main/java/controller/WordCheck.java) )("	
+%0int"java.lang.String#length()I*
+
+	inputTextjava.lang.String2length()‰
+†
+[
+QC:/progetto/letmeknow/Francesco/letMeKnow/src/main/java/controller/WordCheck.java, ,(
+%1java.io.PrintStream"__id*
+""¾»
+[
+QC:/progetto/letmeknow/Francesco/letMeKnow/src/main/java/controller/WordCheck.java, ,(
+
+%2void"java.io.PrintStream#println(F)V*
+
+%1java.io.PrintStream*
+""2
+println(F)*	
+2
+3
+4:
+	inputTextjava.lang.StringB"
+controller.WordCheck

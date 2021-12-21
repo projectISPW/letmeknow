@@ -1,0 +1,1 @@
+Ë 2xmlX	hr4src/letMeKnow/.idea/libraries/fontawesomefx_8_21.xml

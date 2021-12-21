@@ -1,0 +1,1 @@
+ 2xmlX	hr9cristina/letMeKnow/.idea/libraries/fontawesomefx_8_21.xml

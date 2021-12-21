@@ -24,11 +24,11 @@ public class ISCBean {
         }
         return arrStr;
     }
-    private String[] exitMsg(){
+    public String[] exitMsg(){
         String [] arrStr=new String[nval];
         for(lastMessage usr : actual){
             indice=actual.indexOf(usr);
-            arrStr[indice]=usr.getUserid();
+            arrStr[indice]=usr.getLastmsg();
             //System.out.println("About me: in bean " +arrStr[indice]);
         }
         return arrStr;

@@ -60,7 +60,7 @@ public class Messages extends MessagesMeta {
                 attach(rst.getString(TO));
                 attach(rst.getString(FROM));
             }
-            users.remove(users.firstElement());
+            users.remove(userid);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -95,6 +95,6 @@ public class Messages extends MessagesMeta {
     }
 
     public String getTouched() {
-        return "0000000";
+        return touched;
     }
 }

@@ -1,0 +1,32 @@
+
+Šprogettoispw.letmeknow.controller.utenti.Query#inserisciAlbum(Ljava/sql/Statement;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Iˆ
+~C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/utenti/Query.java ( "1*˜	
+1ˆ
+~C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/utenti/Query.java! ('à
+Ý
+ˆ
+~C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/utenti/Query.java! (~
+%0java.lang.String"Pjava.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;*"
+java.lang.String*PN
+LINSERT INTO utenti (AlbumId, Titolo, Artista, Anno) VALUES (%s,'%s','%s',%s)Ó
+Ð
+ˆ
+~C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/utenti/Query.java (#
+insertStatementjava.lang.String"__id*
+
+%0java.lang.String¸µ
+ˆ
+~C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/utenti/Query.java (2	
+%1int"5java.sql.Statement#executeUpdate(Ljava/lang/String;)I*
+
+stmtjava.sql.Statement*%
+#
+insertStatementjava.lang.String2!executeUpdate(Ljava/lang/String;)"“
+ˆ
+~C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/utenti/Query.java (3
+"":
+stmtjava.sql.Statement:
+iduserjava.lang.String:
+passwordjava.lang.String:
+emailjava.lang.StringB20
+.progettoispw.letmeknow.controller.utenti.Query

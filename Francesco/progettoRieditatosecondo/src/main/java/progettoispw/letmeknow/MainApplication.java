@@ -11,6 +11,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import progettoispw.letmeknow.bean.ISCBean;
 import progettoispw.letmeknow.controller.ChatController;
 
 import java.io.IOException;
@@ -19,7 +20,7 @@ import java.sql.SQLException;
 public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        Parent root=FXMLLoader.load(getClass().getResource("chat/interf1.fxml"));
+        Parent root=FXMLLoader.load(getClass().getResource("login/interf1.fxml"));
         stage.setScene(new Scene(root));
         stage.setTitle("Login");
         stage.setResizable(false);
@@ -50,9 +51,7 @@ public class MainApplication extends Application {
     }
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException, InterruptedException {
-        launch();
-        /*ChatControllerInterf1 view =new ChatControllerInterf1();
-        view.recivemsgArr();
-        view.sendMSG("basta test ");*/
+       launch();
+
     }
 }

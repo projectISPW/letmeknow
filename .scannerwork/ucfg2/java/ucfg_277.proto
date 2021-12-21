@@ -1,0 +1,60 @@
+
+‡progettoispw.letmeknow.controller.search.Query#searchVal(Ljava/sql/Statement;Ljava/lang/String;Ljava/lang/String;I)Ljava/sql/ResultSet;ˆ
+~C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/Query.java (!"6*¸
+4ˆ
+~C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/Query.java ()"§
+ˆ
+~C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/Query.java ()
+
+%3java.sql.ResultSet*¬
+5ˆ
+~C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/Query.java (bÇ
+Ä
+ˆ
+~C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/Query.java (b
+sqljava.lang.String"__id*
+
+%2java.lang.StringÌÉ
+ˆ
+~C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/Query.java ((
+%3java.sql.ResultSet"Gjava.sql.Statement#executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet;*
+
+stmtjava.sql.Statement*
+
+sqljava.lang.String2 executeQuery(Ljava/lang/String;)*
+4*ý
+6ˆ
+~C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/Query.java (Û
+Ø
+ˆ
+~C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/Query.java& (!
+%0java.lang.String"__concat*
+SELECT userid,'%s' *
+FROM utenti €
+ý
+ˆ
+~C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/Query.java& (E
+%1java.lang.String"__concat*
+
+%0java.lang.String*42
+0WHERE type='usr' and '%s'>=%d and userid != '%s'†
+ƒ
+ˆ
+~C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/Query.java (a
+%2java.lang.String"Pjava.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;*"
+java.lang.String*
+
+%1java.lang.String*
+
+whatjava.lang.String*
+
+whatjava.lang.String*
+""*
+
+iduserjava.lang.String*
+5:
+stmtjava.sql.Statement:
+whatjava.lang.String:
+iduserjava.lang.String:
+""B20
+.progettoispw.letmeknow.controller.search.Query

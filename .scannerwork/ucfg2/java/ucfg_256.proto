@@ -1,0 +1,18 @@
+
+Fcontroller.wordCheck#contaInvio(Ljava/lang/String;)Ljava/lang/Integer;U
+KC:/progetto/letmeknow/src/letMeKnow/src/main/java/controller/wordCheck.java ("5*œ
+5U
+KC:/progetto/letmeknow/src/letMeKnow/src/main/java/controller/wordCheck.java   (º·
+U
+KC:/progetto/letmeknow/src/letMeKnow/src/main/java/controller/wordCheck.java   (,
+%0char[]" java.lang.String#toCharArray()[C*
+
+	inputTextjava.lang.String2toCharArray()*
+1*»
+1U
+KC:/progetto/letmeknow/src/letMeKnow/src/main/java/controller/wordCheck.java% %("_
+U
+KC:/progetto/letmeknow/src/letMeKnow/src/main/java/controller/wordCheck.java% %(
+"":
+	inputTextjava.lang.StringB"
+controller.wordCheck

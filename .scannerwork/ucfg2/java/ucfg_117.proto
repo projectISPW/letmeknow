@@ -1,0 +1,101 @@
+
+Pprogettoispw.letmeknow.controller.search.Search#descrSearch(Ljava/lang/String;)Z‰
+C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/Search.java[ [("11*¦
+3‰
+C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/Search.javad d("”
+‰
+C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/Search.javad d(
+""*¯
+4‰
+C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/Search.javab b(*˜
+•
+‰
+C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/Search.javab b(*
+%9"Dprogettoispw.letmeknow.controller.search.Search#attach(LUtenteUsr;)V*31
+/progettoispw.letmeknow.controller.search.Search*
+""*
+9*­
+6‰
+C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/Search.java` `(3¶
+³
+‰
+C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/Search.java` `(3
+usrjava.lang.String"__id*
+
+%6¸
+µ
+‰
+C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/Search.javaa a(
+%7java.io.PrintStream"__id*
+""¢Ÿ
+‰
+C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/Search.javaa a('
+
+%8void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%7java.io.PrintStream*
+
+usrjava.lang.String2println(Ljava/lang/String;)*
+4*£
+7‰
+C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/Search.java` `( í
+ê
+‰
+C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/Search.java` `( 
+%5java.sql.ResultSet"__id*<*:1
+/progettoispw.letmeknow.controller.search.Search"
+rstœ™
+‰
+C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/Search.java` `(2
+%6"Bjava.sql.ResultSet#getString(Ljava/lang/String;)Ljava/lang/String;*
+
+%5java.sql.ResultSet*
+""2getString(Ljava/lang/String;)*
+6*è
+9‰
+C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/Search.java_ _(í
+ê
+‰
+C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/Search.java_ _(
+%3java.sql.ResultSet"__id*<*:1
+/progettoispw.letmeknow.controller.search.Search"
+rstÞÛ
+‰
+C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/Search.java_ _(
+%4boolean"java.sql.ResultSet#next()Z*
+
+%3java.sql.ResultSet2next()*
+3
+7*Î
+10‰
+C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/Search.java] ](6Ù
+Ö
+‰
+C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/Search.java] ](6:1
+/progettoispw.letmeknow.controller.search.Search"
+rst"__id*
+""¸
+µ
+‰
+C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/Search.java^ ^(
+%1java.io.PrintStream"__id*
+""Ÿœ
+‰
+C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/Search.java^ ^(4
+
+%2void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%1java.io.PrintStream*
+description search2println(Ljava/lang/String;)*
+9*‡
+11‰
+C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/Search.java] ](î
+ë
+‰
+C:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/Search.java]) ](/
+%0java.lang.String"__id*?*=1
+/progettoispw.letmeknow.controller.search.Search"
+userid*
+10:
+descrjava.lang.StringB31
+/progettoispw.letmeknow.controller.search.Search

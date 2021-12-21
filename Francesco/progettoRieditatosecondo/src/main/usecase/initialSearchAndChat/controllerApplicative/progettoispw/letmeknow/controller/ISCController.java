@@ -13,9 +13,10 @@ public class ISCController {
         public ISCController(Integer n){
             factory=new ControllerClass();
             factory.controllerChat();
+            factory.controllerUsers();
             msgs=factory.getChat().getLast();
             founded=factory.getChat().getUsers();
-            nVal=n;
+            nVal=4;
             count=0;
         }
          Vector<lastMessage>formatted;
@@ -25,6 +26,7 @@ public class ISCController {
         }
         lastMessage actual;
         public Vector<lastMessage> queryUsers(){
+            System.out.println("i am here ");
             int indice;
             actual=null;
             formatted=new Vector<>();
@@ -33,7 +35,7 @@ public class ISCController {
                 indice = founded.indexOf(usr);
                 if (indice >= count && indice < count + nVal) {
                     actual = new lastMessage(usr,msgs.get(indice));
-                    //System.out.println(usr.getUserid()+"nel controller");
+                    System.out.println(usr+"nel controller");
                     actual.getStatus();
                     attach(actual);
                 }

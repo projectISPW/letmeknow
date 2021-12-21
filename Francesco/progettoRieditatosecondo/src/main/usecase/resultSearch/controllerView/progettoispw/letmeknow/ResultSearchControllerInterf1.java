@@ -45,7 +45,7 @@ public class ResultSearchControllerInterf1 {
         strGoal=bean.exitGoal();
         strUid= bean.exitUID();
         for(int i=0;i<nval;i++){
-            if(strUid[i]==null || strDes[i]==null) group[i].setOpacity(0);
+            if(strUid[i]==null || strDes[i]==null || strGoal[i]==null) group[i].setOpacity(0);
             vUid[i].setText("Id:"+strUid[i]);
             vDes[i].setText("About me: " +strDes[i]);
             vGoal[i].setText("Working on: "+strGoal[i]);

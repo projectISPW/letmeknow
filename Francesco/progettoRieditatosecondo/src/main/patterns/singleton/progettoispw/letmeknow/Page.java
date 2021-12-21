@@ -17,15 +17,20 @@ public class Page {
     static Scene scene1;
     static String title1;
     protected Parent root;
+    static String name2;
+    static String title2;
     public void back(ActionEvent event){
-            System.out.println(title1);
+
             stage1 = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene1 = ((Node) event.getSource()).getScene();
             title1 = stage1.getTitle();
+            System.out.println(title1+"          ,             "+stage1);
     }
     public void switchTo(String name, ActionEvent event, String title) {
         try {
             back(event);
+            name2=name;
+            title2=title;
             root = FXMLLoader.load(getClass().getResource(name));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -35,6 +40,8 @@ public class Page {
         } catch (IOException e) {
             e.printStackTrace();
             System.err.println("non sono riuscito a caricare l'interfaccia"+name);
+        }catch(NullPointerException e ){
+            System.err.println("interfaccia nulla "+name);
         }
     }
     public void backTo(ActionEvent event){

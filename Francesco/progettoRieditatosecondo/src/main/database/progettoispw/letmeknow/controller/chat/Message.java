@@ -10,7 +10,6 @@ public class Message {
     public void setDate(String dateSTR) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         date = LocalDateTime.parse(dateSTR, formatter);
-        this.date = date;
     }
 
     public String getText() {

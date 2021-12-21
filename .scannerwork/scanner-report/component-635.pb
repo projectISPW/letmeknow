@@ -1,0 +1,1 @@
+û 2javaXhr‹Francesco/progettoRieditatosecondo/src/main/usecase/initialSearchAndChat/controllerApplicative/progettoispw/letmeknow/bean/lastMessage.java

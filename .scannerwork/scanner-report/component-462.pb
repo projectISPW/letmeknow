@@ -1,0 +1,1 @@
+Î 2xmlXhr^Francesco/progettoRieditatosecondo/.idea/libraries/Maven__org_openjfx_javafx_base_17_0_0_1.xml

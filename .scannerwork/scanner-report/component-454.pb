@@ -1,0 +1,1 @@
+Æ 2xmlXhr6Francesco/progettoRieditatosecondo/.idea/encodings.xml

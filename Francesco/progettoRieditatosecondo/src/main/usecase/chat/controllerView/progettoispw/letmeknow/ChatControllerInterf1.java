@@ -48,7 +48,6 @@ public class ChatControllerInterf1 extends Thread {
                 } else {
                     textmsg = graphic.getMessageRecived();
                 }
-
                 messaggi.getChildren().add(textmsg);
                 messaggi.setPrefHeight(graphic.getAumenta());
             }

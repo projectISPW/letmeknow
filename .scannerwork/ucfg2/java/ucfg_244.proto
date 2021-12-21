@@ -1,0 +1,17 @@
+
+hprogettoispw.letmeknow.controller.utenti.UtenteSQL#setDescription(Ljava/lang/String;Ljava/lang/String;)Vç
+ÇC:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/utenti/UtenteSQL.java ("1*¶
+1ç
+ÇC:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/utenti/UtenteSQL.java (ı
+Ú
+ç
+ÇC:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/utenti/UtenteSQL.java ( 
+%0java.sql.Statement"__id*@*>4
+2progettoispw.letmeknow.controller.utenti.UtenteSQL"
+stmt"ò
+ç
+ÇC:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/utenti/UtenteSQL.java (
+"":
+useridjava.lang.String:
+descrjava.lang.StringB64
+2progettoispw.letmeknow.controller.utenti.UtenteSQL

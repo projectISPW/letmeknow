@@ -1,0 +1,17 @@
+
+xprogettoispw.letmeknow.controller.search.SearchSQL#searchDescr(Ljava/lang/String;Ljava/lang/String;)Ljava/sql/ResultSet;ç
+ÇC:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/SearchSQL.java" "( "1*¶
+1ç
+ÇC:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/SearchSQL.java# #(ı
+Ú
+ç
+ÇC:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/SearchSQL.java# #(#
+%0java.sql.Statement"__id*@*>4
+2progettoispw.letmeknow.controller.search.SearchSQL"
+stmt"ò
+ç
+ÇC:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/database/progettoispw/letmeknow/controller/search/SearchSQL.java# #(@
+"":
+useridjava.lang.String:
+descrjava.lang.StringB64
+2progettoispw.letmeknow.controller.search.SearchSQL

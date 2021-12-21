@@ -1,0 +1,34 @@
+
+Qprogettoispw.letmeknow.WordCheck#checkAhead(Ljava/lang/String;)Ljava/lang/String;~
+tC:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/usecase/java/progettoispw/letmeknow/WordCheck.java[ [("6"7*ñ
+4~
+tC:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/usecase/java/progettoispw/letmeknow/WordCheck.javaa a(ãà
+~
+tC:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/usecase/java/progettoispw/letmeknow/WordCheck.javaa a('
+%1char[]" java.lang.String#toCharArray()[C*
+
+	inputTextjava.lang.String2toCharArray()*
+4
+1*ñ
+6~
+tC:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/usecase/java/progettoispw/letmeknow/WordCheck.java^ ^(ãà
+~
+tC:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/usecase/java/progettoispw/letmeknow/WordCheck.java^ ^(,
+%0char[]" java.lang.String#toCharArray()[C*
+
+	inputTextjava.lang.String2toCharArray()*
+4
+1*Ž
+7~
+tC:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/usecase/java/progettoispw/letmeknow/WordCheck.java]" ](&"ˆ
+~
+tC:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/usecase/java/progettoispw/letmeknow/WordCheck.java] ]('
+""*§
+1~
+tC:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/usecase/java/progettoispw/letmeknow/WordCheck.javad d("¡
+~
+tC:/progetto/letmeknow/Francesco/progettoRieditatosecondo/src/main/usecase/java/progettoispw/letmeknow/WordCheck.javad d(
+
+	inputTextjava.lang.String:
+	inputTextjava.lang.StringB$"
+ progettoispw.letmeknow.WordCheck

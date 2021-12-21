@@ -1,0 +1,1 @@
+Å 2xmlXÔhr8Francesco/progettoRieditatosecondo/.idea/dbnavigator.xml
