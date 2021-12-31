@@ -2,15 +2,22 @@ package progettoispw.letmeknow.controller.utenti;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Vector;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
-public class SalvaUtente extends SalvaUtenteMeta{
+public class SalvaUtente implements SalvaUtenteMeta{
     protected String userid;
     private String password;
     private String type;
     protected UtenteSQL userData;
     protected ResultSet rst;
+    private final static Lock mutex = new ReentrantLock(true);
+    private boolean bool;
     public SalvaUtente(String who)  {
         try {
+            bool=false;
             userData = new UtenteSQL();
             rst = userData.getUserData(who);
             while(rst.next()){
@@ -24,13 +31,15 @@ public class SalvaUtente extends SalvaUtenteMeta{
             e.printStackTrace();
         }
     }
+    public SalvaUtente(){
+        userid=password=type=null;
+    }
     public boolean checkUtente (String pswdInput){
         return password.equals(pswdInput);
     }
     public String abscessType (String pswdInput) {
         if (checkUtente(pswdInput)) {
             if(type.equals("usr")) {
-                dataHomeUsr();
                 return "usr";
             }
             else if (type.equals("psy")){
@@ -50,86 +59,60 @@ public class SalvaUtente extends SalvaUtenteMeta{
     public String getUserid(){
         return userid;
     }
-    private int pos;
-    private int hum;
-    private int emp;
-    private String personalDescrip;
-    private String obbPersonale;
-    private String tag;
-    private String data;
-    static Goal personalObb=new Goal();
-    public void  dataHomeUsr () {
+    public void setPassword(String input){
+        userData.setPswd(userid,input);
+    }
+    public boolean  checkEmail(String input){
+        try {
+            userData=new UtenteSQL();
+            return userData.checkEmail(input);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    public void setEmail(String input){
+        userData.setEmail(userid,input);
+    }
+    public boolean sendMail(String to) {
         try{
-            rst = userData.getUserData(userid);
-            while(rst.next()){
-                pos = Integer.parseInt(rst.getString(POS));
-                hum = Integer.parseInt(rst.getString(HUM));
-                emp= Integer.parseInt(rst.getString(EMP));
-                tag=rst.getString(TAG);
-                data=rst.getString(END);
-                obbPersonale=rst.getString(GOAL);
-                personalObb.setObiettivo(obbPersonale);
-                personalObb.setTag(tag);
-                personalObb.setStrData(data);
-                personalDescrip =rst.getString(DES);
-                return ;
+            userData = new UtenteSQL();
+            String []data =userData.recover(to);
+            if(data!=null){
+                 JavaMailUtil email=new JavaMailUtil();
+                 String text="Your userid is .:     "+data[0]+"\nYour password is .:        "+data[1];
+                 email.setText(text);
+                 if(email.sendMail(to)==false)return false;
+                 return true;
+             }
+        return false  ;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+    public boolean registrationUSR(String password,String email,String type,int [] val,String description,String goal)  {
+            int Random;
+            int min=1000000;
+            int max=9999999;
+            String check=null;
+            boolean different=true;
+            mutex.lock();
+            Vector<String>uidList=userData.getUID();
+            if(uidList==null)return false;
+            while(different==true){
+                Random= (int) (Math.random()*(max-min)) + min;
+                different=false;
+                check=""+Random;
+                for(String uid : uidList){
+                    if(check.equals(uid)){
+                        different=true;
+                    }
+                }
             }
-        }catch (SQLException throwables) {
-            throwables.printStackTrace();
-            return ;
-        }finally {
-
-        }
-    }
-    public int getEmp(){
-        return emp;
-    }
-    public int getHum(){
-        return hum;
-    }
-    public int getPos(){
-        return pos;
-    }
-    public String getDescrizione(){
-        return personalDescrip;
-    }
-    public String getTag(){return personalObb.getTag();}
-    public String getObiettivo(){
-        //System.out.println(personalObb.getObiettivo());
-        return personalObb.getObiettivo();
-    }
-    public Integer[] getData(){return personalObb.getData();}
-    public void setPersonalDes(String newS)  {
-        try{userData.setDescription(userid,newS);}
-        catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-    }
-    public void setPersonalGoal(String newS)  {
-        try{
-            personalObb.setObiettivo(newS);
-            userData.setGoal(userid,newS);
-        }
-        catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-    }
-    public void setPersonalTag(String newS)  {
-        try{
-            personalObb.setTag(newS);
-            userData.setTag(userid,newS);
-        }
-        catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-    }
-    public void setPersonalData(Integer [] value)  {
-        try{
-            personalObb.setData(value);
-            userData.setData(userid,personalObb.getDataStr_American());}
-        catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
+            mutex.unlock();
+            bool= userData.registration(check,password,type,val,description,email,goal);
+            sendMail(email);
+            return bool;
     }
 
 }

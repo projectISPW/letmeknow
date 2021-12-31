@@ -3,15 +3,16 @@ package progettoispw.letmeknow;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import progettoispw.letmeknow.bean.ISCBean;
-import progettoispw.letmeknow.bean.VisitBean;
 import progettoispw.letmeknow.bean.beanResultSearch;
 
 import java.io.IOException;
 
 public class InitialSearchAndChatControllerInterf1 {
     private PageMenu controller ;
+    private String userid;
     @FXML
     Text lst1,lst2,lst3,lst4;
     Text[] lst;
@@ -22,10 +23,12 @@ public class InitialSearchAndChatControllerInterf1 {
     Text[] uid;
     @FXML
     Button home1,home2,home3,home4;
-
+    Button[] home;
     @FXML
     Button chat1,chat2,chat3,chat4;
     Button[] chat;
+    @FXML
+    TextField searchBar;
     int nval;
     ISCBean bean;
     beanResultSearch beanVisit;
@@ -36,24 +39,33 @@ public class InitialSearchAndChatControllerInterf1 {
         controller=new PageMenu();
     }
     public void initialize(){
+        userid=bean.getUserid();
         lst=new Text[]{lst1,lst2,lst3,lst4};
         uid=new Text[]{uid1,uid2,uid3,uid4};
-        chat= new Button[]{chat1, chat2, chat3, chat1};
+        chat= new Button[]{chat1, chat2, chat3, chat4};
+        home=new Button[]{home1,home2,home3,home4};
         outputVal();
+        searchBar.textProperty().addListener((observableValue, s, t1) -> {
+            if(searchBar.getText()==""){
+                System.out.println("on reset");
+                bean.reset();
+            }
+        });
     }
+
     @FXML
     public void outputVal(){
         for(int i=0;i<nval;i++){
-            System.out.println(i);
-           chat[i].setOpacity(1);
+            chat[i].setOpacity(1);
+            home[i].setOpacity(1);
         }
         strUid= bean.exitUid();
         strLst=bean.exitMsg();
        for(int i=0;i<nval;i++){
-           System.out.println(strUid[i]);
            if(strUid[i]==null || strLst[i]==null){
                System.out.println(i);
                chat[i].setOpacity(0);
+               home[i].setOpacity(0);
            }
            else{
             uid[i].setText("Id :  #"+strUid[i]);
@@ -76,16 +88,35 @@ public class InitialSearchAndChatControllerInterf1 {
     protected void homeTouch4(ActionEvent event ){
         visit(event,3);
     }
+    private String getUid(String string){
+        int indice=-1;
+        String sub;
+        if(string.length()<8)return string ;
+        else{
+            indice=string.indexOf("||");
+            sub=string.substring(0,indice);
+            if(sub.equals(userid)==false) {
+                return sub;
+            }
+            return string.substring(indice+2);
+            }
+        }
+
     protected void visit(ActionEvent event,int i){
+        String actual;
         if(chat[i].getOpacity()==1){
-            beanVisit.touched(strUid[i]);
+            actual=getUid(strUid[i]);
+            bean.touched(actual);
+            beanVisit.touched(actual);
             controller.switchTo("homepageOthers/interf1.fxml",event,"Visit");
         }
     }
     protected void visit1(ActionEvent event,int i){
+        String actual=new String();
         if(chat[i].getOpacity()==1){
-            bean.touched(strUid[i]);
-            controller.switchTo("chat/interf1.fxml",event,"Visit");
+            actual=getUid(strUid[i]);
+            bean.touched(actual);
+            controller.switchTo("chat/interf1.fxml",event,"chat");
         }
     }
     @FXML
@@ -125,6 +156,11 @@ public class InitialSearchAndChatControllerInterf1 {
     @FXML
     protected void goToSearch(ActionEvent event) throws IOException {
         controller.switchTo("search/interf1.fxml",event,"Search");
+    }
+    @FXML
+    protected void searchMessage(){
+        bean.search(searchBar.getText());
+        outputVal();
     }
 
 }

@@ -1,0 +1,18 @@
+
+q
+java:S1450 "VRemove the "message" field and declare it as a local variable in the relevant methods.(Ğ©ìéÿÿÿÿÿ
+V
+java:S2134"@Don't extend "Thread", since the "run" method is not overridden.(ïÖ
+’
+java:S1130/"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(ö±Ÿ‘şÿÿÿÿ
+S	java:S1062"9Replace this use of System.out or System.err by a logger.(ÿâöøÿÿÿÿ
+N	java:S1065"9Replace this use of System.out or System.err by a logger.(Ğø³ñ
+S	java:S106?"9Replace this use of System.out or System.err by a logger.(ÿâöøÿÿÿÿ
+‡
+java:S1130I"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(˜Ç€Öşÿÿÿÿ
+‚
+java:S1130M"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ûéø‰
+‡
+java:S1130Q"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(‡°‚Ãşÿÿÿÿ
+^
+java:S1128"CRemove this unused import 'progettoispw.letmeknow.bean.SignupBean'.(‡‘şÕüÿÿÿÿ

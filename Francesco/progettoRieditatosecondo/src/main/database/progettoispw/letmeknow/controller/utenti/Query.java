@@ -10,6 +10,12 @@ public class Query {
         //System.out.println(sql);
         return stmt.executeQuery(sql);
     }
+    protected ResultSet selectUser(Statement stmt,String what, String input )throws SQLException {
+        String sql=String.format(" SELECT *\n FROM utenti \n WHERE %s = '%s' ;\n",what,input);
+        System.out.println(sql);
+        return stmt.executeQuery(sql);
+    }
+
     protected void setDescriptionQuery(Statement stmt, String iduser ,String what,String edit)throws SQLException {
         String sql=String.format(" UPDATE  utenti\n set %s='%s'\n WHERE userid = '%s' ;\n",what,edit,iduser);
         //System.out.println(sql);
@@ -22,9 +28,20 @@ public class Query {
         stmt.executeUpdate(sql);
         return ;
     }
-    protected int inserisciAlbum(Statement stmt, String iduser, String password ,String email) throws SQLException  {
-        String insertStatement = String.format("INSERT INTO utenti (AlbumId, Titolo, Artista, Anno) VALUES (%s,'%s','%s',%s)");
-        //System.out.println(insertStatement);
-        return stmt.executeUpdate(insertStatement);
+    protected ResultSet queryUid(Statement stmt) throws SQLException {
+        String sql=String.format(" SELECT userid FROM utenti ");
+        return stmt.executeQuery(sql);
     }
+
+    protected void newLine(Statement stmt,String uid,String password, String type ,int [] val,String description,String email,String goal) throws SQLException{
+
+        String sql=String.format("INSERT INTO `users`.`utenti` (`userid`, `password`, `type`, `email`, `empathy`, `humor`, `positivity`, `description`, `goal`,`by`)" +
+                                                        " VALUES ('%s',         '%s',      '%s',       '%s',    '%d',       '%d',      '%d','%s','%s',current_date+INTERVAL 6 month )\n",
+                                                                    uid,password,type,email,val[0],val[1],val[2],description,goal);
+        System.out.println(sql);
+        stmt.executeUpdate(sql);
+        return ;
+    }
+
+
 }

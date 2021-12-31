@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Vector;
 
-public class Search extends SalvaUtenteMeta {
+public class Search implements SalvaUtenteMeta {
     private String userid;
     private SearchSQL searchData;
     private ResultSet rst;
@@ -109,7 +109,7 @@ public class Search extends SalvaUtenteMeta {
     }
 
     public void setTouched(String uid) {
-        //System.out.println("utente cliccato" +uid);
+        System.out.println("utente cliccato" +uid);
         this.touched = new UtenteUsr(uid);
     }
 

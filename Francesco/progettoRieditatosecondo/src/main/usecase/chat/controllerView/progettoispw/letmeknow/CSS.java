@@ -8,7 +8,6 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import progettoispw.letmeknow.bean.ChatBean;
 
 public class CSS {
     private  String text;
@@ -38,8 +37,8 @@ public class CSS {
     public void general(){
         label =new Label(check.check(text));// prende il testo con gli invio
         label.setFont(Font.font("Gill Sans MT", FontWeight.BOLD,18));
-        label.setMinWidth(500);
-        label.setMaxWidth(300);
+        //label.setMinWidth(200);
+        label.setPrefWidth(350);
         label.setMinHeight(60);
         if(lastmessage == null){
             ystart =hspacing;
@@ -52,15 +51,18 @@ public class CSS {
     }
     public Label getMessageRecived(){
         general();
-        label.setTextFill(Color.BLACK);
-        label.setTranslateX(0);
-        label.setBackground(new Background(new BackgroundFill(Color.GREY,new CornerRadii(18.0),new Insets(-5.0))));
+        label.setTextFill(Color.rgb(43,43,43,0.7));
+        label.setTranslateX(-5);
+
+        label.setStyle("-fx-padding: 0 0 0 30");
+        label.setBackground(new Background(new BackgroundFill(Color.rgb(214,214,214),new CornerRadii(18.0),new Insets(-5.0))));
         lastmessage=label;
         return label;
     }
     public Label getMessageSended(){
         general();
         label.setTextFill(Color.WHITE);
+        label.setStyle("-fx-padding: 0 60 0 0");
         label.setTranslateX(100);
         label.setBackground(new Background(new BackgroundFill(Color.rgb(55, 125, 255, 0.69),new CornerRadii(18.0),new Insets(-5.0))));
         lastmessage=label;

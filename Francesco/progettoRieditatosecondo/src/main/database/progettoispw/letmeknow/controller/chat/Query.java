@@ -11,6 +11,11 @@ public class Query {
         //System.out.println(sql);
         return stmt.executeQuery(sql);
     }
+    protected ResultSet selectMessages(Statement stmt,String  input,String userid) throws SQLException {
+        String sql=String.format("SELECT * FROM messages  WHERE text='%s' and (sender=%s or reciver =%s ) ","tutto","1234567","1234567");
+        System.out.println(sql);
+        return stmt.executeQuery(sql);
+    }
     protected ResultSet selectUserRSALL(Statement stmt, String iduser )throws SQLException {
         String sql=String.format(" SELECT * \n FROM messages where reciver = '%s' or sender = '%s' ",iduser,iduser);
        // System.out.println(sql);
@@ -24,9 +29,9 @@ public class Query {
         return stmt.executeQuery(sql);
     }
     protected void newMSG(Statement stmt, String from , String who ,String text)throws SQLException {
-
         String sql=String.format("INSERT INTO `users`.`messages` (`datetime`, `sender`, `reciver`, `text`) VALUES (CURRENT_TIMESTAMP, '%s', '%s', '%s')",from,who,text);
        // System.out.println(sql);
         stmt.executeUpdate(sql);
     }
+
 }

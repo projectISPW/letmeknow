@@ -5,28 +5,36 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
 
-public class Messages extends MessagesMeta {
+public class Messages implements MessagesMeta {
     private String userid;
     private MessagesSQL messageData;
     private ResultSet rst;
     private Vector<Message> lastmessages;
     private Vector<Message> messages;
     private Vector<String>users;
+    private Vector<String>searchUsers;
+    private Vector<Message>localSearch;
     private String touched;
     public Messages(String who)  {
         try {
             userid=who;
             messageData=new MessagesSQL();
-        } catch (ClassNotFoundException e) {
+            getALL();
+        } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
     }
+
+    public String getUserid() {
+        return userid;
+    }
+
     public Vector<Message> getLast(){
         getUSR();
         lastmessages =new Vector<>();
         for(String user:users){
            chat(user);
-           attachL(messages.lastElement());
+           attach(messages.lastElement(),lastmessages);
        }
        return lastmessages;
     }
@@ -40,11 +48,11 @@ public class Messages extends MessagesMeta {
        return users;
     }
 
-    public void attach(Message msg){
-       messages.add(msg);
+    public void attach(Message msg,Vector<Message> vec){
+       vec.add(msg);
     }
-    public void attachL(Message msg){
-        lastmessages.add(msg);
+    public void attach(String usr,Vector<String>vec){
+        vec.add(usr);
     }
     public void attach(String usr){
         if (users.contains(usr)==false) {
@@ -76,7 +84,7 @@ public class Messages extends MessagesMeta {
                 message.setSender(rst.getString(FROM));
                 message.setReciver(rst.getString(TO));
                 //message.getStatus();
-                attach(message);
+                attach(message,messages);
             }
             return messages;
         } catch (SQLException e) {
@@ -84,6 +92,8 @@ public class Messages extends MessagesMeta {
             return null;
         }
     }
+
+
     public void newMessage(String text,String to)  {
         try{messageData.newMessage(userid,to,text);}
         catch (SQLException throwables) {
@@ -91,10 +101,33 @@ public class Messages extends MessagesMeta {
         }
     }
     public void setTouched(String touched) {
+        System.out.println("OHH YES YOU TOUCHED"+touched);
         this.touched = touched;
     }
 
     public String getTouched() {
         return touched;
+    }
+    private Vector<Message>messagesALL;
+    public void getALL() throws SQLException {
+        messagesALL=new Vector<Message>();
+        messagesALL=messageData.getSRmsg(userid);
+    }
+    public void search (String word) {
+        localSearch=new Vector<>();
+        searchUsers=new Vector<>();
+        for (Message msg: messagesALL) {
+            if(msg.getText().contains(word)) {
+                attach(msg,localSearch);
+
+            }
+        }
+    }
+
+    public Vector<Message> getLocalSearch() {
+        return localSearch;
+    }
+    public Vector<String> getSearchUsers() {
+        return searchUsers;
     }
 }

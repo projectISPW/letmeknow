@@ -2,62 +2,88 @@ package progettoispw.letmeknow.controller;
 
 import progettoispw.letmeknow.bean.lastMessage;
 import progettoispw.letmeknow.controller.chat.Message;
+import progettoispw.letmeknow.controller.chat.Messages;
 
+import java.sql.SQLException;
 import java.util.Vector;
 public class ISCController {
         ControllerClass factory;
         private Vector<String> founded;
         private Integer count;
         private Integer nVal;
+        private Vector<Message>lmsgs;
         private Vector<Message>msgs;
+        private Messages chat;
         public ISCController(Integer n){
             factory=new ControllerClass();
             factory.controllerChat();
-            factory.controllerUsers();
-            msgs=factory.getChat().getLast();
-            founded=factory.getChat().getUsers();
+            if(factory.getSearch()==null)factory.controllerUsers();
+            chat= factory.getChat();
+            lmsgs=chat.getLast();
+            founded=chat.getUsers();
+            msgs=null;
             nVal=4;
             count=0;
+        }
+        public String getUid(){
+            return chat.getUserid();
         }
          Vector<lastMessage>formatted;
         public void attach(lastMessage elem){
             formatted.add(elem);
-            //elem.getStatus();
         }
         lastMessage actual;
         public Vector<lastMessage> queryUsers(){
-            System.out.println("i am here ");
             int indice;
-            actual=null;
-            formatted=new Vector<>();
-            count = check(count);
-            for (String usr : founded) {
-                indice = founded.indexOf(usr);
-                if (indice >= count && indice < count + nVal) {
-                    actual = new lastMessage(usr,msgs.get(indice));
-                    System.out.println(usr+"nel controller");
-                    actual.getStatus();
-                    attach(actual);
+            actual = null;
+            formatted = new Vector<>();
+            if(msgs==null) {
+                count = check(count, lmsgs);
+                for (String usr : founded) {
+                    indice = founded.indexOf(usr);
+                    if (indice >= count && indice < count + nVal) {
+                        actual = new lastMessage(usr, lmsgs.get(indice));
+                        // actual.getStatus();
+                        attach(actual);
+                    }
                 }
             }
-            count+=nVal;
-            return formatted;
+            else {
+                count = check(count, msgs);
+                for (Message msg : msgs) {
+                    indice = msgs.indexOf(msg);
+                    if (indice >= count && indice < count + nVal) {
+                        actual = new lastMessage(msg.getSender()+"||"+msg.getReciver(), msg);
+                        //actual.getStatus();
+                        attach(actual);
+                    }
+                }
+            }
+                count+=nVal;
+                System.out.println("_____________________________________-");
+                return formatted;
         }
 
-        private Integer check(Integer count) {
-            if(count>=founded.toArray().length){
+        private Integer check(Integer count,Vector<Message> list) {
+            if(count>=list.toArray().length){
                 return count=0;
             }
             return count;
         }
         public void who(String usr){
-            factory.getChat().setTouched(usr);
+            chat.setTouched(usr);
         }
-
-    public void  getMsgs() {
-        for(Message msg:msgs){
-            msg.getStatus();
+        public void search(String find){
+            factory.getChat().search(find);
+            msgs=chat.getLocalSearch();
+            for(Message msg:msgs)msg.getStatus();
+            count=0;
+            queryUsers();
         }
-    }
+        public void reset(){
+            msgs=null;
+            count=0;
+            queryUsers();
+        }
 }
 

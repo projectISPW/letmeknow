@@ -7,7 +7,7 @@ public class VisitController {
     UtenteUsr user;
     public VisitController(){
         user= factory.getSearch().getTouched();
-       // System.out.println(user.getUserid());
+        System.out.println(user.getUserid());
     }
     public String getUserid() {
         return user.getUserid();

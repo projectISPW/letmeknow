@@ -98,7 +98,7 @@
             <FontAwesomeIcon fill="#377dff" glyphName="SEARCH" selectionFill="#377dff" size="50" />
          </graphic>
       </Button>
-      <Button layoutX="228.0" layoutY="548.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="164.0" styleClass="Button">
+      <Button layoutX="228.0" layoutY="548.0" mnemonicParsing="false" onAction="#touchChat" prefHeight="70.0" prefWidth="164.0" styleClass="Button">
          <graphic>
             <Group>
                <children>

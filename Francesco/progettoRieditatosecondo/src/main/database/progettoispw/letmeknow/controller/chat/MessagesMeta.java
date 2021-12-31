@@ -1,8 +1,8 @@
 package progettoispw.letmeknow.controller.chat;
 
-public class MessagesMeta {
-    protected int DATETIME=1;
-    protected int FROM=2;
-    protected int TO=3;
-    protected int TEXT=4;
+public interface MessagesMeta {
+    int DATETIME=1;
+    int FROM=2;
+    int TO=3;
+    int TEXT=4;
 }

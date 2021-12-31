@@ -3,7 +3,9 @@ package progettoispw.letmeknow;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
+import javafx.scene.control.Button;
 import javafx.scene.text.Text;
+import progettoispw.letmeknow.bean.ISCBean;
 import progettoispw.letmeknow.bean.beanResultSearch;
 
 import java.io.IOException;
@@ -25,17 +27,21 @@ public class ResultSearchControllerInterf1 {
     Text goal1,goal2,goal3,goal4;
     Text [] vGoal;
     String [] strGoal=new String[4];
-
-    int nval=4;
+    ISCBean chatBean;
+    int nval;
+    beanResultSearch bean;
+    public ResultSearchControllerInterf1(){
+        nval=4;
+        bean=new beanResultSearch(nval);
+        chatBean=new ISCBean();
+    }
     public void initialize(){
-        beanResultSearch bean=new beanResultSearch(nval);
         vUid=new  Text[]{uid1,uid2,uid3,uid4};
         vDes=new Text[]{des1,des2,des3,des4};
         vGoal=new Text[]{goal1,goal2,goal3,goal4};
         group=new Group[]{g1,g2,g3,g4};
         outputVal();
     }
-    beanResultSearch bean =new beanResultSearch(nval);
     @FXML
     public void outputVal(){
         for(int i=0;i<group.length;i++){
@@ -54,10 +60,6 @@ public class ResultSearchControllerInterf1 {
     @FXML
     protected void goBack(ActionEvent event) throws IOException {
         controller.switchTo("search/interf1.fxml",event,"Search");
-    }
-    @FXML
-    protected void goChat(ActionEvent event) throws IOException {
-        controller.switchTo("homepageOthers/interf1.fxml",event,"Chat");
     }
     @FXML
     protected void goToPersonalForm(ActionEvent event) throws IOException {
@@ -89,6 +91,24 @@ public class ResultSearchControllerInterf1 {
     protected void visit4(ActionEvent event){
         visit(event,3);
     }
+    private void visit1(ActionEvent event,int i ){
+        chatBean.touched(strUid[i]);
+        controller.switchTo("chat/interf1.fxml",event,"Visit");
+    }
 
+    public void touchChat1(ActionEvent event) {
+        visit1(event,0);
+    }
 
+    public void touchChat4(ActionEvent event) {
+        visit1(event,3);
+    }
+
+    public void touchChat3(ActionEvent event) {
+        visit1(event,2);
+    }
+
+    public void touchChat2(ActionEvent event) {
+        visit1(event,1);
+    }
 }

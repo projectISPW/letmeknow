@@ -5,7 +5,9 @@ public class DescrizionePersonaleBean {
     private String userid;
     private HomepageController controller=new HomepageController();;
     public String exitValue(){
+
         String output= controller.tornaDescrizione();
+
         return output;
     }
 }

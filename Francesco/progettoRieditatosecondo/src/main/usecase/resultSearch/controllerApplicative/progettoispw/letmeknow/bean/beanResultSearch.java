@@ -11,6 +11,9 @@ public class beanResultSearch {
         nval=val;
         controller=new resultSearchController(nval);
     }
+    public beanResultSearch(){
+        controller=new resultSearchController(nval);
+    }
 
     int indice;
     private Vector<innerUsers> actual;

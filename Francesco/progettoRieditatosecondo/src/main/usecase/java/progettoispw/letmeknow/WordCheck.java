@@ -13,6 +13,7 @@ public class WordCheck {
         delta=goAhead=-1;
     }
     public  String check(String inputText) {
+        if(inputText==null)return null;
         String add;
         String before;
         for (int k = goAhead-delta,count =goAhead-delta; k < inputText.length(); k = k+1) {
@@ -39,6 +40,7 @@ public class WordCheck {
         return  inputText;
     }
     public String check1(String inputText,String immetti){
+        if(inputText==null)return null;
         String add;
         String before;
         int count=-1;
@@ -86,7 +88,9 @@ public class WordCheck {
         }return true;
     }
     public  String checkLen(String inputText,int lenMax){
-        return inputText= inputText.substring(0,lenMax)+"...";
+        if(inputText==null)return " ";
+        else if(inputText.length()<lenMax)return inputText;
+        else return inputText.substring(0,lenMax)+"...";
     }
     public  String checkAhead(String inputText){
         int k=0;

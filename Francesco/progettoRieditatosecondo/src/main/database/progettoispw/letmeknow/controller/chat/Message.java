@@ -2,6 +2,7 @@ package progettoispw.letmeknow.controller.chat;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Vector;
 
 public class Message {
     private LocalDateTime date;
@@ -34,6 +35,11 @@ public class Message {
     public void setText(String text) {
         this.text = text;
     }
+
+    public String getSender() {
+        return sender;
+    }
+
     public void getStatus(){
         System.out.printf("this message was sended at .: %s from .: %s to .: %s  this was the text .: %s \n\n",date.toString(),sender,reciver,text);
     }

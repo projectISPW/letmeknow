@@ -6,7 +6,6 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -64,12 +63,11 @@
                   <Font size="36.0" />
                </font>
             </Text>
-            <Button layoutX="41.0" layoutY="44.0" mnemonicParsing="false" style="-fx-background-color: rgba(139, 178, 249, 1);" styleClass="Back_Row">
+            <Button layoutX="41.0" layoutY="44.0" mnemonicParsing="false" onAction="#touchChat4" style="-fx-background-color: rgba(139, 178, 249, 1);" styleClass="Back_Row">
                <graphic>
                   <FontAwesomeIcon fill="WHITE" glyphName="PAPER_PLANE" layoutX="69.0" size="20" strokeWidth="0.5" />
                </graphic>
             </Button>
-            <Circle fill="#2dca8c" layoutX="71.0" layoutY="72.0" radius="6.0" stroke="#2dca8c" strokeType="INSIDE" />
          </children>
       </Group>
       <Group fx:id="g3" layoutX="15.0" layoutY="334.0">
@@ -90,7 +88,7 @@
                   <Font size="36.0" />
                </font>
             </Text>
-            <Button layoutX="41.0" layoutY="44.0" mnemonicParsing="false" style="-fx-background-color: rgba(139, 178, 249, 1);" styleClass="Back_Row">
+            <Button layoutX="41.0" layoutY="44.0" mnemonicParsing="false" onAction="#touchChat3" style="-fx-background-color: rgba(139, 178, 249, 1);" styleClass="Back_Row">
                <graphic>
                   <FontAwesomeIcon fill="WHITE" glyphName="PAPER_PLANE" layoutX="69.0" size="20" strokeWidth="0.5" />
                </graphic>
@@ -115,7 +113,7 @@
                   <Font size="36.0" />
                </font>
             </Text>
-            <Button layoutX="41.0" layoutY="44.0" mnemonicParsing="false" style="-fx-background-color: rgba(139, 178, 249, 1);" styleClass="Back_Row">
+            <Button layoutX="41.0" layoutY="44.0" mnemonicParsing="false" onAction="#touchChat2" style="-fx-background-color: rgba(139, 178, 249, 1);" styleClass="Back_Row">
                <graphic>
                   <FontAwesomeIcon fill="WHITE" glyphName="PAPER_PLANE" layoutX="69.0" size="20" strokeWidth="0.5" />
                </graphic>
@@ -140,12 +138,11 @@
                   <Font size="36.0" />
                </font>
             </Text>
-            <Button layoutX="41.0" layoutY="44.0" mnemonicParsing="false" style="-fx-background-color: rgba(139, 178, 249, 1);" styleClass="Back_Row">
+            <Button layoutX="41.0" layoutY="44.0" mnemonicParsing="false" onAction="#touchChat1" style="-fx-background-color: rgba(139, 178, 249, 1);" styleClass="Back_Row">
                <graphic>
                   <FontAwesomeIcon fill="WHITE" glyphName="PAPER_PLANE" layoutX="69.0" size="20" strokeWidth="0.5" />
                </graphic>
             </Button>
-            <Circle fill="#2dca8c" layoutX="71.0" layoutY="72.0" radius="6.0" stroke="#2dca8c" strokeType="INSIDE" />
          </children>
       </Group>
     </children>

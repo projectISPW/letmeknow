@@ -27,18 +27,15 @@ public class ControllerClass {
         }
     }
     public  UtenteUsr getUserUSR(){
-       // userU=new UtenteUsr("1234567");
-        return  userU;
+        return  userU=new UtenteUsr("1234567");
     }
     public void  controllerUsers(){//la istanzia il controller della login
-        //userU=new UtenteUsr("123456");
         userRes =new Search("1234567");
     }
     public  Search getSearch(){
         return  userRes;
     }
     public void controllerChat(){
-       // userU=new UtenteUsr("1234567");
         chat=new Messages("1234567");
     }
     public Messages getChat(){

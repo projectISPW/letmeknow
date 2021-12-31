@@ -11,8 +11,8 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-import progettoispw.letmeknow.bean.ISCBean;
-import progettoispw.letmeknow.controller.ChatController;
+import progettoispw.letmeknow.controller.utenti.SalvaUtente;
+import progettoispw.letmeknow.controller.utenti.UtenteSQL;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -23,7 +23,8 @@ public class MainApplication extends Application {
         Parent root=FXMLLoader.load(getClass().getResource("login/interf1.fxml"));
         stage.setScene(new Scene(root));
         stage.setTitle("Login");
-        stage.setResizable(false);
+        //stage.setResizable(false);
+        //stage.setFullScreen(true);
         Image icon= new Image(getClass().getResourceAsStream("photo/brain.jpg"));
         stage.getIcons().add(icon);
         //Alert in fase di uscita dall'applicazione
@@ -49,9 +50,7 @@ public class MainApplication extends Application {
 
         stage.show();
     }
-
     public static void main(String[] args) throws ClassNotFoundException, SQLException, InterruptedException {
-       launch();
-
+        launch();
     }
 }

@@ -34,13 +34,15 @@ public class VisitControllerInterf1{
     @FXML
     protected Text userName;
     private VisitBean bean;
-    public VisitControllerInterf1(){
+    private ISCBean chatBean;
+    public VisitControllerInterf1() throws InterruptedException {
         bean=new VisitBean();
+        chatBean=new ISCBean();
         userid=bean.getUserId();
     }
 
     public void initialize(){
-        userName.setText("User : "+userid);
+        userName.setText("User : #"+userid);
         SliderBean sliderVal=new SliderBean();
         Integer [] listaValori=bean.exitValue();
         setSlider(empathySlider,listaValori[0]);
@@ -67,9 +69,11 @@ public class VisitControllerInterf1{
         controller.backTo(event);
     }
     @FXML
-    protected void goChat(ActionEvent event) throws IOException {
-        controller.switchTo("homepageOthers/interf1.fxml",event,"Chat");
+    protected void touchChat(ActionEvent event) throws IOException {
+        chatBean.touched(userid);
+        controller.switchTo("chat/interf1.fxml",event,"Chat");
     }
+
     @FXML
     protected void goToPersonalForm(ActionEvent event) throws IOException {
         controller.switchToPersonalForm(event);

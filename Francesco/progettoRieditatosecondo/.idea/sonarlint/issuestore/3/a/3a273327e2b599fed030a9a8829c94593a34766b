@@ -1,0 +1,11 @@
+
+{
+AX3dXFa3sf8ryGDWKpeC
+java:S1659	"CDeclare "sender" and all following declarations on a separate line.(Ίµ‚ψÿÿÿÿÿ8°­κέ/
+„
+AX3dXFa3sf8ryGDWKpeD
+java:S3457,"Q%n should be used in place of \n to produce the platform-specific line separator.(ΕΊ8°­κέ/
+k
+AX3dXFa3sf8ryGDWKpeE	java:S106,"9Replace this use of System.out or System.err by a logger.(ΕΊ8°­κέ/
+O
+java:S1128"-Remove this unused import 'java.util.Vector'.(ÿΈΑÿÿÿÿÿ8›ÿ¤Ύή/

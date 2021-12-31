@@ -11,7 +11,7 @@ public class UpdateDescrizionePersonaleBean {
     }
     public void entryValue(String Value){
         if(Value!=""){
-            //if(Value.toCharArray()[0]=='#'){
+            if(Value.toCharArray()[0]=='#'){
             try {
                 controller.setNewStr(Value);
 
@@ -20,4 +20,4 @@ public class UpdateDescrizionePersonaleBean {
             }
         }
     }
-}
+}}

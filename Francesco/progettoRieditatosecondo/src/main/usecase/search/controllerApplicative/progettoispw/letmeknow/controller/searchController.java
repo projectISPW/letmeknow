@@ -9,7 +9,7 @@ public class searchController {
     private Search find;
     public searchController(){
         factory=new ControllerClass();
-        factory.controllerUsers();
+        if(factory.getSearch()==null)factory.controllerUsers();
         find= factory.getSearch();
     }
     public void enterAffinity(Integer input){

@@ -24,6 +24,7 @@ public class UtenteUsr extends SalvaUtente {
                 pos = Integer.parseInt(rst.getString(POS));
                 hum = Integer.parseInt(rst.getString(HUM));
                 emp= Integer.parseInt(rst.getString(EMP));
+
                 tag=rst.getString(TAG);
                 data=rst.getString(END);
                 obbPersonale=rst.getString(GOAL);
@@ -50,6 +51,7 @@ public class UtenteUsr extends SalvaUtente {
         return pos;
     }
     public String getDescrizione(){
+
         return personalDescrip;
     }
     public String getTag(){return personalObb.getTag();}
@@ -59,36 +61,26 @@ public class UtenteUsr extends SalvaUtente {
     }
     public Integer[] getData(){return personalObb.getData();}
     public void setPersonalDes(String newS)  {
-        try{userData.setDescription(userid,newS);}
-        catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
+
+            personalDescrip=newS;
+            userData.setDescription(userid,newS);
+
+
     }
     public void setPersonalGoal(String newS)  {
-        try{
             personalObb.setObiettivo(newS);
             userData.setGoal(userid,newS);
-        }
-        catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
+
     }
     public void setPersonalTag(String newS)  {
-        try{
             personalObb.setTag(newS);
             userData.setTag(userid,newS);
-        }
-        catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
+
     }
     public void setPersonalData(Integer [] value)  {
-        try{
             personalObb.setData(value);
-            userData.setData(userid,personalObb.getDataStr_American());}
-        catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
+            userData.setData(userid,personalObb.getDataStr_American());
+
     }
 
 }

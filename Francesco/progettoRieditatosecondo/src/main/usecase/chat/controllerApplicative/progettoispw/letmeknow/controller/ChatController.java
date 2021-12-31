@@ -14,10 +14,8 @@ public class ChatController {
     private String with;
     public ChatController(){
         factory =new ControllerClass();
-        factory.controllerChat();
         actChat= factory.getChat();
         with=actChat.getTouched();
-
     }
     public void  newMSG(String text){
         actChat.newMessage(text,with);

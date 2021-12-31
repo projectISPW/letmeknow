@@ -7,6 +7,7 @@ public class SliderBean {
         Integer valori []={0,0,0};
         controller=new HomepageController();
         //valori[0]=1;  valori[1]=1; valori[2]=1;
+
         valori[0]=controller.tornaValoriEmpatia();
         valori[1]=controller.tornaValoriUmorismo();
         valori[2]=controller.tornaValoriPositivita();

@@ -47,9 +47,11 @@ public class HomepagecontrollerInterf1 {
         userName.setText("User : "+userid);
         SliderBean sliderVal=new SliderBean();
         Integer [] listaValori=sliderVal.exitValue();
+
         setSlider(empathySlider,listaValori[0]);
         setSlider(humorSlider,listaValori[1]);
         setSlider(positivitySlider,listaValori[2]);
+
         DescrizionePersonaleBean descrizione=new DescrizionePersonaleBean();
         String text=descrizione.exitValue();
         personalDescription.setText(text);
@@ -65,7 +67,7 @@ public class HomepagecontrollerInterf1 {
         //ho fatto il controllo sintattico nel bean
         String url="photo/val";
         url=url+val+".png";
-        //System.out.println(url);
+        System.out.println(url);
         Image immagine=new Image(getClass().getResourceAsStream(url));
         image.setImage(immagine);
     }

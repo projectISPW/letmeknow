@@ -3,6 +3,7 @@ module progettoispw.letmeknow {
     requires javafx.fxml;
     requires java.desktop;
     requires java.sql;
+    requires java.mail;
 
 
     opens progettoispw.letmeknow to javafx.fxml;

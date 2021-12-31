@@ -9,6 +9,7 @@ public class HomepageController {
         return user.getUserid();
     }
     public int tornaValoriEmpatia(){
+        System.out.println("nella bean "+user.getEmp());
         return user.getEmp();
     }
     public int tornaValoriUmorismo(){

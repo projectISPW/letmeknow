@@ -1,14 +1,15 @@
 package progettoispw.letmeknow.controller.utenti;
 
-public class SalvaUtenteMeta {
-    protected int USERID=1;
-    protected int PASSWORD=2;
-    protected int TYPE=3;
-    protected int EMP=5;
-    protected int HUM=6;
-    protected int POS=7;
-    protected int DES=8;
-    protected int GOAL=9;
-    protected int END=10;
-    protected int TAG=11;
+public interface SalvaUtenteMeta {
+    int USERID=1;
+    int PASSWORD=2;
+    int TYPE=3;
+    int EMAIL=4;
+    int EMP=5;
+    int HUM=6;
+    int POS=7;
+    int DES=8;
+    int GOAL=9;
+    int END=10;
+    int TAG=11;
 }

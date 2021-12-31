@@ -12,15 +12,21 @@ public class ISCBean {
         nval=val;
         controller=new ISCController(nval);
     }
+    public ISCBean (){
+        nval=0;
+        controller=new ISCController(nval);
+    }
     int indice;
     private Vector<lastMessage> actual;
+    public String getUserid(){
+        return controller.getUid();
+    }
     public String[] exitUid(){
         String [] arrStr=new String[nval];
         actual=controller.queryUsers();;
         for(lastMessage usr : actual){
             indice=actual.indexOf(usr);
             arrStr[indice]=usr.getUserid();
-            //System.out.println("About me: in bean " +arrStr[indice]);
         }
         return arrStr;
     }
@@ -29,11 +35,16 @@ public class ISCBean {
         for(lastMessage usr : actual){
             indice=actual.indexOf(usr);
             arrStr[indice]=usr.getLastmsg();
-            //System.out.println("About me: in bean " +arrStr[indice]);
         }
         return arrStr;
     }
     public void touched(String user){
         controller.who(user);
+    }
+    public void search(String find){
+        if(find!="") {controller.search(find);}
+    }
+    public void reset(){
+        controller.reset();
     }
 }

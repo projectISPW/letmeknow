@@ -6,10 +6,11 @@ public class ResultForm1 extends ResultForm {
     static int complete;
     static int i=0;
     public ResultForm1(String inputuserid, String inputform){
-        userid="123456";
+        userid="1234567";
         formid="form1";
         fxml="formToTake/interf1.fxml";
         if (userid ==inputuserid && formid ==inputform) {
+            System.out.println("i am here ");
             if(i==0){
                 valoripassati=new int[]{-1,-1,-1,-1,-1,-1};
                 rispostedate=new boolean[]{false,false,false,false,false,false};
