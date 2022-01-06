@@ -1,7 +1,0 @@
-
-{
-java:S1149"eReplace the synchronized class "Vector" by an unsynchronized one such as "ArrayList" or "LinkedList".(öæ®“
-7
-java:S1116"Remove this empty statement.(Ø‚³ˆþÿÿÿÿ
-Q
-java:S4973-"<Strings and Boxed types should be compared using "equals()".(Ôÿ©S

@@ -20,7 +20,7 @@ public class Messages implements MessagesMeta {
             userid=who;
             messageData=new MessagesSQL();
             getALL();
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch ( SQLException e) {
             e.printStackTrace();
         }
     }

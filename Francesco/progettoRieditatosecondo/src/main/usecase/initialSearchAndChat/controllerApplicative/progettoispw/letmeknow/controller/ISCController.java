@@ -22,9 +22,20 @@ public class ISCController {
             lmsgs=chat.getLast();
             founded=chat.getUsers();
             msgs=null;
-            nVal=4;
+            nVal=n;
             count=0;
         }
+    public ISCController(){
+        factory=new ControllerClass();
+        factory.controllerChat();
+        if(factory.getSearch()==null)factory.controllerUsers();
+        chat= factory.getChat();
+        lmsgs=chat.getLast();
+        founded=chat.getUsers();
+        msgs=null;
+        nVal=0;
+        count=0;
+    }
         public String getUid(){
             return chat.getUserid();
         }
@@ -37,7 +48,17 @@ public class ISCController {
             int indice;
             actual = null;
             formatted = new Vector<>();
-            if(msgs==null) {
+            if(nVal==0){
+                indice=0;
+
+                for (String usr : founded) {//search activated in list users iterf1
+                    System.out.println("i am here "+indice);
+                    actual = new lastMessage(usr, lmsgs.get(indice++));
+                    actual.getStatus();
+                    attach(actual);
+                }
+            }
+            else if(msgs==null) {//list users in interf1
                 count = check(count, lmsgs);
                 for (String usr : founded) {
                     indice = founded.indexOf(usr);
@@ -48,7 +69,9 @@ public class ISCController {
                     }
                 }
             }
-            else {
+
+            else {//search activated in list users iterf1
+                System.out.println("i am here ");
                 count = check(count, msgs);
                 for (Message msg : msgs) {
                     indice = msgs.indexOf(msg);

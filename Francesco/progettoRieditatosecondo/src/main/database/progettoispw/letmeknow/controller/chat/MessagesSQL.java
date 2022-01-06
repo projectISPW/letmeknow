@@ -1,33 +1,16 @@
 package progettoispw.letmeknow.controller.chat;
 
+import progettoispw.letmeknow.controller.ConnectionDB;
+
 import java.sql.*;
 import java.util.Vector;
 
 public class MessagesSQL extends Query implements MessagesMeta {
-    private String User = "root";
-    private String Pass = "password";
-    private String DB_URL = "jdbc:mysql://127.0.0.1:3306/users";
-    private String DRIVER_CLASS_NAME = "com.mysql.cj.jdbc.Driver";
-    private Statement stmt = null;
-    public MessagesSQL() throws ClassNotFoundException {
-        Connection conn = null;
-        try {
-            Class.forName(DRIVER_CLASS_NAME);//recupera dinamicamente il driver , prende la classe dal class path
-            conn = DriverManager.getConnection(DB_URL, User, Pass);//quando ho get connection ho il driver caricato
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-    }
+    private ConnectionDB conn=new ConnectionDB() ;
+    private Statement stmt=conn.getStatement();
     private ResultSet rst;
     private Vector<Message> messages;
     private Vector<String>users;
-    public ResultSet getRecived(String userid) throws SQLException {
-        return selectUser(stmt,userid,"reciver");
-    }
-    public ResultSet getSended(String userid) throws SQLException {
-        return selectUser(stmt,userid,"sender");
-    }
     public ResultSet getSR(String userid) throws SQLException {
         return selectUserRSALL(stmt,userid);
     }
@@ -70,11 +53,12 @@ public class MessagesSQL extends Query implements MessagesMeta {
         scanner(rst);
         userScan(rst,userid);
     }
-
+/*
     public String getUser() {
+
         return User;
     }
-
+*/
     public Vector<Message> getMessages() {
         return messages;
     }

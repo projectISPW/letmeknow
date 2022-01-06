@@ -14,7 +14,7 @@ public class ISCBean {
     }
     public ISCBean (){
         nval=0;
-        controller=new ISCController(nval);
+        controller=new ISCController();
     }
     int indice;
     private Vector<lastMessage> actual;
@@ -22,16 +22,22 @@ public class ISCBean {
         return controller.getUid();
     }
     public String[] exitUid(){
-        String [] arrStr=new String[nval];
-        actual=controller.queryUsers();;
+        actual=controller.queryUsers();
+        System.out.println("grandezza della lista .:"+actual.size());
+        String [] arrStr;
+        if(nval!=0) arrStr=new String[nval];
+        else arrStr=new String [actual.size()];
         for(lastMessage usr : actual){
             indice=actual.indexOf(usr);
             arrStr[indice]=usr.getUserid();
+            System.out.println(arrStr[indice]+actual.indexOf(usr));
         }
         return arrStr;
     }
     public String[] exitMsg(){
-        String [] arrStr=new String[nval];
+        String [] arrStr;
+        if(nval!=0) arrStr=new String[nval];
+        else arrStr=new String [actual.size()];
         for(lastMessage usr : actual){
             indice=actual.indexOf(usr);
             arrStr[indice]=usr.getLastmsg();

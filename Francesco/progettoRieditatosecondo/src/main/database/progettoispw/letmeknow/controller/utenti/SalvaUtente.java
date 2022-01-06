@@ -27,8 +27,6 @@ public class SalvaUtente implements SalvaUtenteMeta{
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         }
     }
     public SalvaUtente(){
@@ -63,13 +61,8 @@ public class SalvaUtente implements SalvaUtenteMeta{
         userData.setPswd(userid,input);
     }
     public boolean  checkEmail(String input){
-        try {
-            userData=new UtenteSQL();
-            return userData.checkEmail(input);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-            return false;
-        }
+        userData=new UtenteSQL();
+        return userData.checkEmail(input);
     }
     public void setEmail(String input){
         userData.setEmail(userid,input);

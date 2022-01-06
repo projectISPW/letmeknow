@@ -30,7 +30,7 @@ public class takeformControllerInterf1  {
     }
     double progress=0;
     int indice=-1;
-    FormToTakeStatusBean startStatus=new FormToTakeStatusBean("form1");
+    FormToTakeStatusBean startStatus=new FormToTakeStatusBean(1);
     public boolean[] not(boolean []bool){
         boolean [] currbool=new boolean[6];
         for(int i=0;i< bool.length;i++){

@@ -29,9 +29,6 @@ public class Search implements SalvaUtenteMeta {
         } catch (SQLException throwables) {
             //throwables.printStackTrace();
             System.err.println("exeption occurred 1");
-        } catch (ClassNotFoundException e) {
-            //e.printStackTrace();
-            System.err.println("exeption occurred 2");
         }
     }
 

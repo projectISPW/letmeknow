@@ -1,32 +1,40 @@
 package progettoispw.letmeknow.controller;
 
+import progettoispw.letmeknow.controller.form.ResultForm;
 import progettoispw.letmeknow.controller.form.ResultForm1;
 import progettoispw.letmeknow.controller.utenti.UtenteUsr;
 
 public class FormToTakeStatusController {
     String userid;
-    String formid;
-    ResultForm1 form;
-    ControllerClass factory;
-    UtenteUsr user;
-    public FormToTakeStatusController(String inputform){
-        factory=new ControllerClass();
-        user= factory.getUserUSR();
+    int formid;
+    ResultForm form;
+    int [] values;
+    public FormToTakeStatusController(int inputform){
+        ControllerClass factory=new ControllerClass();
+        userid= factory.getUserUSR().getUserid();
         formid=inputform;
-        form= new ResultForm1(user.getUserid(),"form1");
-    }
-    public boolean[] getResponse(){
-        boolean [] arr=form.getRisposteDate();
-        for(boolean i : arr)System.out.println(i);
-        return form.getRisposteDate();
+        form= new ResultForm(userid,formid);
     }
     public void setValResponse(int [] passaggio){
         form.setRisposte(passaggio);
     }
     public int[] getValResponse(){
-        return form.getValRisposteDate();
+        values=form.getRisposte();
+        return form.getRisposte();
     }
-    public int getValComplete(){
+
+    public int getValComplete() {
         return form.getComplete();
+    }
+
+    public boolean[] getStatus() {
+        boolean [] bool=new boolean[values.length];
+        for(int i=0;i<values.length;i++){
+            if(values[i]>=1)bool[i]=true;
+            else{
+                bool[i]=false;
+            }
+        }
+        return bool;
     }
 }

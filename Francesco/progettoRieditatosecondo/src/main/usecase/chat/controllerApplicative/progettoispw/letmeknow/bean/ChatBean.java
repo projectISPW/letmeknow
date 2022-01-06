@@ -14,7 +14,7 @@ public class ChatBean{
     private Vector<Message> chat;
     private Integer index;
     private String with;
-    public ChatBean() throws InterruptedException {
+    public ChatBean() {
         controller=new ChatController();
         with= controller.getWith() ;
         index=0;

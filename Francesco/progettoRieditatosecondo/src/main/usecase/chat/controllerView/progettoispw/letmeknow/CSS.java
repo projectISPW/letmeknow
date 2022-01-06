@@ -1,6 +1,7 @@
 package progettoispw.letmeknow;
 
 import javafx.geometry.Insets;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -14,17 +15,29 @@ public class CSS {
     private Label label;
     private WordCheck check;
     private Integer htext;
+    private Integer hlist;//high of the vertical layout starts
+    private Integer hAnchor;//high of the list of the user
     private Label lastmessage;
+    private boolean bool;
     private double hmsg;
     private double ystart;
     private double hspacing;
     private double aumenta;
-    public CSS(){
-        check=new WordCheck(5,30);
+
+    public CSS(boolean inputbool){
+        if(bool){
+            check=new WordCheck(5,30);
+        }else{
+            check=new WordCheck(5,40);
+        }
         hmsg=0;
         hspacing=30;
         lastmessage=null;
         ystart=0;
+        htext=0;
+        bool=inputbool;
+        hlist=0;
+        hAnchor=100;
     }
     public void setText(String input){
         text=input;
@@ -39,6 +52,7 @@ public class CSS {
         label.setFont(Font.font("Gill Sans MT", FontWeight.BOLD,18));
         //label.setMinWidth(200);
         label.setPrefWidth(350);
+        if(!bool)label.setPrefWidth(600);
         label.setMinHeight(60);
         if(lastmessage == null){
             ystart =hspacing;
@@ -53,7 +67,6 @@ public class CSS {
         general();
         label.setTextFill(Color.rgb(43,43,43,0.7));
         label.setTranslateX(-5);
-
         label.setStyle("-fx-padding: 0 0 0 30");
         label.setBackground(new Background(new BackgroundFill(Color.rgb(214,214,214),new CornerRadii(18.0),new Insets(-5.0))));
         lastmessage=label;
@@ -63,9 +76,35 @@ public class CSS {
         general();
         label.setTextFill(Color.WHITE);
         label.setStyle("-fx-padding: 0 60 0 0");
+        label.setTranslateX(50);
         label.setTranslateX(100);
+        if(!bool)label.setTranslateX(300);
         label.setBackground(new Background(new BackgroundFill(Color.rgb(55, 125, 255, 0.69),new CornerRadii(18.0),new Insets(-5.0))));
         lastmessage=label;
         return label;
+    }
+    public Button[] getUsersButton(String usrid, String msg){
+        Button uid,lmsg;
+        Button [] retButt=new Button[2];
+        uid=new Button(usrid);
+        uid.setPrefWidth(100);
+        uid.setPrefHeight(75);
+        uid.setTranslateY(hlist);
+        uid.setStyle("-fx-background-color: rgb(55, 125, 255, 0.69);-fx-text-fill: white; ");
+        lmsg=new Button(msg);
+        lmsg.setTranslateX(100);
+        lmsg.setPrefWidth(330);
+        lmsg.setPrefHeight(75);
+        lmsg.setTranslateY(hlist);
+        lmsg.setStyle("-fx-opacity:  0.7; ");
+        hlist+=100;
+        hAnchor=200+hlist;
+        retButt[0]=uid;
+        retButt[1]=lmsg;
+
+        return retButt;
+    }
+    public Integer getHlist() {
+        return hlist;
     }
 }

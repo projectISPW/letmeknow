@@ -27,16 +27,16 @@ public class ControllerClass {
         }
     }
     public  UtenteUsr getUserUSR(){
-        return  userU=new UtenteUsr("1234567");
+        return  userU;
     }
     public void  controllerUsers(){//la istanzia il controller della login
-        userRes =new Search("1234567");
+        userRes =new Search(userU.getUserid());
     }
     public  Search getSearch(){
         return  userRes;
     }
     public void controllerChat(){
-        chat=new Messages("1234567");
+        chat=new Messages(userU.getUserid());
     }
     public Messages getChat(){
         return chat;

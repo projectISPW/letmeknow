@@ -11,6 +11,8 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import progettoispw.letmeknow.controller.chat.MessagesSQL;
+import progettoispw.letmeknow.controller.form.ResultForm;
 import progettoispw.letmeknow.controller.utenti.SalvaUtente;
 import progettoispw.letmeknow.controller.utenti.UtenteSQL;
 

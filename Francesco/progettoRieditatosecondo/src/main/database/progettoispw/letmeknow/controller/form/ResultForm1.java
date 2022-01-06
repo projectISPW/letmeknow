@@ -1,16 +1,15 @@
 package progettoispw.letmeknow.controller.form;
 
-public class ResultForm1 extends ResultForm {
+public class ResultForm1 {
     static boolean[] rispostedate;
     static int [] valoripassati;
     static int complete;
+    private String formid,userid;
     static int i=0;
     public ResultForm1(String inputuserid, String inputform){
-        userid="1234567";
-        formid="form1";
-        fxml="formToTake/interf1.fxml";
+        userid=inputuserid;
+        formid=inputform;
         if (userid ==inputuserid && formid ==inputform) {
-            System.out.println("i am here ");
             if(i==0){
                 valoripassati=new int[]{-1,-1,-1,-1,-1,-1};
                 rispostedate=new boolean[]{false,false,false,false,false,false};
