@@ -48,13 +48,18 @@ public class ISCController {
             int indice;
             actual = null;
             formatted = new Vector<>();
-            if(nVal==0){
+            if(nVal==0 && msgs==null){
                 indice=0;
-
                 for (String usr : founded) {//search activated in list users iterf1
                     System.out.println("i am here "+indice);
                     actual = new lastMessage(usr, lmsgs.get(indice++));
                     actual.getStatus();
+                    attach(actual);
+                }
+            }
+            else if(nVal==0){
+                for (Message msg : msgs) {
+                    actual = new lastMessage(msg.getSender()+"||"+msg.getReciver(), msg);
                     attach(actual);
                 }
             }
@@ -71,7 +76,6 @@ public class ISCController {
             }
 
             else {//search activated in list users iterf1
-                System.out.println("i am here ");
                 count = check(count, msgs);
                 for (Message msg : msgs) {
                     indice = msgs.indexOf(msg);

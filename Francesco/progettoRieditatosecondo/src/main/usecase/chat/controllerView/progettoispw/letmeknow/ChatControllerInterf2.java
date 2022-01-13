@@ -6,10 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
@@ -31,8 +28,9 @@ public class ChatControllerInterf2 {
     Text withName;
     @FXML
     AnchorPane listUtenti;
+
     @FXML
-    Group groupStd;
+    TextField searchBar;
     boolean initializated;
     private PageMenu controller= new PageMenu();
     ChatBean bean;
@@ -40,6 +38,7 @@ public class ChatControllerInterf2 {
     beanResultSearch visitBean;
     private String [] message;
     private CSS graphic;
+    private String userid;
     Label textmsg;
     Timeline timeline;
     public ChatControllerInterf2(){
@@ -48,6 +47,7 @@ public class ChatControllerInterf2 {
         visitBean=new beanResultSearch();
         graphic=new CSS(false);
         initializated=false;
+        userid=bean.getUid();
         timeline=new Timeline(new KeyFrame(Duration.millis(15000),this::recivemsgArr));
         timeline.setCycleCount(Timeline.INDEFINITE);//never stop
     }
@@ -87,18 +87,53 @@ public class ChatControllerInterf2 {
         addUser();
         this.timeline.play();
     }
-    private int high=200;
+    public String checkUsrId(String input){
+        if(input.length()<=8){
+            return input;
+        }
+        int indice=-1;
+        indice=input.indexOf("||");
+        String sub=input.substring(0,indice);
+        if(sub.equals(userid)==false) {
+            return sub;
+        }
+        return input.substring(indice+2);
+    }
+    private void visit(String input){
+        if(input.length()>=8){
+            input=checkUsrId(input);
+        }
+        iscBean.touched(input);
+        visitBean.touched(input);
+    }
+    private void goChat(ActionEvent event){
+        Button button=(Button)event.getTarget();
+        String who=button.getText();
+        who=checkUsrId(who);
+        System.out.println("visit home"+who);
+        iscBean.touched(who);
+        controller.switchTo("homepageOthers/interf1.fxml",event,"Visit");
+    }
+
     public  void addUser(){
+        Button userButton;
+        Label msgLabel;
         String [] uid= iscBean.exitUid();
         String [] msg=iscBean.exitMsg();
-        Button [] add;
         for(int i=0;i< uid.length;i++){
-            add=graphic.getUsersButton(uid[i],msg[i]);
-            listUtenti.getChildren().addAll(add[0],add[1]);
+            userButton=graphic.getButton(uid[i]);
+            msgLabel=graphic.getLabel(msg[i]);
+            userButton.setOnAction(this::goChat);
+            listUtenti.getChildren().addAll(userButton,msgLabel);
             listUtenti.setPrefHeight(graphic.getHlist());
         }
-
     }
+    @FXML
+    public void searchMessage(){
+        iscBean.search(searchBar.getText());
+        addUser();
+    }
+
     @FXML
     protected void goToHome(ActionEvent event) throws IOException {
         timeline.stop();

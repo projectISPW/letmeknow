@@ -20,14 +20,15 @@ public class ChatController {
     public void  newMSG(String text){
         actChat.newMessage(text,with);
     }
-
+    public String getUID(){
+        return actChat.getUserid();
+    }
     public Vector<Message> getChat() {
         chat=actChat.chat(with);
         if(lastChat!=null){
             newChat=new Vector<>();
             for(int i= lastChat.size();i< chat.size();i++){
                 newChat.add(chat.get(i));
-
             }
             lastChat=chat;
         }

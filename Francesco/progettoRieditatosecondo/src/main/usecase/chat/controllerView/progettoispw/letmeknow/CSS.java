@@ -23,7 +23,7 @@ public class CSS {
     private double ystart;
     private double hspacing;
     private double aumenta;
-
+    private String userid;
     public CSS(boolean inputbool){
         if(bool){
             check=new WordCheck(5,30);
@@ -38,11 +38,14 @@ public class CSS {
         bool=inputbool;
         hlist=0;
         hAnchor=100;
+        userid=null;
     }
     public void setText(String input){
         text=input;
     }
-
+    public void setUserid(String input){
+        userid=input;
+    }
     public double getAumenta() {
         return aumenta;
     }
@@ -83,27 +86,36 @@ public class CSS {
         lastmessage=label;
         return label;
     }
-    public Button[] getUsersButton(String usrid, String msg){
-        Button uid,lmsg;
-        Button [] retButt=new Button[2];
-        uid=new Button(usrid);
+    public Button getButton(String usrid) {
+        Button uid=new Button(usrid);
         uid.setPrefWidth(100);
         uid.setPrefHeight(75);
         uid.setTranslateY(hlist);
         uid.setStyle("-fx-background-color: rgb(55, 125, 255, 0.69);-fx-text-fill: white; ");
-        lmsg=new Button(msg);
+        return uid;
+    }
+    public Label getLabel(String msg){
+        Label lmsg;
+        lmsg=new Label(msg);
         lmsg.setTranslateX(100);
         lmsg.setPrefWidth(330);
         lmsg.setPrefHeight(75);
         lmsg.setTranslateY(hlist);
         lmsg.setStyle("-fx-opacity:  0.7; ");
+        lmsg.setStyle(
+                "-fx-border-width: 1px;"+
+                "-fx-font-family: \"Work Sans\"; "+
+                "-fx-border-color: rgba(177, 177, 187,1);"+
+                "-fx-font-size:16px;"+
+                "-fx-text-fill:rgb(109,109,109);"+
+                "-fx-font-style:normal;"+
+                "-fx-font-weight: 200;"+
+                "-fx-font-size:18px;");
         hlist+=100;
         hAnchor=200+hlist;
-        retButt[0]=uid;
-        retButt[1]=lmsg;
-
-        return retButt;
+        return lmsg;
     }
+
     public Integer getHlist() {
         return hlist;
     }

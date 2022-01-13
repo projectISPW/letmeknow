@@ -35,7 +35,9 @@ public class ChatBean{
        }
         return returnStr;
     }
-
+    public String getUid(){
+        return controller.getUID();
+    }
     public void newMsg(String input){
         controller.newMSG(input);
     }

@@ -61,5 +61,3 @@ y
 Isrc/main/database/progettoispw/letmeknow/controller/utenti/UtenteSQL.java,2\4\2450874ea181056757dcb655054306cfb2d8b624
 
 Osrc/main/patterns/singleton/progettoispw/letmeknow/controller/ConnectionDB.java,0\a\0a1b2e9c68fd77d316114ccacd883330601c4270
-‘
-asrc/main/usecase/chat/controllerApplicative/progettoispw/letmeknow/controller/ChatController.java,f\2\f25b7b7e130c3af2f0ddc6a447dded0c98392f31
