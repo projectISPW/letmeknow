@@ -30,4 +30,38 @@ public class FormSQL extends Query{
     public Boolean setAnswer(String userid,int formid,int [] answer){
         return(setResults(stmt,userid,formid,answer));
       }
+    public int [] queryParam (String userid){
+        try{
+            int [] param=new int[3];
+            int indice=0;
+            rst=takeParam(stmt,userid);
+            while(rst.next()){
+                param[indice++]=Integer.parseInt(rst.getString(indice));
+                param[indice++]=Integer.parseInt(rst.getString(indice));
+                param[indice++]=Integer.parseInt(rst.getString(indice));
+                //param[indice]=Integer.parseInt(rst.getString(indice));
+            }
+            return param;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return null;
+        }
+    }
+    public Boolean close(String userid,int formid){
+            int [] param=queryParam(userid);
+            return close(stmt,userid,formid,param);
+        }
+    public String queryData(String userid,int formid){
+            try {
+                String out;
+                rst=takeDate(stmt,userid,formid);
+                while(rst.next()){
+                    out=rst.getString(1);
+                    return out;
+            }} catch (SQLException e) {
+                e.printStackTrace();
+            }
+            return null;
+    }
+
     }

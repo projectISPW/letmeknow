@@ -1,12 +1,0 @@
-
-Ä
-java:S1149"eReplace the synchronized class "Vector" by an unsynchronized one such as "ArrayList" or "LinkedList".(Àºêª¸ˇˇˇˇ
-Ä
-java:S1149"eReplace the synchronized class "Vector" by an unsynchronized one such as "ArrayList" or "LinkedList".(Ì„¶ì¯ˇˇˇˇ
-z
-java:S1149>"eReplace the synchronized class "Vector" by an unsynchronized one such as "ArrayList" or "LinkedList".(¥ﬁÄ
-{
-java:S1149B"eReplace the synchronized class "Vector" by an unsynchronized one such as "ArrayList" or "LinkedList".(„÷Ìç
-<
-java:S1125"'Remove the unnecessary boolean literal.(ÒÄ‹@
-Q	java:S1259"<This block of commented-out lines of code should be removed.(È˙∞∑

@@ -39,4 +39,33 @@ public class Query {
             return false;
         }
     }
+    public ResultSet takeParam(Statement stmt,String userid){
+        try {
+            String sql=String.format("SELECT empathy,humor,positivity FROM users.utenti where userid='%s';",userid);
+            return stmt.executeQuery(sql);
+        } catch (SQLException throwables) {
+            return null;
+        }
+    }
+    public ResultSet takeDate(Statement stmt,String userid,int formid){
+        try {
+            String sql=String.format("SELECT `by` FROM forms where userid='%s'AND formid=%d;",userid,formid);
+            System.out.println(sql);
+            return stmt.executeQuery(sql);
+        } catch (SQLException throwables) {
+            return null;
+        }
+    }
+    public Boolean close(Statement stmt,String userid,int formid,int[] param){
+        try {
+            for(int i=0;i<param.length;i++)System.out.println(param[i]);
+            String sql=String.format(" UPDATE  forms \n set `emp` = %d, `hum` = %d, `pos` = %d,`by`=CURRENT_TIMESTAMP \n WHERE (`formid` = %d) and (`userid` = '%s');\n",
+                                                                        param[0],param[1],param[2],2,"0000000");
+            stmt.executeUpdate(sql);
+            return true;
+        } catch (SQLException throwables) {
+            return false;
+        }
+    }
+
 }

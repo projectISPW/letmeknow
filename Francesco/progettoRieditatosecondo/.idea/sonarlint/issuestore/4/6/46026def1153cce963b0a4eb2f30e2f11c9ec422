@@ -1,26 +1,0 @@
-
-
-java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(¶¤¤/
-‡
-java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ôİ™Öıÿÿÿÿ
-‡
-java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(˜Ç€Öşÿÿÿÿ
-‡
-java:S1130 "lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(¡ÓèŠùÿÿÿÿ
-‚
-java:S1130$"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ßêÍ
-N
-java:S1128"3Remove this unused import 'javafx.fxml.FXMLLoader'.(À‡ô³úÿÿÿÿ
-D
-java:S1128".Remove this unused import 'javafx.scene.Node'.(ÑÖ¬ï
-F
-java:S1128"0Remove this unused import 'javafx.scene.Parent'.(²ä¡È
-E
-java:S1128"/Remove this unused import 'javafx.scene.Scene'.(Õü²
-N
-java:S1128	"8Remove this unused import 'javafx.scene.control.Slider'.(ÔãÃ™
-J
-java:S1128
-"/Remove this unused import 'javafx.stage.Stage'.(æÄ¸²úÿÿÿÿ
-F
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ

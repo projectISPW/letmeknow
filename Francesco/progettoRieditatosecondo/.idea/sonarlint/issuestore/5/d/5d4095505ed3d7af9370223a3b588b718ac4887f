@@ -1,0 +1,25 @@
+
+p
+java:S1450"URemove the "userID" field and declare it as a local variable in the relevant methods.(³ ûÁÿÿÿÿÿ
+L
+java:S2696"6Make the enclosing method "static" or remove this set.(á¯Õ¾
+L
+java:S2696"6Make the enclosing method "static" or remove this set.(¡§ÚÌ
+f	java:S128"LEnd this switch case with an unconditional break, return or throw statement.(ñ¾Ž·úÿÿÿÿ
+<	java:S131""Add a default case to this switch.(Þ¡úñøÿÿÿÿ
+Q
+java:S2696"6Make the enclosing method "static" or remove this set.(°ÀÙ®þÿÿÿÿ
+K
+java:S2696"6Make the enclosing method "static" or remove this set.(…áœP
+Q
+java:S2696"6Make the enclosing method "static" or remove this set.(‚ûÿ¼øÿÿÿÿ
+Q
+java:S2696!"6Make the enclosing method "static" or remove this set.(¸•ŽÂüÿÿÿÿ
+L
+java:S2696'"6Make the enclosing method "static" or remove this set.(·é¬Ë
+E
+java:S1068"*Remove this unused "userID" private field.(³ ûÁÿÿÿÿÿ
+I
+java:S1121".Extract the assignment out of this expression.(‚ûÿ¼øÿÿÿÿ
+f
+java:S1301"KReplace this "switch" statement by "if" statements to increase readability.(Þ¡úñøÿÿÿÿ

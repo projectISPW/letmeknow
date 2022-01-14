@@ -1,5 +1,7 @@
 package progettoispw.letmeknow;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -8,30 +10,38 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.Slider;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
+import javafx.util.Duration;
 import progettoispw.letmeknow.bean.FormToTakeStatusBean;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Vector;
-public class takeformControllerInterf1  {
+public class takeformControllerInterf1 {
     @FXML
-    Slider sl1,sl2,sl3,sl4,sl5,sl6;
+    protected AnchorPane form;
     @FXML
-    Label lb1,lb2,lb3,lb4,lb5,lb6;
+    protected Text idForm;
     @FXML
-    ProgressBar progressBar;
-    private PageMenu controller= new PageMenu();
-    private Vector<Slider> sl;
-    private boolean [] values;
-    private boolean [] locked;
-    private int [] response;
-    private void attach(Slider slider){
+    protected Slider sl1,sl2,sl3,sl4,sl5,sl6;
+    @FXML
+    protected Label lb1,lb2,lb3,lb4,lb5,lb6;
+    @FXML
+    protected ProgressBar progressBar;
+    protected int which;
+    protected PageMenu controller= new PageMenu();
+    protected Vector<Slider> sl;
+    protected boolean [] values;
+    protected  boolean [] locked;
+    protected int [] response;
+    protected void attach(Slider slider){
         this.sl.add(slider);
     }
-    double progress=0;
+    protected double progress=0;
     int indice=-1;
-    FormToTakeStatusBean startStatus=new FormToTakeStatusBean(1);
-    public boolean[] not(boolean []bool){
+    protected FormToTakeStatusBean startStatus;
+    protected boolean[] not(boolean []bool){
         boolean [] currbool=new boolean[6];
         for(int i=0;i< bool.length;i++){
             if(bool[i]) currbool[i]=false;
@@ -39,14 +49,14 @@ public class takeformControllerInterf1  {
         }
         return currbool;
     }
-    public takeformControllerInterf1(){
+
+
+    public void initialize(){
         response=startStatus.exitValStatus();
         locked=startStatus.exitStatus();
         values=not(locked);
         progress= startStatus.getComplete()*0.17;
         sl=new Vector<Slider> ();
-    }
-    public void initialize(){
         attach(sl1);
         attach(sl2);
         attach(sl3);
@@ -81,7 +91,8 @@ public class takeformControllerInterf1  {
             });
         }
     }
-    public void save() {
+    @FXML
+    protected void save(ActionEvent event) {
         for (Slider slider : sl) {
             indice = sl.indexOf(slider);
             if (values[indice] == false) {
@@ -98,7 +109,7 @@ public class takeformControllerInterf1  {
     }
     @FXML
     protected void goBack(ActionEvent event) throws IOException {
-       exit();
+        exit();
         controller.switchToPersonalForm(event);
     }
     @FXML
@@ -109,11 +120,9 @@ public class takeformControllerInterf1  {
     @FXML
     protected void goToChat(ActionEvent event) throws IOException {
         exit();
-       controller.switchToChat(event);
+        controller.switchToChat(event);
     }
-    public void newTest(){
 
-    }
     @FXML
     protected void goToResult(ActionEvent event) throws IOException {
         exit();

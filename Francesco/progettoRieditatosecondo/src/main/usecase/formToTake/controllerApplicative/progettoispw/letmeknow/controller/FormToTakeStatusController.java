@@ -1,8 +1,6 @@
 package progettoispw.letmeknow.controller;
 
 import progettoispw.letmeknow.controller.form.ResultForm;
-import progettoispw.letmeknow.controller.form.ResultForm1;
-import progettoispw.letmeknow.controller.utenti.UtenteUsr;
 
 public class FormToTakeStatusController {
     String userid;
@@ -36,5 +34,11 @@ public class FormToTakeStatusController {
             }
         }
         return bool;
+    }
+    public int [] getParam () {
+        return form.getParam();
+    }
+    public String getDate () {
+        return form.getDate();
     }
 }

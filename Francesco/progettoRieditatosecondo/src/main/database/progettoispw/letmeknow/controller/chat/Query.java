@@ -12,7 +12,7 @@ public class Query {
         return stmt.executeQuery(sql);
     }
     protected ResultSet selectMessages(Statement stmt,String  input,String userid) throws SQLException {
-        String sql=String.format("SELECT * FROM messages  WHERE text='%s' and (sender=%s or reciver =%s ) ","tutto","1234567","1234567");
+        String sql=String.format("SELECT * FROM messages  WHERE text='%s' and (sender=%s or reciver =%s ) ",input,userid,userid);
         System.out.println(sql);
         return stmt.executeQuery(sql);
     }

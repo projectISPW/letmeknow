@@ -11,13 +11,15 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import progettoispw.letmeknow.controller.form.FormSQL;
+
 import java.io.IOException;
 import java.sql.SQLException;
 
 public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        Parent root=FXMLLoader.load(getClass().getResource("login/interf1.fxml"));
+        Parent root=FXMLLoader.load(getClass().getResource("formCollectionResults/interf1.fxml"));
         stage.setScene(new Scene(root));
         stage.setTitle("Login");
         //stage.setResizable(false);

@@ -1,12 +1,0 @@
-
-i	java:S116	"ORename this field "User" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñ§Ü‡ÿÿÿÿÿ
-i	java:S116
-"ORename this field "Pass" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢×çñıÿÿÿÿ
-k	java:S116"QRename this field "DB_URL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”Áêüÿÿÿÿ
-q	java:S116"\Rename this field "DRIVER_CLASS_NAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÚÄ—ı
-N	java:S106"9Replace this use of System.out or System.err by a logger.(¤«£í
-L
-java:S2696"6Make the enclosing method "static" or remove this set.(ê¹£Ô
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(òÏõñÿÿÿÿÿ8¡æ©¶á/
-c
-java:S2095"HUse try-with-resources or close this "Connection" in a "finally" clause.( ëœúûÿÿÿÿ

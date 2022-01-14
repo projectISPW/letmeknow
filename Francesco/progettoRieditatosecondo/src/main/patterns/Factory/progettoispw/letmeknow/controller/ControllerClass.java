@@ -27,7 +27,7 @@ public class ControllerClass {
         }
     }
     public  UtenteUsr getUserUSR(){
-        return  userU;
+        return  userU=new UtenteUsr("0000000");
     }
     public void  controllerUsers(){//la istanzia il controller della login
         userRes =new Search(userU.getUserid());

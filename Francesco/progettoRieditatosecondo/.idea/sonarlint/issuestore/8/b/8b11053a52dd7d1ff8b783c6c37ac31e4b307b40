@@ -1,0 +1,18 @@
+
+
+java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(¶¤¤/
+‡
+java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ôÝ™Öýÿÿÿÿ
+‡
+java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(˜Ç€Öþÿÿÿÿ
+‡
+java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(¡ÓèŠùÿÿÿÿ
+>
+java:S1659""#Declare "title" on a separate line.(Ã‰»Åûÿÿÿÿ
+‚
+java:S1130/"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ßêŽÍ
+f	java:S1283"LEnd this switch case with an unconditional break, return or throw statement.(­è×ðÿÿÿÿÿ
+f	java:S1282"LEnd this switch case with an unconditional break, return or throw statement.(â‘¿Ëÿÿÿÿÿ
+7	java:S1311""Add a default case to this switch.(Ø¤öÖ
+b	java:S101
+"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(™ã‘¯

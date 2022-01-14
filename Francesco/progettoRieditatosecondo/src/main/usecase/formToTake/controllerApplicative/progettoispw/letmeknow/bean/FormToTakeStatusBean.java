@@ -6,6 +6,7 @@ public class FormToTakeStatusBean {
     int formid;
     FormToTakeStatusController controller;
     public FormToTakeStatusBean(int inputformid){
+        System.out.println("id form nel bean"+inputformid);
         formid=inputformid;
         controller=new FormToTakeStatusController(formid);
     }
@@ -19,8 +20,13 @@ public class FormToTakeStatusBean {
     public int getComplete(){
         return controller.getValComplete();
     }
-
     public boolean[] exitStatus() {
         return controller.getStatus();
+    }
+    public int [] getParam(){
+        return controller.getParam();
+    }
+    public String getData(){
+        return controller.getDate();
     }
 }

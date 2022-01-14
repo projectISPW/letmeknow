@@ -1,0 +1,23 @@
+
+
+java:S1130."wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(…™ûÀ
+V	java:S125>"<This block of commented-out lines of code should be removed.(ˆÇÛþÿÿÿÿ
+S	java:S106F"9Replace this use of System.out or System.err by a logger.(ÞÆ­Ûþÿÿÿÿ
+‡
+java:S1130L"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ôÝ™Öýÿÿÿÿ
+‡
+java:S1130Q"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(‡°‚Ãþÿÿÿÿ
+‚
+java:S1130V"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(èúÒå
+
+java:S1130Z"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(¶¤¤/
+S
+java:S1128"=Remove this unused import 'javafx.collections.FXCollections'.(´¶²Æ
+U
+java:S1128"?Remove this unused import 'javafx.scene.control.PasswordField'.(êú´Ë
+Q
+java:S1128";Remove this unused import 'javafx.scene.control.TextField'.(¨¢¤¶
+o
+java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(ìºçáýÿÿÿÿ
+j
+java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(Äî•¼

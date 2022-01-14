@@ -4,3 +4,15 @@ java:S3457"Q%n should be used in place of \n to produce the platform-specific 
 S	java:S106"9Replace this use of System.out or System.err by a logger.(Ø¦…§ÿÿÿÿÿ
 l
 java:S3457"Q%n should be used in place of \n to produce the platform-specific line separator.(¤½ô´ÿÿÿÿÿ
+L
+java:S1117,"6Rename "sql" which hides the field declared at line 8.(¨¯õ‚
+L
+java:S11174"6Rename "sql" which hides the field declared at line 8.(ªÏúã
+N	java:S1065"9Replace this use of System.out or System.err by a logger.(Â–‘ö
+T
+java:S1172;"9Remove these unused method parameters "userid", "formid".(žÀÂýÿÿÿÿ
+S	java:S106="9Replace this use of System.out or System.err by a logger.(ñÎ¶“ûÿÿÿÿ
+L
+java:S1117>"6Rename "sql" which hides the field declared at line 8.(ß±èØ
+g
+java:S3457>"Q%n should be used in place of \n to produce the platform-specific line separator.(ß±èØ
