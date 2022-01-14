@@ -6,9 +6,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class ConnectionDB {
-    private String User = "root";
-    private String Pass = "password";
-    private String DB_URL = "jdbc:mysql://127.0.0.1:3306/users";
+    private String User = "uf56pst70onxcz68";
+    private String Pass = "N5bkvOZY2AhFpYZYu3w7";
+    private String DB_URL = "jdbc:mysql://uf56pst70onxcz68:N5bkvOZY2AhFpYZYu3w7@b16kdsy1yce6nyrrldqg-mysql.services.clever-cloud.com:3306/b16kdsy1yce6nyrrldqg";
     private String DRIVER_CLASS_NAME = "com.mysql.cj.jdbc.Driver";
     private static Statement stmt = null;
     private Statement connection(){
