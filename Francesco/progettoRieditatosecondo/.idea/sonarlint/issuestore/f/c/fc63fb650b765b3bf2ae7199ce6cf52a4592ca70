@@ -1,26 +1,0 @@
-
-L
-java:S2696"6Make the enclosing method "static" or remove this set.(Ñ‚Öœ
-Q	java:S125"<This block of commented-out lines of code should be removed.(Š•Ãê
-Q
-java:S2696"6Make the enclosing method "static" or remove this set.(ÿÕ•Îøÿÿÿÿ
-Q	java:S125"<This block of commented-out lines of code should be removed.(ˆôŽ
-N	java:S106!"9Replace this use of System.out or System.err by a logger.(Á“°½
-N	java:S106-"9Replace this use of System.out or System.err by a logger.(ÕÇžÎ
-S	java:S1065"9Replace this use of System.out or System.err by a logger.(ýŸþúÿÿÿÿ
-N	java:S1068"9Replace this use of System.out or System.err by a logger.(ëÿÃ
-B
-java:S1172;",Remove this unused method parameter "event".(¹ðƒ•
-S	java:S106<"9Replace this use of System.out or System.err by a logger.(¨è¼°øÿÿÿÿ
-N	java:S106F"9Replace this use of System.out or System.err by a logger.(Á“°½
-N	java:S106Q"9Replace this use of System.out or System.err by a logger.(ÕÇžÎ
-S	java:S106Y"9Replace this use of System.out or System.err by a logger.(ýŸþúÿÿÿÿ
-N	java:S106\"9Replace this use of System.out or System.err by a logger.(ëÿÃ
-H
-java:S1128"-Remove this unused import 'java.util.Vector'.(ÿŒ¸Áÿÿÿÿÿ
-K
-java:S1068"0Remove this unused "onfullScreen" private field.(©×ÿíþÿÿÿÿ
-c
-java:S1192#"HDefine a constant instead of duplicating this literal "interf1" 4 times.(˜¸Š³þÿÿÿÿ
-c
-java:S1192("HDefine a constant instead of duplicating this literal "interf2" 4 times.(èÊªÞûÿÿÿÿ

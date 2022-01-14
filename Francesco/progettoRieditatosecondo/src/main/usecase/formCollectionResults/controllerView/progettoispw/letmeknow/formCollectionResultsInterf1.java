@@ -47,9 +47,18 @@ public class formCollectionResultsInterf1 {
     protected void urResult(ActionEvent event) throws IOException {
         Button button=(Button) event.getTarget();
         switch(button.getText()){
-            case "FORM 3":which(3,event);
-            case "FORM 1":which(1,event);
-            case "FORM 2":which(2,event);
+            case "FORM 3":{
+                which(3,event);
+                break;
+            }
+            case "FORM 1":{
+                which(1,event);
+                break;
+            }
+            case "FORM 2":{
+                which(2,event);
+                break;
+            }
         }
 
     }

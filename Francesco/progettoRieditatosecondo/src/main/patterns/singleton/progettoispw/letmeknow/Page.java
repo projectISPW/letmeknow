@@ -35,7 +35,7 @@ public class Page {
             if(stage.getWidth()>500 && name.indexOf("interf1")>-1){
                 index= name.indexOf("interf1");
                 name=name.substring(0,index);
-                name+="form1interf2.fxml";
+                name+="interf2.fxml";
             }
             if(stage.getWidth()<500 && name.indexOf("interf2")>-1){
                 index= name.indexOf("interf2");
@@ -89,7 +89,8 @@ public class Page {
             System.err.println("non sono riuscito a caricare l'interfaccia"+name);
         }catch(NullPointerException e ){
             e.printStackTrace();
-            System.err.println("interfaccia nulla "+name);
+            System.err.println("interfaccia no costruita "+name);
+            stage.setMaxWidth(400);
         }
     }
 

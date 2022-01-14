@@ -10,7 +10,7 @@ public class innerUsers {
     private int lenMax;
     private WordCheck check=new WordCheck();
     public innerUsers(UtenteUsr elem){
-        lenMax=25;
+        lenMax=15;
         userid=elem.getUserid();
         description= elem.getDescrizione();
         goal=elem.getTag();

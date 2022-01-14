@@ -66,7 +66,7 @@ public class VisitControllerInterf1{
     }
     @FXML
     protected void goBack(ActionEvent event) throws IOException {
-        controller.backTo(event);
+        controller.switchToChat(event);
     }
     @FXML
     protected void touchChat(ActionEvent event) throws IOException {

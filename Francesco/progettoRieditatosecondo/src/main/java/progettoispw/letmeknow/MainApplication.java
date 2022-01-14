@@ -19,7 +19,7 @@ import java.sql.SQLException;
 public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        Parent root=FXMLLoader.load(getClass().getResource("formCollectionResults/interf1.fxml"));
+        Parent root=FXMLLoader.load(getClass().getResource("login/interf1.fxml"));
         stage.setScene(new Scene(root));
         stage.setTitle("Login");
         //stage.setResizable(false);

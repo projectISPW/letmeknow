@@ -89,8 +89,13 @@ public class WordCheck {
     }
     public  String checkLen(String inputText,int lenMax){
         if(inputText==null)return " ";
-        else if(inputText.length()<lenMax)return inputText;
-        else return inputText.substring(0,lenMax)+"...";
+        inputText=inputText.replaceAll("\\n","");
+        inputText=inputText.replaceAll("\\r","");
+        inputText=inputText.replaceAll("\n","");
+        if(inputText.length()<lenMax)return inputText;
+        else {
+            return inputText.substring(0,lenMax)+"...";
+        }
     }
     public  String checkAhead(String inputText){
         int k=0;

@@ -29,7 +29,7 @@ public class Query {
         return stmt.executeQuery(sql);
     }
     protected void newMSG(Statement stmt, String from , String who ,String text)throws SQLException {
-        String sql=String.format("INSERT INTO `users`.`messages` (`datetime`, `sender`, `reciver`, `text`) VALUES (CURRENT_TIMESTAMP, '%s', '%s', '%s')",from,who,text);
+        String sql=String.format("INSERT INTO `messages` (`datetime`, `sender`, `reciver`, `text`) VALUES (CURRENT_TIMESTAMP, '%s', '%s', '%s')",from,who,text);
        // System.out.println(sql);
         stmt.executeUpdate(sql);
     }

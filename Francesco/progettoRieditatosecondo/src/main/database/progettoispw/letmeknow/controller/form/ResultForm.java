@@ -27,11 +27,14 @@ public class ResultForm {
     private void queryComplete(){
         param= formData.queryParam(userid);
         date=formData.queryData(userid,formid);
+        if(date ==null){
+            formData.close(userid,formid);
+        }
     }
     public boolean setRisposte(int[] input){
         complete=0;
         for(int i=0;i<input.length;i++)System.out.println(input[i]);
-        for(int i:input)if(input[i]!=-1)++complete;
+        for(int i:input)if(i!=-1)++complete;
         if(complete==6){
             formData.close(userid,formid);
             queryComplete();
