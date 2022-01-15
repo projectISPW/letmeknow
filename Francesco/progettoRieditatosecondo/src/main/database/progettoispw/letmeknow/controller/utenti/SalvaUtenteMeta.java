@@ -13,7 +13,6 @@ public interface SalvaUtenteMeta {
     int GOAL=9;
     int END=10;
     int TAG=11;
-    int DATEFORM=13;
-    int ABOUT=13;
-    int CALCULATED=14;
+    int ABOUT=14;
+    int CALCULATED=15;
 }

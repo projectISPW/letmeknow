@@ -41,6 +41,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/signup/controllerView" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/formCollectionResults/controllerView" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/formResult/controllerView" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/formResult/controllerApplicative" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />

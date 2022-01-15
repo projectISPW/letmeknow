@@ -1,0 +1,33 @@
+
+·
+java:S1845" Rename field "userid" to prevent any misunderstanding/clash with field "USERID" defined in interface "progettoispw.letmeknow.controller.utenti.SalvaUtenteMeta".(ïÓ§…
+À
+java:S1845"¤Rename field "password" to prevent any misunderstanding/clash with field "PASSWORD" defined in interface "progettoispw.letmeknow.controller.utenti.SalvaUtenteMeta".(œãë­úÿÿÿÿ
+¸
+java:S1845"œRename field "type" to prevent any misunderstanding/clash with field "TYPE" defined in interface "progettoispw.letmeknow.controller.utenti.SalvaUtenteMeta".(–î†ûÿÿÿÿ
+€
+java:S1149a"eReplace the synchronized class "Vector" by an unsynchronized one such as "ArrayList" or "LinkedList".(°’ÈŞÿÿÿÿÿ
+[
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ÀÊ’Š
+S	java:S1063"9Replace this use of System.out or System.err by a logger.(±‚ò¬ûÿÿÿÿ
+S	java:S1067"9Replace this use of System.out or System.err by a logger.(ã¶–×úÿÿÿÿ
+W
+java:S1126R"AReplace this if-then-else statement by a single return statement.(Ë£³™
+=
+java:S1125R"'Remove the unnecessary boolean literal.(Ë£³™
+=
+java:S1125c"'Remove the unnecessary boolean literal.(¸ôç
+D
+java:S2140d")Use "java.util.Random.nextInt()" instead.(œ´Öªüÿÿÿÿ
+q
+java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(îˆôÆ8ß•îå/
+q
+java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(¾ª”8à•îå/
+q
+java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(¬·ğ¡8à•îå/
+Y
+java:S1128
+"CRemove this unused import 'java.util.concurrent.ThreadLocalRandom'.(¨ÏÙî
+k	java:S117["QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡±…éÿÿÿÿÿ
+@
+java:S5411R"*Use the primitive boolean expression here.(Ë£³™

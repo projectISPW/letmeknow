@@ -29,7 +29,6 @@ public class takeformControllerInterf1 {
     protected Label lb1,lb2,lb3,lb4,lb5,lb6;
     @FXML
     protected ProgressBar progressBar;
-    protected int which;
     protected PageMenu controller= new PageMenu();
     protected Vector<Slider> sl;
     protected boolean [] values;
@@ -49,9 +48,8 @@ public class takeformControllerInterf1 {
         }
         return currbool;
     }
-
-
     public void initialize(){
+
         response=startStatus.exitValStatus();
         locked=startStatus.exitStatus();
         values=not(locked);
@@ -104,28 +102,16 @@ public class takeformControllerInterf1 {
         startStatus.inputValStatus(response);
         initialize();
     }
-    public void exit(){
-
-    }
     @FXML
     protected void goBack(ActionEvent event) throws IOException {
-        exit();
         controller.switchToPersonalForm(event);
     }
     @FXML
     protected void goToHome(ActionEvent event) throws IOException {
-        exit();
         controller.switchToHome(event);
     }
     @FXML
     protected void goToChat(ActionEvent event) throws IOException {
-        exit();
         controller.switchToChat(event);
-    }
-
-    @FXML
-    protected void goToResult(ActionEvent event) throws IOException {
-        exit();
-        controller.switchTo("formResult/interf1.fxml",event,"Your result");
     }
 }

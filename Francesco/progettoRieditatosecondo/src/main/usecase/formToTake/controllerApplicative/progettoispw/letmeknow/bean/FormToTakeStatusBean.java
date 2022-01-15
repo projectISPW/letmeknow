@@ -10,6 +10,7 @@ public class FormToTakeStatusBean {
         formid=inputformid;
         controller=new FormToTakeStatusController(formid);
     }
+
     public int[] exitValStatus(){
         return controller.getValResponse();
     }
@@ -22,11 +23,5 @@ public class FormToTakeStatusBean {
     }
     public boolean[] exitStatus() {
         return controller.getStatus();
-    }
-    public int [] getParam(){
-        return controller.getParam();
-    }
-    public String getData(){
-        return controller.getDate();
     }
 }

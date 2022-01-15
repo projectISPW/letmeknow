@@ -5,6 +5,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import progettoispw.letmeknow.bean.GoToFormBean;
 import progettoispw.letmeknow.bean.SignupBean;
 
 import java.io.IOException;
@@ -84,6 +85,13 @@ public class SignupControllerInterf1 {
             ///allert
 
         }
+    }
+    @FXML
+    protected void takeForm(ActionEvent event){
+        GoToFormBean takeFormBean=new GoToFormBean();
+        int val=takeFormBean.getFormid();
+        String name="formToTake/form"+val+"interf1.fxml";
+        controller.switchTo(name,event,"fill the form");
     }
 
 }

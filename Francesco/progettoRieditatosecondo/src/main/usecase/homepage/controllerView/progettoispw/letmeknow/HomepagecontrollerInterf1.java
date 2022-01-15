@@ -1,18 +1,13 @@
 package progettoispw.letmeknow;
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
-import progettoispw.letmeknow.Factory;
-import progettoispw.letmeknow.PageMenu;
 import progettoispw.letmeknow.bean.SliderBean;
 import progettoispw.letmeknow.bean.*;
-import progettoispw.letmeknow.HomepagecontrollerInterf1;
+
 import java.io.IOException;
 /*
 -cambiare foto clessidra se obiettivo scaduto
@@ -38,9 +33,9 @@ public class HomepagecontrollerInterf1 {
     protected Label date;
     @FXML
     protected Text userName;
-    private HomepageBean id=new HomepageBean();
+    private UseridBean id=new UseridBean();
     public HomepagecontrollerInterf1(){
-        id=new HomepageBean();
+        id=new UseridBean();
         userid= id.getUserId();
     }
     public void initialize() throws InterruptedException {

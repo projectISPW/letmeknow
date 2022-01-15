@@ -3,13 +3,23 @@ package progettoispw.letmeknow;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.text.Text;
 import progettoispw.letmeknow.bean.FormToTakeStatusBean;
+import progettoispw.letmeknow.bean.GoToFormBean;
+import progettoispw.letmeknow.bean.UseridBean;
 
 import java.io.IOException;
 
 public class formCollectionResultsInterf1 {
     PageMenu controller = new PageMenu();
     FormToTakeStatusBean bean;
+    UseridBean homeBean;
+    @FXML
+    Text idUser;
+    public void initialize(){
+        homeBean=new UseridBean();
+        idUser.setText("User"+homeBean.getUserId());
+    }
     @FXML
     protected void goToSettings(ActionEvent event) throws IOException {
         controller.switchTo("settings/interf1.fxml",event,"Settings");
@@ -26,9 +36,6 @@ public class formCollectionResultsInterf1 {
     protected void takeTheForm(ActionEvent event) throws IOException {
         controller.switchTo("formToTake/form1interf1.fxml",event,"homepage");
     }
-    protected void takeForm1(ActionEvent event ){
-        controller.switchTo("formToTake/form1interf1.fxml",event,"form1");
-    }
     private void which(int i,ActionEvent event){
         bean=new FormToTakeStatusBean(i);
         String name,title;
@@ -44,7 +51,7 @@ public class formCollectionResultsInterf1 {
         }
     }
     @FXML
-    protected void urResult(ActionEvent event) throws IOException {
+    protected void urResult(ActionEvent event) {
         Button button=(Button) event.getTarget();
         switch(button.getText()){
             case "FORM 3":{
@@ -61,5 +68,12 @@ public class formCollectionResultsInterf1 {
             }
         }
 
+    }
+    @FXML
+    protected void takeForm(ActionEvent event){
+        GoToFormBean takeFormBean=new GoToFormBean();
+        int val=takeFormBean.getFormid();
+        String name="formToTake/form"+val+"interf1.fxml";
+        controller.switchTo(name,event,"fill the form");
     }
 }

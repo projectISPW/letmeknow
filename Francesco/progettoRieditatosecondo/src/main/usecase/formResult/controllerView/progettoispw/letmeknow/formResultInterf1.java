@@ -6,6 +6,7 @@ import javafx.scene.control.Slider;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import progettoispw.letmeknow.bean.FormResultBean;
 import progettoispw.letmeknow.bean.FormToTakeStatusBean;
 
 public class formResultInterf1 {
@@ -19,7 +20,7 @@ public class formResultInterf1 {
     ImageView [] images;
     @FXML
     Text by;
-    FormToTakeStatusBean bean ;
+    FormResultBean bean ;
     PageMenu controller =new PageMenu();
     int [] values;
     public void initialize(){
