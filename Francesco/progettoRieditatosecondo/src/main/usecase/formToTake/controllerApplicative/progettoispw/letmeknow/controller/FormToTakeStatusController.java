@@ -1,11 +1,13 @@
 package progettoispw.letmeknow.controller;
 
 import progettoispw.letmeknow.controller.form.ResultForm;
+import progettoispw.letmeknow.controller.utenti.UtenteUsr;
 
 public class FormToTakeStatusController {
     String userid;
     int formid;
     ResultForm form;
+    UtenteUsr user;
     int [] values;
     public FormToTakeStatusController(int inputform){
         ControllerClass factory=new ControllerClass();

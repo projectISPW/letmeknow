@@ -4,6 +4,7 @@ public interface SalvaUtenteMeta {
     int USERID=1;
     int PASSWORD=2;
     int TYPE=3;
+    int START=3;
     int EMAIL=4;
     int EMP=5;
     int HUM=6;
@@ -12,4 +13,7 @@ public interface SalvaUtenteMeta {
     int GOAL=9;
     int END=10;
     int TAG=11;
+    int DATEFORM=13;
+    int ABOUT=13;
+    int CALCULATED=14;
 }

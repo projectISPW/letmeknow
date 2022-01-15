@@ -1,5 +1,8 @@
 package progettoispw.letmeknow.controller.form;
 
+import progettoispw.letmeknow.controller.ControllerClass;
+import progettoispw.letmeknow.controller.utenti.UtenteUsr;
+
 public class ResultForm {
     private String userid;
     private int formid;
@@ -25,20 +28,22 @@ public class ResultForm {
         }
     }
     private void queryComplete(){
-        param= formData.queryParam(userid);
+        ControllerClass factory=new ControllerClass();
+        UtenteUsr user= factory.getUserUSR();
         date=formData.queryData(userid,formid);
         if(date ==null){
+            formData.setCalculated(userid,formid);
+            user.setParams();
             formData.close(userid,formid);
+            date=formData.queryData(userid,formid);
         }
+        param= formData.queryParamForm(userid,formid);
+        System.out.println("DATA DEL FORM RESULT"+date);
     }
     public boolean setRisposte(int[] input){
         complete=0;
         for(int i=0;i<input.length;i++)System.out.println(input[i]);
         for(int i:input)if(i!=-1)++complete;
-        if(complete==6){
-            formData.close(userid,formid);
-            queryComplete();
-        }
         return formData.setAnswer(userid,formid,input);
     }
     public int[] getRisposte(){
@@ -51,7 +56,6 @@ public class ResultForm {
         return param;
     }
     public String getDate() {
-
         return date;
     }
 }

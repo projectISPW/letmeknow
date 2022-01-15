@@ -117,4 +117,19 @@ public class UtenteSQL extends Query implements SalvaUtenteMeta {
             return false;
         }
     }
+    public ResultSet getResult(String userid){
+        try {
+            return rst=queryResult(stmt,userid);
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public void setCalculated(String userid,int formid){
+        setCalculated(stmt,userid,formid);
+    }
+    public void setParams(String userid,int [] params ){
+        setParams(stmt,userid,params);
+    }
 }

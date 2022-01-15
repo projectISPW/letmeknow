@@ -47,6 +47,23 @@ public class FormSQL extends Query{
             return null;
         }
     }
+    public int [] queryParamForm (String userid,int formid){
+        try{
+            int [] param=new int[3];
+            int indice=0;
+            rst=takeParamForm(stmt,userid,formid);
+            while(rst.next()){
+                param[indice++]=Integer.parseInt(rst.getString(indice));
+                param[indice++]=Integer.parseInt(rst.getString(indice));
+                param[indice++]=Integer.parseInt(rst.getString(indice));
+                //param[indice]=Integer.parseInt(rst.getString(indice));
+            }
+            return param;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return null;
+        }
+    }
     public Boolean close(String userid,int formid){
             int [] param=queryParam(userid);
             return close(stmt,userid,formid,param);
@@ -62,6 +79,9 @@ public class FormSQL extends Query{
                 e.printStackTrace();
             }
             return null;
+    }
+    public Boolean setCalculated(String userid,int formid){
+        return setCalculated(stmt,userid,formid);
     }
 
     }

@@ -11,21 +11,21 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="736.0" prefWidth="414.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="progettoispw.letmeknow.formResultInterf1">
+<AnchorPane prefHeight="736.0" prefWidth="414.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="progettoispw.letmeknow.form1ResultInterf1">
    <children>
       <Group layoutX="-16.0" layoutY="681.0">
          <children>
-            <Button layoutX="281.0" layoutY="0.5" mnemonicParsing="false" prefHeight="52.0" prefWidth="146.0" styleClass="button_bar">
+            <Button layoutX="281.0" layoutY="0.5" mnemonicParsing="false" onAction="#goChat" prefHeight="52.0" prefWidth="146.0" styleClass="button_bar">
                <graphic>
                   <FontAwesomeIcon fill="#377dff" glyphName="PAPER_PLANE" opacity="0.5" size="20" text="" />
                </graphic>
             </Button>
-            <Button layoutY="0.5" mnemonicParsing="false" prefHeight="33.0" prefWidth="146.0" styleClass="button_bar">
+            <Button layoutY="0.5" mnemonicParsing="false" onAction="#goBack" prefHeight="33.0" prefWidth="146.0" styleClass="button_bar">
                <graphic>
                   <FontAwesomeIcon fill="#377dff" glyphName="TASKS" size="50" />
                </graphic>
             </Button>
-            <Button layoutX="147.0" layoutY="0.5" mnemonicParsing="false" prefHeight="52.0" prefWidth="142.0" styleClass="button_bar">
+            <Button layoutX="147.0" layoutY="0.5" mnemonicParsing="false" onAction="#goHome" prefHeight="52.0" prefWidth="142.0" styleClass="button_bar">
                <graphic>
                   <FontAwesomeIcon fill="#377dff" glyphName="HOME" opacity="0.5" size="20" />
                </graphic>
@@ -34,7 +34,7 @@
          </children>
       </Group>
       <Text fx:id="idForm" layoutX="152.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" styleClass="textContent_signup" text="Form 1" wrappingWidth="104.99024963378906" />
-      <Button layoutX="41.0" layoutY="58.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="35.0" styleClass="Back_Row">
+      <Button layoutX="41.0" layoutY="58.0" mnemonicParsing="false" onAction="#goBack" prefHeight="30.0" prefWidth="35.0" styleClass="Back_Row">
          <graphic>
             <FontAwesomeIcon fill="WHITE" glyphName="ARROW_LEFT" size="20" />
          </graphic>

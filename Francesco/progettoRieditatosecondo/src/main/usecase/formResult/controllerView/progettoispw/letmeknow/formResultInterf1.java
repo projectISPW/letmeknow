@@ -10,6 +10,8 @@ import progettoispw.letmeknow.bean.FormToTakeStatusBean;
 
 public class formResultInterf1 {
     @FXML
+    Text idForm;
+    @FXML
     ImageView empathySlider,humorSlider,positivitySlider;
     ImageView [] param;
     @FXML
@@ -17,7 +19,8 @@ public class formResultInterf1 {
     ImageView [] images;
     @FXML
     Text by;
-    FormToTakeStatusBean bean =new FormToTakeStatusBean(1);
+    FormToTakeStatusBean bean ;
+    PageMenu controller =new PageMenu();
     int [] values;
     public void initialize(){
         values=bean.exitValStatus();
@@ -42,4 +45,17 @@ public class formResultInterf1 {
         Image immagine=new Image(getClass().getResourceAsStream(url));
         image.setImage(immagine);
     }
+    @FXML
+    public void goBack(ActionEvent actionEvent) {
+        controller.switchToPersonalForm(actionEvent);
+    }
+    @FXML
+    public void goChat(ActionEvent actionEvent) {
+        controller.switchToChat(actionEvent);
+    }
+    @FXML
+    public void goHome(ActionEvent event){
+        controller.switchToHome(event);
+    }
+
 }

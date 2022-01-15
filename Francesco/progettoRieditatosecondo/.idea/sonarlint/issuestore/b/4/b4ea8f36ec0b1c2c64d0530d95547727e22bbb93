@@ -1,0 +1,16 @@
+
+V	java:S125"<This block of commented-out lines of code should be removed.(ÛàÕàıÿÿÿÿ
+N	java:S106("9Replace this use of System.out or System.err by a logger.(ï¤Œ¯
+S	java:S106,"9Replace this use of System.out or System.err by a logger.(µ™¡Òÿÿÿÿÿ
+”
+java:S11303"yRemove the declaration of thrown exception 'java.lang.ClassNotFoundException', as it cannot be thrown from method's body.(ıÚ«œıÿÿÿÿ
+‰
+java:S11303"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(ıÚ«œıÿÿÿÿ
+’
+java:S11303"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(ıÚ«œıÿÿÿÿ
+f
+java:S1128"KRemove this unused import 'progettoispw.letmeknow.controller.form.FormSQL'.(½²Ñşÿÿÿÿ
+C
+java:S1604"(Make this anonymous inner class a lambda(ùë²¥şÿÿÿÿ
+k
+java:S3655%"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ŸªÍäùÿÿÿÿ

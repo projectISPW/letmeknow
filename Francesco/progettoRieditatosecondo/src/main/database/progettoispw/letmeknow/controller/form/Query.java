@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class Query {
+public class Query implements FormMeta {
     private String sql;
     public ResultSet queryResults(Statement stmt, String userid ,int formid) {
         ResultSet rst=null;
@@ -14,7 +14,7 @@ public class Query {
         if(!stmt.executeQuery(sql).next()){
             System.out.println("first time");
             rst.close();
-            sql=String.format("INSERT INTO `forms` (`formid`, `userid`, `q1`, `q2`, `q3`, `q4`, `q5`, `q6`) VALUES ('%d', '%s', '-1', '-1', '-1', '-1', '-1', '-1');",formid,userid);
+            sql=String.format("INSERT INTO `forms` (`formid`, `userid`, `q1`, `q2`, `q3`, `q4`, `q5`, `q6`,`about`) VALUES ('%d', '%s', '-1', '-1', '-1', '-1', '-1', '-1','%s');",formid,userid,FORM[formid-1]);
             stmt.executeUpdate(sql);
             sql=String.format(" SELECT * \n FROM forms where userid = '%s' and formid='%d' ",userid,formid);
             return stmt.executeQuery(sql);
@@ -47,6 +47,14 @@ public class Query {
             return null;
         }
     }
+    public ResultSet takeParamForm(Statement stmt,String userid,int formid){
+        try {
+            String sql=String.format("SELECT emp,hum,pos FROM forms where userid='%s' AND formid='%d';",userid,formid);
+            return stmt.executeQuery(sql);
+        } catch (SQLException throwables) {
+            return null;
+        }
+    }
     public ResultSet takeDate(Statement stmt,String userid,int formid){
         try {
             String sql=String.format("SELECT `by` FROM forms where userid='%s'AND formid=%d;",userid,formid);
@@ -56,11 +64,20 @@ public class Query {
             return null;
         }
     }
+    public Boolean setCalculated(Statement stmt,String userid,int formid){
+        try {
+            String sql=String.format(" UPDATE  forms \n set `calculated`=1 \n WHERE (`formid` = %d) and (`userid` = '%s');\n", formid,userid);
+            stmt.executeUpdate(sql);
+            return true;
+        } catch (SQLException throwables) {
+            return false;
+        }
+    }
     public Boolean close(Statement stmt,String userid,int formid,int[] param){
         try {
             for(int i=0;i<param.length;i++)System.out.println(param[i]);
             String sql=String.format(" UPDATE  forms \n set `emp` = %d, `hum` = %d, `pos` = %d,`by`=CURRENT_TIMESTAMP \n WHERE (`formid` = %d) and (`userid` = '%s');\n",
-                                                                        param[0],param[1],param[2],2,"0000000");
+                                                                        param[0],param[1],param[2],formid,userid);
             stmt.executeUpdate(sql);
             return true;
         } catch (SQLException throwables) {
