@@ -94,7 +94,10 @@ public class homepagecEditcontrollerInterf1 {
         controller.switchToPersonalForm(event);
     }
     @FXML
-    protected void takeTheForm(ActionEvent event) throws IOException {
-        controller.switchTo("formToTake/interf1.fxml",event,"fill the form");
+    protected void takeForm(ActionEvent event){
+        GoToFormBean takeFormBean=new GoToFormBean();
+        int val=takeFormBean.getFormid();
+        String name="formToTake/form"+val+"interf1.fxml";
+        controller.switchTo(name,event,"fill the form");
     }
 }

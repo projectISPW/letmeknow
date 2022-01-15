@@ -27,9 +27,9 @@ public class FormSQL extends Query{
             return null;
         }
     }
-    public Boolean setAnswer(String userid,int formid,int [] answer){
-        return(setResults(stmt,userid,formid,answer));
-      }
+    public Boolean setAnswer(String userid, int formid, int[] answer, int complete){
+        return(setResults(stmt,userid,formid,answer,complete));
+    }
     public int [] queryParam (String userid){
         try{
             int [] param=new int[3];
@@ -65,23 +65,26 @@ public class FormSQL extends Query{
         }
     }
     public Boolean close(String userid,int formid){
-            int [] param=queryParam(userid);
-            return close(stmt,userid,formid,param);
-        }
+        int [] param=queryParam(userid);
+        return close(stmt,userid,formid,param);
+    }
     public String queryData(String userid,int formid){
-            try {
-                String out;
-                rst=takeDate(stmt,userid,formid);
-                while(rst.next()){
-                    out=rst.getString(1);
-                    return out;
+        try {
+            String out;
+            rst=takeDate(stmt,userid,formid);
+            while(rst.next()){
+                out=rst.getString(1);
+                return out;
             }} catch (SQLException e) {
-                e.printStackTrace();
-            }
-            return null;
+            e.printStackTrace();
+        }
+        return null;
     }
     public Boolean setCalculated(String userid,int formid){
         return setCalculated(stmt,userid,formid);
     }
-
+    public ResultSet newForm(String userid){
+        return newForm(stmt,userid);
     }
+
+}

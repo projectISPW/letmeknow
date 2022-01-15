@@ -33,7 +33,7 @@
             <Line endX="349.9999694824219" endY="13.999998092651367" layoutX="79.4999771118164" layoutY="-13.0" startX="-64.0000228881836" startY="13.999998092651367" styleClass="line" />
          </children>
       </Group>
-      <Text fx:id="idForm" layoutX="152.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" styleClass="textContent_signup" text="Form 1" wrappingWidth="104.99024963378906" />
+      <Text fx:id="idForm" layoutX="152.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" styleClass="textContent_signup" text="Form 2" wrappingWidth="104.99024963378906" />
       <Button layoutX="41.0" layoutY="58.0" mnemonicParsing="false" onAction="#goBack" prefHeight="30.0" prefWidth="35.0" styleClass="Back_Row">
          <graphic>
             <FontAwesomeIcon fill="WHITE" glyphName="ARROW_LEFT" size="20" />
@@ -43,7 +43,7 @@
       <Text fx:id="by" fill="#7836ea" layoutX="199.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #7836ea;" styleClass="param" text=" 22/11/2021" />
       <Text layoutX="61.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: 100;" styleClass="param" text="Empathy:" />
       <Text layoutX="61.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="param" text="Humor:" />
-      <Text layoutX="61.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="param" text="Potitivity:" />
+      <Text layoutX="61.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="param" text="Optimism:" />
       <ImageView fx:id="positivitySlider" fitHeight="50.0" fitWidth="155.0" layoutX="181.0" layoutY="195.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../homepage/photo/val3.png" />

@@ -1,14 +1,10 @@
 package progettoispw.letmeknow.controller.search;
 
-import progettoispw.letmeknow.controller.utenti.SalvaUtente;
 import progettoispw.letmeknow.controller.utenti.SalvaUtenteMeta;
-import progettoispw.letmeknow.controller.utenti.UtenteSQL;
 import progettoispw.letmeknow.controller.utenti.UtenteUsr;
 
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.util.List;
 import java.util.Vector;
 
 public class Search implements SalvaUtenteMeta {

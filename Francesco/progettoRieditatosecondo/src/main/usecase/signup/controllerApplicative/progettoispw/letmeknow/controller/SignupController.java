@@ -1,10 +1,6 @@
 package progettoispw.letmeknow.controller;
 
-import progettoispw.letmeknow.controller.chat.Message;
-import progettoispw.letmeknow.controller.chat.Messages;
 import progettoispw.letmeknow.controller.utenti.SalvaUtente;
-
-import java.util.Vector;
 
 public class SignupController {
    private SalvaUtente user;

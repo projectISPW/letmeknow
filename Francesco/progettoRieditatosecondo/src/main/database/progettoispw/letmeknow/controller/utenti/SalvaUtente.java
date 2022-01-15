@@ -1,5 +1,9 @@
 package progettoispw.letmeknow.controller.utenti;
 
+import progettoispw.letmeknow.controller.utenti.JavaMailUtil;
+import progettoispw.letmeknow.controller.utenti.SalvaUtenteMeta;
+import progettoispw.letmeknow.controller.utenti.UtenteSQL;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
@@ -7,7 +11,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class SalvaUtente implements SalvaUtenteMeta{
+public class SalvaUtente implements SalvaUtenteMeta {
     protected String userid;
     private String password;
     private String type;

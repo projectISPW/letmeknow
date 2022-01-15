@@ -1,7 +1,6 @@
 package progettoispw.letmeknow.controller;
 
 import progettoispw.letmeknow.controller.search.Search;
-import progettoispw.letmeknow.controller.utenti.SalvaUtente;
 import progettoispw.letmeknow.controller.utenti.UtenteUsr;
 
 public class searchController {

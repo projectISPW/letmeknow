@@ -7,8 +7,6 @@ u
 Esrc/main/database/progettoispw/letmeknow/controller/search/Query.java,a\a\aa15d7f0217d4bce81fee4798b1a61ac2abadf17
 c
 3src/main/java/META-INF/javamail.default.address.map,1\f\1f1bbaaeb48f477279e16174790363953a3aff44
-i
-9src/main/java/progettoispw/letmeknow/MainApplication.java,b\4\b4ea8f36ec0b1c2c64d0530d95547727e22bbb93
 ê
 `src/main/usecase/formToTake/controllerView/progettoispw/letmeknow/takeformControllerInterf1.java,9\7\97593250b0a82c2b1e95fdb814b597359632f4a6
 à
@@ -27,11 +25,7 @@ l
 ^src/main/usecase/homepage/controllerView/progettoispw/letmeknow/HomepagecontrollerInterf1.java,2\6\26d15b1cdabefbaf4c36350ffb49815fd94de38f
 û
 nsrc/main/usecase/formCollectionResults/controllerView/progettoispw/letmeknow/formCollectionResultsInterf1.java,8\b\8b11053a52dd7d1ff8b783c6c37ac31e4b307b40
-
-Osrc/main/database/progettoispw/letmeknow/controller/utenti/SalvaUtenteMeta.java,f\f\ff6457dfcf528752d72eb769eecd13e1ebec48d3
 â
 Ysrc/main/usecase/formResult/controllerView/progettoispw/letmeknow/form3ResultInterf1.java,d\4\d449b132bde554d2c52b02e1414fa4b7e31613d2
-â
-Ysrc/main/usecase/formResult/controllerView/progettoispw/letmeknow/form2ResultInterf1.java,1\b\1b23338acbd8cf3f34e017e89855a3913b36b918
 y
 Isrc/main/database/progettoispw/letmeknow/controller/utenti/UtenteSQL.java,2\4\2450874ea181056757dcb655054306cfb2d8b624

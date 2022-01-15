@@ -1,7 +1,6 @@
 package progettoispw.letmeknow.controller.utenti;
 
 import java.sql.SQLException;
-import java.util.List;
 import java.util.Vector;
 
 public class UtenteUsr extends SalvaUtente {
@@ -63,24 +62,24 @@ public class UtenteUsr extends SalvaUtente {
     public Integer[] getData(){return personalObb.getData();}
     public void setPersonalDes(String newS)  {
 
-            personalDescrip=newS;
-            userData.setDescription(userid,newS);
+        personalDescrip=newS;
+        userData.setDescription(userid,newS);
 
 
     }
     public void setPersonalGoal(String newS)  {
-            personalObb.setObiettivo(newS);
-            userData.setGoal(userid,newS);
+        personalObb.setObiettivo(newS);
+        userData.setGoal(userid,newS);
 
     }
     public void setPersonalTag(String newS)  {
-            personalObb.setTag(newS);
-            userData.setTag(userid,newS);
+        personalObb.setTag(newS);
+        userData.setTag(userid,newS);
 
     }
     public void setPersonalData(Integer [] value)  {
-            personalObb.setData(value);
-            userData.setData(userid,personalObb.getDataStr_American());
+        personalObb.setData(value);
+        userData.setData(userid,personalObb.getDataStr_American());
 
     }
     public int media(int n1,int n2){
@@ -95,46 +94,46 @@ public class UtenteUsr extends SalvaUtente {
     }
     public void queryResult() {
         try{
-        boolean edited=false;
-        rst = userData.getResult(userid);
-        char[] about;
-        Vector<Integer> calculated=new Vector<Integer>();
-        int empMed = 0, humMed = 0, posMed = 0;
-        while (rst.next()) {
-            edited=true;
-            if (rst.getString(CALCULATED).equals("1")) {
-                System.out.println("i am here ");
-                about = rst.getString(ABOUT).toCharArray();
-                for (int i = 0; i < about.length; i++) {
-                    System.out.println("valori in entrata valore .:"+rst.getString(START+i));
-                    switch (about[i]) {
-                        case '1': {
-                            empMed += Integer.parseInt(rst.getString(START + i));
-                            System.err.println("param i entrata"+empMed);
-                            break;
-                        }
-                        case '2': {
-                            humMed += Integer.parseInt(rst.getString(START + i));
-                            break;
-                        }
-                        case '3': {
-                            posMed += Integer.parseInt(rst.getString(START + i));
-                            break;
+            boolean edited=false;
+            rst = userData.getResult(userid);
+            char[] about;
+            Vector<Integer> calculated=new Vector<Integer>();
+            int empMed = 0, humMed = 0, posMed = 0;
+            while (rst.next()) {
+                edited=true;
+                if (rst.getString(CALCULATED).equals("1")) {
+                    System.out.println("i am here ");
+                    about = rst.getString(ABOUT).toCharArray();
+                    for (int i = 0; i < about.length; i++) {
+                        System.out.println("valori in entrata valore .:"+rst.getString(START+i));
+                        switch (about[i]) {
+                            case '1': {
+                                empMed += Integer.parseInt(rst.getString(START + i));
+                                System.err.println("param i entrata"+empMed);
+                                break;
+                            }
+                            case '2': {
+                                humMed += Integer.parseInt(rst.getString(START + i));
+                                break;
+                            }
+                            case '3': {
+                                posMed += Integer.parseInt(rst.getString(START + i));
+                                break;
+                            }
                         }
                     }
+                    calculated.add(Integer.parseInt(rst.getString(1)));
+                    emp=media(empMed,emp);
+                    hum=media(humMed,hum);
+                    pos=media(posMed,pos);
                 }
-                calculated.add(Integer.parseInt(rst.getString(1)));
-                emp=media(empMed,emp);
-                hum=media(humMed,hum);
-                pos=media(posMed,pos);
             }
-        }
-        for(Integer id :calculated)userData.setCalculated(userid,id);
-        if(edited){
-            System.err.println("parametri aggiornati emp"+emp+"hum"+hum+"pos"+pos);
-            userData.setParams(userid,new int[]{emp,hum,pos});
-        }
-    }catch (SQLException throwables) {
+            for(Integer id :calculated)userData.setCalculated(userid,id);
+            if(edited){
+                System.err.println("parametri aggiornati emp"+emp+"hum"+hum+"pos"+pos);
+                userData.setParams(userid,new int[]{emp,hum,pos});
+            }
+        }catch (SQLException throwables) {
             throwables.printStackTrace();
         }
     }
