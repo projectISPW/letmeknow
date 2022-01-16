@@ -18,7 +18,7 @@ public class PsicologistHomeController {
         System.out.println("Prompt Password: "+pw.getText());
     }
     @FXML
-    protected void backToLogin(ActionEvent event) throws IOException {
-        controller.backTo(event);
+    protected void backToLogin() throws IOException {
+        controller.backTo();
     }
 }

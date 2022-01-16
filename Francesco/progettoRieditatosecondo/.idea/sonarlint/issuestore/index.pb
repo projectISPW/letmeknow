@@ -1,8 +1,4 @@
 
-
-Osrc/main/patterns/singleton/progettoispw/letmeknow/controller/ConnectionDB.java,0\a\0a1b2e9c68fd77d316114ccacd883330601c4270
-s
-Csrc/main/database/progettoispw/letmeknow/controller/chat/Query.java,e\1\e1aec5b7c581abb4a27245f3f670d82c22294d36
 u
 Esrc/main/database/progettoispw/letmeknow/controller/search/Query.java,a\a\aa15d7f0217d4bce81fee4798b1a61ac2abadf17
 c
@@ -19,17 +15,9 @@ qsrc/main/usecase/resultSearch/controllerApplicative/progettoispw/letmeknow/cont
 _src/main/usecase/resultSearch/controllerApplicative/progettoispw/letmeknow/bean/innerUsers.java,e\1\e13f205c92e935674b8fe1545406b3bb2bbcdec3
 Ž
 ^src/main/usecase/homepage/controllerView/progettoispw/letmeknow/HomepagecontrollerInterf1.java,2\6\26d15b1cdabefbaf4c36350ffb49815fd94de38f
-y
-Isrc/main/database/progettoispw/letmeknow/controller/utenti/UtenteSQL.java,2\4\2450874ea181056757dcb655054306cfb2d8b624
-i
-9src/main/java/progettoispw/letmeknow/MainApplication.java,b\4\b4ea8f36ec0b1c2c64d0530d95547727e22bbb93
-s
-Csrc/main/database/progettoispw/letmeknow/controller/form/Query.java,6\7\67487f65008d751322d96e8d60acb67a58b47628
-v
-Fsrc/main/database/progettoispw/letmeknow/controller/form/FormMeta.java,4\1\41c0d16cd253664bec99aed41550556098deaf41
 
 Osrc/main/usecase/java/progettoispw/letmeknow/controller/GoToFormController.java,0\6\06f76e2c6a8db1ab080a261dabe1049a8a376007
 s
 Csrc/main/usecase/java/progettoispw/letmeknow/bean/GoToFormBean.java,0\c\0cda14e7ca484f22abf9acc4f93df0d43d6a30b8
-{
-Ksrc/main/database/progettoispw/letmeknow/controller/utenti/SalvaUtente.java,8\e\8e362fa360ad1e974aee01401179056f2b9342ad
+
+Osrc/main/database/progettoispw/letmeknow/controller/utenti/SalvaUtenteMeta.java,f\f\ff6457dfcf528752d72eb769eecd13e1ebec48d3

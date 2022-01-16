@@ -16,7 +16,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="736.0" prefWidth="414.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="progettoispw.letmeknow.takeform2ControllerInterf1">
    <children>
 
-      <ScrollPane fx:id="ScrollBar" layoutX="-14.0" layoutY="191.0" prefHeight="565.0" prefWidth="410.0">
+      <ScrollPane fx:id="ScrollBar" layoutX="3.0" layoutY="116.0" prefHeight="565.0" prefWidth="410.0">
          <content>
             <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1350.0" prefWidth="390.0" stylesheets="@../css.css">
                <children>

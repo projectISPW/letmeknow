@@ -22,7 +22,7 @@ public class Page {
     private int index;
     private boolean onfullScreen;
     public void back(ActionEvent event){
-            //title1=stage.getTitle();
+            title1=stage.getTitle();
             stage1 = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene1 = ((Node) event.getSource()).getScene();
             //title1 = stage1.getTitle();
@@ -56,8 +56,7 @@ public class Page {
             System.err.println("interfaccia nulla "+name);
         }
     }
-    public void backTo(ActionEvent event){
-        System.out.println(stage.getWidth());
+    public void backTo(){
         stage=stage1;
         scene=scene1;
         stage.setScene(scene);

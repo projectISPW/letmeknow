@@ -31,6 +31,7 @@ public class JavaMailUtil {
             return false;
         }
     }
+
     public void setText(String input){
         text=input;
     }

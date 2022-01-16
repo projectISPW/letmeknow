@@ -32,7 +32,7 @@ public class RecoverPswdControllerInterf1
     }
     @FXML
     protected void backToLogin(ActionEvent event)  {
-        controller.backTo(event);
+        controller.switchTo("login/interf1.fxml",event,"login");
     }
 
 }

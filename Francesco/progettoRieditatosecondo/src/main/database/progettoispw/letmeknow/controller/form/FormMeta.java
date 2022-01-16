@@ -2,7 +2,6 @@ package progettoispw.letmeknow.controller.form;
 
 public interface FormMeta {
     int FORMID=1;
-    int COMPLETE=9;
     String FORM1="112233";
     String FORM2="123123";
     String FORM3="123321";

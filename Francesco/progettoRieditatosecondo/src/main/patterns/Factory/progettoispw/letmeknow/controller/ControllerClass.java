@@ -1,9 +1,10 @@
 package progettoispw.letmeknow.controller;
 
+import progettoispw.letmeknow.bean.HomepagePsicologistBean;
 import progettoispw.letmeknow.controller.chat.Messages;
 import progettoispw.letmeknow.controller.search.Search;
 import progettoispw.letmeknow.controller.utenti.SalvaUtente;
-import progettoispw.letmeknow.controller.utenti.UtentePsy;
+import progettoispw.letmeknow.controller.utentiPsy.UtentePsy;
 import progettoispw.letmeknow.controller.utenti.UtenteUsr;
 
 public class ControllerClass {
@@ -11,11 +12,10 @@ public class ControllerClass {
     static  UtentePsy userP;
     static Search userRes;
     static Messages  chat;
-    private String userID;
+    static HomepagePsicologistController controllerPsy;
     public void  controllerUser(String userid){//la istanzia il controller della login
         userU=null;
         userP=null;
-        userID=userid;
         SalvaUtente actual =new SalvaUtente(userid);
         switch(actual.getType()){
             case "usr":{
@@ -27,8 +27,8 @@ public class ControllerClass {
         }
     }
     public  UtenteUsr getUserUSR(){
-        return  userU;
-    }
+        return  userU;    }
+    public UtentePsy getUserPsy(){return userP;}
     public void  controllerUsers(){//la istanzia il controller della login
         userRes =new Search(userU.getUserid());
     }
@@ -41,4 +41,5 @@ public class ControllerClass {
     public Messages getChat(){
         return chat;
     }
+
 }

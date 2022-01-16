@@ -16,8 +16,8 @@ public class SettingsController implements Initializable {
     @FXML
     private ComboBox<String> comb;
     @FXML
-    protected void goBack(ActionEvent event) throws IOException {
-        controller.backTo(event);
+    protected void goBack() throws IOException {
+        controller.backTo();
     }
     @FXML
     protected void goEditProf(ActionEvent event) throws IOException {

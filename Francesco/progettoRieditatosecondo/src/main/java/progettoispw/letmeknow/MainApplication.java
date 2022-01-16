@@ -11,7 +11,9 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import progettoispw.letmeknow.bean.HomepagePsicologistBean;
 import progettoispw.letmeknow.controller.form.FormSQL;
+import progettoispw.letmeknow.controller.utentiPsy.UtentePsy;
 
 import java.io.IOException;
 import java.sql.SQLException;
