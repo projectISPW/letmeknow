@@ -34,4 +34,7 @@ public class ConnectionDB {
         }
         return stmt;
     }
+    public void close(){
+
+    }
 }

@@ -46,8 +46,8 @@ public class SignupControllerInterf1 {
         }
     }
     @FXML
-    protected void backToLogin(ActionEvent event) throws IOException {
-        controller.switchTo("login/interf1.fxml",event,"Login");
+    protected void backToLogin() {
+        controller.backTo();
     }
     private boolean check(Boolean bool,Label lab){
         if(bool==false)lab.setOpacity(1);
@@ -55,7 +55,7 @@ public class SignupControllerInterf1 {
     }
 
     @FXML
-    protected void Save(ActionEvent event) throws IOException {
+    protected void save() throws IOException {
         Boolean bool;
         String[] arr;
         int [] val;
@@ -75,23 +75,14 @@ public class SignupControllerInterf1 {
         arr= new String[]{lab1.getText(), lab2.getText(), lab3.getText()};
         val=bean.checkVal(arr);
         bool=true;
-        System.out.println(val);
         if(val==null)bool=false;
         if(check(bool,slCheck)==false)return;
         bool=bean.signupUSR(pswd.getText(),email.getText(),val, description.getText(), goal.getText());
-        if(bool)backToLogin(event);
+        if(bool)backToLogin();
         else{
 
             ///allert
 
         }
     }
-    @FXML
-    protected void takeForm(ActionEvent event){
-        GoToFormBean takeFormBean=new GoToFormBean();
-        int val=takeFormBean.getFormid();
-        String name="formToTake/form"+val+"interf1.fxml";
-        controller.switchTo(name,event,"fill the form");
-    }
-
 }

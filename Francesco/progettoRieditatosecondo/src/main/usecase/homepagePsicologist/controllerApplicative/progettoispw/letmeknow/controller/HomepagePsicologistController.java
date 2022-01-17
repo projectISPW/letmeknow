@@ -46,4 +46,7 @@ public class HomepagePsicologistController implements FormMeta {
     public void setSelected(int selectedInp){
         user.setSelected(innerList[selectedInp-1]);
     }
+    public boolean setFeed(String input){
+        return user.suggestQuestion(input);
+    }
 }

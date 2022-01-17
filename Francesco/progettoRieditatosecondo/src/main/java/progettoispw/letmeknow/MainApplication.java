@@ -12,6 +12,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import progettoispw.letmeknow.bean.HomepagePsicologistBean;
+import progettoispw.letmeknow.controller.ConnectionDB;
 import progettoispw.letmeknow.controller.form.FormSQL;
 import progettoispw.letmeknow.controller.utentiPsy.UtentePsy;
 
@@ -39,6 +40,8 @@ public class MainApplication extends Application {
                 if(alert.showAndWait().get() == ButtonType.OK){
                     //Log Out Account and Exit Program
                     // ...
+                    ConnectionDB connection =new ConnectionDB();
+                    connection.close();
                     System.out.println("Prompt: On Log Out phase");
                     Platform.exit();
                     System.exit(0);

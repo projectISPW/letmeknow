@@ -7,11 +7,13 @@ import static java.lang.Thread.sleep;
 
 public class RecoverPswdBean {
     RecoverPswdController controller;
+    SignupBean checkBean;
     public  RecoverPswdBean(){
+        checkBean=new SignupBean();
         controller=new RecoverPswdController();
     }
     public boolean sendMail(String input){
-        if(input.contains("@"))
+        if(checkBean.checkEmail(input))
         {
             return controller.sendMail(input);
         }

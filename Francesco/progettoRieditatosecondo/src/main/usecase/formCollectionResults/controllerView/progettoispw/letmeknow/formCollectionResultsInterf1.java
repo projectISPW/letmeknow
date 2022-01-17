@@ -32,10 +32,6 @@ public class formCollectionResultsInterf1 {
     protected void goToHome(ActionEvent event) throws IOException {
         controller.switchTo("homepage/interf1.fxml",event,"Home");
     }
-    @FXML
-    protected void takeTheForm(ActionEvent event) throws IOException {
-        controller.switchTo("formToTake/form1interf1.fxml",event,"homepage");
-    }
     private void which(int i,ActionEvent event){
         bean=new FormToTakeStatusBean(i);
         String name,title;

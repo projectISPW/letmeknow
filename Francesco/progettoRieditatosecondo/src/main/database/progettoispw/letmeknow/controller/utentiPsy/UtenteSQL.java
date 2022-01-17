@@ -18,7 +18,7 @@ public class UtenteSQL extends Query {
             return null;
         }
     }
-    public void suggestForm(String from,String what){
-        suggestForm(stmt,from,what);
+    public boolean suggestForm(String from,String what){
+        return suggestForm(stmt,from,what);
     }
 }

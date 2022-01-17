@@ -49,4 +49,8 @@ public class HomepagePsicologistBean {
     public void setSelected(int selected) {
        controller.setSelected(selected);
     }
+    public boolean suggestForm(String input){
+        if(!input.equals(""))return controller.setFeed(input);
+        return false;
+    }
 }

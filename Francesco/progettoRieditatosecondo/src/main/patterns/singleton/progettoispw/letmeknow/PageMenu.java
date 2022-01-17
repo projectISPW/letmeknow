@@ -5,7 +5,6 @@ import java.io.IOException;
 public  class PageMenu extends Page {
 
     public void switchToSettings(ActionEvent event)  {
-        back(event);
         this.switchTo("settings/interf1.fxml",event,"Settings");
     }
     public void switchToChat(ActionEvent event)  {

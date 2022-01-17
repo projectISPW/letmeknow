@@ -14,4 +14,7 @@ public class SignupController {
    public boolean signup(String password,String type,String email,int [] val,String description,String goal){
        return user.registrationUSR(password,email,type,val,description,goal);
    }
+   public boolean signup(String password,String type,String email){
+       return user.registrationPSY(password,email,type);
+   }
 }

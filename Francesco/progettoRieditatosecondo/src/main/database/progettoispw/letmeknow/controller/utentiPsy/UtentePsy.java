@@ -16,9 +16,8 @@ public class UtentePsy extends SalvaUtente implements FormMeta {
         userDataPsy=new UtenteSQL();
         form=new Form();
     }
-
-    public void suggestQuestion(String from,String textInput) {
-        userDataPsy.suggestForm(from,textInput);
+    public boolean suggestQuestion(String textInput) {
+        return userDataPsy.suggestForm(userid,textInput);
     }
     public Vector<Form> getSum(){
         return form.getSum(listForms);

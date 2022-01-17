@@ -4,8 +4,6 @@ import progettoispw.letmeknow.controller.ConnectionDB;
 import java.sql.*;
 import java.util.Vector;
 
-import static progettoispw.letmeknow.controller.utenti.Query.*;
-
 public class UtenteSQL extends Query implements SalvaUtenteMeta {
     private ConnectionDB conn=new ConnectionDB() ;
     private Statement stmt=conn.getStatement();
@@ -18,29 +16,16 @@ public class UtenteSQL extends Query implements SalvaUtenteMeta {
             return null;
         }
     }
-
     public void setDescription( String userid, String descr){
-        try {
-            setDescriptionQuery(stmt,userid,"description",descr);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        setDB(stmt,userid,"description",descr);
         return;
     }
     public void setGoal( String userid, String goal) {
-        try {
-            setDescriptionQuery(stmt,userid,"goal",goal);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        setDB(stmt,userid,"goal",goal);
         return;
     }
     public void setTag( String userid, String tag){
-        try {
-            setDescriptionQuery(stmt,userid,"tag",tag);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        setDB(stmt,userid,"tag",tag);
         return;
     }
     public void setData( String userid, String data) {
@@ -51,21 +36,11 @@ public class UtenteSQL extends Query implements SalvaUtenteMeta {
         }
         return;
     }
-    public void setPswd( String userid, String input)  {
-        try {
-            setDataQuery(stmt,userid,input);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return;
+    public boolean setPswd( String userid, String input)  {
+        return setDB(stmt,userid,"password",input);
     }
-    public void setEmail( String userid, String input){
-        try {
-            setDescriptionQuery(stmt,userid,"email",input);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return;
+    public boolean setEmail( String userid, String input){
+        return setDB(stmt,userid,"email",input);
     }
     public String[] recover (String email){
         String [] returnStr=new String[2];
@@ -108,6 +83,15 @@ public class UtenteSQL extends Query implements SalvaUtenteMeta {
             return false;
         }
     }
+    public boolean registration(String uid,String password, String type, String email) {
+        try {
+            newLine(stmt,uid,password,type,email);
+            return true;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return false;
+        }
+    }
     public boolean registration(String uid,String password, String type ,int[] val,String description,String email,String goal ){
         try {
             newLine(stmt,uid,password,type,val,description,email,goal);
@@ -132,4 +116,9 @@ public class UtenteSQL extends Query implements SalvaUtenteMeta {
     public void setParams(String userid,int [] params ){
         setParams(stmt,userid,params);
     }
+    public boolean feed(String userid,String input){
+        return feed(stmt,userid,input);
+    }
+
+
 }

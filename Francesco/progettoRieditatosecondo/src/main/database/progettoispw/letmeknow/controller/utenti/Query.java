@@ -16,11 +16,16 @@ public class Query {
         return stmt.executeQuery(sql);
     }
 
-    protected void setDescriptionQuery(Statement stmt, String iduser ,String what,String edit)throws SQLException {
-        String sql=String.format(" UPDATE  utenti\n set %s='%s'\n WHERE userid = '%s' ;\n",what,edit,iduser);
-        //System.out.println(sql);
-        stmt.executeUpdate(sql);
-       return ;
+    protected boolean setDB(Statement stmt, String iduser ,String what,String edit){
+        try {
+            String sql=String.format(" UPDATE  utenti\n set %s='%s'\n WHERE userid = '%s' ;\n",what,edit,iduser);
+            //System.out.println(sql);
+            stmt.executeUpdate(sql);
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
     protected void setDataQuery(Statement stmt, String iduser ,String edit)throws SQLException {
         String sql=String.format(" UPDATE `utenti` SET `by` = '%s' WHERE (`userid` = '%s');",edit,iduser);
@@ -34,10 +39,17 @@ public class Query {
     }
 
     protected void newLine(Statement stmt,String uid,String password, String type ,int [] val,String description,String email,String goal) throws SQLException{
-
         String sql=String.format("INSERT INTO `utenti` (`userid`, `password`, `type`, `email`, `empathy`, `humor`, `positivity`, `description`, `goal`,`by`)" +
                                                         " VALUES ('%s',         '%s',      '%s',       '%s',    '%d',       '%d',      '%d','%s','%s',current_date+INTERVAL 6 month )\n",
                                                                     uid,password,type,email,val[0],val[1],val[2],description,goal);
+        System.out.println(sql);
+        stmt.executeUpdate(sql);
+        return ;
+    }
+    protected void newLine(Statement stmt, String uid,String password, String type, String email) throws SQLException {
+        String sql=String.format("INSERT INTO `utenti` (`userid`, `password`, `type`, `email`)" +
+                                " VALUES ('%s',         '%s',      '%s',       '%s')\n",
+                                            uid,password,type,email);
         System.out.println(sql);
         stmt.executeUpdate(sql);
         return ;
@@ -65,6 +77,17 @@ public class Query {
             e.printStackTrace();
         }return false;
     }
+    protected boolean feed(Statement stmt,String from,String what){
+        try {
+            String sql=String.format(" INSERT INTO suggest (`from`, `content`,`when`) VALUES ('%s', '%s',CURRENT_TIMESTAMP);",from,what);
+            stmt.executeUpdate(sql);
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    
 
 
 }

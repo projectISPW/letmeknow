@@ -3,6 +3,7 @@ package progettoispw.letmeknow;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import progettoispw.letmeknow.bean.HomepagePsicologistBean;
 
 import java.util.Calendar;
@@ -14,7 +15,8 @@ public class HomepagePsicologistInterf1 {
     Label count1,count2,count3;
     @FXML
     Label month;
-    int val;
+    @FXML
+    TextArea feedback;
     public HomepagePsicologistInterf1(){
         bean=new HomepagePsicologistBean();
     }
@@ -44,5 +46,18 @@ public class HomepagePsicologistInterf1 {
     public void goToResult3(ActionEvent event) {
         bean.setSelected(3);
         controller.switchTo("formResultPsicologist/form3interf1.fxml",event,"users results");
+    }
+    public void suggestForm(){
+        feedback.setStyle("-fx-border-color: white;");
+        boolean bool =bean.suggestForm(feedback.getText());
+        if(bool){
+            feedback.setText("");
+        }
+        else{
+            feedback.setStyle("-fx-border-color: red;");
+        }
+    }
+    public void goToSettings(ActionEvent event ){
+        controller.switchTo("settingsPsicologist/interf1.fxml",event,"Settings");
     }
 }

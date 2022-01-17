@@ -23,6 +23,7 @@ public class SignupBean {
 
     public boolean checkPswd(String str1,String str2){
         if(str1.equals("")||str1.equals(" "))return false;
+        else if(str1.length()>20)return false;
         return str1.equals(str2);
     }
     public boolean checkDescription(String description){
@@ -40,5 +41,8 @@ public class SignupBean {
     }
     public boolean signupUSR(String password,String email,int [] val,String description,String goal){
         return controller.signup(password,"usr",email,val,description,goal);
+    }
+    public boolean signupPSY(String password,String email){
+        return controller.signup(password,"psy",email);
     }
 }

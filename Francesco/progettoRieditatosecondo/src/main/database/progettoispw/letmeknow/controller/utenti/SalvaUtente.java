@@ -1,13 +1,8 @@
 package progettoispw.letmeknow.controller.utenti;
 
-import progettoispw.letmeknow.controller.utenti.JavaMailUtil;
-import progettoispw.letmeknow.controller.utenti.SalvaUtenteMeta;
-import progettoispw.letmeknow.controller.utenti.UtenteSQL;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -15,6 +10,7 @@ public class SalvaUtente implements SalvaUtenteMeta {
     protected String userid;
     private String password;
     private String type;
+    private String email;
     protected UtenteSQL userData;
     protected ResultSet rst;
     private final static Lock mutex = new ReentrantLock(true);
@@ -28,6 +24,7 @@ public class SalvaUtente implements SalvaUtenteMeta {
                 userid = rst.getString(USERID);
                 password=rst.getString(PASSWORD);
                 type=rst.getString(TYPE);
+                email=rst.getString(EMAIL);
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -61,15 +58,24 @@ public class SalvaUtente implements SalvaUtenteMeta {
     public String getUserid(){
         return userid;
     }
-    public void setPassword(String input){
-        userData.setPswd(userid,input);
+    public boolean setPassword(String input){
+        if(userData.setPswd(userid,input)){
+            return sendMail(email);
+        }
+        return false;
     }
     public boolean  checkEmail(String input){
         userData=new UtenteSQL();
         return userData.checkEmail(input);
     }
-    public void setEmail(String input){
-        userData.setEmail(userid,input);
+    public boolean setEmail(String input){
+        if(userData.setEmail(userid,input)){
+            email=input;
+            if(sendMail(email)){
+                return true;
+            }
+        }
+        return false;
     }
     public boolean sendMail(String to) {
         try{
@@ -87,29 +93,41 @@ public class SalvaUtente implements SalvaUtenteMeta {
             return false;
         }
     }
-    public boolean registrationUSR(String password,String email,String type,int [] val,String description,String goal)  {
-            int Random;
-            int min=1000000;
-            int max=9999999;
-            String check=null;
-            boolean different=true;
-            mutex.lock();
-            Vector<String>uidList=userData.getUID();
-            if(uidList==null)return false;
-            while(different==true){
-                Random= (int) (Math.random()*(max-min)) + min;
-                different=false;
-                check=""+Random;
-                for(String uid : uidList){
-                    if(check.equals(uid)){
-                        different=true;
-                    }
+    public String getUid(){
+        int Random;
+        int min=1000000;
+        int max=9999999;
+        String check=null;
+        boolean different=true;
+        mutex.lock();
+        Vector<String>uidList=userData.getUID();
+        if(uidList==null)return "0000000";
+        while(different==true){
+            Random= (int) (Math.random()*(max-min)) + min;
+            different=false;
+            check=""+Random;
+            for(String uid : uidList){
+                if(check.equals(uid)){
+                    different=true;
                 }
             }
-            mutex.unlock();
-            bool= userData.registration(check,password,type,val,description,email,goal);
+        }
+        mutex.unlock();
+        return check;
+    }
+    public boolean registrationUSR(String password,String email,String type,int [] val,String description,String goal)  {
+            String uid=getUid();
+            bool= userData.registration(uid,password,type,val,description,email,goal);
             sendMail(email);
             return bool;
+    }
+    public boolean registrationPSY(String password, String email, String type) {
+        String uid=getUid();
+        bool= userData.registration(uid,password,type,email);
+        return bool;
+    }
+    public boolean setFeed(String feed){
+        return userData.feed(userid,feed);
     }
 
 }

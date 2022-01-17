@@ -10,9 +10,9 @@ public class Query {
         System.out.println(sql);
         return stmt.executeQuery(sql);
     }
-    protected Boolean suggestForm(Statement stmt,String from,String what){
+    protected boolean suggestForm(Statement stmt,String from,String what){
         try {
-            String sql=String.format(" INSERT INTO suggest (`from`, `content`,`when`) VALUES ('%s', '%s',CURRENT_TIMESTAMP);",from,what);
+            String sql=String.format(" INSERT INTO suggest (`from`, `content`,`when`,`type`) VALUES ('%s', '%s',CURRENT_TIMESTAMP,'psy');",from,what);
             System.out.println(sql);
             stmt.executeUpdate(sql);
             return true;

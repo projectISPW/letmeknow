@@ -49,7 +49,10 @@ public class takeformControllerInterf1 {
         return currbool;
     }
     public void initialize(){
-
+        if(startStatus.getComplete()==6){
+            System.out.println("i am here");
+            goBack();
+        }
         response=startStatus.exitValStatus();
         locked=startStatus.exitStatus();
         values=not(locked);
@@ -103,8 +106,8 @@ public class takeformControllerInterf1 {
         initialize();
     }
     @FXML
-    protected void goBack(ActionEvent event) throws IOException {
-        controller.switchToPersonalForm(event);
+    protected void goBack() {
+        controller.backTo();
     }
     @FXML
     protected void goToHome(ActionEvent event) throws IOException {
