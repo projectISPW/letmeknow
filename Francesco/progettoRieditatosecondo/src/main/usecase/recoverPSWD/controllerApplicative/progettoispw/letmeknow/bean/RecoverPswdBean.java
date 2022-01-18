@@ -13,7 +13,7 @@ public class RecoverPswdBean {
         controller=new RecoverPswdController();
     }
     public boolean sendMail(String input){
-        if(checkBean.checkEmail(input))
+        if(checkBean.checkEmail(input,false))
         {
             return controller.sendMail(input);
         }

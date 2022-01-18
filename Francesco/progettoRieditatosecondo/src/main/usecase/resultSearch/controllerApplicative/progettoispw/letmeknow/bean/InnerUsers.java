@@ -3,13 +3,13 @@ package progettoispw.letmeknow.bean;
 import progettoispw.letmeknow.WordCheck;
 import progettoispw.letmeknow.controller.utenti.UtenteUsr;
 
-public class innerUsers {
-    private String userid;
+public class InnerUsers {
+    private final String userid;
     private String description;
     private String goal;
     private int lenMax;
     private WordCheck check=new WordCheck();
-    public innerUsers(UtenteUsr elem){
+    public InnerUsers(UtenteUsr elem){
         lenMax=15;
         userid=elem.getUserid();
         description= elem.getDescrizione();
@@ -28,8 +28,8 @@ public class innerUsers {
                 if(goal!=null && goal.length()>lenMax)goal= check.checkLen(goal,lenMax);
                 return check.checkAhead(goal);
             }
+            default: return null;
         }
-        return null;
     }
 
     public void getStatus(){

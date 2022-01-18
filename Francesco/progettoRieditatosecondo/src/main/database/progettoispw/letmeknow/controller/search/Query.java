@@ -26,9 +26,9 @@ public class Query {
     protected ResultSet searchAll(Statement stmt,int emp, int hum,int pos,String iduser)  {
         try{String sql=String.format("SELECT userid " +
                         "FROM utenti WHERE type='usr' and " +
-                        "empathy>=%d and humor>=%d and positivity >=%d and userid != '%s' and type='usr'",
+                        "empathy>=%d and humor>=%d and positivity >=%d and userid != '%s' ",
                         emp,hum,pos,iduser);
-            //System.out.println(sql);
+            System.out.println(sql);
             return stmt.executeQuery(sql);
         }catch (SQLException throwables) {
             System.err.println("errore durante la ricerca parametrica ");

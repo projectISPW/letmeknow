@@ -68,15 +68,8 @@ public class WordCheck {
         }
         return contAhead;
     }
-    public double highText() {
+    public int highText() {
         int linee= contaInvio(text);
-        if(linee>4){
-            return linee* 21;
-        }
-        return 60;
-    }
-    public double highText(String inputText) {
-        int linee= contaInvio(inputText);
         if(linee>4){
             return linee* 21;
         }

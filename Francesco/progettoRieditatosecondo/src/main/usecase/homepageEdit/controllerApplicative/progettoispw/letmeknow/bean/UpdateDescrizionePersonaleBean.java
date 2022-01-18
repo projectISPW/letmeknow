@@ -10,7 +10,7 @@ public class UpdateDescrizionePersonaleBean {
         controller=new EditProfileController();
     }
     public void entryValue(String Value){
-        if(Value!=""){
+        if(!Value.equals("")){
             if(Value.toCharArray()[0]=='#'){
             try {
                 controller.setNewStr(Value);

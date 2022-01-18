@@ -3,9 +3,6 @@ import progettoispw.letmeknow.controller.ConnectionDB;
 
 import java.sql.*;
 
-import static progettoispw.letmeknow.controller.search.Query.*;
-import static progettoispw.letmeknow.controller.utenti.Query.*;
-
 public class SearchSQL extends Query {
     private ConnectionDB conn=new ConnectionDB() ;
     private Statement stmt=conn.getStatement();

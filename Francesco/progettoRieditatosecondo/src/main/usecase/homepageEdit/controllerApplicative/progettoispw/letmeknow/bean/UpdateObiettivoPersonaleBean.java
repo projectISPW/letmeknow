@@ -25,11 +25,11 @@ public class UpdateObiettivoPersonaleBean {
         controller=new EditProfileController();
     }
     public void check(String ValueObb,String ValueTag, String ValueData) {
-        if(ValueObb!="")newObb=ValueObb;
+        if(!ValueObb.equals(""))newObb=ValueObb;
         else {
             newObb =padre.exitObiettivo();
         }
-        if(ValueTag!=""){
+        if(!ValueTag.equals("")){
             if(ValueTag.toCharArray()[0]!='#'){
                 System.err.println("error occurred on the tag");
                 newTag=padre.exitTag();
@@ -39,7 +39,7 @@ public class UpdateObiettivoPersonaleBean {
         }else{
             newTag=padre.exitTag();
         }
-        if(ValueData!=""){
+        if(!ValueData.equals("")){
             newScadenza=ValueData;
             //data=dateParser.parse(ValueData);
             int end=newScadenza.indexOf("/");

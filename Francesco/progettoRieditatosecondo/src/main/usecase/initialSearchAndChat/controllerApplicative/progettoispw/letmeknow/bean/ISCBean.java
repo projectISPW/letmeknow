@@ -1,7 +1,6 @@
 package progettoispw.letmeknow.bean;
 
 import progettoispw.letmeknow.controller.ISCController;
-import progettoispw.letmeknow.controller.resultSearchController;
 
 import java.util.Vector;
 
@@ -48,7 +47,7 @@ public class ISCBean {
         controller.who(user);
     }
     public void search(String find){
-        if(find!="") {controller.search(find);}
+        if(!find.equals("")) {controller.search(find);}
     }
     public void reset(){
         controller.reset();

@@ -33,7 +33,7 @@ public class SignupPsicologistControllerInterf1 {
         Boolean bool;
         emailCheck.setOpacity(0);
         pswdCheck.setOpacity(0);
-        bool=bean.checkEmail(email.getText());
+        bool=bean.checkEmail(email.getText(),true);
         if(check(bool,emailCheck)==false)return;
         bool=bean.checkPswd(pswd.getText(),confirmpswd.getText());
         if(check(bool,pswdCheck)==false)return;

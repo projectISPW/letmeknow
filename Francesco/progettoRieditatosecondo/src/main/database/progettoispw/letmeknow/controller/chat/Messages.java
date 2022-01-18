@@ -3,17 +3,19 @@ package progettoispw.letmeknow.controller.chat;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Messages implements MessagesMeta {
     private String userid;
     private MessagesSQL messageData;
     private ResultSet rst;
-    private Vector<Message> lastmessages;
-    private Vector<Message> messages;
-    private Vector<String>users;
-    private Vector<String>searchUsers;
-    private Vector<Message>localSearch;
+    private ArrayList<Message> lastmessages;
+    private ArrayList<Message> texts;
+    private ArrayList<String> users;
+    private ArrayList<String>searchUsers;
+    private ArrayList<Message>localSearch;
     private String touched;
     public Messages(String who)  {
         try {
@@ -29,41 +31,37 @@ public class Messages implements MessagesMeta {
         return userid;
     }
 
-    public Vector<Message> getLast(){
+    public List<Message> getLast(){
         getUSR();
-        lastmessages =new Vector<>();
+        lastmessages =new ArrayList<>();
         for(String user:users){
            chat(user);
-           attach(messages.lastElement(),lastmessages);
+           attach(texts.get(texts.size()-1),lastmessages);
        }
        return lastmessages;
     }
     public Message getLast(String usr){
-        lastmessages =new Vector<>();
+        lastmessages =new ArrayList<>();
         chat(usr);
-        return (messages.lastElement());
+        return (texts.get(texts.size()-1));
     }
 
-    public Vector<String> getUsers() {
+    public ArrayList<String> getUsers() {
        return users;
     }
 
-    public void attach(Message msg,Vector<Message> vec){
-       vec.add(msg);
-    }
-    public void attach(String usr,Vector<String>vec){
-        vec.add(usr);
+    public void attach(Message msg,ArrayList<Message> lis){
+       lis.add(msg);
     }
     public void attach(String usr){
         if (users.contains(usr)==false) {
             users.add(usr);
-            //System.out.println(users);
         }
     }
     public void getUSR(){
         try {
             rst=messageData.getSR(userid);
-            users=new Vector<>();
+            users=new ArrayList<>();
             while (rst.next()) {
                 attach(rst.getString(TO));
                 attach(rst.getString(FROM));
@@ -73,23 +71,22 @@ public class Messages implements MessagesMeta {
             e.printStackTrace();
         }
     }
-    public Vector<Message> chat(String user2){
+    public ArrayList<Message> chat(String user2){
         try {
             rst=messageData.getSRchat(userid,user2);
-            messages=new Vector<>();
+            texts =new ArrayList<>();
             while (rst.next()) {
                 Message message=new Message();
                 message.setDateSTR(rst.getString(DATETIME));
                 message.setText(rst.getString(TEXT));
                 message.setSender(rst.getString(FROM));
                 message.setReciver(rst.getString(TO));
-                //message.getStatus();
-                attach(message,messages);
+                attach(message, texts);
             }
-            return messages;
+            return texts;
         } catch (SQLException e) {
             e.printStackTrace();
-            return null;
+            return new ArrayList<Message>();
         }
     }
 
@@ -101,21 +98,20 @@ public class Messages implements MessagesMeta {
         }
     }
     public void setTouched(String touched) {
-        System.out.println("OHH YES YOU TOUCHED"+touched);
         this.touched = touched;
     }
 
     public String getTouched() {
         return touched;
     }
-    private Vector<Message>messagesALL;
+    private List<Message> messagesALL;
     public void getALL() throws SQLException {
-        messagesALL=new Vector<Message>();
+        messagesALL=new ArrayList<>();
         messagesALL=messageData.getSRmsg(userid);
     }
     public void search (String word) {
-        localSearch=new Vector<>();
-        searchUsers=new Vector<>();
+        localSearch=new ArrayList<>();
+        searchUsers=new ArrayList<>();
         for (Message msg: messagesALL) {
             if(msg.getText().contains(word)) {
                 attach(msg,localSearch);
@@ -124,10 +120,10 @@ public class Messages implements MessagesMeta {
         }
     }
 
-    public Vector<Message> getLocalSearch() {
+    public ArrayList<Message> getLocalSearch() {
         return localSearch;
     }
-    public Vector<String> getSearchUsers() {
+    public ArrayList<String> getSearchUsers() {
         return searchUsers;
     }
 }

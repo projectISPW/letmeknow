@@ -5,13 +5,14 @@ import progettoispw.letmeknow.controller.ChatController;
 import progettoispw.letmeknow.controller.SignupController;
 import progettoispw.letmeknow.controller.chat.Message;
 
+import java.util.ArrayList;
 import java.util.Vector;
 
 import static java.lang.Thread.sleep;
 
 public class ChatBean{
     private ChatController controller;
-    private Vector<Message> chat;
+    private ArrayList<Message> chat;
     private Integer index;
     private String with;
     public ChatBean() {

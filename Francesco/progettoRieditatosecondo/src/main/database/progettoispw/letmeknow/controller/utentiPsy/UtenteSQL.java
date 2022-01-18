@@ -15,6 +15,7 @@ public class UtenteSQL extends Query {
             return selectResult(stmt,month,year);
         } catch (SQLException e) {
             e.printStackTrace();
+            conn.close();
             return null;
         }
     }

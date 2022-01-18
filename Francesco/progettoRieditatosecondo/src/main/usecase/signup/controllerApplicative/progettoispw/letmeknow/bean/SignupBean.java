@@ -10,16 +10,18 @@ public class SignupBean {
     public SignupBean(){
         controller=new SignupController();
     }
-    public boolean checkEmail(String email){
+    public boolean checkEmail(String email , boolean checkpresence){
             try {
                 InternetAddress emailAddr = new InternetAddress(email);
                 emailAddr.validate();
+                if(!checkpresence)return true;
                 return controller.checkMail(email);
             } catch (AddressException e) {
                // e.printStackTrace();
                 return false;
             }
     }
+
 
     public boolean checkPswd(String str1,String str2){
         if(str1.equals("")||str1.equals(" "))return false;

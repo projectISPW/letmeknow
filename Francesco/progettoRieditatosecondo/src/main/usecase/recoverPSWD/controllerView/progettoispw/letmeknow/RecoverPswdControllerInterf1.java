@@ -20,19 +20,21 @@ public class RecoverPswdControllerInterf1
     public void initialize(){
         controller= new PageMenu();
         bean=new RecoverPswdBean();
+        show.setOpacity(0);
     }
     @FXML
-    public void sendMail(ActionEvent event ){
-        if(show.getOpacity()==1)show.setOpacity(0);
+    public void sendMail( ){
+        show.setOpacity(0);
         String address=email.getText();
         Boolean bool=bean.sendMail(address);
         if(bool==false){
             show.setOpacity(1);
         }
+        else controller.backTo();
     }
     @FXML
     protected void backToLogin(ActionEvent event)  {
-        controller.switchTo("login/interf1.fxml",event,"login");
+        controller.backTo();
     }
 
 }

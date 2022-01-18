@@ -3,12 +3,9 @@ package progettoispw.letmeknow;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
-import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 import progettoispw.letmeknow.bean.ISCBean;
-import progettoispw.letmeknow.bean.beanResultSearch;
-
-import java.io.IOException;
+import progettoispw.letmeknow.bean.BeanResultSearch;
 
 public class ResultSearchControllerInterf1 {
     PageMenu controller=new PageMenu();
@@ -29,10 +26,10 @@ public class ResultSearchControllerInterf1 {
     String [] strGoal=new String[4];
     ISCBean chatBean;
     int nval;
-    beanResultSearch bean;
+    BeanResultSearch bean;
     public ResultSearchControllerInterf1(){
         nval=4;
-        bean=new beanResultSearch(nval);
+        bean=new BeanResultSearch(nval);
         chatBean=new ISCBean();
     }
     public void initialize(){
@@ -58,15 +55,15 @@ public class ResultSearchControllerInterf1 {
         }
     }
     @FXML
-    protected void goBack(ActionEvent event) throws IOException {
+    protected void goBack(ActionEvent event)  {
         controller.switchTo("search/interf1.fxml",event,"Search");
     }
     @FXML
-    protected void goToPersonalForm(ActionEvent event) throws IOException {
+    protected void goToPersonalForm(ActionEvent event) {
         controller.switchToPersonalForm(event);
     }
     @FXML
-    protected void goToHome(ActionEvent event) throws IOException {
+    protected void goToHome(ActionEvent event) {
         controller.switchToHome(event);
     }
     protected void visit(ActionEvent event,int i){

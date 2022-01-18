@@ -14,10 +14,14 @@ import javafx.stage.WindowEvent;
 import progettoispw.letmeknow.bean.HomepagePsicologistBean;
 import progettoispw.letmeknow.controller.ConnectionDB;
 import progettoispw.letmeknow.controller.form.FormSQL;
+import progettoispw.letmeknow.controller.search.Search;
+import progettoispw.letmeknow.controller.utenti.UtenteUsr;
 import progettoispw.letmeknow.controller.utentiPsy.UtentePsy;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainApplication extends Application {
     @Override
@@ -54,6 +58,6 @@ public class MainApplication extends Application {
         stage.show();
     }
     public static void main(String[] args) throws ClassNotFoundException, SQLException, InterruptedException {
-        launch();
+         launch();
     }
 }

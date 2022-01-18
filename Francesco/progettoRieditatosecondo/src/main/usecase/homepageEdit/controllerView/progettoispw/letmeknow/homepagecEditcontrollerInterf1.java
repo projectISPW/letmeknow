@@ -44,7 +44,7 @@ public class homepagecEditcontrollerInterf1 {
         descrizione = new UpdateDescrizionePersonaleBean();
         home =new HomepagecontrollerInterf1();
     }
-    public void initialize() throws InterruptedException {
+    public void initialize() {
         userid= obiettivo.getUserid();
         userName.setText("User : "+userid);
         SliderBean sliderVal=new SliderBean();
@@ -70,16 +70,7 @@ public class homepagecEditcontrollerInterf1 {
         goal.setText("");
         tag.setText("");
         date.setText("");
-        try {
-            sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        try {
-            initialize();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        initialize();
     }
     @FXML
     protected void goToHome(ActionEvent event) throws IOException {

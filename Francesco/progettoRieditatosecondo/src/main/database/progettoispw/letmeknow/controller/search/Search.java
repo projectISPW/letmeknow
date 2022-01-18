@@ -5,6 +5,8 @@ import progettoispw.letmeknow.controller.utenti.UtenteUsr;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Vector;
 
 public class Search implements SalvaUtenteMeta {
@@ -12,22 +14,20 @@ public class Search implements SalvaUtenteMeta {
     private SearchSQL searchData;
     private ResultSet rst;
     private Sliders slider;
-    private Vector<UtenteUsr> foundList;
+    private ArrayList<String> foundList;
     private UtenteUsr touched;
     public Search(String who) {
         try {
-            foundList= new Vector <UtenteUsr>();
+            foundList= new ArrayList <String>();
             searchData = new SearchSQL();
             rst = searchData.getUserData1(who);
             while (rst.next()) {
                 userid = rst.getString(USERID);
             }
         } catch (SQLException throwables) {
-            //throwables.printStackTrace();
             System.err.println("exeption occurred 1");
         }
     }
-
     public void setAffinity(Integer val) {
         slider = new Sliders(val);
         return;
@@ -41,22 +41,17 @@ public class Search implements SalvaUtenteMeta {
     }
 
 
-    private void attach(UtenteUsr elem){
-        boolean present=false;
-       for(UtenteUsr usr :foundList){
-           if(usr.getUserid().equals(elem.getUserid()))present=true;
-       }
-        if(present==false)foundList.add(elem);
+    private void attach(String elem){
+        foundList.add(elem);
+        for(String inp:foundList)System.out.println(inp);
     }
     public boolean parametricSearch() {
         try {
             Integer[] array = slider.getAll();
             rst = searchData.search4All(userid, array[0], array[1], array[2]);
-           // System.out.println("parametric search");
             while (rst.next()) {
                 String usr = rst.getString(USERID);
-                System.out.println(usr);
-                attach(new UtenteUsr(usr));
+                attach(usr);
             }
             return true;
         } catch (SQLException throwables) {
@@ -72,7 +67,7 @@ public class Search implements SalvaUtenteMeta {
             while (rst.next()) {
                 String usr = rst.getString(USERID);
                 System.out.println(usr);
-                attach(new UtenteUsr(usr));
+                attach(usr);
             }
             return true;
         } catch (SQLException throwables) {
@@ -88,16 +83,15 @@ public class Search implements SalvaUtenteMeta {
             while (rst.next()) {
                 String usr = rst.getString(USERID);
                 System.out.println(usr);
-                attach(new UtenteUsr(usr));
+                attach(usr);
             }
             return true;
         } catch (SQLException throwables) {
-            //throwables.printStackTrace();
             System.err.println("ho trovato solo questi utenti forse avrei dovuto trovarne altri");
         }
         return false;
     }
-    public Vector<UtenteUsr> getVector(){
+    public ArrayList<String> getArrayList(){
         return foundList;
     }
 

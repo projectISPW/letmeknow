@@ -30,13 +30,10 @@ public class takeformControllerInterf1 {
     @FXML
     protected ProgressBar progressBar;
     protected PageMenu controller= new PageMenu();
-    protected Vector<Slider> sl;
+    protected Slider[] sl;
     protected boolean [] values;
     protected  boolean [] locked;
     protected int [] response;
-    protected void attach(Slider slider){
-        this.sl.add(slider);
-    }
     protected double progress=0;
     int indice=-1;
     protected FormToTakeStatusBean startStatus;
@@ -57,49 +54,37 @@ public class takeformControllerInterf1 {
         locked=startStatus.exitStatus();
         values=not(locked);
         progress= startStatus.getComplete()*0.17;
-        sl=new Vector<Slider> ();
-        attach(sl1);
-        attach(sl2);
-        attach(sl3);
-        attach(sl4);
-        attach(sl5);
-        attach(sl6);
+        sl=new Slider[] {sl1,sl2,sl3,sl4,sl5,sl6};
         Label[] labels= new Label[]{lb1, lb2, lb3, lb4, lb5, lb6};
         progressBar.setProgress(progress);
-        progressBar.setStyle("-fx-accent:#7836ea;");
-        for(Slider slider :sl){
-            indice=sl.indexOf(slider);
-            if(response[indice]!=-1){
-                slider.setValue(response[indice]);
-            }
-        }
-
-        for(Slider slider:sl ){
-            slider.valueProperty().addListener(new ChangeListener<Number>() {
+        for(int i=0;i<6;i++){
+                 if(response[i]!=-1){
+                       sl[i].setValue(response[i]);
+                 }
+                int finalI = i;
+                sl[i].valueProperty().addListener(new ChangeListener<Number>() {
                 @Override
                 public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
-                    indice=sl.indexOf(slider);
-                    if(values[indice]==true){
+                    if(values[finalI]==true){
                         progress+=0.17;
                         progressBar.setProgress(progress);
-                        values[indice]=false;
+                        values[finalI]=false;
                     }
-                    if(locked[indice]==true){
-                        slider.setValue(response[indice]);
+                    if(locked[finalI]==true){
+                        sl[finalI].setValue(response[finalI]);
                     }
-                    labels[indice].setText(""+(int)slider.getValue());
+                    labels[finalI].setText(""+(int)sl[finalI].getValue());
                 }
             });
         }
     }
     @FXML
     protected void save(ActionEvent event) {
-        for (Slider slider : sl) {
-            indice = sl.indexOf(slider);
-            if (values[indice] == false) {
+        for (int i=0;i<6;i++) {
+            if (values[i] == false) {
                 //System.out.printf("*il valore dell elemento sl[%d] è pari a %d \n", indice, (int) slider.getValue());
-                locked[indice]=true;
-                response[indice]=(int)slider.getValue();
+                locked[i]=true;
+                response[i]=(int)sl[i].getValue();
             }
         }
         startStatus.inputValStatus(response);

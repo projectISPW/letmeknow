@@ -5,21 +5,22 @@ import progettoispw.letmeknow.controller.chat.Message;
 import progettoispw.letmeknow.controller.chat.Messages;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Vector;
 public class ISCController {
         ControllerClass factory;
-        private Vector<String> founded;
+        private ArrayList<String> founded;
         private Integer count;
         private Integer nVal;
-        private Vector<Message>lmsgs;
-        private Vector<Message>msgs;
+        private ArrayList<Message>lmsgs;
+        private ArrayList<Message>msgs;
         private Messages chat;
         public ISCController(Integer n){
             factory=new ControllerClass();
             factory.controllerChat();
             if(factory.getSearch()==null)factory.controllerUsers();
             chat= factory.getChat();
-            lmsgs=chat.getLast();
+            lmsgs= (ArrayList<Message>) chat.getLast();
             founded=chat.getUsers();
             msgs=null;
             nVal=n;
@@ -30,7 +31,7 @@ public class ISCController {
         factory.controllerChat();
         if(factory.getSearch()==null)factory.controllerUsers();
         chat= factory.getChat();
-        lmsgs=chat.getLast();
+        lmsgs= (ArrayList<Message>) chat.getLast();
         founded=chat.getUsers();
         msgs=null;
         nVal=0;
@@ -91,8 +92,8 @@ public class ISCController {
                 return formatted;
         }
 
-        private Integer check(Integer count,Vector<Message> list) {
-            if(count>=list.toArray().length){
+        private Integer check(Integer count,ArrayList<Message> list) {
+            if(count>=list.size()){
                 return count=0;
             }
             return count;

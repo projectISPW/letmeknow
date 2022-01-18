@@ -3,14 +3,15 @@ package progettoispw.letmeknow.controller.chat;
 import progettoispw.letmeknow.controller.ConnectionDB;
 
 import java.sql.*;
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MessagesSQL extends Query implements MessagesMeta {
     private ConnectionDB conn=new ConnectionDB() ;
     private Statement stmt=conn.getStatement();
     private ResultSet rst;
-    private Vector<Message> messages;
-    private Vector<String>users;
+    private ArrayList<Message> messages;
+    private ArrayList<String>users;
     public ResultSet getSR(String userid) throws SQLException {
         return selectUserRSALL(stmt,userid);
     }
@@ -25,7 +26,7 @@ public class MessagesSQL extends Query implements MessagesMeta {
         messages.add(msg);
     }
     public void attach(String usr){
-        if (users.contains(usr)==false) {
+        if (!users.contains(usr)) {
             users.add(usr);
         }
     }
@@ -47,24 +48,16 @@ public class MessagesSQL extends Query implements MessagesMeta {
         users.remove(userid);
     }
     public void  research(String word,String userid) throws SQLException {
-        messages=new Vector<>();
-        users=new Vector<>();
+        messages=new ArrayList<>();
+        users=new ArrayList<>();
         rst=selectMessages(stmt,word,userid);
         scanner(rst);
         userScan(rst,userid);
     }
-/*
-    public String getUser() {
 
-        return User;
-    }
-*/
-    public Vector<Message> getMessages() {
-        return messages;
-    }
 
-    public Vector<Message> getSRmsg(String userid) throws SQLException {
-        messages=new Vector<>();
+    public List<Message> getSRmsg(String userid) throws SQLException {
+        messages=new ArrayList<>();
         rst=selectUserRSALL(stmt,userid);
         scanner(rst);
         return messages;

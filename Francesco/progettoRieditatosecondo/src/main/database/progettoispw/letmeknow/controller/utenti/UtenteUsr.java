@@ -24,7 +24,6 @@ public class UtenteUsr extends SalvaUtente {
                 pos = Integer.parseInt(rst.getString(POS));
                 hum = Integer.parseInt(rst.getString(HUM));
                 emp= Integer.parseInt(rst.getString(EMP));
-
                 tag=rst.getString(TAG);
                 data=rst.getString(END);
                 obbPersonale=rst.getString(GOAL);

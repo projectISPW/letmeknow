@@ -4,15 +4,13 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Group;
-import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 import progettoispw.letmeknow.bean.ChatBean;
 import progettoispw.letmeknow.bean.ISCBean;
-import progettoispw.letmeknow.bean.beanResultSearch;
+import progettoispw.letmeknow.bean.BeanResultSearch;
 
 import java.io.IOException;
 import java.util.Date;
@@ -35,7 +33,7 @@ public class ChatControllerInterf2 {
     private PageMenu controller= new PageMenu();
     ChatBean bean;
     ISCBean iscBean;
-    beanResultSearch visitBean;
+    BeanResultSearch visitBean;
     private String [] message;
     private CSS graphic;
     private String userid;
@@ -44,7 +42,7 @@ public class ChatControllerInterf2 {
     public ChatControllerInterf2(){
         bean=new ChatBean();
         iscBean=new ISCBean();
-        visitBean=new beanResultSearch();
+        visitBean=new BeanResultSearch();
         graphic=new CSS(false);
         initializated=false;
         userid=bean.getUid();

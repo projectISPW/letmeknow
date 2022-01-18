@@ -93,7 +93,7 @@ public class SalvaUtente implements SalvaUtenteMeta {
             return false;
         }
     }
-    public String getUid(){
+    private String getUid(){
         int Random;
         int min=1000000;
         int max=9999999;
@@ -124,7 +124,8 @@ public class SalvaUtente implements SalvaUtenteMeta {
     public boolean registrationPSY(String password, String email, String type) {
         String uid=getUid();
         bool= userData.registration(uid,password,type,email);
-        return bool;
+        if(bool)return sendMail(email);
+        return false;
     }
     public boolean setFeed(String feed){
         return userData.feed(userid,feed);

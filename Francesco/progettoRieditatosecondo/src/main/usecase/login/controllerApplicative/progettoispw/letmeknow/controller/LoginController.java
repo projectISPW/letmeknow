@@ -13,7 +13,7 @@ public class LoginController {
     }
     public String tornaLog(){
         String str=utente.abscessType(password);
-        if(str!="uncorrect log"){
+        if(!str.equals("uncorrect log")){
             factory.controllerUser(userid);
         }
         return str;

@@ -6,7 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import progettoispw.letmeknow.bean.ISCBean;
-import progettoispw.letmeknow.bean.beanResultSearch;
+import progettoispw.letmeknow.bean.BeanResultSearch;
 
 import java.io.IOException;
 
@@ -31,11 +31,11 @@ public class InitialSearchAndChatControllerInterf1 {
     TextField searchBar;
     int nval;
     ISCBean bean;
-    beanResultSearch beanVisit;
+    BeanResultSearch beanVisit;
     public InitialSearchAndChatControllerInterf1(){
         nval=4;
         bean=new ISCBean(nval);
-        beanVisit=new beanResultSearch(4);
+        beanVisit=new BeanResultSearch(4);
         controller=new PageMenu();
     }
     public void initialize(){

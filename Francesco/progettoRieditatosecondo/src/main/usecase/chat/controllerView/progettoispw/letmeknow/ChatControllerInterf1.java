@@ -11,12 +11,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 import progettoispw.letmeknow.bean.ChatBean;
-import progettoispw.letmeknow.bean.beanResultSearch;
+import progettoispw.letmeknow.bean.BeanResultSearch;
 
 import java.io.IOException;
 import java.util.Date;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import javafx.animation.Timeline;
 import static java.lang.Thread.sleep;
@@ -33,14 +31,14 @@ public class ChatControllerInterf1 {
     boolean initializated;
     private PageMenu controller= new PageMenu();
     ChatBean bean;
-    beanResultSearch visitBean;
+    BeanResultSearch visitBean;
     private String [] message;
     private CSS graphic;
     Label textmsg;
     Timeline timeline;
     public ChatControllerInterf1() {
         bean=new ChatBean();
-        visitBean=new beanResultSearch();
+        visitBean=new BeanResultSearch();
         graphic=new CSS(true);
         initializated=false;
         timeline=new Timeline(new KeyFrame(Duration.millis(5000),this::recivemsgArr));
