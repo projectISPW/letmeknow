@@ -21,8 +21,6 @@ csrc/main/usecase/recoverPSWD/controllerApplicative/progettoispw/letmeknow/bean/
 ]src/main/usecase/settings/controllerApplicative/progettoispw/letmeknow/bean/SettingsBean.java,8\3\83b4b8067da8121071a20ce46181d4cda9366354
 †
 Vsrc/main/usecase/chat/controllerView/progettoispw/letmeknow/ChatControllerInterf1.java,3\e\3e92f7ccbc28b568dc2e1c15beafdc692f49d4ac
-¯
-src/main/usecase/homepagePsicologist/controllerApplicative/progettoispw/letmeknow/controller/HomepagePsicologistController.java,b\5\b53bbe53a02f16165a6385667f452dff7ccea903
 u
 Esrc/main/database/progettoispw/letmeknow/controller/utenti/Query.java,4\0\408885508d67e15d6ad9031546c12f8a21079603
 
@@ -55,8 +53,6 @@ Fsrc/main/database/progettoispw/letmeknow/controller/chat/Messages.java,f\a\fab
 Xsrc/main/usecase/formResult/controllerView/progettoispw/letmeknow/formResultInterf1.java,4\f\4f4bd84ac49219cc5822816cb656718c77c9542e
 s
 Csrc/main/database/progettoispw/letmeknow/controller/chat/Query.java,e\1\e1aec5b7c581abb4a27245f3f670d82c22294d36
-v
-Fsrc/main/database/progettoispw/letmeknow/controller/form/FormMeta.java,4\1\41c0d16cd253664bec99aed41550556098deaf41
 €
 Psrc/main/patterns/Factory/progettoispw/letmeknow/controller/ControllerClass.java,5\d\5d4095505ed3d7af9370223a3b588b718ac4887f
 w
@@ -73,8 +69,6 @@ Hsrc/main/database/progettoispw/letmeknow/controller/utentiusr/Query.java,5\b\5
 Lsrc/main/database/progettoispw/letmeknow/controller/utentiusr/UtenteUsr.java,e\4\e4b89437756b297859f3ffb3f7c2b70cf9492f3e
 z
 Jsrc/main/database/progettoispw/letmeknow/controller/utentiusr/UserDAO.java,9\f\9ff0d0af7f6e3f64a60ad0751c393818411f2167
-u
-Esrc/main/database/progettoispw/letmeknow/controller/form/FormDAO.java,a\9\a9efd267af4f34ec63a34391fe674def8e600111
 u
 Esrc/main/database/progettoispw/letmeknow/controller/search/Query.java,a\a\aa15d7f0217d4bce81fee4798b1a61ac2abadf17
 ¡
@@ -99,3 +93,9 @@ i
 9src/main/java/progettoispw/letmeknow/MainApplication.java,b\4\b4ea8f36ec0b1c2c64d0530d95547727e22bbb93
 ™
 isrc/main/usecase/settings/controllerApplicative/progettoispw/letmeknow/controller/SettingsController.java,8\6\866309e07057743bd6c21b279e940a4f406e1b1e
+u
+Esrc/main/database/progettoispw/letmeknow/controller/form/FormDAO.java,a\9\a9efd267af4f34ec63a34391fe674def8e600111
+v
+Fsrc/main/database/progettoispw/letmeknow/controller/form/FormMeta.java,4\1\41c0d16cd253664bec99aed41550556098deaf41
+¯
+src/main/usecase/homepagePsicologist/controllerApplicative/progettoispw/letmeknow/controller/HomepagePsicologistController.java,b\5\b53bbe53a02f16165a6385667f452dff7ccea903

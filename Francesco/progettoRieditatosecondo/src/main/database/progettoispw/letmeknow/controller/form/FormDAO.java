@@ -76,7 +76,10 @@ public class FormDAO implements FormMeta{
             connDB.closeRSTSTMT(rst, stmt);
         }
     }
-    public int [] queryParam (String userid,Statement stmt,ResultSet rst){
+    private int [] queryParam (String userid){
+        Statement stmt=null;
+        ResultSet rst = null;
+        stmt=connDB.connection(stmt);
         try{
             int [] param=new int[3];
             int indice=0;
@@ -90,17 +93,17 @@ public class FormDAO implements FormMeta{
         } catch (SQLException throwables) {
             throwables.printStackTrace();
             return new int[]{1,1,1};
+        }finally{
+            connDB.closeSTMT(stmt);
         }
     }
 
     public Boolean close(String userid,int formid){
         Statement stmt=null;
-        ResultSet rst = null;
-        Boolean bool=false;
-        stmt=connDB.connection(stmt);
-        int [] param=queryParam(userid,stmt,rst);
+        boolean bool;
+        int [] param=queryParam(userid);
         bool=query.close(stmt,userid,formid,param);
-        connDB.closeRSTSTMT(rst,stmt);
+        connDB.closeSTMT(stmt);
         return bool;
     }
     public String queryData(String userid,int formid){
