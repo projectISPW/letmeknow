@@ -2,6 +2,8 @@ package progettoispw.letmeknow.controller.utentiusr;
 
 import progettoispw.letmeknow.controller.utenti.SalvaUtente;
 
+import java.util.ArrayList;
+
 public class UtenteUsr extends SalvaUtente {
     UserDAO userDataUSR;
     private int pos;
@@ -76,4 +78,5 @@ public class UtenteUsr extends SalvaUtente {
     public boolean queryResult() {
         return userDataUSR.getResult(userid,emp,hum,pos);
     }
+
 }

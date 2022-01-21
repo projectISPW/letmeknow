@@ -106,7 +106,6 @@ public class InitialSearchAndChatControllerInterf1 {
         String actual;
         if(chat[i].getOpacity()==1){
             actual=getUid(strUid[i]);
-            bean.touched(actual);
             beanVisit.touched(actual);
             controller.switchTo("homepageOthers/interf1.fxml",event,"Visit");
         }

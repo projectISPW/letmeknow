@@ -1,0 +1,14 @@
+
+=
+java:S1125)"'Remove the unnecessary boolean literal.(³Ç©÷
+B
+java:S11256"'Remove the unnecessary boolean literal.(˜ÈÊ±ÿÿÿÿÿ
+‡
+java:S1130A"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ÀÛ«¨øÿÿÿÿ
+N	java:S106J"9Replace this use of System.out or System.err by a logger.(Ìµ‡˜
+a	java:S128Y"LEnd this switch case with an unconditional break, return or throw statement.(»ˆ«¸
+N	java:S106["9Replace this use of System.out or System.err by a logger.(æŸ¬Á
+E
+java:S1068"*Remove this unused "userID" private field.(³ ûÁÿÿÿÿÿ
+k
+java:S3655I"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ŸªÍäùÿÿÿÿ

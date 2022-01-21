@@ -1,6 +1,5 @@
 package progettoispw.letmeknow.controller.utentipsy;
 
-import progettoispw.letmeknow.controller.ConnectionDB;
 import progettoispw.letmeknow.controller.ConnectionDBMS;
 import progettoispw.letmeknow.controller.form.FormMeta;
 import progettoispw.letmeknow.controller.utenti.SalvaUtenteMeta;
@@ -45,7 +44,7 @@ public class UserDAO implements SalvaUtenteMeta,FormMeta {
             stmt=connDB.connection(stmt);
             return query.suggestForm(stmt,from,what);
         } finally {
-            ConnectionDB.closeConnection();
+            connDB.closeSTMT(stmt);
         }
     }
 }

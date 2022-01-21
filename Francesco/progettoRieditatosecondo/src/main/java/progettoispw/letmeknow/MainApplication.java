@@ -11,7 +11,6 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-import progettoispw.letmeknow.controller.ConnectionDB;
 import progettoispw.letmeknow.controller.ConnectionDBMS;
 import progettoispw.letmeknow.controller.chat.Message;
 import progettoispw.letmeknow.controller.chat.Messages;
@@ -22,13 +21,25 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class MainApplication extends Application {
+    private enum ScreenSize{
+        LAPTOP,SMARTPHONE
+    }
+    private static ScreenSize size;
     @Override
     public void start(Stage stage) throws IOException {
-        Parent root=FXMLLoader.load(getClass().getResource("login/interf1.fxml"));
+        Parent root;
+        if(size==ScreenSize.LAPTOP){
+            stage.setFullScreen(true);
+            root=FXMLLoader.load(getClass().getResource("login/interf2.fxml"));
+        }
+        else{
+            stage.setMaxWidth(414);
+            stage.setMinHeight(736);
+            root=FXMLLoader.load(getClass().getResource("login/interf1.fxml"));
+        }
         stage.setScene(new Scene(root));
         stage.setTitle("Login");
-        //stage.setResizable(false);
-        //stage.setFullScreen(true);
+        stage.setResizable(false);
         Image icon= new Image(getClass().getResourceAsStream("photo/brain.jpg"));
         stage.getIcons().add(icon);
         //Alert in fase di uscita dall'applicazione
@@ -40,8 +51,6 @@ public class MainApplication extends Application {
                 alert.setHeaderText("Are you sure to exit program?");
                 alert.setContentText("If you want to exit you'll be logged out from application.");
                 if(alert.showAndWait().get() == ButtonType.OK){
-                    //Log Out Account and Exit Program
-                    // ...
                     ConnectionDBMS conn=new ConnectionDBMS();
                     conn.closeCONN();
                     System.out.println("Prompt: On Log Out phase");
@@ -55,7 +64,8 @@ public class MainApplication extends Application {
         });
         stage.show();
     }
-    public static void main(String[] args) throws ClassNotFoundException, SQLException, InterruptedException {
-         launch();
+    public static void main(String[] args) {
+        size=ScreenSize.LAPTOP;
+        launch();
     }
 }

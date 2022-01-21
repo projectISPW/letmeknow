@@ -7,3 +7,14 @@ S	java:S106)"9Replace this use of System.out or System.err by a logger.(µÇ÷Üÿÿ
 N	java:S106+"9Replace this use of System.out or System.err by a logger.(–æëÿ
 S	java:S106A"9Replace this use of System.out or System.err by a logger.(ú¾ÇÅøÿÿÿÿ
 S	java:S106E"9Replace this use of System.out or System.err by a logger.(‰ÞÒ¾ûÿÿÿÿ
+K
+java:S1128"/Remove this unused import 'java.sql.ResultSet'.(ˆóÚw8Ð·÷Þç/
+O
+java:S1128"2Remove this unused import 'java.sql.SQLException'.(ÛïÆŸ8Ð·÷Þç/
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8Ñ·÷Þç/
+O
+java:S1128	"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8Ñ·÷Þç/
+M
+java:S1128
+"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8Ñ·÷Þç/

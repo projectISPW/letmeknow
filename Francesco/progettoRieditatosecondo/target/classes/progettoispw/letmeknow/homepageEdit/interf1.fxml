@@ -59,7 +59,7 @@
         <Text layoutX="35.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="hiperlink_signup" text="9.31" />
         <ImageView fitHeight="181.0" fitWidth="146.0" layoutX="18.0" layoutY="345.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@photo/img.png" />
+                <Image url="@photo/clessidra.png" />
             </image>
         </ImageView>
         <ImageView fitHeight="41.0" fitWidth="32.0" layoutX="371.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">

@@ -12,7 +12,7 @@ public class BeanResultSearch {
         controller=new ResultSearchController(nval);
     }
     public BeanResultSearch(){
-        controller=new ResultSearchController(nval);
+        controller=new ResultSearchController();
     }
 
     int indice;
@@ -23,6 +23,7 @@ public class BeanResultSearch {
         for(InnerUsers usr : actual){
             indice=actual.indexOf(usr);
             arrStr[indice]=usr.get("description");
+            usr.getStatus();
         }
         return arrStr;
     }
@@ -44,5 +45,8 @@ public class BeanResultSearch {
     }
     public void touched(String user){
         controller.who(user);
+    }
+    public int[] getnval(){
+        return controller.nVisit();
     }
 }

@@ -29,11 +29,11 @@ public class Search implements SalvaUtenteMeta {
     }
     public void parametricSearch() {
         Integer[] array = slider.getAll();
-        ArrayList<String> inner= searchData.paramSearch(userid, array[0], array[1], array[2]);
+        ArrayList<String> inner= (ArrayList<String>) searchData.paramSearch(userid, array[0], array[1], array[2]);
         foundList.addAll(inner);
     }
     public void goalSearch(String goal) {
-        ArrayList<String>inner=searchData.paramSearch(userid, 1, 1, 1);
+        ArrayList<String>inner= (ArrayList<String>) searchData.paramSearch(userid, 1, 1, 1);
         for(String elem:inner){
             UtenteUsr user=new UtenteUsr(elem);
             if(user.getTag().contains(goal)){
@@ -42,7 +42,7 @@ public class Search implements SalvaUtenteMeta {
         }
     }
     public void descrSearch(String descr) {
-        ArrayList<String> inner= searchData.paramSearch(userid, 1, 1, 1);
+        ArrayList<String> inner= (ArrayList<String>) searchData.paramSearch(userid, 1, 1, 1);
         for(String elem:inner){
             UtenteUsr user=new UtenteUsr(elem);
             if(user.getDescrizione().contains(descr)){
@@ -52,15 +52,26 @@ public class Search implements SalvaUtenteMeta {
     }
     public ArrayList<String> getArrayList(){
         ArrayList inner=new ArrayList();
+        if(foundList.isEmpty()){
+            inner=searchData.getVisit(userid);
+        }
         for(String str:foundList){
             if(!inner.contains(str))inner.add(str);
         }
         foundList=new ArrayList<>();
         return inner;
     }
-    public void setTouched(String userid2) {
-        System.out.println("utente cliccato" +userid2);
+    public boolean setTouched(String userid2) {
+        boolean bool;
+        bool=searchData.addVisited(userid,userid2);
         this.touched = new UtenteUsr(userid2);
+        return bool;
+    }
+    public int[] getnVisit(){
+        int [] inner;
+        inner=searchData.getnVisit(userid);
+        System.err.println("numero di visite ricevute"+inner[0]+"numero di utenze nel sistema"+inner[1]);
+        return inner;
     }
     public UtenteUsr getTouched() {
         return touched;
