@@ -47,9 +47,10 @@
         </Button>
         <Button layoutX="20.0" layoutY="358.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="53.0" styleClass="Label" textFill="WHITE">
             <graphic>
-                <FontAwesomeIcon fill="#0059ff91" glyphName="COG"  size="40" text="" />
+                <FontAwesomeIcon fill="#0059ff91" glyphName="COG" size="40" text="" />
             </graphic>
         </Button>
+
         <Button layoutX="20.0" layoutY="442.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="27.0" styleClass="Label" textFill="WHITE" />
         <Line endX="350.0" endY="-154.0" layoutX="-248.0" layoutY="153.0" startX="350.0" startY="642.4666748046875" styleClass="line" />
         <Text layoutX="264.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 40;" styleClass="textSubTitle" text="Profile">
@@ -143,7 +144,7 @@
                               <Font size="36.0" />
                            </font>
                         </Text>
-                        <Text fx:id="uid1" layoutX="65.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="#..." />
+                        <Text fx:id="uid1" layoutX="65.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="#" />
                      </children>
                   </Group>
                </graphic>
@@ -186,8 +187,8 @@
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Text fx:id="uid111" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Uid" />
-                  <Text fx:id="goal111" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Working On : ..." wrappingWidth="307.3902130126953">
+                  <Text fx:id="uid111" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="#" />
+                  <Text fx:id="goal111" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="..." wrappingWidth="307.3902130126953">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -196,7 +197,7 @@
             </Group>
          </children>
       </Group>
-      <Group  layoutX="648.0" layoutY="687.0" />
+      <Group layoutX="648.0" layoutY="687.0" />
       <ImageView fitHeight="314.0" fitWidth="376.0" layoutX="1077.0" layoutY="504.0">
          <image>
             <Image url="@../homepageEdit/photo/4369.png" />
@@ -212,12 +213,12 @@
       <Label fx:id="tag" alignment="CENTER" layoutX="147.0" layoutY="497.0" minHeight="18.0" minWidth="-Infinity" prefHeight="19.0" prefWidth="231.0" styleClass="textHomePage" textAlignment="CENTER" />
       <Group fx:id="group5" layoutX="639.0" layoutY="590.416015625">
          <children>
-            <Button  layoutY="10.583984375" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row">
+            <Button fx:id="home5" layoutY="10.583984375" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row">
                <graphic>
                   <FontAwesomeIcon fill="WHITE" glyphName="USER" size="40" strokeWidth="0.5" wrappingWidth="29.942844480276108" />
                </graphic>
             </Button>
-            <Button  layoutX="41.0" layoutY="46.583984375" mnemonicParsing="false" onAction="#touchChat" style="-fx-background-color: rgba(139, 178, 249, 1);" styleClass="Back_Row">
+            <Button fx:id="chat5" layoutX="41.0" layoutY="46.583984375" mnemonicParsing="false" onAction="#touchChat" style="-fx-background-color: rgba(139, 178, 249, 1);" styleClass="Back_Row">
                <graphic>
                   <FontAwesomeIcon fill="WHITE" glyphName="PAPER_PLANE" layoutX="69.0" size="20" strokeWidth="0.5" />
                </graphic>
@@ -229,8 +230,8 @@
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Text fx:id="uid1111" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Uid" />
-                  <Text fx:id="goal1111" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Working On : ..." wrappingWidth="307.3902130126953">
+                  <Text fx:id="uid1111" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="#" />
+                  <Text fx:id="goal1111" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="..." wrappingWidth="307.3902130126953">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -241,12 +242,12 @@
       </Group>
       <Group fx:id="group6" layoutX="638.0" layoutY="684.416015625">
          <children>
-            <Button fx:id="home411" layoutY="10.583984375" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row">
+            <Button fx:id="home6" layoutY="10.583984375" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row">
                <graphic>
                   <FontAwesomeIcon fill="WHITE" glyphName="USER" size="40" strokeWidth="0.5" wrappingWidth="29.942844480276108" />
                </graphic>
             </Button>
-            <Button fx:id="chat411" layoutX="41.0" layoutY="46.583984375" mnemonicParsing="false" onAction="#touchChat" style="-fx-background-color: rgba(139, 178, 249, 1);" styleClass="Back_Row">
+            <Button fx:id="chat6" layoutX="41.0" layoutY="46.583984375" mnemonicParsing="false" onAction="#touchChat" style="-fx-background-color: rgba(139, 178, 249, 1);" styleClass="Back_Row">
                <graphic>
                   <FontAwesomeIcon fill="WHITE" glyphName="PAPER_PLANE" layoutX="69.0" size="20" strokeWidth="0.5" />
                </graphic>
@@ -258,8 +259,8 @@
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Text fx:id="uid11111" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Uid" />
-                  <Text fx:id="goal11111" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Working On : ..." wrappingWidth="307.3902130126953">
+                  <Text fx:id="uid11111" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="#" />
+                  <Text fx:id="goal11111" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="..." wrappingWidth="307.3902130126953">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -270,12 +271,12 @@
       </Group>
       <Group fx:id="extGroup2" layoutX="638.0" layoutY="253.0">
          <children>
-            <Button fx:id="home11" layoutY="8.0" mnemonicParsing="false" onAction="#visit" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row">
+            <Button fx:id="home2" layoutY="8.0" mnemonicParsing="false" onAction="#visit" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row">
                <graphic>
                   <FontAwesomeIcon fill="WHITE" glyphName="USER" size="40" strokeWidth="0.5" wrappingWidth="29.942844480276108" />
                </graphic>
             </Button>
-            <Button fx:id="chat11" layoutX="63.0" mnemonicParsing="false" onAction="#touchChat" prefHeight="75.0" prefWidth="267.0" style="-fx-background-color: transparent;">
+            <Button fx:id="chat2" layoutX="63.0" mnemonicParsing="false" onAction="#touchChat" prefHeight="75.0" prefWidth="267.0" style="-fx-background-color: transparent;">
                <graphic>
                   <Group fx:id="group2">
                      <children>
@@ -284,7 +285,7 @@
                               <Font size="36.0" />
                            </font>
                         </Text>
-                        <Text fx:id="uid11" layoutX="65.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="#..." />
+                        <Text fx:id="uid11" layoutX="65.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="#" />
                      </children>
                   </Group>
                </graphic>
@@ -293,12 +294,12 @@
       </Group>
       <Group fx:id="extGroup3" layoutX="640.0" layoutY="343.0">
          <children>
-            <Button fx:id="home111" layoutY="8.0" mnemonicParsing="false" onAction="#visit" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row">
+            <Button fx:id="home3" layoutY="8.0" mnemonicParsing="false" onAction="#visit" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row">
                <graphic>
                   <FontAwesomeIcon fill="WHITE" glyphName="USER" size="40" strokeWidth="0.5" wrappingWidth="29.942844480276108" />
                </graphic>
             </Button>
-            <Button fx:id="chat111" layoutX="63.0" mnemonicParsing="false" onAction="#touchChat" prefHeight="75.0" prefWidth="267.0" style="-fx-background-color: transparent;">
+            <Button fx:id="chat3" layoutX="63.0" mnemonicParsing="false" onAction="#touchChat" prefHeight="75.0" prefWidth="267.0" style="-fx-background-color: transparent;">
                <graphic>
                   <Group fx:id="group3">
                      <children>
@@ -307,7 +308,7 @@
                               <Font size="36.0" />
                            </font>
                         </Text>
-                        <Text fx:id="uid112" layoutX="65.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="#..." />
+                        <Text fx:id="uid112" layoutX="65.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="#" />
                      </children>
                   </Group>
                </graphic>

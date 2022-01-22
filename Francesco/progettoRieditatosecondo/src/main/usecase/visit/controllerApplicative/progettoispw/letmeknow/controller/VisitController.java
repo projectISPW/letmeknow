@@ -10,26 +10,26 @@ public class VisitController {
     public String getUserid() {
         return user.getUserid();
     }
-   public int tornaValoriEmpatia(){
+    public int returnEmpathyValues(){
         return user.getEmp();
     }
-    public int tornaValoriUmorismo(){
+    public int returnHumorValues(){
         return user.getHum();
     }
-    public int tornaValoriPositivita(){
-        return user.getPos();
+    public int returnOptimismValues(){
+        return user.getOpt();
     }
-    public String tornaObiettivo(){
-        return user.getObiettivo();
+    public String returnGoal(){
+        return user.getGoal();
     }
-    public Integer[] tornaData(){
-        return user.getData();
+    public Integer[] returnDate(){
+        return user.getDate();
     }
-    public String tornaTag(){
+    public String returnTag(){
         return user.getTag();
     }
-    public String tornaDescrizione(){
-        return user.getDescrizione();
+    public String returnDescription(){
+        return user.getDescript();
     }
 
 }

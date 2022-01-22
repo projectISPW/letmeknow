@@ -3,7 +3,6 @@ package progettoispw.letmeknow.controller;
 import progettoispw.letmeknow.controller.utentiusr.UtenteUsr;
 
 public class EditProfileController {
-    ControllerClass factory;
     UtenteUsr user;
     String newStr;
     public EditProfileController(){
@@ -17,9 +16,9 @@ public class EditProfileController {
         this.newStr = input;
         user.setPersonalDes(newStr);
     }
-    public void setGoal(String obbInput , String tagInput, Integer [] scadenzaInput){
+    public void setGoal(String obbInput , String tagInput, Integer [] dueDateInput){
         user.setPersonalGoal(obbInput);
         user.setPersonalTag(tagInput);
-        user.setPersonalData(scadenzaInput);
+        user.setPersonalData(dueDateInput);
     }
 }

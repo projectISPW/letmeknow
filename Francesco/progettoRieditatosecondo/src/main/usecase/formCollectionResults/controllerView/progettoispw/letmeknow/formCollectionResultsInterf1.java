@@ -1,3 +1,4 @@
+//ln 45-46 duplicated code, i put it out of the if/else
 package progettoispw.letmeknow;
 
 import javafx.event.ActionEvent;
@@ -37,14 +38,11 @@ public class formCollectionResultsInterf1 {
         String name,title;
         if(bean.getComplete()==6){
             name="formResult/form"+i+"interf1.fxml";
-            title="form"+i;
-            controller.switchTo(name,event,title);
         }
         else{
             name="formToTake/form"+i+"interf1.fxml";
-            title="form"+i;
-            controller.switchTo(name,event,title);
-        }
+        } title="form"+i;
+        controller.switchTo(name,event,title);
     }
     @FXML
     protected void urResult(ActionEvent event) {

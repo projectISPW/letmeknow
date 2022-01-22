@@ -102,6 +102,7 @@ public class FormDAO implements FormMeta{
         Statement stmt=null;
         boolean bool;
         int [] param=queryParam(userid);
+        stmt=connDB.connection(stmt);
         bool=query.close(stmt,userid,formid,param);
         connDB.closeSTMT(stmt);
         return bool;

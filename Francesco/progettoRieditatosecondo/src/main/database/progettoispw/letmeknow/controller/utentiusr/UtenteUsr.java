@@ -2,8 +2,6 @@ package progettoispw.letmeknow.controller.utentiusr;
 
 import progettoispw.letmeknow.controller.utenti.SalvaUtente;
 
-import java.util.ArrayList;
-
 public class UtenteUsr extends SalvaUtente {
     UserDAO userDataUSR;
     private int pos;
@@ -23,6 +21,7 @@ public class UtenteUsr extends SalvaUtente {
     }
     public void  dataHomeUsr () {
         String [] inner= userDataUSR.selectUser(userid);
+        System.out.println(userid);
         emp= Integer.parseInt(inner[0]);
         hum = Integer.parseInt(inner[1]);
         pos = Integer.parseInt(inner[2]);
@@ -40,19 +39,19 @@ public class UtenteUsr extends SalvaUtente {
     public int getHum(){
         return hum;
     }
-    public int getPos(){
+    public int getOpt(){
         return pos;
     }
-    public String getDescrizione(){
+    public String getDescript(){
         return des;
     }
     public String getTag(){
         return personalObb.getTag();
     }
-    public String getObiettivo(){
+    public String getGoal(){
         return personalObb.getObiettivo();
     }
-    public Integer[] getData(){
+    public Integer[] getDate(){
         return personalObb.getData();
     }
     public void setPersonalDes(String newS)  {
@@ -78,5 +77,4 @@ public class UtenteUsr extends SalvaUtente {
     public boolean queryResult() {
         return userDataUSR.getResult(userid,emp,hum,pos);
     }
-
 }

@@ -25,7 +25,8 @@ public class ResultSearchController {
     public ArrayList<InnerUsers> queryUsers(){
         int indice;
         actual=null;
-        ArrayList<String> founded=search.getArrayList() ;
+        search.getArrayList() ;
+        ArrayList<String> founded= search.getArrayList();
         ArrayList<InnerUsers>formatted=new ArrayList<>();
         count = check(count,founded);
         UtenteUsr user;
@@ -44,6 +45,7 @@ public class ResultSearchController {
 
     private Integer check(Integer count,ArrayList<String> founded) {
         if(count>=founded.size()){
+            System.err.println("ricomincio da 0");
             return count=0;
         }
         return count;

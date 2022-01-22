@@ -44,11 +44,11 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/formResult/controllerApplicative" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/formPsicologistResult/controllerApplicative" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/formPsicologistResult/controllerView" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/homepagePsicologist/controllerApplicative" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/homepagePsicologist/controllerView" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/signupPsicologist/controllerView" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/settings/controllerApplicative" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/settings/controllerView" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/HomepagePsycologist/controllerApplicative" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/HomepagePsycologist/controllerView" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/signupPsycologist/controllerView" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />

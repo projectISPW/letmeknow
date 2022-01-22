@@ -11,15 +11,15 @@ public class SignupBean {
         controller=new SignupController();
     }
     public boolean checkEmail(String email , boolean checkpresence){
-            try {
-                InternetAddress emailAddr = new InternetAddress(email);
-                emailAddr.validate();
-                if(!checkpresence)return true;
-                return controller.checkMail(email);
-            } catch (AddressException e) {
-               // e.printStackTrace();
-                return false;
-            }
+        try {
+            InternetAddress emailAddr = new InternetAddress(email);
+            emailAddr.validate();
+            if(!checkpresence)return true;
+            return controller.checkMail(email);
+        } catch (AddressException e) {
+            // e.printStackTrace();
+            return false;
+        }
     }
 
 

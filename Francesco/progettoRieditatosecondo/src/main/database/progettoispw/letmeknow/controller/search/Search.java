@@ -45,7 +45,7 @@ public class Search implements SalvaUtenteMeta {
         ArrayList<String> inner= (ArrayList<String>) searchData.paramSearch(userid, 1, 1, 1);
         for(String elem:inner){
             UtenteUsr user=new UtenteUsr(elem);
-            if(user.getDescrizione().contains(descr)){
+            if(user.getDescript().contains(descr)){
                 foundList.add(elem);
             }
         }

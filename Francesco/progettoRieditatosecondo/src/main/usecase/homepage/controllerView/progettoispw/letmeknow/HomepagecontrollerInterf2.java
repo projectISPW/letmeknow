@@ -6,7 +6,6 @@ import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import progettoispw.letmeknow.bean.BeanResultSearch;
 import progettoispw.letmeknow.bean.ISCBean;
@@ -48,19 +47,27 @@ public class HomepagecontrollerInterf2 extends HomepagecontrollerInterf1 {
         uids=new String[6];
     }
     public void initialize(){
+        chatExtGroup=new Group[]{extGroup1,extGroup2,extGroup3};
+        chatGroup=new Group []{group1,group2,group3};
+        visitGroup=new Group[]{group4,group5,group6};
         outputValChat();
         outputValVisited();
         super.initialize();
     }
+    public void setGroups(Group [] chatExtGroupInput, Group []chatGroupInp){
+        chatExtGroup=chatExtGroupInput;
+        chatGroup=chatGroupInp;
+    }
+    private Group [] chatExtGroup;
+    private Group []chatGroup;
+
     public  void outputValChat(){
-        Group [] chatExtGroup=new Group[]{extGroup1,extGroup2,extGroup3};
-        Group []chatGroup=new Group []{group1,group2,group3};
         for(int i=0;i<nVal;i++){
             chatExtGroup[i].setOpacity(1);
         }
-        String [] strUid= iscBean.exitUid();
-        String [] strLst=iscBean.exitMsg();
-
+        String [][] innerusers =iscBean.exitUid();
+        String [] strUid=innerusers[0];
+        String [] strLst=innerusers[1];
         for(int i=0;i<nVal;i++){
             if(strUid[i]==null || strLst[i]==null){
                 chatExtGroup[i].setOpacity(0);
@@ -76,14 +83,18 @@ public class HomepagecontrollerInterf2 extends HomepagecontrollerInterf1 {
             }
         }
     }
+    Group [] visitGroup;
+    public void setVisitGroup(Group [] inp){
+        visitGroup=inp;
+    }
     public void outputValVisited(){
-        Group [] visitGroup=new Group[]{group4,group5,group6};
         for(int i=0;i<nVal;i++){
             visitGroup[i].setOpacity(1);
         }
-        String[] strDes= visitBean.exitDes();
-        String[] strGoal=visitBean.exitGoal();
-        String[] strUid=visitBean.exitUID();
+        String [][] users=visitBean.exitDes();
+        String[] strDes= users[2];
+        String[] strGoal=users[1];
+        String[] strUid=users[0];
         for(int i=0;i<nVal;i++){
             ObservableList<Node> externList= visitGroup[i].getChildren();
             Group group =(Group)externList.get(2);
@@ -93,8 +104,8 @@ public class HomepagecontrollerInterf2 extends HomepagecontrollerInterf1 {
             for(Node elem:inner){
                 Text text=(Text)elem;
                 uids[3+i]=strUid[i];
-                if(text.getText().contains("Uid")){
-                    text.setText("#"+strUid[i]);
+                if(text.getText().contains(UID_CONTENT)){
+                    text.setText(UID_CONTENT+strUid[i]);
                 }
                 else if(text.getText().contains(MSG_WORKON))text.setText("Working on:"+strGoal[i]);
                 else if(text.getText().contains(DESCRIPTION))text.setText(DESCRIPTION+strDes[i]);

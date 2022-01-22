@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
-<?import javafx.scene.Group?>
-<?import javafx.scene.chart.PieChart?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Circle?>
-<?import javafx.scene.shape.Line?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1440.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="progettoispw.letmeknow.HomepageEditcontrollerInterf2">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1440.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="progettoispw.letmeknow.HomepageEditControllerInterf2">
     <children>
         <Circle fill="#8290f1" layoutX="53.0" layoutY="70.0" radius="30.0" stroke="WHITE" strokeType="INSIDE" />
         <FontAwesomeIcon fill="#fffefe" glyphName="USERS" layoutX="32.0" layoutY="84.0" size="40" text="" wrappingWidth="28.38747485632939" />
@@ -59,25 +56,12 @@
                 <Font size="30.0" />
             </font>
         </Text>
+        <Text layoutX="133.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Personality Traits:">
+            <font>
+                <Font size="30.0" />
+            </font>
+        </Text>
         <Text layoutX="135.0" layoutY="492.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textSubSubTitle" text="Work On :" wrappingWidth="211.39027404785156" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <Line endX="350.0" endY="-154.0" layoutX="234.0" layoutY="151.0" startX="350.0" startY="642.4666748046875" styleClass="line" />
         <Circle fill="#8290f1" layoutX="1357.0" layoutY="73.0" radius="30.0" stroke="WHITE" strokeType="INSIDE" />
         <FontAwesomeIcon fill="#fff6f6" glyphName="USER" layoutX="1341.0" layoutY="87.0" size="40" text="" wrappingWidth="35.19999999999993" />
@@ -145,8 +129,8 @@
                                 <Font size="36.0" />
                             </font>
                         </Text>
-                        <Text fx:id="uid111" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Uid" />
-                        <Text fx:id="goal111" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Working On : ..." wrappingWidth="307.3902130126953">
+                        <Text fx:id="uid111" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="#" />
+                        <Text fx:id="goal111" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="..." wrappingWidth="307.3902130126953">
                             <font>
                                 <Font size="36.0" />
                             </font>
@@ -158,7 +142,7 @@
         <Group layoutX="648.0" layoutY="687.0" />
         <ImageView fitHeight="314.0" fitWidth="376.0" layoutX="1077.0" layoutY="504.0">
             <image>
-                <Image url="@../homepageEdit/photo/4369.png" />
+                <Image url="@photo/4369.png" />
             </image>
         </ImageView>
         <PieChart layoutX="1136.0" layoutY="215.0" prefHeight="222.0" prefWidth="231.0" />
@@ -168,7 +152,6 @@
             </graphic>
         </Button>
         <Button fx:id="chat" layoutX="707.0" layoutY="257.0" mnemonicParsing="false" onAction="#touchChat" prefHeight="75.0" prefWidth="267.0" style="-fx-background-color: transparent;" />
-        <Label  alignment="CENTER" layoutX="147.0" layoutY="497.0" minHeight="18.0" minWidth="-Infinity" prefHeight="19.0" prefWidth="231.0" styleClass="textHomePage" textAlignment="CENTER" />
         <Group fx:id="group5" layoutX="639.0" layoutY="590.416015625">
             <children>
                 <Button layoutY="10.583984375" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row">
@@ -183,13 +166,13 @@
                 </Button>
                 <Group layoutX="-18.0">
                     <children>
-                        <Text fx:id="des1111" layoutX="98.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="About me:" wrappingWidth="297.7902374267578">
+                        <Text fx:id="des" layoutX="98.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="About me:" wrappingWidth="297.7902374267578">
                             <font>
                                 <Font size="36.0" />
                             </font>
                         </Text>
-                        <Text fx:id="uid1111" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Uid" />
-                        <Text fx:id="goal1111" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Working On : ..." wrappingWidth="307.3902130126953">
+                        <Text fx:id="uid1111" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="#" />
+                        <Text fx:id="goal1111" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="..." wrappingWidth="307.3902130126953">
                             <font>
                                 <Font size="36.0" />
                             </font>
@@ -198,6 +181,16 @@
                 </Group>
             </children>
         </Group>
+        <ImageView fx:id="empathySlider" fitHeight="81.0" fitWidth="211.0" layoutX="320.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@photo/val2.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="humorSlider" fitHeight="70.0" fitWidth="214.0" layoutX="321.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@photo/val3.png" />
+            </image>
+        </ImageView>
         <Group fx:id="group6" layoutX="638.0" layoutY="684.416015625">
             <children>
                 <Button fx:id="home411" layoutY="10.583984375" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row">
@@ -217,8 +210,8 @@
                                 <Font size="36.0" />
                             </font>
                         </Text>
-                        <Text fx:id="uid11111" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Uid" />
-                        <Text fx:id="goal11111" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Working On : ..." wrappingWidth="307.3902130126953">
+                        <Text fx:id="uid11111" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="#" />
+                        <Text fx:id="goal11111" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="..." wrappingWidth="307.3902130126953">
                             <font>
                                 <Font size="36.0" />
                             </font>
@@ -229,12 +222,12 @@
         </Group>
         <Group fx:id="extGroup2" layoutX="638.0" layoutY="253.0">
             <children>
-                <Button fx:id="home11" layoutY="8.0" mnemonicParsing="false" onAction="#visit" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row">
+                <Button fx:id="home2" layoutY="8.0" mnemonicParsing="false" onAction="#visit" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row">
                     <graphic>
                         <FontAwesomeIcon fill="WHITE" glyphName="USER" size="40" strokeWidth="0.5" wrappingWidth="29.942844480276108" />
                     </graphic>
                 </Button>
-                <Button fx:id="chat11" layoutX="63.0" mnemonicParsing="false" onAction="#touchChat" prefHeight="75.0" prefWidth="267.0" style="-fx-background-color: transparent;">
+                <Button fx:id="chat2" layoutX="63.0" mnemonicParsing="false" onAction="#touchChat" prefHeight="75.0" prefWidth="267.0" style="-fx-background-color: transparent;">
                     <graphic>
                         <Group fx:id="group2">
                             <children>
@@ -252,12 +245,12 @@
         </Group>
         <Group fx:id="extGroup3" layoutX="640.0" layoutY="343.0">
             <children>
-                <Button fx:id="home111" layoutY="8.0" mnemonicParsing="false" onAction="#visit" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row">
+                <Button fx:id="home3" layoutY="8.0" mnemonicParsing="false" onAction="#visit" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row">
                     <graphic>
                         <FontAwesomeIcon fill="WHITE" glyphName="USER" size="40" strokeWidth="0.5" wrappingWidth="29.942844480276108" />
                     </graphic>
                 </Button>
-                <Button fx:id="chat111" layoutX="63.0" mnemonicParsing="false" onAction="#touchChat" prefHeight="75.0" prefWidth="267.0" style="-fx-background-color: transparent;">
+                <Button fx:id="chat3" layoutX="63.0" mnemonicParsing="false" onAction="#touchChat" prefHeight="75.0" prefWidth="267.0" style="-fx-background-color: transparent;">
                     <graphic>
                         <Group fx:id="group3">
                             <children>
@@ -273,5 +266,24 @@
                 </Button>
             </children>
         </Group>
+        <Hyperlink layoutX="378.0" layoutY="328.0" onAction="#takeForm" styleClass="hiperlink_signup" text="Take a new Form" />
+        <TextField fx:id="personalDes" layoutX="133.0" layoutY="413.0" prefHeight="46.0" prefWidth="350.0" promptText="#Calm#honest#creative" />
+        <TextField fx:id="goal" layoutX="138.0" layoutY="516.0" onAction="#saveChanges" prefHeight="127.0" prefWidth="220.0" promptText="i want to be a better person" styleClass="textField">
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+        </TextField>
+        <TextField fx:id="date" layoutX="153.0" layoutY="628.0" prefHeight="26.0" prefWidth="201.0" promptText="21/10/2021" />
+        <TextField fx:id="tag" layoutX="138.0" layoutY="507.0" onAction="#saveChanges" prefHeight="31.0" prefWidth="220.0" promptText="#character" styleClass="textHomePage" />
+        <Button fx:id="save" layoutX="235.0" layoutY="684.0" mnemonicParsing="false" onAction="#saveChanges" prefHeight="70.0" prefWidth="164.0" style="-fx-font-size: 18px;" styleClass="Button" text="Save Profile" textFill="#f2f2f2">
+            <padding>
+                <Insets right="30.0" />
+            </padding>
+        </Button>
+      <ImageView fx:id="positivitySlider" fitHeight="70.0" fitWidth="214.0" layoutX="321.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@photo/val1.png" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>

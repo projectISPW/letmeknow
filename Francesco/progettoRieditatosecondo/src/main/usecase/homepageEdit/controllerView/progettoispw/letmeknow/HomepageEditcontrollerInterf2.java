@@ -1,13 +1,10 @@
 package progettoispw.letmeknow;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
-import javafx.scene.control.Button;
-import javafx.scene.input.MouseEvent;
 
 
-public class HomepageEditcontrollerInterf2 extends homepagecEditcontrollerInterf1 {
+public class HomepageEditControllerInterf2 extends HomepageEditControllerInterf1 {
     @FXML
     Group group1;
     @FXML
@@ -27,10 +24,12 @@ public class HomepageEditcontrollerInterf2 extends homepagecEditcontrollerInterf
     @FXML
     Group group6;
     HomepagecontrollerInterf2 homepage;
-    HomepageEditcontrollerInterf2(){
+    public HomepageEditControllerInterf2(){
         homepage=new HomepagecontrollerInterf2();
     }
     public void initialize(){
+        homepage.setGroups(new Group[]{extGroup1,extGroup2,extGroup3},new Group []{group1,group2,group3});
+        homepage.setVisitGroup(new Group[]{group4,group5,group6});
         homepage.outputValChat();
         homepage.outputValVisited();
         super.initialize();
@@ -43,6 +42,4 @@ public class HomepageEditcontrollerInterf2 extends homepagecEditcontrollerInterf
     private void visit(ActionEvent event){
         homepage.visit(event);
     }
-
-
 }

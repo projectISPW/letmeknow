@@ -1,6 +1,9 @@
+//translated variables/classes
+
 package progettoispw.letmeknow.controller;
 
 import progettoispw.letmeknow.controller.utentiusr.UtenteUsr;
+
 public class HomepageController {
     UtenteUsr user;
     public HomepageController(){
@@ -9,26 +12,21 @@ public class HomepageController {
     public String getUserID(){
         return user.getUserid();
     }
-    public int tornaValoriEmpatia(){
-        System.out.println("nella bean "+user.getEmp());
+    public int returnEmpathyValues(){
         return user.getEmp();
     }
-    public int tornaValoriUmorismo(){
+    public int returnHumorValues(){
         return user.getHum();
     }
-    public int tornaValoriPositivita(){
-        return user.getPos();
+    public int returnOptimismValues(){return user.getOpt();}
+    public String returnGoal(){return user.getGoal();}
+    public Integer[] returnDate(){
+        return user.getDate();
     }
-    public String tornaObiettivo(){
-        return user.getObiettivo();
-    }
-    public Integer[] tornaData(){
-        return user.getData();
-    }
-    public String tornaTag(){
+    public String returnTag(){
         return user.getTag();
     }
-    public String tornaDescrizione(){
-        return user.getDescrizione();
+    public String returnDescription(){
+        return user.getDescript();
     }
 }

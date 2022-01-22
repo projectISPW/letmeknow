@@ -1,0 +1,20 @@
+
+n
+java:S1450"XRemove the "contAhead" field and declare it as a local variable in the relevant methods.(óì÷•
+Q	java:S125"<This block of commented-out lines of code should be removed.(ÌÕ±Ä
+Q	java:S125&"<This block of commented-out lines of code should be removed.(öÒ·›
+E
+java:S1481."*Remove this unused "count" local variable.(×Çëýüÿÿÿÿ
+V	java:S1256"<This block of commented-out lines of code should be removed.(ß´ùøÿÿÿÿ
+\
+java:S1126O"AReplace this if-then-else statement by a single return statement.(¡ðˆšÿÿÿÿÿ
+c
+java:S5361U"HReplace this call to "replaceAll()" by a call to the "replace()" method.(“ï‡·ùÿÿÿÿ
+c
+java:S5361V"HReplace this call to "replaceAll()" by a call to the "replace()" method.(õ‹àôúÿÿÿÿ
+c
+java:S5361W"HReplace this call to "replaceAll()" by a call to the "replace()" method.(äéÿ³üÿÿÿÿ
+r	java:S127"XRefactor the code in order to not assign to this loop counter from within the loop body.(¢™Œ½üÿÿÿÿ
+r	java:S127"XRefactor the code in order to not assign to this loop counter from within the loop body.(¢™Œ½üÿÿÿÿ
+r	java:S127!"XRefactor the code in order to not assign to this loop counter from within the loop body.(¢™Œ½üÿÿÿÿ
+r	java:S127#"XRefactor the code in order to not assign to this loop counter from within the loop body.(ëæûÿÿÿÿÿ

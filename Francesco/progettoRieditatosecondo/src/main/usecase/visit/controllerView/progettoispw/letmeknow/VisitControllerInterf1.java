@@ -2,15 +2,10 @@ package progettoispw.letmeknow;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
-import progettoispw.letmeknow.HomepagecontrollerInterf1;
 import progettoispw.letmeknow.bean.*;
 
 import java.io.IOException;
@@ -51,7 +46,7 @@ public class VisitControllerInterf1{
         String text=bean.exitDes();
         //System.out.println(text);
         personalDescription.setText(text);
-        goal.setText(bean.exitObiettivo());
+        goal.setText(bean.exitGoal());
         tag.setText(bean.exitTag());
         listaValori=bean.exitData();
         date.setText(" "+listaValori[0]+"-"+listaValori[1]+"-"+listaValori[2]);

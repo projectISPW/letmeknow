@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class BeanResultSearch {
     Integer nval;
     ResultSearchController controller;
+    private ArrayList<InnerUsers> actual;
     public BeanResultSearch(int val){
         nval=val;
         controller=new ResultSearchController(nval);
@@ -15,34 +16,20 @@ public class BeanResultSearch {
         controller=new ResultSearchController();
     }
 
-    int indice;
-    private ArrayList<InnerUsers> actual;
-    public String[] exitDes(){
-        String [] arrStr=new String[nval];
+    public String[][] exitDes(){
+        int index;
+        String [][] arrStr=new String[3][nval];
         actual=controller.queryUsers();
         for(InnerUsers usr : actual){
-            indice=actual.indexOf(usr);
-            arrStr[indice]=usr.get("description");
+            index=actual.indexOf(usr);
+            arrStr[0][index]=usr.getUserid();
+            arrStr[1][index]=usr.getGoal();
+            arrStr[2][index]=usr.getDescription();
             usr.getStatus();
         }
         return arrStr;
     }
-    public String[] exitGoal(){
-        String [] arrStr=new String[nval];
-        for(InnerUsers usr : actual){
-            indice=actual.indexOf(usr);
-            arrStr[indice]=usr.get("goal");
-        }
-        return arrStr;
-    }
-    public String[] exitUID(){
-        String [] arrStr=new String[nval];
-        for(InnerUsers usr : actual){
-            indice=actual.indexOf(usr);
-            arrStr[indice]=usr.get("userid");
-        }
-        return arrStr;
-    }
+
     public void touched(String user){
         controller.who(user);
     }

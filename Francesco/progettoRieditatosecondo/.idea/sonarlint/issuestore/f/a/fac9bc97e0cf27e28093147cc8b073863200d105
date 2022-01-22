@@ -1,22 +1,25 @@
 
-q
-java:S1450%"VRemove the "message" field and declare it as a local variable in the relevant methods.(Ğ©ìéÿÿÿÿÿ
-[
-java:S32522"EUse static access with "javafx.animation.Animation" for "INDEFINITE".(æİ…³
-S	java:S106A"9Replace this use of System.out or System.err by a logger.(û¨ÑÆøÿÿÿÿ
-N	java:S106D"9Replace this use of System.out or System.err by a logger.(Ğø³ñ
-S	java:S106N"9Replace this use of System.out or System.err by a logger.(“…œİüÿÿÿÿ
-
-java:S1130Q"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(…™ûÀ
-N	java:S106S"9Replace this use of System.out or System.err by a logger.(Ì¾Í¡
+U
+java:S1161$":Add the "@Override" annotation above this method signature(˜¢Ú®üÿÿÿÿ
+\
+java:S1161+":Add the "@Override" annotation above this method signature(ÊÕ­şüÿÿÿÿ8ñè¤Œè/
+U
+java:S1161/":Add the "@Override" annotation above this method signature(·òşÿÿÿÿ
 B
-java:S1125_"'Remove the unnecessary boolean literal.(Ù‚°†úÿÿÿÿ
-N	java:S106o"9Replace this use of System.out or System.err by a logger.(«‚×Ÿ
-ˆ
-java:S1130ˆ"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(˜Ç€Öşÿÿÿÿ
-ƒ
-java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ûéø‰
-ˆ
-java:S1130’"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(‡°‚Ãşÿÿÿÿ
-E
-java:S1144d"*Remove this unused private "visit" method.(¸²İƒıÿÿÿÿ
+java:S1125:"'Remove the unnecessary boolean literal.(Ù‚°†úÿÿÿÿ
+`
+java:S1128">Remove this unused import 'javafx.collections.ObservableList'.(ÄÜ€éüÿÿÿÿ8ÛÕèè/
+L
+java:S1128"/Remove this unused import 'javafx.scene.Group'.(Ÿ°ô–8ÛÕèè/
+K
+java:S1128	".Remove this unused import 'javafx.scene.Node'.(ÑÖ¬ï8ÜÕèè/
+U
+java:S1128"3Remove this unused import 'javafx.scene.text.Text'.(˜ÿ‡Üşÿÿÿÿ8ÜÕèè/
+^
+java:S1128"ARemove this unused import 'progettoispw.letmeknow.bean.ChatBean'.(µé‹İ8ÜÕèè/
+k
+java:S1128"IRemove this unused import 'progettoispw.letmeknow.bean.BeanResultSearch'.(…·„òûÿÿÿÿ8ÜÕèè/
+R
+java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8ÜÕèè/
+H
+java:S1128"+Remove this unused import 'java.util.Date'.(¸…¼ü8ÜÕèè/

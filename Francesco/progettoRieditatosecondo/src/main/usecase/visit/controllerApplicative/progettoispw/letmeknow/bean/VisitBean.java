@@ -10,37 +10,37 @@ public class VisitBean {
         return controller.getUserid();
     }
 
-    public String exitObiettivo() {
+    public String exitGoal() {
         WordCheck checkStr = new WordCheck(3, 20);
-        String obiettivo = controller.tornaObiettivo();
-        return obiettivo=checkStr.check(obiettivo);
+        String goal = controller.returnGoal();
+        return goal=checkStr.check(goal);
     }
     public Integer[] exitData(){
-            Integer [] data=controller.tornaData();
-            return data;
+        Integer [] data=controller.returnDate();
+        return data;
     }
 
     public Integer [] exitValue(){
-        Integer valori []={0,0,0};
-        //valori[0]=1;  valori[1]=1; valori[2]=1;
-        valori[0]=controller.tornaValoriEmpatia();
-        valori[1]=controller.tornaValoriUmorismo();
-        valori[2]=controller.tornaValoriPositivita();
+        Integer values []={0,0,0};
+        //values[0]=1;  values[1]=1; values[2]=1;
+        values[0]=controller.returnEmpathyValues();
+        values[1]=controller.returnHumorValues();
+        values[2]=controller.returnOptimismValues();
         for(int i =0;i<2;i++){
-            if(valori[i]>5 || valori[i]<1){
-            System.err.println("error occurred");
+            if(values[i]>5 || values[i]<1){
+                System.err.println("error occurred");
             }
         }
-        return valori;
+        return values;
     }
     public String exitTag(){
-            WordCheck checkStr=new WordCheck(3,20);
-            String tag=controller.tornaTag();
-            return tag;
-        }
+        WordCheck checkStr=new WordCheck(3,20);
+        String tag=controller.returnTag();
+        return tag;
+    }
 
     public String exitDes(){
-        String output= controller.tornaDescrizione();
+        String output= controller.returnDescription();
         return output;
     }
 }

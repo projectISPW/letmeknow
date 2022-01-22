@@ -9,7 +9,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import progettoispw.letmeknow.bean.SettingsBean;
-import progettoispw.letmeknow.controller.SettingsController;
+
 
 import java.io.IOException;
 import java.net.URL;
@@ -19,7 +19,9 @@ public class SettingsControllerInterf1 implements Initializable {
     private PageMenu controller;
     private SettingsBean bean;
     @FXML
-    PasswordField pswd,confirmpswd;
+    PasswordField pswd;
+    @FXML
+    PasswordField confirmpswd;
     @FXML
     TextField email;
     @FXML
@@ -85,7 +87,7 @@ public class SettingsControllerInterf1 implements Initializable {
     protected void setFeed(){
         feedback.setStyle("-fx-border-color: white");
         bool=bean.setFeed(feedback.getText());
-        System.out.println("ritorno dal feed.:"+bool);
+        System.out.println("go back from feed.:"+bool);
         if(!bool){
             feedback.setStyle("-fx-border-color: red");
         }else{

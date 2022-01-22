@@ -5,7 +5,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import progettoispw.letmeknow.bean.searchBean;
+import progettoispw.letmeknow.bean.SearchBean;
 
 import java.util.Vector;
 
@@ -73,7 +73,7 @@ public class SearchControllerInterf1 {
             incremProgress(5);
         });
     }
-    searchBean bean= new searchBean();
+    SearchBean bean= new SearchBean();
     private void researchByParameter(){
         Integer [] paramS=new Integer[labels.length-1];
         for(Slider slider :sl){
