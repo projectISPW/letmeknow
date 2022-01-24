@@ -14,12 +14,12 @@
     <children>
         <Circle fill="#8290f1" layoutX="53.0" layoutY="70.0" radius="30.0" stroke="WHITE" strokeType="INSIDE" />
         <FontAwesomeIcon fill="#fffefe" glyphName="USERS" layoutX="32.0" layoutY="84.0" size="40" text="" wrappingWidth="28.38747485632939" />
-        <Button layoutX="19.0" layoutY="142.0" mnemonicParsing="false" styleClass="Label" textFill="WHITE">
+        <Button layoutX="19.0" layoutY="142.0" mnemonicParsing="false"  styleClass="Label" textFill="WHITE">
             <graphic>
                 <FontAwesomeIcon fill="#0059ff" glyphName="PAPER_PLANE" opacity="0.5" size="30" text="" />
             </graphic>
         </Button>
-        <Button layoutX="17.0" layoutY="214.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="53.0" styleClass="Label" textFill="WHITE">
+        <Button layoutX="17.0" layoutY="214.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="44.0" prefWidth="53.0" styleClass="Label" textFill="WHITE">
             <graphic>
                 <FontAwesomeIcon fill="#377dff" glyphName="HOME" size="40" text="" />
             </graphic>
@@ -86,7 +86,7 @@
                                         <Font size="36.0" />
                                     </font>
                                 </Text>
-                                <Text fx:id="uid1" layoutX="65.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="#..." />
+                                <Text fx:id="userid" layoutX="65.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="#..." />
                             </children>
                         </Group>
                     </graphic>
@@ -129,8 +129,8 @@
                                 <Font size="36.0" />
                             </font>
                         </Text>
-                        <Text fx:id="uid111" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="#" />
-                        <Text fx:id="goal111" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="..." wrappingWidth="307.3902130126953">
+                        <Text fx:id="uid111" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Userid  : #" />
+                        <Text fx:id="goal111" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Working On :" wrappingWidth="307.3902130126953">
                             <font>
                                 <Font size="36.0" />
                             </font>
@@ -171,8 +171,8 @@
                                 <Font size="36.0" />
                             </font>
                         </Text>
-                        <Text fx:id="uid1111" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="#" />
-                        <Text fx:id="goal1111" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="..." wrappingWidth="307.3902130126953">
+                        <Text fx:id="uid1111" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Userid  : #" />
+                        <Text fx:id="goal1111" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Working On :" wrappingWidth="307.3902130126953">
                             <font>
                                 <Font size="36.0" />
                             </font>
@@ -210,8 +210,8 @@
                                 <Font size="36.0" />
                             </font>
                         </Text>
-                        <Text fx:id="uid11111" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="#" />
-                        <Text fx:id="goal11111" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="..." wrappingWidth="307.3902130126953">
+                        <Text fx:id="uid11111" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Userid  : #" />
+                        <Text fx:id="goal11111" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Working On :" wrappingWidth="307.3902130126953">
                             <font>
                                 <Font size="36.0" />
                             </font>
@@ -236,7 +236,7 @@
                                         <Font size="36.0" />
                                     </font>
                                 </Text>
-                                <Text fx:id="uid11" layoutX="65.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="#..." />
+                                <Text fx:id="userid" layoutX="65.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="#..." />
                             </children>
                         </Group>
                     </graphic>
@@ -259,7 +259,7 @@
                                         <Font size="36.0" />
                                     </font>
                                 </Text>
-                                <Text fx:id="uid112" layoutX="65.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="#..." />
+                                <Text fx:id="userid" layoutX="65.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="#..." />
                             </children>
                         </Group>
                     </graphic>

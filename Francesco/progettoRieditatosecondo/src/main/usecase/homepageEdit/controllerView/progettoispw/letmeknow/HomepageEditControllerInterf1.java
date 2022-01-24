@@ -22,7 +22,6 @@ public class HomepageEditControllerInterf1 {
     private TextField personalDes;
     @FXML
     private ImageView positivitySlider;
-
     @FXML
     private TextField tag;
     @FXML
@@ -73,8 +72,8 @@ public class HomepageEditControllerInterf1 {
         controller.switchToHome(event);
     }
     @FXML
-    protected void goToChat(ActionEvent event) throws IOException {
-        controller.switchToChat(event);
+    protected void goToISC(ActionEvent event) {
+        controller.switchToISC(event);
     }
     @FXML
     protected void goToPersonalForm(ActionEvent event) throws IOException {
@@ -82,9 +81,7 @@ public class HomepageEditControllerInterf1 {
     }
     @FXML
     protected void takeForm(ActionEvent event){
-        GoToFormBean takeFormBean=new GoToFormBean();
-        int val=takeFormBean.getFormid();
-        String name="formToTake/form"+val+"interf1.fxml";
-        controller.switchTo(name,event,"fill the form");
+       FormToTakeInterf1 takeForm=new FormToTakeInterf1();
+       takeForm.takeForm(event);
     }
 }

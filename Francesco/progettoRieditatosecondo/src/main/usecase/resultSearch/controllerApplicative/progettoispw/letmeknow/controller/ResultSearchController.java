@@ -25,17 +25,16 @@ public class ResultSearchController {
     public ArrayList<InnerUsers> queryUsers(){
         int indice;
         actual=null;
-        search.getArrayList() ;
         ArrayList<String> founded= search.getArrayList();
         ArrayList<InnerUsers>formatted=new ArrayList<>();
         count = check(count,founded);
         UtenteUsr user;
         for (String userid : founded) {
+            if(userid==null)return formatted;
             user=new UtenteUsr(userid);
             indice = founded.indexOf(userid);
             if (indice >= count && indice < count + nVal) {
                actual = new InnerUsers(user);
-               actual.getStatus();
                attach(actual,formatted);
             }
         }
@@ -51,6 +50,7 @@ public class ResultSearchController {
         return count;
     }
     public void who(String usr){
+        System.out.println("UTENTE CLICCATO "+usr);
         search.setTouched(usr);
     }
     public int[] nVisit(){

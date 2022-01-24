@@ -12,7 +12,7 @@
    <children>
       <Group layoutX="-16.0" layoutY="681.0">
          <children>
-            <Button layoutX="281.0" layoutY="0.5" mnemonicParsing="false" onAction="#goChat" prefHeight="52.0" prefWidth="146.0" styleClass="button_bar">
+            <Button layoutX="281.0" layoutY="0.5" mnemonicParsing="false" onAction="#goToISC" prefHeight="52.0" prefWidth="146.0" styleClass="button_bar">
                <graphic>
                   <FontAwesomeIcon fill="#377dff" glyphName="PAPER_PLANE" opacity="0.5" size="20" text="" />
                </graphic>

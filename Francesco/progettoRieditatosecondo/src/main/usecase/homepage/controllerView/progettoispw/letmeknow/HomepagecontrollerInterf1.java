@@ -14,7 +14,7 @@ import java.io.IOException;
 -possibilita di mettere slider che bloccano il proprio valore invece che lasciare l'image view
  */
 
-public class HomepagecontrollerInterf1 {
+public class HomepagecontrollerInterf1 implements Interf1ButtonBar{
     protected String userid;
     protected PageMenu controller= new PageMenu();
     @FXML
@@ -67,15 +67,6 @@ public class HomepagecontrollerInterf1 {
         image.setImage(immagine);
     }
 
-    @FXML
-    protected void goToChat(ActionEvent event) throws IOException {
-        controller.switchToChat(event);
-    }
-
-    @FXML
-    protected void goToPersonalForm(ActionEvent event) throws IOException {
-        controller.switchToPersonalForm(event);
-    }
 
     @FXML
     protected void editProfile(ActionEvent event) throws IOException {
@@ -85,4 +76,16 @@ public class HomepagecontrollerInterf1 {
     protected void goToSettings(ActionEvent event) throws IOException {
         controller.switchToSettings(event);
     }
+    @FXML
+    protected void goBack() {
+        controller.backTo();
+    }
+    @FXML
+    protected  void goToISC(ActionEvent event){
+        controller.switchToISC(event);
+    }
+    @FXML
+    protected  void goToHome(ActionEvent event){controller.switchToHome(event);}
+    @FXML
+    protected void goToPersonalForm (ActionEvent event ){controller.switchToPersonalForm(event);}
 }

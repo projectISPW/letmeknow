@@ -12,17 +12,18 @@ import progettoispw.letmeknow.bean.BeanResultSearch;
 
 public class ResultSearchControllerInterf1 {
     @FXML
-    Group group1;
+    protected Group group1;
     @FXML
-    Group group2;
+    protected Group group2;
     @FXML
-    Group group3;
+    protected Group group3;
     @FXML
-    Group group4;
+    protected Group group4;
+    Group [] visitGroup;
     String [] uids;
-    private static final String UID_CONTENT ="Userid  : #";
-    private static final String MSG_WORKON ="Working On :";
-    private static final String DESCRIPTION ="About me :";
+    static final String UID_CONTENT ="Userid  : #";
+    static final String MSG_WORKON ="Working On :";
+    static final String DESCRIPTION ="About me :";
     private PageMenu controller;
     BeanResultSearch beanVisit;
     ISCBean chatBean;
@@ -35,13 +36,22 @@ public class ResultSearchControllerInterf1 {
         uids=new String[nval];
     }
     public void initialize(){
+        visitGroup=new Group[]{group1,group2,group3,group4};
         outputVal();
     }
-    @FXML
-    public void outputVal(){
 
-        Group [] visitGroup=new Group[]{group1,group2,group3,group4};
+    public String[] ouputVal_prev(Group [] input, int inputnval, String[] output){
+        visitGroup=input;
+        nval=inputnval;
+        beanVisit=new BeanResultSearch(nval);
+        uids=new String[nval];
+
+        return outputVal();
+    }
+    @FXML
+    public String [] outputVal(){
         for(int i=0;i<nval;i++){
+            System.out.println(i);
             visitGroup[i].setOpacity(1);
         }
         String [] [] users= beanVisit.exitDes();
@@ -69,6 +79,7 @@ public class ResultSearchControllerInterf1 {
             else {
                 visitGroup[i].setOpacity(0);
             }}
+        return uids;
     }
     @FXML
     public void touchChat(ActionEvent event){
@@ -109,12 +120,12 @@ public class ResultSearchControllerInterf1 {
         controller.backTo();
     }
     @FXML
-    protected void goToPersonalForm(ActionEvent event) {
-        controller.switchToPersonalForm(event);
-    }
-    @FXML
     protected void goToHome(ActionEvent event) {
         controller.switchToHome(event);
+    }
+    @FXML
+    protected void goToPersonalForm(ActionEvent event){
+        controller.switchToPersonalForm(event);
     }
 
 }

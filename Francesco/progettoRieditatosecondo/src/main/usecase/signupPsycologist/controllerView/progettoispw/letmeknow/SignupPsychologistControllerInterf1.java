@@ -30,8 +30,9 @@ public class SignupPsychologistControllerInterf1 {
     }
     @FXML
     protected void backToLogin() {
-        controller.backTo();
-    }
+            Page controller=new Page();
+            controller.backTo();
+        }
     public void save (ActionEvent event) {
         Boolean bool;
         emailCheck.setOpacity(0);

@@ -39,15 +39,20 @@ public class InitialSearchAndChatControllerInterf1 {
     ISCBean bean;
     BeanResultSearch beanVisit;
     String [] uids;
+    Group [] chatExtGroup;
+    Group []chatGroup;
     public InitialSearchAndChatControllerInterf1(){
         nval=4;
         bean=new ISCBean(nval);
         beanVisit=new BeanResultSearch(4);
         uids=new String[4];
         controller=new PageMenu();
+
     }
     public void initialize(){
         userid=bean.getUserid();
+        chatExtGroup=new Group[]{extGroup1,extGroup2,extGroup3,extGroup4};
+        chatGroup=new Group []{group1,group2,group3,group4};
         outputValChat();
         searchBar.textProperty().addListener((observableValue, s, t1) -> {
             if(searchBar.getText().equals("")){
@@ -56,11 +61,15 @@ public class InitialSearchAndChatControllerInterf1 {
             }
         });
     }
-
+    public String [] prev_outputValChat(Group [] group1,Group [] group2,int input ){
+        chatExtGroup=group1;
+        chatGroup=group2;
+        nval=input;
+        bean=new ISCBean(nval);
+        return outputValChat();
+    }
     @FXML
-    public  void outputValChat(){
-        Group [] chatExtGroup=new Group[]{extGroup1,extGroup2,extGroup3,extGroup4};
-        Group []chatGroup=new Group []{group1,group2,group3,group4};
+    public  String [] outputValChat(){
         for(int i=0;i<nval;i++){
             chatExtGroup[i].setOpacity(1);
         }
@@ -74,15 +83,15 @@ public class InitialSearchAndChatControllerInterf1 {
             ObservableList<Node> inner= chatGroup[i].getChildren();
             for(Node elem:inner){
                 Text text=(Text)elem;
-                if(elem.getId().equals(UID)){
+                if(elem.getId()!=null && elem.getId().equals(UID)){
                     uids[i]=strUid[i];
                     text.setText("#"+strUid[i]);
                 }
                 else text.setText(strLst[i]);
             }
         }
+        return uids;
     }
-
     private String getUid(String string){
         int indice=-1;
         String sub;
@@ -133,6 +142,11 @@ public class InitialSearchAndChatControllerInterf1 {
        resultSearch.visit(event);
     }
     @FXML
+    protected void searchMessage(){
+        bean.search(searchBar.getText());
+        outputValChat();
+    }
+    @FXML
     protected void goToHome(ActionEvent event)  {
         controller.switchToHome(event);
     }
@@ -146,12 +160,10 @@ public class InitialSearchAndChatControllerInterf1 {
     }
     @FXML
     protected void goToSearch(ActionEvent event) {
-        controller.switchTo("search/interf1.fxml",event,"Search");
-    }
-    @FXML
-    protected void searchMessage(){
-        bean.search(searchBar.getText());
-        outputValChat();
+        controller.switchToSearch(event);
     }
 
+    public void goToISC(ActionEvent event) {
+        controller.switchToISC(event);
+    }
 }

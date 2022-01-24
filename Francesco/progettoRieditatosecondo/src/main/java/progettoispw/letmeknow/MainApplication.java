@@ -19,6 +19,8 @@ import progettoispw.letmeknow.controller.search.Search;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainApplication extends Application {
     private enum ScreenSize{

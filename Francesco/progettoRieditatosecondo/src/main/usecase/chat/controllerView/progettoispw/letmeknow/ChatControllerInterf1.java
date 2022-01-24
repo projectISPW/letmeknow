@@ -87,7 +87,7 @@ public class ChatControllerInterf1 {
     @FXML
     protected void goBack(ActionEvent event) throws IOException {
         timeline.stop();
-        controller.switchTo("initialSearchAndChat/interf1.fxml",event,"Your chat");
+        controller.switchToISC(event);
     }
     @FXML
     protected void goToPersonalForm(ActionEvent event) throws IOException {

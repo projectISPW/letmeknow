@@ -65,7 +65,7 @@ public class ChatControllerInterf2 extends ChatControllerInterf1{
         String who=button.getText();
         who=checkUsrId(who);
         iscBean.touched(who);
-        controller.switchTo("chat/interf2.fxml",event,"chat");
+        controller.switchToChat(event);
     }
     public  void addUser(){
         listUtenti.getChildren().removeAll(listUtenti.getChildren());
@@ -79,7 +79,6 @@ public class ChatControllerInterf2 extends ChatControllerInterf1{
             userButton=graphic.getButton(uid[i]);
             msgLabel=graphic.getLabel(msg[i]);
             userButton.setOnAction(this::goChat);
-
             listUtenti.getChildren().addAll(userButton,msgLabel);
             listUtenti.setPrefHeight(graphic.getHlist());
         }

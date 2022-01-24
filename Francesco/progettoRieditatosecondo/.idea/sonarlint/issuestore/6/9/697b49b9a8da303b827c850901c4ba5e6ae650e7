@@ -1,9 +1,0 @@
-
-`
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(¹‡ß©øÿÿÿÿ
-S	java:S1066"9Replace this use of System.out or System.err by a logger.(üË¹úÿÿÿÿ
-S	java:S106Y"9Replace this use of System.out or System.err by a logger.(™Ø¼Óøÿÿÿÿ
-B
-java:S1125^"'Remove the unnecessary boolean literal.(Ù‚°†úÿÿÿÿ
-N	java:S106q"9Replace this use of System.out or System.err by a logger.(ŞÄ©Œ
-N	java:S106u"9Replace this use of System.out or System.err by a logger.(š¯îû

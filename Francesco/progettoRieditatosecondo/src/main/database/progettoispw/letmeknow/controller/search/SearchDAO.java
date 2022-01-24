@@ -8,9 +8,10 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchDAO implements SearchMeta {
+public class SearchDAO {
     ConnectionDBMS connDB;
     Query query;
+    public static final String UID ="userid";
     public SearchDAO() {
         connDB = new ConnectionDBMS();
         query = new Query();
@@ -32,7 +33,7 @@ public class SearchDAO implements SearchMeta {
             while (rst.next()) {
                 attach(rst.getString(UID), ret);
             }
-            return (ArrayList<String>) ret;
+            return ret;
         } catch (SQLException e) {
             e.printStackTrace();
             return new ArrayList<>();
@@ -40,29 +41,31 @@ public class SearchDAO implements SearchMeta {
             connDB.closeRSTSTMT(rst, stmt);
         }
     }
+    public void attach(String input,String check,ArrayList list){
+        if(!list.contains(input) && !input.equals(check))list.add(input);
+    }
     public boolean addVisited(String userid, String userid2) {
         Statement stmt = null;
         ResultSet rst = null;
-        boolean bool = true;
+        boolean bool = false;
         String [] out=new String[4];
+        ArrayList<String>prev=new ArrayList<>();
         try {
             stmt = connDB.connection(stmt);
-            query.newLine(stmt,userid);
             rst = query.getVisited(stmt, userid);
             while (rst.next()) {
-              out[1]=rst.getString(1);
-              out[2]=rst.getString(2);
-              out[3]=rst.getString(3);
+                bool=true;
+                attach(rst.getString(1),userid2,prev);
+                attach(rst.getString(2),userid2,prev);
+                attach(rst.getString(3),userid2,prev);
             }
-            out[0]=userid2;
-            for(int i=0;i<4;i++){
-                for(int j=i+1;j<4;j++){
-                    if(out[j]!=null && out[i]!=null && out[i].equals(out[j]) ){
-                        out[j]=null;
-                    }
-                }
+            if(!bool){
+                  bool=query.newLine(stmt,userid);
+                  prev.add(null);
+                  prev.add(null);
             }
-            bool=query.setVisited(stmt, userid,out);
+            prev.add(userid2);
+            if(bool)bool=query.setVisited(stmt, userid,prev);
             if(bool)bool=query.incremVisit(stmt,userid2);
             return bool;
         } catch (SQLException throwables) {
@@ -80,6 +83,10 @@ public class SearchDAO implements SearchMeta {
             query.newLine(stmt,userid);
             System.out.println(" i am survived");
             rst = query.getnVisit(stmt, userid);
+            if(!rst.next()){
+                query.newLine(stmt,userid);
+                rst=query.getnVisit(stmt,userid);
+            }
             if (rst.next()) ret[0]=Integer.parseInt(rst.getString(1));
             System.err.println(ret[0]);
             rst = query.getnRows(stmt);

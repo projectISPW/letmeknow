@@ -6,7 +6,7 @@ import progettoispw.letmeknow.controller.utentipsy.UtentePsy;
 
 import java.util.ArrayList;
 
-public class HomepagePsychologistController implements FormMeta {
+public class HomepagePsychologistController implements  FormMeta {
     private UtentePsy user;
     private ArrayList<Form> list;
     private float [][] innerList;

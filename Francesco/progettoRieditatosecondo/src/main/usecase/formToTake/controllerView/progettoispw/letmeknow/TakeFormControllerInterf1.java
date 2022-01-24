@@ -19,7 +19,7 @@ import progettoispw.letmeknow.bean.FormToTakeStatusBean;
 import java.io.IOException;
 
 
-public class TakeFormControllerInterf1 {
+public class TakeFormControllerInterf1 implements Interf1ButtonBar{
     @FXML
     protected AnchorPane form;
     @FXML
@@ -116,11 +116,9 @@ public class TakeFormControllerInterf1 {
         controller.backTo();
     }
     @FXML
-    protected void goToHome(ActionEvent event) throws IOException {
-        controller.switchToHome(event);
+    protected  void goToISC(ActionEvent event){
+        controller.switchToISC(event);
     }
     @FXML
-    protected void goToChat(ActionEvent event) throws IOException {
-        controller.switchToChat(event);
-    }
+    protected  void goToHome(ActionEvent event){controller.switchToHome(event);}
 }

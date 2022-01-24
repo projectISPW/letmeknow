@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class Search implements SalvaUtenteMeta {
+public class Search {
     private String userid;
     private SearchDAO searchData;
     private Sliders slider;
@@ -58,7 +58,6 @@ public class Search implements SalvaUtenteMeta {
         for(String str:foundList){
             if(!inner.contains(str))inner.add(str);
         }
-        foundList=new ArrayList<>();
         return inner;
     }
     public boolean setTouched(String userid2) {

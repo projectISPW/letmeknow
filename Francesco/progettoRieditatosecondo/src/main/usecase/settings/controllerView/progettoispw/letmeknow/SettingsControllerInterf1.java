@@ -53,7 +53,7 @@ public class SettingsControllerInterf1 implements Initializable {
     }
     @FXML
     protected void goToChat(ActionEvent event) throws IOException {
-        controller.switchToChat(event);
+        controller.switchToISC(event);
     }
     @FXML
     protected void setPswd()  {
