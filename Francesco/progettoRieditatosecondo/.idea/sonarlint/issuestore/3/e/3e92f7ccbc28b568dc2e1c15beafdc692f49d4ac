@@ -1,17 +1,18 @@
 
-[
-java:S3252/"EUse static access with "javafx.animation.Animation" for "INDEFINITE".(æİ…³
-M	java:S106:"9Replace this use of System.out or System.err by a logger.(Æ¾ìy
-S	java:S106@"9Replace this use of System.out or System.err by a logger.(û¨ÑÆøÿÿÿÿ
-N	java:S106C"9Replace this use of System.out or System.err by a logger.(Ğø³ñ
-S	java:S106M"9Replace this use of System.out or System.err by a logger.(“…œİüÿÿÿÿ
-‚
-java:S1130["lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ûéø‰
-‡
-java:S1130`"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(‡°‚Ãşÿÿÿÿ
-m
-java:S1128"KRemove this unused import 'progettoispw.letmeknow.bean.CollectionFormBean'.(©„è“ûÿÿÿÿ8æ±Ø„ê/
-d
-java:S1128"BRemove this unused import 'progettoispw.letmeknow.bean.VisitBean'.(ìÖ‰¬ûÿÿÿÿ8ç±Ø„ê/
-j
-java:S1104("TMake timeline a static final constant or non-public and provide accessors if needed.(ãÈŞà
+b
+java:S3252/"EUse static access with "javafx.animation.Animation" for "INDEFINITE".(æİ…³8Ôæáµê/
+j
+AX6iing-JEa6mvIdAxj6	java:S106:"9Replace this use of System.out or System.err by a logger.(Æ¾ìy8ğ˜”ê/
+p
+AX5otPbUa98W3gDnLusu	java:S106@"9Replace this use of System.out or System.err by a logger.(û¨ÑÆøÿÿÿÿ8À‹şÄæ/
+k
+AX5otPbUa98W3gDnLusv	java:S106C"9Replace this use of System.out or System.err by a logger.(Ğø³ñ8À‹şÄæ/
+p
+AX5otPbUa98W3gDnLusw	java:S106M"9Replace this use of System.out or System.err by a logger.(“…œİüÿÿÿÿ8À‹şÄæ/
+‰
+java:S1130["lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ûéø‰8Ôæáµê/
+
+java:S1130`"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(‡°‚Ãşÿÿÿÿ8Ôæáµê/
+‡
+AX6iing-JEa6mvIdAxj7
+java:S1104("TMake timeline a static final constant or non-public and provide accessors if needed.(ãÈŞà8ğ˜”ê/

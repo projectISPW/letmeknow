@@ -34,7 +34,7 @@ public class LoginControllerInterf1 {
     }
     @FXML
     protected void switchToSignUpPsych(ActionEvent event) {
-        controller.switchTo("signupPsicologist/interf1.fxml",event,"Signup");
+        controller.switchTo("signupPsychologist/interf1.fxml",event,"Signup");
     }
     @FXML
     protected void showPSWD(){

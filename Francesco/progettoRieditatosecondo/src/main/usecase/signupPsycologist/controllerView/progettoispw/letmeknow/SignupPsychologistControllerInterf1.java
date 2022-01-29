@@ -21,8 +21,12 @@ public class SignupPsychologistControllerInterf1 {
     public SignupPsychologistControllerInterf1() {
         bean=new SignupBean();
     }
+    public void reset(){
+        pswdCheck.setOpacity(0);
+        emailCheck.setOpacity(0);
+    }
     public void initialize(){
-
+        reset();
     }
     private boolean check(Boolean bool,Label lab){
         if(bool==false)lab.setOpacity(1);

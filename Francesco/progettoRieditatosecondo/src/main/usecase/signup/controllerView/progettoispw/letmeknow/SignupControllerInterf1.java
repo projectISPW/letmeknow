@@ -28,14 +28,13 @@ public class SignupControllerInterf1 {
     Slider sl2;
     @FXML
     Slider sl3;
-    Vector<Slider>sl;
+    Slider [] sliders;
     @FXML
     Label lab1;
     @FXML
     Label lab2;
     @FXML
     Label lab3;
-    Label[]labels;
     @FXML
     Label emailCheck;
     @FXML
@@ -48,19 +47,18 @@ public class SignupControllerInterf1 {
     SignupBean bean;
     public SignupControllerInterf1(){
         bean=new SignupBean();
-        sl=new Vector<>();
+
     }
     public void initialize() {
-        sl.add(sl1);
-        sl.add(sl2);
-        sl.add(sl3);
-        labels = new Label[]{lab1, lab2, lab3};
-        indice = 0;
-        for (Slider slider : sl) {
-            slider.valueProperty().addListener((observableValue, number, t1) -> {
-                indice = sl.indexOf(slider);
-                labels[indice].setText("" + (int) slider.getValue());
-                labels[indice].setOpacity(1);
+        Label [] labels = new Label[]{lab1, lab2, lab3};
+        sliders=new Slider[]{sl1,sl2,sl3};
+        reset();
+        for (int i=0;i<3;i++) {
+            int finalI = i;
+            sliders[i].valueProperty().addListener((observableValue, number, t1) -> {
+                System.out.println(finalI);
+                labels[finalI].setText("" + (int) sliders[finalI].getValue());
+                labels[finalI].setOpacity(1);
             });
         }
     }
@@ -72,16 +70,18 @@ public class SignupControllerInterf1 {
         if(bool==false)lab.setOpacity(1);
         return bool;
     }
-
+    private void reset(){
+        emailCheck.setOpacity(0);
+        pswdCheck.setOpacity(0);
+        desCheck.setOpacity(0);
+        slCheck.setOpacity(0);
+    }
     @FXML
     protected void save(ActionEvent event) {
         Boolean bool;
         String[] arr;
         int [] val;
-        emailCheck.setOpacity(0);
-        pswdCheck.setOpacity(0);
-        desCheck.setOpacity(0);
-        slCheck.setOpacity(0);
+        reset();
         bool=bean.checkEmail(email.getText(),true);
         if(check(bool,emailCheck)==false)return;
         bool=bean.checkPswd(pswd.getText(),confirmpswd.getText());
