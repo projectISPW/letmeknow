@@ -121,5 +121,3 @@ Fsrc/main/database/progettoispw/letmeknow/controller/search/Search.java,7\6\767
 Psrc/main/patterns/Factory/progettoispw/letmeknow/controller/ControllerClass.java,5\d\5d4095505ed3d7af9370223a3b588b718ac4887f
 u
 Esrc/main/database/progettoispw/letmeknow/controller/search/Query.java,a\a\aa15d7f0217d4bce81fee4798b1a61ac2abadf17
-y
-Isrc/main/database/progettoispw/letmeknow/controller/search/SearchDAO.java,7\0\70138f7b2afcf921afeabbaeaaf6e0b6b8e44b14
