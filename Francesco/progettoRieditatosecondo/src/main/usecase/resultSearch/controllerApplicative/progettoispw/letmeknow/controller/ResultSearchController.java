@@ -34,8 +34,8 @@ public class ResultSearchController {
             user=new UtenteUsr(userid);
             indice = founded.indexOf(userid);
             if (indice >= count && indice < count + nVal) {
-               actual = new InnerUsers(user);
-               attach(actual,formatted);
+                actual = new InnerUsers(user);
+                attach(actual,formatted);
             }
         }
         count+=nVal;

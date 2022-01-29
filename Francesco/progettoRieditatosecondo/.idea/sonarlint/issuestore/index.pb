@@ -7,8 +7,6 @@ osrc/main/usecase/formPsicologistResult/controllerView/progettoispw/letmeknow/Fo
 ksrc/main/usecase/HomepagePsycologist/controllerView/progettoispw/letmeknow/HomepagePsychologistInterf1.java,c\3\c313ab5dddadae47f8ba388732f142253dbbd367
 õ
 ksrc/main/usecase/HomepagePsycologist/controllerView/progettoispw/letmeknow/HomepagePsychologistInterf2.java,b\3\b30c9b70af6c4430e08a3b9e2f1c5c950c5befe7
-Å
-Qsrc/main/patterns/singleton/progettoispw/letmeknow/controller/ConnectionDBMS.java,7\3\73884065e3c49ac5eaee334d7d8430c0fdb7c106
 u
 Esrc/main/database/progettoispw/letmeknow/controller/utenti/Query.java,4\0\408885508d67e15d6ad9031546c12f8a21079603
 ä
@@ -23,8 +21,6 @@ xsrc/main/usecase/formPsicologistResult/controllerApplicative/progettoispw/letme
 msrc/main/usecase/formResult/controllerApplicative/progettoispw/letmeknow/controller/FormResultController.java,4\2\42758b3985024f5ca4ccdc1d6bf85811265bd2c1
 ±
 Äsrc/main/usecase/HomepagePsycologist/controllerApplicative/progettoispw/letmeknow/controller/HomepagePsychologistController.java,c\0\c018112573a5d16e870da9ad99a5745ee00ef0c0
-†
-psrc/main/usecase/initialSearchAndChat/controllerApplicative/progettoispw/letmeknow/controller/ISCController.java,9\e\9e44ea8d1ef7471755a6946d9ba84e5d459103d3
 ì
 csrc/main/usecase/login/controllerApplicative/progettoispw/letmeknow/controller/LoginController.java,6\e\6e391cac773dad09905901fd0d945d05358c51ea
 ô
@@ -99,12 +95,8 @@ asrc/main/usecase/homepage/controllerView/progettoispw/letmeknow/Homepage_Homepa
 ^src/main/usecase/homepage/controllerView/progettoispw/letmeknow/HomepageControllerInterf2.java,b\f\bfbdadde07645d8aa1d635d41fb3836e35bbd510
 ï
 esrc/main/usecase/search/controllerApplicative/progettoispw/letmeknow/controller/SearchController.java,8\2\82565afac8841ce0b9e070b958944200add2b1fb
-°
-qsrc/main/usecase/resultSearch/controllerApplicative/progettoispw/letmeknow/controller/ResultSearchController.java,a\5\a5fdda0377b8dec97aa61932d7931c1023dca850
 é
 ^src/main/usecase/settings/controllerView/progettoispw/letmeknow/SettingsControllerInterf1.java,c\b\cb8d31428a8e07e7e8d703d8e5c0ed30ce67bc47
-ë
-asrc/main/usecase/homepage/controllerView/progettoispw/letmeknow/AdviseBoarcControllerInterf2.java,1\7\17f091fda3a0bd021315692b87a38ee185c7d90a
 v
 Fsrc/main/database/progettoispw/letmeknow/controller/search/Search.java,7\6\767466ef605e1024bf07e2fe16531b55eb76458c
 Ä
