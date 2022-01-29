@@ -3,11 +3,12 @@ package progettoispw.letmeknow.bean;
 import progettoispw.letmeknow.controller.ResultSearchController;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class BeanResultSearch {
     Integer nval;
     ResultSearchController controller;
-    private ArrayList<InnerUsers> actual;
+    private List<InnerUsers> actual;
     public BeanResultSearch(int val){
         nval=val;
         controller=new ResultSearchController(nval);
@@ -27,6 +28,7 @@ public class BeanResultSearch {
             arrStr[2][index]=usr.getDescription();
             usr.getStatus();
         }
+        actual=null;
         return arrStr;
     }
 

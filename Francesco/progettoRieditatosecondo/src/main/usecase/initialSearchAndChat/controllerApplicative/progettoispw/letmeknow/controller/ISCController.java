@@ -48,7 +48,7 @@ public class ISCController {
     }
     private List<lastMessage> getListV2(String find){
         //ricerca messaggi sulla lista utenti 2
-        ArrayList <Message>msgs=(ArrayList<Message>) chat.getLocalSearch(find);
+        List <Message>msgs= chat.getLocalSearch(find);
         ArrayList <lastMessage> formatted  = new ArrayList<>();
         lastMessage actual;
         for (Message msg : msgs) {
@@ -78,14 +78,14 @@ public class ISCController {
         return formatted;
     }
     private List<lastMessage>getListV4(String find ){
-        ArrayList <Message>msgs= chat.getLocalSearch(find);
+        List <Message>msgs= chat.getLocalSearch(find);
         if(msgs.isEmpty())return new ArrayList<>();
         lastMessage actual;
         ArrayList <lastMessage> formatted  = new ArrayList<>();
         ArrayList<Message>inner=new ArrayList<>();
         int index=0;
         while(index++<nVal){
-            count = check(count, msgs);
+            count = check(count, (ArrayList<Message>) msgs);
             Message msg=msgs.get(count++);
             if(inner.contains(msg))break;
             actual = new lastMessage(msg.getSender()+"||"+msg.getReciver(), msg);

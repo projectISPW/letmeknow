@@ -3,6 +3,7 @@ package progettoispw.letmeknow.controller.search;
 import progettoispw.letmeknow.controller.utentiusr.UtenteUsr;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Search {
     private String userid;
@@ -48,7 +49,7 @@ public class Search {
             }
         }
     }
-    public ArrayList<String> getArrayList(){
+    public List<String> getArrayList(){
         ArrayList inner=new ArrayList();
         if(foundList.isEmpty()){
             inner= (ArrayList) searchData.getVisit(userid);

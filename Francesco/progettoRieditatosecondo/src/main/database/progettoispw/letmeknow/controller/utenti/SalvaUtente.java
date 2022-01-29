@@ -40,18 +40,18 @@ public class SalvaUtente {
         UserDAO userDataInner=new UserDAO();
         String []data = userDataInner.recover(to);
         if(data[0]!=null && data[1]!=null){
-            JavaMailUtil email=new JavaMailUtil();
+            JavaMailUtil host=new JavaMailUtil();
             String text="Your userid is .:     "+data[0]+"Your password is .:        "+data[1];
-            email.setText(text);
-            return email.sendMail(to);
+            host.setText(text);
+            return host.sendMail(to);
         }
         return false;
     }
     public boolean composeMail(String uid, String password, String mail) {
-        JavaMailUtil email=new JavaMailUtil();
+        JavaMailUtil host=new JavaMailUtil();
         String text="Your userid is .:     "+uid+"Your password is .:        "+password;
-        email.setText(text);
-        return email.sendMail(mail);
+        host.setText(text);
+        return host.sendMail(mail);
     }
     private String getUid(){
         int random;

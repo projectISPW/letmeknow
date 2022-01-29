@@ -4,6 +4,7 @@ import progettoispw.letmeknow.controller.ConnectionDBMS;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class UserDAO {
     ConnectionDBMS connDB;
@@ -15,7 +16,7 @@ public class UserDAO {
         connDB= new ConnectionDBMS();
         query=new Query();
     }
-    public ArrayList<Form> collectForms(int month, int year) {
+    public List<Form> collectForms(int month, int year) {
         Statement stmt=null;
         ResultSet rst=null;
         Form form=new Form();
@@ -23,13 +24,13 @@ public class UserDAO {
             stmt=connDB.connection(stmt);
             rst=query.selectResult(stmt,month,year);
             int [] answers;
-            ArrayList<Form>list=new ArrayList<>();
+            List<Form> list=new ArrayList<>();
             while(rst.next()) {
                 answers = new int[6];
                 for (int i = 0; i < 6; i++) {
                     answers[i] = Integer.parseInt(rst.getString(START + i));//3=inizio dei valori delle risposte
                 }
-                list= form.attach(Integer.parseInt(rst.getString(FORMID)), answers,rst.getString(UID), list);
+                list=  form.attach(Integer.parseInt(rst.getString(FORMID)), answers,rst.getString(UID), list);
             }
             return list;
         } catch (SQLException e) {

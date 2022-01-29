@@ -7,7 +7,6 @@ import progettoispw.letmeknow.bean.SignupBean;
 
 public class SignupPsychologistControllerInterf1 {
     SignupBean bean;
-    Page controller=new Page();
     @FXML
     TextField email;
     @FXML

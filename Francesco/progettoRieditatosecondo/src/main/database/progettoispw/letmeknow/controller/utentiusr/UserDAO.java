@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 
 public class UserDAO{
     ConnectionDBMS connDB;
@@ -85,14 +86,14 @@ public class UserDAO{
         else if(val <1 )return 1;
         else return val;
     }
-    public boolean getResult(String userid,int [] params){
+    public boolean getResult(String userid,Integer [] params){
         Statement stmt=null;
         ResultSet rst=null;
-        ArrayList<Integer> calculated=new ArrayList<>();
+        List<Integer> calculated=new ArrayList<>();
         char[] about;
         boolean edited=false;
         boolean check=true;
-        int []  currentVal=new int[3];
+        Integer []  currentVal=new Integer[3];
         int size=-1;
         try {
             stmt=connDB.connection(stmt);
@@ -134,7 +135,7 @@ public class UserDAO{
         }
         return check;
     }
-    private boolean setParams(String userid,int [] oldParam,int [] newParam,int size){
+    private boolean setParams(String userid,Integer [] oldParam,Integer [] newParam,int size){
         Statement stmt=null;
         try{
             for(int i=0;i<3;i++)oldParam[i]=average(oldParam[i]+newParam[i],size+1 );
@@ -144,7 +145,7 @@ public class UserDAO{
             connDB.closeSTMT(stmt);
         }
     }
-    private boolean setCalculated(String userid,ArrayList<Integer> calculated){
+    private boolean setCalculated(String userid,List<Integer> calculated){
         Statement stmt=null;
         boolean check=true;
         try{

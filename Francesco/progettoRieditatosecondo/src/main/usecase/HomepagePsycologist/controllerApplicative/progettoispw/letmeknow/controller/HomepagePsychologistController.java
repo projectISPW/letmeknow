@@ -4,10 +4,11 @@ import progettoispw.letmeknow.controller.utentipsy.Form;
 import progettoispw.letmeknow.controller.utentipsy.UtentePsy;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class HomepagePsychologistController {
     private UtentePsy user;
-    private ArrayList<Form> list;
+    private List<Form> list;
     private float [][] innerList;
     private int index;
     static final Integer [] FORMSID={1,2,3};

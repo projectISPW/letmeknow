@@ -4,50 +4,41 @@ import progettoispw.letmeknow.controller.utenti.SalvaUtente;
 
 public class UtenteUsr extends SalvaUtente {
     UserDAO userDataUSR;
-    private int pos;
-    private int hum;
-    private int emp;
     private String des;
     private String goal;
     private String tag;
     private String data;
     private Goal personalObb;
+    private ParameterSliders parameterSliders;
     public UtenteUsr(String who) {
         super(who);
         userDataUSR =new UserDAO();
         personalObb=new Goal();
+        parameterSliders=new ParameterSliders();
         dataHomeUsr();
         queryResult();
     }
     public void  dataHomeUsr () {
         if(userid!=null){
             String [] inner= userDataUSR.selectUser(userid);
-            if(inner[0]!=null && inner[1]!=null && inner[2]!=null) {
-                emp = Integer.parseInt(inner[0]);
-                hum = Integer.parseInt(inner[1]);
-                pos = Integer.parseInt(inner[2]);
+                parameterSliders.setEmp(inner[0]);
+                parameterSliders.setHum(inner[1]);
+                parameterSliders.setOpt(inner[2]);
                 des = inner[3];
-                goal = inner[4];
-                data = inner[5];
-                tag = inner[6];
-                personalObb.setObiettivo(goal);
-                personalObb.setTag(tag);
-                personalObb.setStrDataAmericanEurope(data);
-            }}
-       else{
-            emp=hum=pos=1;
-            goal=tag="";
-            data="0-0-0";
+                personalObb.setObiettivo(inner[4]);
+                personalObb.setTag(inner[5]);
+                personalObb.setStrDataAmericanEurope(inner[6]);
         }
     }
+
     public int getEmp(){
-        return emp;
+        return parameterSliders.getEmp();
     }
     public int getHum(){
-        return hum;
+        return parameterSliders.getHum();
     }
     public int getOpt(){
-        return pos;
+        return parameterSliders.getOpt();
     }
     public String getDescript(){
         return des;
@@ -85,6 +76,6 @@ public class UtenteUsr extends SalvaUtente {
         return personalObb.getExpired();
     }
     public boolean queryResult() {
-        return userDataUSR.getResult(userid,emp,hum,pos);
+        return userDataUSR.getResult(userid,parameterSliders.getAll());
     }
 }

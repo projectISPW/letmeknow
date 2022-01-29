@@ -59,11 +59,9 @@ public class ControllerClass {
        return chat;
     }
     public static void setResultForm(){
-        System.err.println(" i am instanziated too");
         form=new ResultForm(userU.getUserid());
     }
     public static void setResultForm(int formid){
-        System.err.println(" i am instanziated");
         form=new ResultForm(userU.getUserid(),formid);
     }
     public static ResultForm getResultForm(){

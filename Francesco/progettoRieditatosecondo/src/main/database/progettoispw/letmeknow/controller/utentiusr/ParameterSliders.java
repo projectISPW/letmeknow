@@ -19,11 +19,9 @@ public class ParameterSliders {
     public void setEmp(String  emp) {
         if(emp!=null)this.emp=Integer.parseInt(emp);
     }
-
     public void setHum(String  hum) {
         if(hum!=null)this.emp=Integer.parseInt(hum);
     }
-
     public void setOpt(String opt) {
         if(opt!=null)this.opt=Integer.parseInt(opt);
     }

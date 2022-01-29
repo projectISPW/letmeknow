@@ -8,7 +8,7 @@ import java.util.List;
 public class UtentePsy extends SalvaUtente{
     UserDAO userDataPsy;
     Form form;
-    ArrayList<Form> listForms;
+    List<Form> listForms;
     float [] selected;
     public UtentePsy(String who) {
         super(who);

@@ -5,6 +5,7 @@ import progettoispw.letmeknow.controller.search.Search;
 import progettoispw.letmeknow.controller.utentiusr.UtenteUsr;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ResultSearchController {
     private int count;
@@ -18,16 +19,16 @@ public class ResultSearchController {
     public ResultSearchController(){
         search=ControllerClass.getSearch();
     }
-    public void attach(InnerUsers elem,ArrayList<InnerUsers>formatted ){
+    public void attach(InnerUsers elem,List <InnerUsers>formatted ){
         formatted.add(elem);
     }
     InnerUsers actual;
-    public ArrayList<InnerUsers> queryUsers(){
+    public List<InnerUsers> queryUsers(){
         int indice;
         actual=null;
-        ArrayList<String> founded= search.getArrayList();
+        List<String> founded= search.getArrayList();
         ArrayList<InnerUsers>formatted=new ArrayList<>();
-        count = check(count,founded);
+        count = check(count, (ArrayList<String>) founded);
         UtenteUsr user;
         for (String userid : founded) {
             if(userid==null)return formatted;
@@ -44,12 +45,11 @@ public class ResultSearchController {
 
     private Integer check(Integer count,ArrayList<String> founded) {
         if(count>=founded.size()){
-            return count=0;
+            return 0;
         }
         return count;
     }
     public void who(String usr){
-        System.out.println("UTENTE CLICCATO "+usr);
         search.setTouched(usr);
     }
     public int[] nVisit(){

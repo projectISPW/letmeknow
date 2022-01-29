@@ -77,24 +77,21 @@ public class UserDAO {
         Statement stmt=null;
         try {
             stmt=connDB.connection(stmt);
-            query.newLine(stmt,uid,password,type,email);
-            return true;
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-            return false;
-        }finally{
+            return query.newLine(stmt,uid,password,type,email);
+        } finally{
             connDB.closeRSTSTMT(null,stmt);
         }
     }
     public boolean registration(String uid,String password, String type ,int[] val,String description,String email,String goal ){
         Statement stmt=null;
         try {
+            String []log=new String[3];
+            log[0]=uid;
+            log[1]=password;
+            log[2]=type;
+            log[3]=email;
             stmt=connDB.connection(stmt);
-            query.newLine(stmt,uid,password,type,val,description,email,goal);
-            return true;
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-            return false;
+            return  query.newLine(stmt,log,val,description,goal);
         } finally{
             connDB.closeSTMT(stmt);
         }

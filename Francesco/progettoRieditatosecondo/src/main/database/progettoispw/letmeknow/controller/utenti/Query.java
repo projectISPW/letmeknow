@@ -26,24 +26,33 @@ public class Query {
     }
 
     protected ResultSet queryUid(Statement stmt) throws SQLException {
-        String sql=String.format(" SELECT userid FROM utenti ");
+        String sql=" SELECT userid FROM utenti ";
         return stmt.executeQuery(sql);
     }
 
-    protected void newLine(Statement stmt,String uid,String password, String type ,int [] val,String description,String email,String goal) throws SQLException{
-        String sql=String.format("INSERT INTO `utenti` (`userid`, `password`, `type`, `email`, `empathy`, `humor`, `positivity`, `description`, `goal`,`by`)" +
-                                                        " VALUES ('%s',         '%s',      '%s',       '%s',    '%d',       '%d',      '%d','%s','%s',current_date+INTERVAL 6 month )",
-                                                                    uid,password,type,email,val[0],val[1],val[2],description,goal);
-        stmt.executeUpdate(sql);
-        return ;
+    protected boolean newLine(Statement stmt,String [] log ,int [] val,String description,String goal) {
+
+        try {
+            String sql=String.format("INSERT INTO `utenti` (`userid`, `password`, `type`, `email`, `empathy`, `humor`, `positivity`, `description`, `goal`,`by`)" +
+                            " VALUES ('%s',         '%s',      '%s',       '%s',    '%d',       '%d',      '%d','%s','%s',current_date+INTERVAL 6 month )",
+                    log[0],log[1],log[2],log[3],val[0],val[1],val[2],description,goal);
+            stmt.executeUpdate(sql);
+            return true;
+        } catch (SQLException e) {
+           return false;
+        }
     }
-    protected void newLine(Statement stmt, String uid,String password, String type, String email) throws SQLException {
-        String sql=String.format("INSERT INTO `utenti` (`userid`, `password`, `type`, `email`)" +
-                                " VALUES ('%s',         '%s',      '%s',       '%s')",
-                                            uid,password,type,email);
-        
-        stmt.executeUpdate(sql);
-        return ;
+    protected boolean newLine(Statement stmt, String uid,String password, String type, String email) {
+        try {
+            String sql=String.format("INSERT INTO `utenti` (`userid`, `password`, `type`, `email`)" +
+                            " VALUES ('%s',         '%s',      '%s',       '%s')",
+                    uid,password,type,email);
+
+            stmt.executeUpdate(sql);
+            return true;
+        } catch (SQLException e) {
+           return false;
+        }
     }
     protected boolean feed(Statement stmt,String from,String what){
         try {

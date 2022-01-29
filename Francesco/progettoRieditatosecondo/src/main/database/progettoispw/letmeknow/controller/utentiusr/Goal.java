@@ -1,12 +1,6 @@
 package progettoispw.letmeknow.controller.utentiusr;
 
-import javax.swing.text.DateFormatter;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
 public class Goal {
     private  String obiettivo;
@@ -49,8 +43,7 @@ public class Goal {
         }
     }
     public String getAmericanDataStr(){
-        String convert=String.format("%d-%d-%d", dataEuropean[2], dataEuropean[1], dataEuropean[0]);
-        return convert;
+        return String.format("%d-%d-%d", dataEuropean[2], dataEuropean[1], dataEuropean[0]);
     }
     public void setTag(String string){
         tag=string;
@@ -66,8 +59,5 @@ public class Goal {
         LocalDate inner=LocalDate.of(dataEuropean[2],dataEuropean[1],dataEuropean[0]);
         LocalDate compare =LocalDate.now();
         return compare.isAfter(inner);
-    }
-    public void getStatus(){
-        System.out.println("il tuo obiettivo personale:"+obiettivo+"i tuoi tag:"+tag+"la tua scadenza:"+ dataEuropean[0]+"/"+ dataEuropean[1]+"/"+ dataEuropean[2]);
     }
 }
