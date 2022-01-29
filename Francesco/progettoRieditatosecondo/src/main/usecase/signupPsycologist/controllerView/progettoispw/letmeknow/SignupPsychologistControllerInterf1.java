@@ -39,8 +39,7 @@ public class SignupPsychologistControllerInterf1 {
         }
     public void save (ActionEvent event) {
         Boolean bool;
-        emailCheck.setOpacity(0);
-        pswdCheck.setOpacity(0);
+        reset();
         bool = bean.checkEmail(email.getText(), true);
         if (check(bool, emailCheck) == false) return;
         bool = bean.checkPswd(pswd.getText(), confirmpswd.getText());

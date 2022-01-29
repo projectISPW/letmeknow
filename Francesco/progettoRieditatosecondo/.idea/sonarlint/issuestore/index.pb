@@ -137,11 +137,3 @@ x
 Hsrc/main/database/progettoispw/letmeknow/controller/utentipsy/Query.java,d\b\db673471588c1bfcb7a1e0af970d55917b2218cc
 |
 Lsrc/main/database/progettoispw/letmeknow/controller/utentipsy/UtentePsy.java,b\0\b009d7abdd461e28a2d7f8f9ee46ff77ec8678a3
-i
-9src/main/java/progettoispw/letmeknow/MainApplication.java,b\4\b4ea8f36ec0b1c2c64d0530d95547727e22bbb93
-Š
-Zsrc/main/usecase/signup/controllerView/progettoispw/letmeknow/SignupControllerInterf1.java,b\b\bbf6bc955b5c77a1d8bec19ad7f6946395e7e742
-ˆ
-Xsrc/main/usecase/login/controllerView/progettoispw/letmeknow/LoginControllerInterf1.java,d\7\d7ec9ce4c0ef0e4f9d8c4e08dbb3e34bd77b560c
-¡
-qsrc/main/usecase/signupPsycologist/controllerView/progettoispw/letmeknow/SignupPsychologistControllerInterf1.java,8\4\845e661a9fc4a3c1bf9bd64c9fb2948b815744e3
