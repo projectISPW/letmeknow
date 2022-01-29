@@ -7,7 +7,7 @@ import java.util.Random;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class SalvaUtente implements SalvaUtenteMeta {
+public class SalvaUtente {
     protected String userid;
     private String password;
     private String type;
