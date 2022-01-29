@@ -30,6 +30,9 @@ public class ResultSearchControllerInterf2{
     public ResultSearchControllerInterf2(){
         uids=new String[6];
     }
+    public ResultSearchControllerInterf2(String [] input){
+        uids=input;
+    }
     public void initialize(){
         outputVal();
     }
@@ -48,20 +51,24 @@ public class ResultSearchControllerInterf2{
                 event.consume();
             }
         }
+        if(Result_Visit!=null)switchPane();
+    }
+    public void switchPane(){
         try {
             Result_Visit.getChildren().removeAll(Result_Visit.getChildren());
             Result_Visit.getChildren().add((Node) FXMLLoader.load(getClass().getResource("homepageOthers/interf2.fxml")));
         } catch (IOException e) {
-            event.consume();
+
         }
+
     }
     public void touchChat(ActionEvent actionEvent) {
-        HomepagecontrollerInterf2 homepage=new HomepagecontrollerInterf2(uids);
-        homepage.touchChat(actionEvent);
+        InitialSearchAndChatControllerInterf1 iscController=new InitialSearchAndChatControllerInterf1();
+        iscController.touchChat(actionEvent);
     }
     public void outputVal() {
         ResultSearchControllerInterf1 rscInterf1=new ResultSearchControllerInterf1();
         String [] inner =new String [6];
-        uids=rscInterf1.ouputVal_prev(new Group[]{group1,group2,group3,group4,group5,group6},6,inner);
+        uids=rscInterf1.ouputVal_prev(new Group[]{group1,group2,group3,group4,group5,group6},6);
     }
 }

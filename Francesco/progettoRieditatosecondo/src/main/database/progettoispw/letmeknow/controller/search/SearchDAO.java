@@ -41,30 +41,37 @@ public class SearchDAO {
             connDB.closeRSTSTMT(rst, stmt);
         }
     }
-    public void attach(String input,String check,ArrayList list){
-        if(!list.contains(input) && !input.equals(check))list.add(input);
+    public void attach(String input,String check,List<String> list){
+        if(input!=null) {
+            if (!list.contains(input) && !input.equals(check)) list.add(input);
+        }
+        else
+        {
+            list.add(null);
+        }
     }
     public boolean addVisited(String userid, String userid2) {
         Statement stmt = null;
         ResultSet rst = null;
         boolean bool = false;
-        String [] out=new String[4];
         ArrayList<String>prev=new ArrayList<>();
         try {
             stmt = connDB.connection(stmt);
             rst = query.getVisited(stmt, userid);
-            while (rst.next()) {
+            prev.add(userid2);
+            if (rst.next()) {
+                System.out.println("scansione lista ");
                 bool=true;
                 attach(rst.getString(1),userid2,prev);
                 attach(rst.getString(2),userid2,prev);
                 attach(rst.getString(3),userid2,prev);
             }
             if(!bool){
-                  bool=query.newLine(stmt,userid);
-                  prev.add(null);
-                  prev.add(null);
+                System.out.println("insert line");
+                bool=query.newLine(stmt,userid);
+                prev.add(null);
+                prev.add(null);
             }
-            prev.add(userid2);
             if(bool)bool=query.setVisited(stmt, userid,prev);
             if(bool)bool=query.incremVisit(stmt,userid2);
             return bool;
@@ -77,21 +84,26 @@ public class SearchDAO {
     public int[] getnVisit(String userid) {
         Statement stmt = null;
         ResultSet rst = null;
+        boolean bool=true;
         int [] ret = new int [2];
         try {
             stmt = connDB.connection(stmt);
             query.newLine(stmt,userid);
-            System.out.println(" i am survived");
+            
             rst = query.getnVisit(stmt, userid);
-            if(!rst.next()){
-                query.newLine(stmt,userid);
-                rst=query.getnVisit(stmt,userid);
+            if (rst.next()) {
+                System.out.println(rst.getString(5));
+                ret[0]=Integer.parseInt(rst.getString(5));
+                bool=false;
             }
-            if (rst.next()) ret[0]=Integer.parseInt(rst.getString(1));
-            System.err.println(ret[0]);
+            if(bool){
+                bool=query.newLine(stmt,userid);
+                if(bool)ret[0]= Integer.parseInt(rst.getString(1));
+            }
+            System.out.println("get recived visit"+ret[0]);
             rst = query.getnRows(stmt);
             if (rst.next()) ret [1]=Integer.parseInt(rst.getString(1));
-            System.err.println(ret[1]);
+            System.out.println("get n visit"+ret[1]);
             return ret;
         } catch (Exception throwables) {
             return new int [2];
@@ -99,7 +111,7 @@ public class SearchDAO {
             connDB.closeRSTSTMT(rst, stmt);
         }
     }
-    public ArrayList<String> getVisit(String userid) {
+    public List<String> getVisit(String userid) {
         Statement stmt = null;
         ResultSet rst = null;
         int ind = 1;
@@ -108,7 +120,9 @@ public class SearchDAO {
             stmt = connDB.connection(stmt);
             rst = query.getVisited(stmt, userid);
             while (rst.next()) {
-                users.add(rst.getString(ind++));
+                users.add(rst.getString (1));
+                users.add(rst.getString (2));
+                users.add(rst.getString (3));
             }
             return users;
         } catch (SQLException throwables) {

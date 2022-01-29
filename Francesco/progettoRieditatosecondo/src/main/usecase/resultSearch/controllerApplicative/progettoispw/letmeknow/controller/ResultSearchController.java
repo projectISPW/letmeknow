@@ -44,7 +44,6 @@ public class ResultSearchController {
 
     private Integer check(Integer count,ArrayList<String> founded) {
         if(count>=founded.size()){
-            System.err.println("ricomincio da 0");
             return count=0;
         }
         return count;
@@ -55,5 +54,8 @@ public class ResultSearchController {
     }
     public int[] nVisit(){
         return search.getnVisit();
+    }
+    public void reset(){
+        search.reset();
     }
 }

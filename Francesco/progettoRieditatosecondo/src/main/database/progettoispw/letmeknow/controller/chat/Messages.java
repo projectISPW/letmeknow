@@ -59,11 +59,9 @@ public class Messages {
         ArrayList<String>users= (ArrayList<String>) getUsers();
         lastmessages =new ArrayList<>();
         for(String user:users){
-            System.err.println(user);
             lastmessages.add(lstMsgWith(user));
        }
         lastmessages= orderByTime(lastmessages);
-        System.err.println("_____________________________________________");
         return lastmessages;
     }
     public Message lstMsgWith(String user) {
@@ -92,8 +90,8 @@ public class Messages {
         messageData.newMessage(userid,to,text);
         getAllChat();
     }
-    public void setTouched(String touched) {
-        this.touched = touched;
+    public void setTouched(String input) {
+        touched = input;
     }
     public String getTouched() {
         return touched;

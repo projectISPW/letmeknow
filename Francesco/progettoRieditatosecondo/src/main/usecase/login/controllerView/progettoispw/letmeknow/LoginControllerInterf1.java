@@ -87,8 +87,7 @@ public class LoginControllerInterf1 {
                     return;
                 }
                 case "psy":{
-                    controller.switchTo("homepagePsicologist/interf1.fxml",event,"Home");
-                    System.out.println("fatto accesso da psicologo");
+                    controller.switchTo("homepagePsychologist/interf1.fxml",event,"Home");
                 }
                 default:{
                     color(false);

@@ -27,7 +27,7 @@ public class SettingsControllerInterf1 implements Initializable {
     @FXML
     TextArea feedback;
     @FXML
-    private ComboBox<String> comb;
+    protected ComboBox<String> comb;
     private boolean bool;
     public SettingsControllerInterf1(){
         bean=new SettingsBean();
@@ -37,7 +37,6 @@ public class SettingsControllerInterf1 implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb){
         comb.setItems(FXCollections.observableArrayList("Italiano", "Inglese"));
-
     }
     @FXML
     protected void goBack() throws IOException {
@@ -86,8 +85,8 @@ public class SettingsControllerInterf1 implements Initializable {
     @FXML
     protected void setFeed(){
         feedback.setStyle("-fx-border-color: white");
+        System.out.println(feedback.getText());
         bool=bean.setFeed(feedback.getText());
-        System.out.println("go back from feed.:"+bool);
         if(!bool){
             feedback.setStyle("-fx-border-color: red");
         }else{

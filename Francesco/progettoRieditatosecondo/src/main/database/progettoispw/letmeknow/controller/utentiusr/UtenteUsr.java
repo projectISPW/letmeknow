@@ -20,22 +20,25 @@ public class UtenteUsr extends SalvaUtente {
         queryResult();
     }
     public void  dataHomeUsr () {
-        String [] inner= userDataUSR.selectUser(userid);
-        System.out.println(userid);
-        if(inner[0]!=null && inner[1]!=null && inner[2]!=null){
-            emp= Integer.parseInt(inner[0]);
-            hum = Integer.parseInt(inner[1]);
-            pos = Integer.parseInt(inner[2]);
-        }else{
+        if(userid!=null){
+            String [] inner= userDataUSR.selectUser(userid);
+            if(inner[0]!=null && inner[1]!=null && inner[2]!=null) {
+                emp = Integer.parseInt(inner[0]);
+                hum = Integer.parseInt(inner[1]);
+                pos = Integer.parseInt(inner[2]);
+                des = inner[3];
+                goal = inner[4];
+                data = inner[5];
+                tag = inner[6];
+                personalObb.setObiettivo(goal);
+                personalObb.setTag(tag);
+                personalObb.setStrDataAmericanEurope(data);
+            }}
+       else{
             emp=hum=pos=1;
+            goal=tag="";
+            data="0-0-0";
         }
-        des =inner[3];
-        goal =inner[4];
-        data=inner[5];
-        tag=inner[6];
-        personalObb.setObiettivo(goal);
-        personalObb.setTag(tag);
-        personalObb.setStrData(data);
     }
     public int getEmp(){
         return emp;
@@ -56,27 +59,30 @@ public class UtenteUsr extends SalvaUtente {
         return personalObb.getObiettivo();
     }
     public Integer[] getDate(){
-        return personalObb.getData();
+        return personalObb.getDataEuropean();
     }
-    public void setPersonalDes(String newS)  {
+    public boolean setPersonalDes(String newS)  {
         des =newS;
-        userDataUSR.setDescription(userid,newS);
+        return userDataUSR.setDescription(userid,newS);
     }
-    public void setPersonalGoal(String newS)  {
+    public boolean setPersonalGoal(String newS)  {
         personalObb.setObiettivo(newS);
-        userDataUSR.setGoal(userid,newS);
+        return userDataUSR.setGoal(userid,newS);
     }
-    public void setPersonalTag(String newS)  {
+    public boolean setPersonalTag(String newS)  {
         personalObb.setTag(newS);
-        userDataUSR.setTag(userid,newS);
+        return userDataUSR.setTag(userid,newS);
     }
-    public void setPersonalData(Integer [] value)  {
-        personalObb.setData(value);
-        userDataUSR.setData(userid,personalObb.getDataStr());
+    public boolean setPersonalData(String newData)  {
+        personalObb.setStrDataEurope(newData);
+        return userDataUSR.setData(userid,personalObb.getAmericanDataStr());
     }
     public void setParams(){
         queryResult();
         dataHomeUsr();
+    }
+    public boolean getExpired(){
+        return personalObb.getExpired();
     }
     public boolean queryResult() {
         return userDataUSR.getResult(userid,emp,hum,pos);

@@ -5,27 +5,32 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
+import progettoispw.letmeknow.bean.CollectionFormBean;
 import progettoispw.letmeknow.bean.FormToTakeStatusBean;
 import progettoispw.letmeknow.bean.UseridBean;
 
-public class formCollectionResultsInterf1 implements Interf1ButtonBar{
-    PageMenu controller = new PageMenu();
-    FormToTakeStatusBean bean;
-    UseridBean homeBean;
+public class FormCollectionResultsInterf1 {
+    PageMenu controller;
+    CollectionFormBean bean;
     @FXML
-    Text idUser;
+    protected Text idUser;
+    public FormCollectionResultsInterf1(){
+        bean=new CollectionFormBean();
+        controller=new PageMenu();
+    }
     public void initialize(){
-        homeBean=new UseridBean();
-        idUser.setText("User"+homeBean.getUserId());
+        UseridBean useridBean=new UseridBean();
+        idUser.setText("User"+ useridBean.getUserId());
     }
     @FXML
     protected void goToSettings(ActionEvent event) {
         controller.switchToSettings(event);
     }
-    private void which(int i,ActionEvent event){
-        bean=new FormToTakeStatusBean(i);
+    protected  void which(int i,ActionEvent event){
+        bean.setTouched(i);
         String name,title;
-        if(bean.getComplete()==6){
+        FormToTakeStatusBean formBean=new FormToTakeStatusBean();
+        if(formBean.getComplete()==6){
             name="formResult/form"+i+"interf1.fxml";
         }
         else{
@@ -53,9 +58,16 @@ public class formCollectionResultsInterf1 implements Interf1ButtonBar{
 
     }
     @FXML
-    protected void takeForm(ActionEvent event){
-        FormToTakeInterf1 takeForm=new FormToTakeInterf1();
-        takeForm.takeForm(event);
+    public void takeForm(ActionEvent event){
+        bean.takeForm();
+        FormToTakeStatusBean innerBean=new FormToTakeStatusBean();
+        int val = innerBean.getFormId();
+        if(innerBean.getComplete()<=6){
+            controller.switchTo("formToTake/form"+val+"interf1.fxml",event,"form"+val);
+        }
+        else{
+            controller.switchTo("formResult/form"+val+"interf1.fxml",event,"form"+val);
+        }
     }
     @FXML
     protected  void goToISC(ActionEvent event){

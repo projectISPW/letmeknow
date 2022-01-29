@@ -17,6 +17,7 @@ public class Search {
         foundList= new ArrayList <String>();
         searchData=new SearchDAO();
         userid=who;
+        touched=null;
     }
     public void setAffinity(Integer val) {
         slider = new Sliders(val);
@@ -53,7 +54,7 @@ public class Search {
     public ArrayList<String> getArrayList(){
         ArrayList inner=new ArrayList();
         if(foundList.isEmpty()){
-            inner=searchData.getVisit(userid);
+            inner= (ArrayList) searchData.getVisit(userid);
         }
         for(String str:foundList){
             if(!inner.contains(str))inner.add(str);
@@ -63,17 +64,21 @@ public class Search {
     public boolean setTouched(String userid2) {
         boolean bool;
         bool=searchData.addVisited(userid,userid2);
-        this.touched = new UtenteUsr(userid2);
+        if(userid!=null){
+            this.touched = new UtenteUsr(userid2);
+        }
         return bool;
     }
     public int[] getnVisit(){
         int [] inner;
         inner=searchData.getnVisit(userid);
-        System.err.println("numero di visite ricevute"+inner[0]+"numero di utenze nel sistema"+inner[1]);
         return inner;
     }
     public UtenteUsr getTouched() {
         return touched;
+    }
+    public void reset(){
+        foundList=new ArrayList<>();
     }
 }
 
