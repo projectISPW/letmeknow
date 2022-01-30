@@ -15,7 +15,7 @@ public class BeanResultSearch {
         controller=new ResultSearchController();
     }
 
-    public String[][] exitDes(){
+    public String[][] getUsers(){
         int index;
         String [][] arrStr=new String[3][nval];
         List<InnerUsers> actual=controller.queryUsers();

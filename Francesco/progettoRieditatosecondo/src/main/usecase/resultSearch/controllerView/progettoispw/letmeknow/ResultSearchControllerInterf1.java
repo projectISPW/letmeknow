@@ -7,7 +7,6 @@ import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
-import progettoispw.letmeknow.bean.ISCBean;
 import progettoispw.letmeknow.bean.BeanResultSearch;
 
 public class ResultSearchControllerInterf1 {
@@ -56,7 +55,7 @@ public class ResultSearchControllerInterf1 {
         for(int i=0;i<nval;i++){
             visitGroup[i].setOpacity(1);
         }
-        String [] [] users= beanVisit.exitDes();
+        String [] [] users= beanVisit.getUsers();
         String[] strDes= users[2];
         String[] strGoal=users[1];
         String[] strUid=users[0];
