@@ -24,7 +24,6 @@ public class JavaMailUtil {
             });
         Message message = prepareMessage(session,myAccount,recipient);
         Transport .send(message);
-        System.out.println("MESSAGE CORRECTLY SENDED");
         return true;
         } catch (Exception e ){
             return false;

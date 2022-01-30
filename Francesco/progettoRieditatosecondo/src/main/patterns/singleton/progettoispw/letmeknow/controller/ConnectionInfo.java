@@ -10,17 +10,14 @@ import java.util.Map;
 
 
 public class ConnectionInfo {
-    private static String FILENAME;
-    private static String User;
-    private static String Pass;
-    private static String DB_URL;
-    private static String DRIVER_CLASS_NAME;
+    private static final String FILENAME="src/main/resources/progettoispw/letmeknow/connection/ConnectionParameters.xml";
+    private static String user;
+    private static String pass;
+    private static String dbUrl;
+    private static String driverClassName;
 
-    public ConnectionInfo(){
-        FILENAME="src/main/resources/progettoispw/letmeknow/connection/ConnectionParameters.xml";
-    }
 
-    private void getElements(){
+    private static void getElements(){
 
         String id;
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -46,10 +43,10 @@ public class ConnectionInfo {
                     id=element.getAttribute("id");
 
                     //Actual connection parameters from XML
-                    User = element.getElementsByTagName("username").item(0).getTextContent();
-                    Pass = element.getElementsByTagName("password").item(0).getTextContent();
-                    DB_URL = element.getElementsByTagName("url").item(0).getTextContent();
-                    DRIVER_CLASS_NAME = element.getElementsByTagName("driverName").item(0).getTextContent();
+                    user = element.getElementsByTagName("username").item(0).getTextContent();
+                    pass = element.getElementsByTagName("password").item(0).getTextContent();
+                    dbUrl = element.getElementsByTagName("url").item(0).getTextContent();
+                    driverClassName = element.getElementsByTagName("driverName").item(0).getTextContent();
 
                 }
             }
@@ -65,10 +62,10 @@ public class ConnectionInfo {
         getElements();
         Map<String, String> parameters = new HashMap<>();
 
-        parameters.put("username",User);
-        parameters.put("password",Pass);
-        parameters.put("url",DB_URL);
-        parameters.put("driverName",DRIVER_CLASS_NAME);
+        parameters.put("username", user);
+        parameters.put("password", pass);
+        parameters.put("url", dbUrl);
+        parameters.put("driverName", driverClassName);
 
         return parameters;
     }

@@ -1,4 +1,4 @@
-//ln 45-46 duplicated code, i put it out of the if/else
+
 package progettoispw.letmeknow;
 
 import javafx.event.ActionEvent;
@@ -12,6 +12,7 @@ import progettoispw.letmeknow.bean.UseridBean;
 public class FormCollectionResultsInterf1 {
     PageMenu controller;
     CollectionFormBean bean;
+    public static final String INTERF="interf1.fxml";
     @FXML
     protected Text idUser;
     public FormCollectionResultsInterf1(){
@@ -28,13 +29,14 @@ public class FormCollectionResultsInterf1 {
     }
     protected  void which(int i,ActionEvent event){
         bean.setTouched(i);
-        String name,title;
+        String name;
+        String title;
         FormToTakeStatusBean formBean=new FormToTakeStatusBean();
         if(formBean.getComplete()==6){
-            name="formResult/form"+i+"interf1.fxml";
+            name="formResult/form"+i+INTERF;
         }
         else{
-            name="formToTake/form"+i+"interf1.fxml";
+            name="formToTake/form"+i+INTERF;
         } title="form"+i;
         controller.switchTo(name,event,title);
     }

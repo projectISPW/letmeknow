@@ -5,9 +5,6 @@ import progettoispw.letmeknow.controller.utenti.SalvaUtente;
 public class UtenteUsr extends SalvaUtente {
     UserDAO userDataUSR;
     private String des;
-    private String goal;
-    private String tag;
-    private String data;
     private Goal personalObb;
     private ParameterSliders parameterSliders;
     public UtenteUsr(String who) {

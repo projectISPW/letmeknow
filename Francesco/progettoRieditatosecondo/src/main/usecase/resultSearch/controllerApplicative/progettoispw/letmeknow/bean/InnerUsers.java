@@ -15,21 +15,13 @@ public class InnerUsers {
         description= elem.getDescript();
         goal=elem.getTag();
     }
-
     public String getUserid() {
         return userid;
     }
-
     public String getDescription() {
-        return description;
+        return check.checkLen(description,lenMax);
     }
-
     public String getGoal() {
-        return goal;
+        return check.checkLen(goal,lenMax);
     }
-
-    public void getStatus(){
-        System.out.println("userid"+userid +"description"+description+"tag"+goal);
-    }
-
 }

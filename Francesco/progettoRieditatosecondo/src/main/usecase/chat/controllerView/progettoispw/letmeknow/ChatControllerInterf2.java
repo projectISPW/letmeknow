@@ -37,7 +37,6 @@ public class ChatControllerInterf2 extends ChatControllerInterf1{
         if(initializated) {
             addUser();
             recivemsgArr();
-            System.out.println(" i am alive");
         }
     }
     @FXML
@@ -47,7 +46,6 @@ public class ChatControllerInterf2 extends ChatControllerInterf1{
     }
     public void  initialize(){
         addUser();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("buttonBarInterf2.fxml"));
         try {
             if(bean.getWith()==null){
                 anchorChat.getChildren().removeAll(anchorChat.getChildren());
@@ -64,10 +62,10 @@ public class ChatControllerInterf2 extends ChatControllerInterf1{
         if(input.length()<=8){
             return input;
         }
-        int indice=-1;
+        int indice;
         indice=input.indexOf("||");
         String sub=input.substring(0,indice);
-        if(sub.equals(userid)==false) {
+        if(!sub.equals(userid)) {
             return sub;
         }
         return input.substring(indice+2);
@@ -104,7 +102,6 @@ public class ChatControllerInterf2 extends ChatControllerInterf1{
     @FXML
     public void searchMessage(){
         iscBean.search(searchBar.getText());
-        System.out.println("searching for new message");
         timeline.stop();
         addUser();
     }

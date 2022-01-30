@@ -11,14 +11,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.Slider;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 
 import progettoispw.letmeknow.bean.FormToTakeStatusBean;
-
-import java.io.IOException;
-
-
 public class TakeFormControllerInterf1 {
     @FXML
     protected Text idForm;
@@ -98,12 +93,12 @@ public class TakeFormControllerInterf1 {
             sl[i].valueProperty().addListener(new ChangeListener<Number>() {
                 @Override
                 public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
-                    if(values[finalI]==true){
+                    if(values[finalI]){
                         progress+=0.17;
 
                         values[finalI]=false;
                     }
-                    if(locked[finalI]==true){
+                    if(locked[finalI]){
                         sl[finalI].setValue(response[finalI]);
                     }
                     labels[finalI].setText(""+(int)sl[finalI].getValue());
@@ -121,7 +116,7 @@ public class TakeFormControllerInterf1 {
     }
     protected void save1(){
         for (int i=0;i<6;i++) {
-            if (values[i] == false) {
+            if (!values[i]) {
                 locked[i]=true;
                 response[i]=(int)sl[i].getValue();
             }

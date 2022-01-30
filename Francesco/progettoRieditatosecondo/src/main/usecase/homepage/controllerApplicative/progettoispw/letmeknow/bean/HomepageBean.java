@@ -17,8 +17,7 @@ public class HomepageBean {
         return controller.getParam();
     }
     public String getDescription(){
-        String output= controller.getDescription();
-        return output;
+        return  controller.getDescription();
     }
     public String getTag(){
         WordCheck checkStr=new WordCheck(3,20);

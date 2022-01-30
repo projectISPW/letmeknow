@@ -16,7 +16,7 @@ public class ControllerClass {
     private ControllerClass(){
         reset();
     }
-    static private void reset() {
+    private static void reset() {
         userU = null;
         userP = null;
         search = null;

@@ -18,9 +18,7 @@ import java.io.IOException;
 import java.util.Date;
 
 import javafx.animation.Timeline;
-import progettoispw.letmeknow.bean.VisitBean;
 
-import static java.lang.Thread.sleep;
 
 public class ChatControllerInterf1 {
     @FXML
@@ -31,19 +29,28 @@ public class ChatControllerInterf1 {
     private ScrollPane scrollpane;
     @FXML
     protected Text withName;
-    protected boolean initializated;
+    protected static  boolean initializated;
     protected  PageMenu controller;
     protected ChatBean bean;
     protected  String [] message;
     protected  CSS graphic;
     protected Label textmsg;
-    public Timeline timeline;
+    protected static Timeline timeline;
     public ChatControllerInterf1() {
         bean=new ChatBean();
         graphic=new CSS(true);
         initializated=false;
         controller=new PageMenu();
-        timeline=new Timeline(new KeyFrame(Duration.millis(5000),this::recivemsgArr));
+        setTimeline();
+    }
+    protected  void turnOn() {
+        timeline.play();
+    }
+    protected  void turnOff() {
+        timeline.stop();
+    }
+    protected  void setTimeline(){
+        timeline=new Timeline(new KeyFrame(Duration.millis(5000),this::action));
         timeline.setCycleCount(Timeline.INDEFINITE);//never stop
     }
     @FXML
@@ -52,16 +59,14 @@ public class ChatControllerInterf1 {
         recivemsgArr();
         inputmsg.setText("");
     }
-    private void recivemsgArr(ActionEvent event){
+    private  void action(ActionEvent event ){
         if(initializated) {
             recivemsgArr();
-            System.out.println("i am alive");
         }
     }
     public void  recivemsgArr() {
         bean.getChat();
         message = bean.getMSG();
-        System.out.println("*******inizioscansione + *********"+new Date().toString());
         for (int i = 0; i < message.length; i += 2) {
             graphic.setText(message[i]);
             System.out.println(message[i]);
@@ -74,13 +79,12 @@ public class ChatControllerInterf1 {
             messaggi.setPrefHeight(graphic.getAumenta());
             scrollpane.setVvalue(1.0);
         }
-        System.out.println("*********finescansione********"+new Date().toString());
         initializated=true;
     }
     public void  initialize(){
         withName.setText("User #"+bean.getWith());
         recivemsgArr();
-        this.timeline.play();
+        turnOn();
     }
     @FXML
     protected void goToHome(ActionEvent event){
@@ -94,7 +98,7 @@ public class ChatControllerInterf1 {
     }
     @FXML
     protected void goToPersonalForm(ActionEvent event) throws IOException {
-        timeline.stop();
+        turnOff();
         controller.switchToPersonalForm(event);
     }
     @FXML

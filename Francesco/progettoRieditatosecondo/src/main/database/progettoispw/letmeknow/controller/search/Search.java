@@ -12,7 +12,7 @@ public class Search {
     private ArrayList<String> foundList;
     private UtenteUsr touched;
     public Search(String who) {
-        foundList= new ArrayList <String>();
+        foundList= new ArrayList <>();
         searchData=new SearchDAO();
         userid=who;
         touched=null;
@@ -50,9 +50,9 @@ public class Search {
         }
     }
     public List<String> getArrayList(){
-        ArrayList inner=new ArrayList();
+        List <String>inner=new ArrayList<>();
         if(foundList.isEmpty()){
-            inner= (ArrayList) searchData.getVisit(userid);
+            inner= searchData.getVisit(userid);
         }
         for(String str:foundList){
             if(!inner.contains(str))inner.add(str);

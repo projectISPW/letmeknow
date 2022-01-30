@@ -27,8 +27,8 @@ public class SignupPsychologistControllerInterf1 {
     public void initialize(){
         reset();
     }
-    private boolean check(Boolean bool,Label lab){
-        if(bool==false)lab.setOpacity(1);
+    private boolean check(boolean bool,Label lab){
+        if(!bool)lab.setOpacity(1);
         return bool;
     }
     @FXML
@@ -37,12 +37,12 @@ public class SignupPsychologistControllerInterf1 {
             controller.backTo();
         }
     public void save (ActionEvent event) {
-        Boolean bool;
+        boolean bool;
         reset();
         bool = bean.checkEmail(email.getText(), true);
-        if (check(bool, emailCheck) == false) return;
+        if (!check(bool, emailCheck)) return;
         bool = bean.checkPswd(pswd.getText(), confirmpswd.getText());
-        if (check(bool, pswdCheck) == false) return;
+        if (!check(bool, pswdCheck)) return;
         bool = bean.signupPSY(pswd.getText(), email.getText());
         if (bool) backToLogin();
         else {
@@ -51,9 +51,7 @@ public class SignupPsychologistControllerInterf1 {
             alert.setHeaderText("We could'nt retrieve your data, please try again!");
             alert.setContentText("Please, fill Email and Password Fields. They cannot be empty.");
             if (alert.showAndWait().get() == ButtonType.OK) {
-                System.out.println("Prompt: Empty Fields Alert");
                 event.consume();
-                return;
             }
         }
     }

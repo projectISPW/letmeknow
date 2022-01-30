@@ -118,7 +118,6 @@ public class UserDAO {
             }
             return uid;
         } catch (SQLException e) {
-            System.err.println("errore nella richiesta degli userid");
             return new ArrayList<>();
         }finally{
             connDB.closeRSTSTMT(rst,stmt);
