@@ -38,6 +38,7 @@ public class SignupPsychologistControllerInterf1 {
             Page controller=new Page();
             controller.backTo();
         }
+
     public void save (ActionEvent event) {
         boolean bool;
         reset();

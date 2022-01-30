@@ -93,7 +93,7 @@ public class InitialSearchAndChatControllerInterf1 {
         return uids;
     }
     private String getUid(String string){
-        int indice=-1;
+        int indice;
         String sub;
         if(string==null ||string.length()<8 )return string ;
         else{

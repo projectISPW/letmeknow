@@ -91,27 +91,24 @@ public class ResultSearchControllerInterf1 {
     public void setUids(String [] input){
         uids=input;
     }
-    @FXML
-    public void visit(ActionEvent event) {
+    public void touchVisit(ActionEvent event){
         Button button = (Button) event.getTarget();
         if (button.getOpacity() < 1) return;
         switch (button.getId()) {
-            case "home1":
-                beanVisit.touched(uids[0]);
-                break;
-            case "home2":
-                beanVisit.touched(uids[1]);
-                break;
-            case "home3":
-                beanVisit.touched(uids[2]);
-                break;
-            case "home4":
-                beanVisit.touched(uids[3]);
-                break;
+            case "home1":beanVisit.touched(uids[0]);break;
+            case "home2":beanVisit.touched(uids[1]);break;
+            case "home3":beanVisit.touched(uids[2]);break;
+            case "home4":beanVisit.touched(uids[3]);break;
+            case "home5":beanVisit.touched(uids[4]);break;
+            case "home6":beanVisit.touched(uids[5]);break;
             default: {
                 event.consume();
             }
         }
+    }
+    @FXML
+    public void visit(ActionEvent event) {
+        touchVisit(event);
         controller.switchTo("homepageOthers/interf1.fxml",event,"visit");
     }
     @FXML

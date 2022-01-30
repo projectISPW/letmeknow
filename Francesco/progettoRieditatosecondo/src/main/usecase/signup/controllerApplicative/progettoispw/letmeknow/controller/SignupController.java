@@ -8,7 +8,6 @@ public class SignupController {
         user=new InitialUser();
     }
     public boolean checkMail(String input){
-        System.out.println("mail check in controller"+user.checkEmail(input));
         return !user.checkEmail(input);
     }
     public boolean signup(String password,String type,String email,int [] val,String description,String goal){
