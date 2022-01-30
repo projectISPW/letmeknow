@@ -1,12 +1,12 @@
 package progettoispw.letmeknow.controller;
 
-import progettoispw.letmeknow.controller.utentipsy.Form;
-import progettoispw.letmeknow.controller.utentipsy.UtentePsy;
+import progettoispw.letmeknow.controller.psyuser.Form;
+import progettoispw.letmeknow.controller.psyuser.PsyUser;
 
 import java.util.List;
 
 public class HomepagePsychologistController {
-    private UtentePsy user;
+    private PsyUser user;
     private float [][] innerList;
     private int index;
     static final Integer [] FORMSID={1,2,3};

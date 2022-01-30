@@ -1,5 +1,3 @@
-//same line variables, I put them on different lines
-
 package progettoispw.letmeknow;
 
 

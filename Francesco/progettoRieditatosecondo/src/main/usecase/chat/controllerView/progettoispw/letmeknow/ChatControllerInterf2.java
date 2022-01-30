@@ -1,5 +1,6 @@
 package progettoispw.letmeknow;
 
+import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -31,7 +32,7 @@ public class ChatControllerInterf2 extends ChatControllerInterf1{
         graphic=new CSS(false);
         userid=bean.getUid();
         timeline=new Timeline(new KeyFrame(Duration.millis(5000),this::recivemsgArr));
-        timeline.setCycleCount(Timeline.INDEFINITE);//never stop
+        timeline.setCycleCount(Animation.INDEFINITE);//never stop
     }
     private void recivemsgArr(ActionEvent event){
         if(initializated) {
@@ -39,11 +40,12 @@ public class ChatControllerInterf2 extends ChatControllerInterf1{
             recivemsgArr();
         }
     }
-    @FXML
+    @FXML@Override
     protected void sendMsg() {
         super.sendMsg();
         addUser();
     }
+    @FXML@Override
     public void  initialize(){
         addUser();
         try {
@@ -117,8 +119,8 @@ public class ChatControllerInterf2 extends ChatControllerInterf1{
         timeline.stop();
         controller.switchToChat(actionEvent);
     }
-    @FXML
-    private void touchedHome(ActionEvent event){
+    @FXML@Override
+    protected void touchedHome(ActionEvent event){
         BeanResultSearch visitBean=new BeanResultSearch();
         visitBean.touched(bean.getWith());
         goToSearch(event);

@@ -2,7 +2,7 @@ package progettoispw.letmeknow.controller;
 
 import progettoispw.letmeknow.bean.InnerUsers;
 import progettoispw.letmeknow.controller.search.Search;
-import progettoispw.letmeknow.controller.utentiusr.UtenteUsr;
+import progettoispw.letmeknow.controller.usruser.UsrUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,10 +29,10 @@ public class ResultSearchController {
         List<String> founded= search.getArrayList();
         ArrayList<InnerUsers>formatted=new ArrayList<>();
         count = check(count, (ArrayList<String>) founded);
-        UtenteUsr user;
+        UsrUser user;
         for (String userid : founded) {
             if(userid==null)return formatted;
-            user=new UtenteUsr(userid);
+            user=new UsrUser(userid);
             indice = founded.indexOf(userid);
             if (indice >= count && indice < count + nVal) {
                 actual = new InnerUsers(user);

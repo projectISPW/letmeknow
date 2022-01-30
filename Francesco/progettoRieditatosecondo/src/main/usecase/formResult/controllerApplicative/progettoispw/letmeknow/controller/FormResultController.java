@@ -3,7 +3,6 @@
 package progettoispw.letmeknow.controller;
 
 import progettoispw.letmeknow.controller.form.ResultForm;
-import progettoispw.letmeknow.controller.utentiusr.UtenteUsr;
 
 public class FormResultController {
     ResultForm form;

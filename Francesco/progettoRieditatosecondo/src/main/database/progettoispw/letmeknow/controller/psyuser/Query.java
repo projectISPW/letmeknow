@@ -1,4 +1,4 @@
-package progettoispw.letmeknow.controller.utentipsy;
+package progettoispw.letmeknow.controller.psyuser;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

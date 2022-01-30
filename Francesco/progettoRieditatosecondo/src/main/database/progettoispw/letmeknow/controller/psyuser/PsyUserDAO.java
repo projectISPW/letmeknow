@@ -1,4 +1,4 @@
-package progettoispw.letmeknow.controller.utentipsy;
+package progettoispw.letmeknow.controller.psyuser;
 
 import progettoispw.letmeknow.controller.ConnectionDBMS;
 
@@ -6,13 +6,13 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDAO {
+public class PsyUserDAO {
     ConnectionDBMS connDB;
     Query query;
     public static final String UID ="userid";
     public static final int FORMID=1;
     public static final int START=3;//dove iniziano le risposte
-    public UserDAO() {
+    public PsyUserDAO() {
         connDB= new ConnectionDBMS();
         query=new Query();
     }

@@ -1,4 +1,4 @@
-package progettoispw.letmeknow.controller.utentiusr;
+package progettoispw.letmeknow.controller.usruser;
 
 import java.time.LocalDate;
 

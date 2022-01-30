@@ -1,9 +1,9 @@
 package progettoispw.letmeknow.controller;
 
-import progettoispw.letmeknow.controller.utentipsy.UtentePsy;
+import progettoispw.letmeknow.controller.psyuser.PsyUser;
 
 public class FormPsychologistResultController {
-    UtentePsy user;
+    PsyUser user;
     public FormPsychologistResultController(){
         user=ControllerClass.getUserPsy();
     }

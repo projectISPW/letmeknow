@@ -1,4 +1,4 @@
-package progettoispw.letmeknow.controller.utentiusr;
+package progettoispw.letmeknow.controller.usruser;
 
 import progettoispw.letmeknow.controller.ConnectionDBMS;
 
@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDAO{
+public class UsrUserDAO {
     ConnectionDBMS connDB;
     Query query;
     public static final int EMP=5;
@@ -18,7 +18,7 @@ public class UserDAO{
     public static final String BY="by";
     public static final int ABOUT=14;
     public static final int CALCULATED=15;
-    public UserDAO() {
+    public UsrUserDAO() {
         connDB= new ConnectionDBMS();
         query=new Query();
     }

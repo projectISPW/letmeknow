@@ -1,4 +1,4 @@
-package progettoispw.letmeknow.controller.utenti;
+package progettoispw.letmeknow.controller.user;
 
 import progettoispw.letmeknow.controller.ConnectionDBMS;
 

@@ -1,4 +1,4 @@
-package progettoispw.letmeknow.controller.utenti;
+package progettoispw.letmeknow.controller.user;
 
 
 import java.util.ArrayList;
@@ -7,7 +7,7 @@ import java.util.Random;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class SalvaUtente {
+public class InitialUser {
     protected String userid;
     private String password;
     private String type;
@@ -15,7 +15,7 @@ public class SalvaUtente {
     private UserDAO userData;
     private Random randomno ;
     private static final  Lock mutex = new ReentrantLock(true);
-    public SalvaUtente(String who)  {
+    public InitialUser(String who)  {
         if(who !=null && who.length()==7 ){
         userData=new UserDAO();
         String [] log=userData.selectUser(who);
@@ -28,7 +28,7 @@ public class SalvaUtente {
         }
 
     }
-    public SalvaUtente(){
+    public InitialUser(){
         userid=password=type=null;
         randomno = new Random();
     }

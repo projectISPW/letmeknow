@@ -16,7 +16,7 @@
         </ImageView>
         <FontAwesomeIcon glyphName="WIFI" layoutX="331.0" layoutY="21.0" size="20" />
         <Text layoutX="35.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="hiperlink_signup" text="9.31" />
-      <Button layoutX="25.0" layoutY="39.0" mnemonicParsing="false" onAction="#backToLogin" prefHeight="30.0" prefWidth="35.0" styleClass="Back_Row">
+      <Button layoutX="25.0" layoutY="39.0" mnemonicParsing="false" onAction="#goToLogin" prefHeight="30.0" prefWidth="35.0" styleClass="Back_Row">
          <graphic>
             <FontAwesomeIcon fill="WHITE" glyphName="ARROW_LEFT" size="20" />
          </graphic>

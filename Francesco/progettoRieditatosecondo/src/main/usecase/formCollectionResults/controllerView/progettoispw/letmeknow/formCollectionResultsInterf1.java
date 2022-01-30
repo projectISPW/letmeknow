@@ -56,6 +56,9 @@ public class FormCollectionResultsInterf1 {
                 which(2,event);
                 break;
             }
+            default:{
+                event.consume();
+            }
         }
 
     }
@@ -65,10 +68,10 @@ public class FormCollectionResultsInterf1 {
         FormToTakeStatusBean innerBean=new FormToTakeStatusBean();
         int val = innerBean.getFormId();
         if(innerBean.getComplete()<=6){
-            controller.switchTo("formToTake/form"+val+"interf1.fxml",event,"form"+val);
+            controller.switchTo("formToTake/form"+val+INTERF,event,"form"+val);
         }
         else{
-            controller.switchTo("formResult/form"+val+"interf1.fxml",event,"form"+val);
+            controller.switchTo("formResult/form"+val+INTERF,event,"form"+val);
         }
     }
     @FXML

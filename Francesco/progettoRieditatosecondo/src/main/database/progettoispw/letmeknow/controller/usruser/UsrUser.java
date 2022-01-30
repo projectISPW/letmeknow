@@ -1,15 +1,15 @@
-package progettoispw.letmeknow.controller.utentiusr;
+package progettoispw.letmeknow.controller.usruser;
 
-import progettoispw.letmeknow.controller.utenti.SalvaUtente;
+import progettoispw.letmeknow.controller.user.InitialUser;
 
-public class UtenteUsr extends SalvaUtente {
-    UserDAO userDataUSR;
+public class UsrUser extends InitialUser {
+    UsrUserDAO userDataUSR;
     private String des;
     private Goal personalObb;
     private ParameterSliders parameterSliders;
-    public UtenteUsr(String who) {
+    public UsrUser(String who) {
         super(who);
-        userDataUSR =new UserDAO();
+        userDataUSR =new UsrUserDAO();
         personalObb=new Goal();
         parameterSliders=new ParameterSliders();
         dataHomeUsr();

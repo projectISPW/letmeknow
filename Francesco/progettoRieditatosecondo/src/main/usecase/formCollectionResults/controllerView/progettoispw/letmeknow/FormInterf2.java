@@ -4,9 +4,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;
 import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -45,16 +43,12 @@ public class FormInterf2 {
     protected Label lb5;
     @FXML
     protected Label lb6;
-    private int formid;
     private FormToTakeStatusBean bean;
     private TakeFormControllerInterf1 takeForm;
-    private Button save;
     public FormInterf2(){
         bean=new FormToTakeStatusBean();
-        formid=bean.getFormId();
     }
     public void initialize(){
-        System.out.println("i am here with"+formid+"touched");
         takeForm=new TakeFormControllerInterf1(new Slider[]{sl1,sl2,sl3,sl4,sl5,sl6},new Label []{lb1,lb2,lb3,lb4,lb5,lb6});
         takeForm.setValues();
         setSection();
@@ -70,6 +64,7 @@ public class FormInterf2 {
             status.getChildren().add((Node) FXMLLoader.load(getClass().getResource("formCollectionResults/resultFormSectionInterf2.fxml")));
             }
             else{
+                Button save;
                 status.getChildren().add((Node) FXMLLoader.load(getClass().getResource("formCollectionResults/takeFormSectionInterf2.fxml")));
                 ObservableList<Node> externList= status.getChildren();
                 AnchorPane pane=(AnchorPane) externList.get(0);
@@ -79,7 +74,7 @@ public class FormInterf2 {
             }
         }
         catch (IOException e) {
-                e.printStackTrace();
+                status.getChildren().removeAll(status.getChildren());
             }
         }
 }

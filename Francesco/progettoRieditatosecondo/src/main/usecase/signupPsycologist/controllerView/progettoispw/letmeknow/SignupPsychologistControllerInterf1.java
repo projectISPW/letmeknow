@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import progettoispw.letmeknow.bean.SignupBean;
 
+import java.util.Optional;
+
 public class SignupPsychologistControllerInterf1 {
     SignupBean bean;
     @FXML
@@ -32,7 +34,7 @@ public class SignupPsychologistControllerInterf1 {
         return bool;
     }
     @FXML
-    protected void backToLogin() {
+    protected void goToLogin() {
             Page controller=new Page();
             controller.backTo();
         }
@@ -44,14 +46,18 @@ public class SignupPsychologistControllerInterf1 {
         bool = bean.checkPswd(pswd.getText(), confirmpswd.getText());
         if (!check(bool, pswdCheck)) return;
         bool = bean.signupPSY(pswd.getText(), email.getText());
-        if (bool) backToLogin();
+        if (bool) goToLogin();
         else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Attention ");
-            alert.setHeaderText("We could'nt retrieve your data, please try again!");
+            alert.setTitle("keep attention ");
+            alert.setHeaderText("We weren't be able to retrieve your data, please try  again!");
             alert.setContentText("Please, fill Email and Password Fields. They cannot be empty.");
-            if (alert.showAndWait().get() == ButtonType.OK) {
+            Optional<ButtonType> result = alert.showAndWait();
+            if(result.isPresent() && result.get() == ButtonType.OK){
                 event.consume();
+            }
+            else{
+                goToLogin();
             }
         }
     }

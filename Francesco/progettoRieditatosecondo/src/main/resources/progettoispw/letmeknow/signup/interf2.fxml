@@ -67,7 +67,7 @@
                 <Font size="36.0" />
             </font>
         </Text>
-        <Button layoutX="566.0" layoutY="676.0" mnemonicParsing="false" onAction="#backToLogin" prefHeight="50.0" prefWidth="130.0" style="-fx-font-size: 18;" styleClass="Button" text="Go back" />
+        <Button layoutX="566.0" layoutY="676.0" mnemonicParsing="false" onAction="#goToLogin" prefHeight="50.0" prefWidth="130.0" style="-fx-font-size: 18;" styleClass="Button" text="Go back" />
       <Label fx:id="emailCheck" layoutX="123.0" layoutY="266.0" style="-fx-text-fill: #7836ea; -fx-font-size: 20;" text="email must not be already in the sistem and must be valid " />
       <Label fx:id="pswdCheck" layoutX="176.0" layoutY="366.0" style="-fx-text-fill: #7836ea; -fx-font-size: 20;" text="the two password must match each other  " />
       <Label fx:id="desCheck" layoutX="225.0" layoutY="466.0" style="-fx-text-fill: #7836ea; -fx-font-size: 20;" text="each trait must begin with #" />

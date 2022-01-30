@@ -1,9 +1,9 @@
 package progettoispw.letmeknow.controller;
 
-import progettoispw.letmeknow.controller.utentiusr.UtenteUsr;
+import progettoispw.letmeknow.controller.usruser.UsrUser;
 
 public class HomepageEditController {
-    UtenteUsr user;
+    UsrUser user;
     HomepageController compare;
     public HomepageEditController(){
         user = ControllerClass.getUserUSR();

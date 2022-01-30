@@ -1,7 +1,7 @@
 package progettoispw.letmeknow.bean;
 
 import progettoispw.letmeknow.WordCheck;
-import progettoispw.letmeknow.controller.utentiusr.UtenteUsr;
+import progettoispw.letmeknow.controller.usruser.UsrUser;
 
 public class InnerUsers {
     private final String userid;
@@ -9,7 +9,7 @@ public class InnerUsers {
     private String goal;
     private int lenMax;
     private WordCheck check=new WordCheck();
-    public InnerUsers(UtenteUsr elem){
+    public InnerUsers(UsrUser elem){
         lenMax=15;
         userid=elem.getUserid();
         description= elem.getDescript();

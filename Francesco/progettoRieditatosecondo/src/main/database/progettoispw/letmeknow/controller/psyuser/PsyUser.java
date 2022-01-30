@@ -1,19 +1,18 @@
-package progettoispw.letmeknow.controller.utentipsy;
+package progettoispw.letmeknow.controller.psyuser;
 
-import progettoispw.letmeknow.controller.utenti.SalvaUtente;
+import progettoispw.letmeknow.controller.user.InitialUser;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class UtentePsy extends SalvaUtente{
-    UserDAO userDataPsy;
+public class PsyUser extends InitialUser {
+    PsyUserDAO userDataPsy;
     Form form;
     List<Form> listForms;
     float [] selected;
-    public UtentePsy(String who) {
+    public PsyUser(String who) {
         super(who);
         form=new Form();
-        userDataPsy=new UserDAO();
+        userDataPsy=new PsyUserDAO();
     }
     public boolean suggestQuestion(String textInput) {
         return userDataPsy.suggestForm(userid,textInput);

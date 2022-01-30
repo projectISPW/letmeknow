@@ -7,6 +7,7 @@ import javafx.scene.control.*;
 
 import progettoispw.letmeknow.bean.SignupBean;
 
+import java.util.Optional;
 
 
 public class SignupControllerInterf1 {
@@ -60,7 +61,7 @@ public class SignupControllerInterf1 {
         }
     }
     @FXML
-    protected void backToLogin() {
+    protected void goToLogin() {
         controller.backTo();
     }
     private boolean check(boolean bool,Label lab){
@@ -93,14 +94,18 @@ public class SignupControllerInterf1 {
         if(val==null)bool=false;
         if(!check(bool,slCheck))return;
         bool=bean.signupUSR(pswd.getText(),email.getText(),val, description.getText(), goal.getText());
-        if(bool)backToLogin();
+        if(bool) goToLogin();
         else{
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("keep attention ");
             alert.setHeaderText("We weren't be able to retrieve your data, please try  again!");
             alert.setContentText("Please, fill Email and Password Fields. They cannot be empty.");
-            if(alert.showAndWait().get()==ButtonType.OK) {
+            Optional<ButtonType> result = alert.showAndWait();
+            if(result.isPresent() && result.get() == ButtonType.OK){
                 event.consume();
+            }
+            else{
+                goToLogin();
             }
         }
     }

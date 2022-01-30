@@ -1,6 +1,6 @@
 package progettoispw.letmeknow.controller.search;
 
-import progettoispw.letmeknow.controller.utentiusr.UtenteUsr;
+import progettoispw.letmeknow.controller.usruser.UsrUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,7 @@ public class Search {
     private SearchDAO searchData;
     private Sliders slider;
     private ArrayList<String> foundList;
-    private UtenteUsr touched;
+    private UsrUser touched;
     public Search(String who) {
         foundList= new ArrayList <>();
         searchData=new SearchDAO();
@@ -34,7 +34,7 @@ public class Search {
     public void goalSearch(String goal) {
         ArrayList<String>inner= (ArrayList<String>) searchData.paramSearch(userid, 1, 1, 1);
         for(String elem:inner){
-            UtenteUsr user=new UtenteUsr(elem);
+            UsrUser user=new UsrUser(elem);
             if(user.getTag().contains(goal)){
                 foundList.add(elem);
             }
@@ -43,7 +43,7 @@ public class Search {
     public void descrSearch(String descr) {
         ArrayList<String> inner= (ArrayList<String>) searchData.paramSearch(userid, 1, 1, 1);
         for(String elem:inner){
-            UtenteUsr user=new UtenteUsr(elem);
+            UsrUser user=new UsrUser(elem);
             if(user.getDescript().contains(descr)){
                 foundList.add(elem);
             }
@@ -63,7 +63,7 @@ public class Search {
         boolean bool;
         bool=searchData.addVisited(userid,userid2);
         if(userid!=null){
-            this.touched = new UtenteUsr(userid2);
+            this.touched = new UsrUser(userid2);
         }
         return bool;
     }
@@ -72,7 +72,7 @@ public class Search {
         inner=searchData.getnVisit(userid);
         return inner;
     }
-    public UtenteUsr getTouched() {
+    public UsrUser getTouched() {
         return touched;
     }
     public void reset(){

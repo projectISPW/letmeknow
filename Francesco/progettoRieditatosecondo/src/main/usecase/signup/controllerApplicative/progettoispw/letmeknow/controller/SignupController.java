@@ -1,11 +1,11 @@
 package progettoispw.letmeknow.controller;
 
-import progettoispw.letmeknow.controller.utenti.SalvaUtente;
+import progettoispw.letmeknow.controller.user.InitialUser;
 
 public class SignupController {
-    private SalvaUtente user;
+    private InitialUser user;
     public SignupController(){
-        user=new SalvaUtente();
+        user=new InitialUser();
     }
     public boolean checkMail(String input){
         System.out.println("mail check in controller"+user.checkEmail(input));

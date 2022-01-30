@@ -1,9 +1,9 @@
 package progettoispw.letmeknow.controller;
 
-import progettoispw.letmeknow.controller.utentiusr.UtenteUsr;
+import progettoispw.letmeknow.controller.usruser.UsrUser;
 
 public class VisitController {
-    UtenteUsr user;
+    UsrUser user;
     public VisitController(){
         user= ControllerClass.getSearch().getTouched();
     }

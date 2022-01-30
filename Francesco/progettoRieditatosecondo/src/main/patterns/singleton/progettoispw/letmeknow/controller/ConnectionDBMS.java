@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Map;
+import java.util.Optional;
 
 public class ConnectionDBMS {
     private static String  user ;
@@ -35,7 +36,8 @@ public class ConnectionDBMS {
         alert.setTitle("Connection failed ");
         alert.setHeaderText("we found found some trouble during the connection on the Database");
         alert.setContentText("Please retry your access");
-        if(alert.showAndWait().get() == ButtonType.OK){
+        Optional<ButtonType> result = alert.showAndWait();
+        if(result.isPresent() && result.get() == ButtonType.OK){
             closeCONN();
             System.exit(0);
             Platform.exit();

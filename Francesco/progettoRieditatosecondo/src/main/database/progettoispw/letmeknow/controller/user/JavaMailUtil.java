@@ -1,4 +1,4 @@
-package progettoispw.letmeknow.controller.utenti;
+package progettoispw.letmeknow.controller.user;
 import java.util.Properties;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;

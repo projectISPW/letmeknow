@@ -2,11 +2,10 @@
 
 package progettoispw.letmeknow.controller;
 
-import progettoispw.letmeknow.controller.utentiusr.UtenteUsr;
-import java.time.LocalDate;
+import progettoispw.letmeknow.controller.usruser.UsrUser;
 
 public class HomepageController {
-    UtenteUsr user;
+    UsrUser user;
     public HomepageController(){
         user= ControllerClass.getUserUSR();
     }
