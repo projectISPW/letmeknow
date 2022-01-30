@@ -94,7 +94,7 @@ public class SignupControllerInterf1 {
         bool = bean.checkPswd(pswd.getText(), confirmpswd.getText());
         if (!check(bool, pswdCheck)) return;
         if(psyAcces){
-            if(bool) bool= bean.signupPSY(pswd.getText(), email.getText());
+            bool= bean.signupPSY(pswd.getText(), email.getText());
             if(bool)goToLogin();
              else {
                  exceptionOccurred(event);
@@ -112,7 +112,7 @@ public class SignupControllerInterf1 {
         if(!check(bool,desCheck))return;
         arr= new String[]{lab1.getText(), lab2.getText(), lab3.getText()};
         val=bean.checkVal(arr);
-        bool=(!(val.length==0));
+        bool=(val.length!=0);
         if(!check(bool,slCheck))return;
         bool=bean.signupUSR(pswd.getText(),email.getText(),val, description.getText(), goal.getText());
         if(bool) goToLogin();

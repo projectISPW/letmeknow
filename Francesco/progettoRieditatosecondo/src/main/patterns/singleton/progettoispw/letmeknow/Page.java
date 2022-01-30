@@ -38,7 +38,7 @@ public class Page {
     public void switchTo(String name, ActionEvent event, String title) {
         try {
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            if(stage.getWidth()>500)stage.setFullScreen(true);
+            //if(stage.getWidth()>500)stage.setFullScreen(true);
             name=check(name,stage);
             prevBack(event);
             Parent root = FXMLLoader.load(getClass().getResource(name));

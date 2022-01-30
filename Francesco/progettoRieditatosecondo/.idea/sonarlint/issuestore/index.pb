@@ -59,8 +59,6 @@ ksrc/main/usecase/HomepagePsycologist/controllerView/progettoispw/letmeknow/Home
 ksrc/main/usecase/HomepagePsycologist/controllerView/progettoispw/letmeknow/HomepagePsychologistInterf1.java,c\3\c313ab5dddadae47f8ba388732f142253dbbd367
 Å
 Qsrc/main/usecase/java/controllerApplicative/progettoispw/letmeknow/WordCheck.java,5\2\525c7ad65f475cfbae8be290a5df31a52ff0f00b
-Å
-Qsrc/main/usecase/java/controllerView/progettoispw/letmeknow/ButtonBarInterf2.java,d\5\d5ef137f1860d962bcbb997a837df96328416578
 á
 Wsrc/main/usecase/login/controllerApplicative/progettoispw/letmeknow/bean/LoginBean.java,7\4\74f5b120d87f58bf4971ad6b5b5794152adb5915
 à

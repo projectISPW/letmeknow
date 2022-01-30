@@ -11,6 +11,7 @@ public class HomepageController {
         else user= ControllerClass.getSearch().getTouched();
     }
     public String getUserID(){
+        System.out.println(user.getUserid());
         return user.getUserid();
     }
     public Integer[] getParam(){

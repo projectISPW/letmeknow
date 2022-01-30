@@ -62,6 +62,7 @@ public class Search {
     public boolean setTouched(String userid2) {
         boolean bool;
         bool=searchData.addVisited(userid,userid2);
+        System.out.println(userid2);
         if(userid!=null){
             this.touched = userid2 ;
         }
