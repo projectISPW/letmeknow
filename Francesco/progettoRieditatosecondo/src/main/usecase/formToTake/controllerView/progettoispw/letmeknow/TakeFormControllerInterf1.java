@@ -1,7 +1,6 @@
 package progettoispw.letmeknow;
 
 
-import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -54,11 +53,6 @@ public class TakeFormControllerInterf1 {
         controller=new PageMenu();
         bean=new FormToTakeStatusBean();
     }
-    public TakeFormControllerInterf1(Slider[] slidersInput, Label[] labelsInput) {
-        sl=slidersInput;
-        labels=labelsInput;
-        bean=new FormToTakeStatusBean();
-    }
 
     private boolean[] not(boolean []bool){
         boolean [] currbool=new boolean[6];
@@ -88,9 +82,8 @@ public class TakeFormControllerInterf1 {
                 sl[i].setValue(response[i]);
             }
             int finalI = i;
-            sl[i].valueProperty().addListener(new ChangeListener<Number>() {
-                @Override
-                public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+            sl[i].valueProperty().addListener(
+                    (ObservableValue<? extends Number> observableValue, Number number, Number t1) ->{
                     if(values[finalI]){
                         progress+=0.17;
 
@@ -100,8 +93,7 @@ public class TakeFormControllerInterf1 {
                         sl[finalI].setValue(response[finalI]);
                     }
                     labels[finalI].setText(""+(int)sl[finalI].getValue());
-                }
-            });
+                });
         }
     }
     @FXML

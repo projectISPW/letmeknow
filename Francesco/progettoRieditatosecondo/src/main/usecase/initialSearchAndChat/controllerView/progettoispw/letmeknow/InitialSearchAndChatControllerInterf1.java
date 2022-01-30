@@ -115,16 +115,10 @@ public class InitialSearchAndChatControllerInterf1 {
         Button button=(Button) event.getTarget();
         if(button.getOpacity()<1)return ;
         uids=getUids(uids);
-        switch(button.getId()){
-            case "chat1" : bean.touched(uids[0]);break;
-            case "chat2" :bean.touched(uids[1]);break;
-            case "chat3" :bean.touched(uids[2]);break;
-            case "chat4" :bean.touched(uids[3]);break;
-            case "chat5" :bean.touched(uids[4]);break;
-            case "chat6" :bean.touched(uids[5]);break;
-            default :{
-                event.consume();
-            }
+        for(int i=1;i<7;i++){
+            String compare="chat"+i;
+            System.out.println(compare);
+            if(compare.equals(button.getId()))bean.touched(uids[i-1]);
         }
         controller.switchTo("chat/interf1.fxml",event,"chat");
     }

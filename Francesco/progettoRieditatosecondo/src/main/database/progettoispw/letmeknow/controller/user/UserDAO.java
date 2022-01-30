@@ -85,7 +85,7 @@ public class UserDAO {
     public boolean registration(String uid,String password, String type ,int[] val,String description,String email,String goal ){
         Statement stmt=null;
         try {
-            String []log=new String[3];
+            String []log=new String[4];
             log[0]=uid;
             log[1]=password;
             log[2]=type;

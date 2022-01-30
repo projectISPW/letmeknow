@@ -25,7 +25,6 @@ public class MainApplication extends Application {
     public void start(Stage stage) throws IOException {
         Parent root;
         if(size==ScreenSize.LAPTOP){
-            //stage.setFullScreen(true);
             root=FXMLLoader.load(getClass().getResource("login/interf2.fxml"));
         }
         else{
@@ -39,9 +38,8 @@ public class MainApplication extends Application {
         Image icon= new Image(getClass().getResourceAsStream("photo/brain.jpg"));
         stage.getIcons().add(icon);
         //Alert in fase di uscita dall'applicazione
-        stage.setOnCloseRequest(input->new EventHandler<WindowEvent>() {
-            @Override
-            public void handle(WindowEvent windowEvent) {
+
+        stage.setOnCloseRequest((WindowEvent windowEvent) ->{
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Exit Confirmation");
                 alert.setHeaderText("Are you sure to exit program?");
@@ -56,7 +54,6 @@ public class MainApplication extends Application {
                 else{
                     windowEvent.consume();
                 }
-            }
         });
         stage.show();
     }

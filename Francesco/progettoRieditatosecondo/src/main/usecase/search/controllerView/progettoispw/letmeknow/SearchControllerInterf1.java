@@ -1,6 +1,5 @@
 package progettoispw.letmeknow;
 
-import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -54,13 +53,11 @@ public class SearchControllerInterf1 {
         sl=new Slider[] {empSL,humSL,posSL, carefulness};
         for(int i=0;i<4;i++){
             int finalI = i;
-            sl[i].valueProperty().addListener(new ChangeListener<Number>() {
-                @Override
-                public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+            sl[i].valueProperty().addListener(
+                    (ObservableValue<? extends Number> observableValue, Number number, Number t1) ->{
                     incremProgress(finalI);
                     progressBar.setProgress(progress);
                     if(finalI< 4)labels[finalI].setText(""+(int)sl[finalI].getValue());
-                    }
                 });
             }
         inputTraits.textProperty().addListener((observableValue, s, t1) ->incremProgress(4));

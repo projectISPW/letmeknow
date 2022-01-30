@@ -22,9 +22,11 @@ public class SignupPsychologistControllerInterf1 {
     SignupControllerInterf1 signupController;
     public SignupPsychologistControllerInterf1() {
         bean=new SignupBean();
-        signupController=new SignupControllerInterf1();
+
     }
+
     public void initialize(){
+        signupController=new SignupControllerInterf1(email,new PasswordField[]{pswd,confirmpswd},new Label[]{emailCheck,pswdCheck});
         signupController.reset();
     }
 
@@ -33,8 +35,9 @@ public class SignupPsychologistControllerInterf1 {
             Page controller=new Page();
             controller.backTo();
         }
-
+    @FXML
     protected  void save (ActionEvent event) {
+        signupController.reset();
        signupController.checkMailPswd(event,true);
     }
 }

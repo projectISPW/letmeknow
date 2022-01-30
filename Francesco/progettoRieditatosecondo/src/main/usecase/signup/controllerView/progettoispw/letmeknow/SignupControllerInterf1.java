@@ -46,6 +46,15 @@ public class SignupControllerInterf1 {
     public SignupControllerInterf1(){
         bean=new SignupBean();
     }
+    public SignupControllerInterf1(TextField  email,PasswordField [] passwords,Label []labels){
+        bean=new SignupBean();
+        this.email=email;
+        this.pswd=passwords[0];
+        this.confirmpswd=passwords[1];
+        this.emailCheck=labels[0];
+        this.pswdCheck=labels[1];
+
+    }
     public void initialize() {
         Label [] labels = new Label[]{lab1, lab2, lab3};
         sliders=new Slider[]{sl1,sl2,sl3};
