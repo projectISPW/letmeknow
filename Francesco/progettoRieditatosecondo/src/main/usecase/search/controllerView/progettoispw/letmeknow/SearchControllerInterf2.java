@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
-import progettoispw.letmeknow.bean.VisitBean;
+import progettoispw.letmeknow.bean.HomepageBean;
 
 import java.io.IOException;
 
@@ -27,7 +27,7 @@ public class SearchControllerInterf2 extends SearchControllerInterf1 {
             buttonBar.getChildren().add((Node)loader.load());
             ButtonBarInterf2 barController=loader.getController();
             barController.setSearch();
-            VisitBean beanVisit =new VisitBean();
+            HomepageBean beanVisit =new HomepageBean(true);
             if(beanVisit.getUserId()!=null)visit();
         } catch (IOException e) {
             buttonBar.getChildren().removeAll(buttonBar.getChildren());

@@ -5,13 +5,18 @@ import java.time.LocalDate;
 public class Goal {
     private  String obiettivo;
     private   String tag;
-    private  Integer[] dataEuropean =new Integer[3];//EUROPEAN FORMAT DD-MM-YYYY
-
+    private  Integer[] dataEuropean;//EUROPEAN FORMAT DD-MM-YYYY
+    public Goal(){
+        obiettivo= "";
+        tag="#";
+        dataEuropean=new Integer[]{0,0,0};
+    }
     public void setObiettivo(String string){
         obiettivo=string;
     }
     public void setStrDataAmericanEurope(String input){
         //CONVERTED FROM American to  INPUT DD-MM-YYYY
+        if(input!=null){
         int end=input.indexOf("-");
         dataEuropean[2]=(Integer.parseInt(input.substring(0,end)));
         int beg=end;
@@ -20,7 +25,7 @@ public class Goal {
         beg=end;
         end=input.length();
         dataEuropean[0]=(Integer.parseInt(input.substring(beg+1,end)));
-    }
+    }}
     public void setStrDataEurope(String input){
         //CONVERTED FROM  DD-MM-YYYY to American
         int end=input.indexOf("-");

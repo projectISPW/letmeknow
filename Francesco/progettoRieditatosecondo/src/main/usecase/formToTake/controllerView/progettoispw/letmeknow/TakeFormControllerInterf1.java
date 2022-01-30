@@ -73,8 +73,6 @@ public class TakeFormControllerInterf1 {
             goBack();
         }
         progress= bean.getComplete()*0.17;
-        sl=new Slider[] {sl1,sl2,sl3,sl4,sl5,sl6};
-        labels= new Label[]{lb1, lb2, lb3, lb4, lb5, lb6};
         progressBar.setProgress(progress);
         setValues();
         progressBar.setProgress(progress);
@@ -82,6 +80,8 @@ public class TakeFormControllerInterf1 {
     public void setValues(){
         response=bean.exitValStatus();
         locked=bean.exitStatus();
+        sl=new Slider[] {sl1,sl2,sl3,sl4,sl5,sl6};
+        labels= new Label[]{lb1, lb2, lb3, lb4, lb5, lb6};
         values=not(locked);
         for(int i=0;i<6;i++){
             if(response[i]!=-1){
@@ -104,15 +104,8 @@ public class TakeFormControllerInterf1 {
             });
         }
     }
-    public int getComplete(){
-        return bean.getComplete();
-    }
     @FXML
-    protected void save() {
-       save1();
-        initialize();
-    }
-    protected void save1(){
+    protected void save(){
         for (int i=0;i<6;i++) {
             if (!values[i]) {
                 locked[i]=true;
@@ -120,6 +113,7 @@ public class TakeFormControllerInterf1 {
             }
         }
         bean.inputValStatus(response);
+        initialize();
     }
     @FXML
     protected void goBack() {

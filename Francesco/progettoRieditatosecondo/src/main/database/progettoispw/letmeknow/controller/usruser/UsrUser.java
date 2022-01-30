@@ -23,8 +23,8 @@ public class UsrUser extends InitialUser {
                 parameterSliders.setOpt(inner[2]);
                 des = inner[3];
                 personalObb.setObiettivo(inner[4]);
-                personalObb.setTag(inner[5]);
-                personalObb.setStrDataAmericanEurope(inner[6]);
+                personalObb.setTag(inner[6]);
+                personalObb.setStrDataAmericanEurope(inner[5]);
         }
     }
 

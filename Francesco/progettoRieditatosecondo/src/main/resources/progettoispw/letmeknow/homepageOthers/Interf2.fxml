@@ -27,7 +27,7 @@
          </font>
       </Text>
       <Text layoutX="403.0" layoutY="406.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textSubSubTitle" text="Work On :" wrappingWidth="211.39027404785156" />
-      <ImageView fitHeight="213.0" fitWidth="173.0" layoutX="158.0" layoutY="386.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="expired" fitHeight="254.0" fitWidth="244.0" layoutX="103.0" layoutY="403.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@photo/img3.png" />
          </image>

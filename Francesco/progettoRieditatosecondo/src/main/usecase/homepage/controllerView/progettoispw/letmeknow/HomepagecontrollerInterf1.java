@@ -28,14 +28,14 @@ public class HomepagecontrollerInterf1 {
     protected Text userName;
     @FXML
     protected ImageView expired;
-    private HomepageBean bean;
+    protected HomepageBean bean;
     public HomepagecontrollerInterf1(){
         controller=new PageMenu();
-        bean=new HomepageBean();
+        bean=new HomepageBean(false);
         userid= bean.getUserId();
     }
     public void initialize(){
-        userName.setText("User : "+userid);
+        userName.setText("User : #"+userid);
 
         Integer[] arrayOut= bean.getParam();
         setSlider(empathySlider,arrayOut[0]);
@@ -66,10 +66,6 @@ public class HomepagecontrollerInterf1 {
     @FXML
     protected void goToSettings(ActionEvent event) {
         controller.switchToSettings(event);
-    }
-    @FXML
-    protected void goBack() {
-        controller.backTo();
     }
     @FXML
     protected  void goToISC(ActionEvent event){

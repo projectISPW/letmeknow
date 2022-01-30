@@ -7,8 +7,8 @@ import java.util.Calendar;
 
 public class HomepageBean {
     private HomepageController controller;
-    public HomepageBean(){
-        controller=new HomepageController();
+    public HomepageBean(boolean visit){
+        controller=new HomepageController(visit);
     }
     public String getUserId() {
         return controller.getUserID();

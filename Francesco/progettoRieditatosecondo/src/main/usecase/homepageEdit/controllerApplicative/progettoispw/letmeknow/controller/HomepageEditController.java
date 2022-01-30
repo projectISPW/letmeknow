@@ -7,7 +7,7 @@ public class HomepageEditController {
     HomepageController compare;
     public HomepageEditController(){
         user = ControllerClass.getUserUSR();
-        compare=new HomepageController();
+        compare=new HomepageController(false);
     }
     public String getUserID(){
         return user.getUserid();

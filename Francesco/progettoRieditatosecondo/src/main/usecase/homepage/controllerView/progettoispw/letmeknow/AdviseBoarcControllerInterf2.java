@@ -51,7 +51,7 @@ public class AdviseBoarcControllerInterf2 {
     public  void outputValChat(){
         InitialSearchAndChatControllerInterf1 iscInterf1=new InitialSearchAndChatControllerInterf1();
         String [] inner=iscInterf1.prevOutputValChat(new Group[]{extGroup1,extGroup2,extGroup3},new Group[]{group1,group2,group3},3);
-        uids = Arrays.copyOf(inner, 3);
+        uids = Arrays.copyOf(inner, 6);
     }
     public void outputValVisited(){
         ResultSearchControllerInterf1 rscInterf1=new ResultSearchControllerInterf1();

@@ -7,7 +7,6 @@ import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 import progettoispw.letmeknow.bean.CollectionFormBean;
 import progettoispw.letmeknow.bean.FormToTakeStatusBean;
-import progettoispw.letmeknow.bean.UseridBean;
 
 public class FormCollectionResultsInterf1 {
     PageMenu controller;
@@ -20,8 +19,7 @@ public class FormCollectionResultsInterf1 {
         controller=new PageMenu();
     }
     public void initialize(){
-        UseridBean useridBean=new UseridBean();
-        idUser.setText("User"+ useridBean.getUserId());
+        idUser.setText("User"+ bean.getUid());
     }
     @FXML
     protected void goToSettings(ActionEvent event) {

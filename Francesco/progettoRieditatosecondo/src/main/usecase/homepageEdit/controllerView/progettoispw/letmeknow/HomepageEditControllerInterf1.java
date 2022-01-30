@@ -34,7 +34,7 @@ public class HomepageEditControllerInterf1 {
     private HomepageBean homepageBean;
     public HomepageEditControllerInterf1(){
         bean=new HomepageEditBean();
-        homepageBean=new HomepageBean();
+        homepageBean=new HomepageBean(false);
         home =new HomepagecontrollerInterf1();
         controller=new PageMenu();
     }

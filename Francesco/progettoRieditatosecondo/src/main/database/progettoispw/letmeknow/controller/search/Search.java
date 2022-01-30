@@ -10,7 +10,7 @@ public class Search {
     private SearchDAO searchData;
     private Sliders slider;
     private ArrayList<String> foundList;
-    private UsrUser touched;
+    private String touched;
     public Search(String who) {
         foundList= new ArrayList <>();
         searchData=new SearchDAO();
@@ -63,7 +63,7 @@ public class Search {
         boolean bool;
         bool=searchData.addVisited(userid,userid2);
         if(userid!=null){
-            this.touched = new UsrUser(userid2);
+            this.touched = userid2 ;
         }
         return bool;
     }
@@ -73,7 +73,7 @@ public class Search {
         return inner;
     }
     public UsrUser getTouched() {
-        return touched;
+        return new UsrUser(touched);
     }
     public void reset(){
         foundList=new ArrayList<>();
