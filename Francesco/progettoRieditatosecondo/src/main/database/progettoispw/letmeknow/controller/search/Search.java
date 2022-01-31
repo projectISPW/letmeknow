@@ -33,10 +33,11 @@ public class Search {
     }
     public void goalSearch(String goal) {
         ArrayList<String>inner= (ArrayList<String>) searchData.paramSearch(userid, 1, 1, 1);
+        UsrUser me=new UsrUser(userid);
         for(String elem:inner){
             UsrUser user=new UsrUser(elem);
-            System.out.println("nel db "+user.getTag());
-            if((user.getTag()!=null) && user.getTag().contains(goal)){
+            System.out.println("goal in input"+goal);
+            if((user.getTag()!=null)  && me.getTag()!=null && user.getTag().contains(goal)){
                 foundList.add(elem);
             }
         }
@@ -63,7 +64,6 @@ public class Search {
     public boolean setTouched(String userid2) {
         boolean bool;
         bool=searchData.addVisited(userid,userid2);
-        System.out.println(userid2);
         if(userid!=null){
             this.touched = userid2 ;
         }

@@ -62,12 +62,14 @@ public class ISCController {
         ArrayList <Message> lmsgs=(ArrayList<Message>) chat.getLast();
         if(lmsgs.isEmpty())return new ArrayList<>();
         LastMessage actual;
+        Message msg;
         ArrayList<Message>inner=new ArrayList<>();
+
         int index=0;
         ArrayList <LastMessage> formatted  = new ArrayList<>();
         while(index<nVal){
             count = check(count, lmsgs);
-            Message msg=lmsgs.get(count);
+            msg=lmsgs.get(count);
             if(inner.contains(msg))break;
             count++;
             actual = new LastMessage(check(msg),msg);

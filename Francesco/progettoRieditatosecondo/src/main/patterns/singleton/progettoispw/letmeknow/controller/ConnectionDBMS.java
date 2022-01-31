@@ -27,9 +27,14 @@ public class ConnectionDBMS {
         dburl=parameters.get("url");
         driverclassname=parameters.get("driverName");
     }
-    public ConnectionDBMS(){
-       setValues();
-       if(conn==null)getConn();
+    public ConnectionDBMS()  {
+       try {
+           setValues();
+           if (conn == null || conn.isClosed()) conn = getConn();
+       }catch(SQLException throwables){
+           closeCONN();
+           exceptionOccurred();
+       }
     }
     public void exceptionOccurred(){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -47,8 +52,9 @@ public class ConnectionDBMS {
     private static java.sql.Connection getConn(){
         try {
             Class.forName(driverclassname);//recupera dinamicamente il driver , prende la classe dal class path
-            conn = DriverManager.getConnection(dburl, user ,password);//quando ho get connection ho il driver caricato
-            return conn;
+            java.sql.Connection newConn = DriverManager.getConnection(dburl, user ,password);//quando ho get connection ho il driver caricato
+            System.out.println(" i am stablish again a connection");
+            return newConn;
         } catch (Exception e) {
             e.printStackTrace();
             return null;
@@ -57,6 +63,7 @@ public class ConnectionDBMS {
     public Statement connection(Statement stmt){
         if(numConnection<1) {
             try {
+                if(conn==null)getConn();
                 stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 increm();
                 return stmt;

@@ -43,11 +43,11 @@ public class ResultSearchControllerInterf1 {
         outputVal();
     }
 
-    public String[] prevOutputVal(Group [] input, int inputnval){
+    public String[] prevOutputVal(Group [] input, int inputnval,BeanResultSearch bean){
         visitGroup=input;
         nval=inputnval;
-        beanVisit=new BeanResultSearch(nval);
         uids=new String[nval];
+        this.beanVisit=bean;
         return outputVal();
     }
     @FXML
@@ -59,6 +59,7 @@ public class ResultSearchControllerInterf1 {
         String[] strDes= users[2];
         String[] strGoal=users[1];
         String[] strUid=users[0];
+        for(String str:strUid)System.out.println("exit from bean "+str);
         for(int i=0;i<nval;i++){
             ObservableList<Node> externList= visitGroup[i].getChildren();
             Group group =(Group)externList.get(2);
@@ -68,7 +69,6 @@ public class ResultSearchControllerInterf1 {
                     Text text=(Text)elem;
                     if(text.getText().contains(UID_CONTENT)){
                         text.setText(UID_CONTENT +strUid[i]);
-
                         uids[i]=strUid[i];
                     }
                     else if(text.getText().contains(MSG_WORKON)){
@@ -95,7 +95,6 @@ public class ResultSearchControllerInterf1 {
         if (button.getOpacity() < 1) return;
         for(int i=1;i<7;i++){
             String compare="home"+i;
-            System.out.println(compare);
             if(compare.equals(button.getId()))beanVisit.touched(uids[i-1]);
         }
     }
