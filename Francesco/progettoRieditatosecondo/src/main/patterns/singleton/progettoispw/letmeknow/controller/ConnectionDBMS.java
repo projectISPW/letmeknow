@@ -1,10 +1,16 @@
 package progettoispw.letmeknow.controller;
 
 
+import javafx.application.Platform;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Map;
+import java.util.Optional;
 
 public class ConnectionDBMS {
     private static String  user ;
@@ -13,17 +19,42 @@ public class ConnectionDBMS {
     private static String driverclassname ;
     private static java.sql.Connection conn;
     private static int numConnection;
-    public ConnectionDBMS(){
-        user = "uf56pst70onxcz68";
-        password = "N5bkvOZY2AhFpYZYu3w7";
-        dburl = "jdbc:mysql://uf56pst70onxcz68:N5bkvOZY2AhFpYZYu3w7@b16kdsy1yce6nyrrldqg-mysql.services.clever-cloud.com:3306/b16kdsy1yce6nyrrldqg";
-        driverclassname = "com.mysql.cj.jdbc.Driver";
-        if(conn==null)conn=getConn();
+    public static void setValues(){
+        ConnectionInfo connectionInfo = new ConnectionInfo();
+        Map<String, String> parameters = connectionInfo.getConnectionInfo();
+        user=parameters.get("username");
+        password=parameters.get("password");
+        dburl=parameters.get("url");
+        driverclassname=parameters.get("driverName");
+    }
+    public ConnectionDBMS()  {
+       try {
+           setValues();
+           if (conn == null || conn.isClosed()) conn = getConn();
+       }catch(SQLException throwables){
+           closeCONN();
+           exceptionOccurred();
+       }
+    }
+    public void exceptionOccurred(){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Connection failed ");
+        alert.setHeaderText("we found found some trouble during the connection on the Database");
+        alert.setContentText("Please retry your access");
+        Optional<ButtonType> result = alert.showAndWait();
+        if(result.isPresent() && result.get() == ButtonType.OK){
+            closeCONN();
+            System.exit(0);
+            Platform.exit();
+        }
+        Platform.exit();
     }
     private static java.sql.Connection getConn(){
         try {
             Class.forName(driverclassname);//recupera dinamicamente il driver , prende la classe dal class path
-            return conn = DriverManager.getConnection(dburl, user ,password);//quando ho get connection ho il driver caricato
+            java.sql.Connection newConn = DriverManager.getConnection(dburl, user ,password);//quando ho get connection ho il driver caricato
+            System.out.println(" i am stablish again a connection");
+            return newConn;
         } catch (Exception e) {
             e.printStackTrace();
             return null;
@@ -32,12 +63,13 @@ public class ConnectionDBMS {
     public Statement connection(Statement stmt){
         if(numConnection<1) {
             try {
+                if(conn==null)getConn();
                 stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 increm();
                 return stmt;
             } catch (Exception throwables) {
                 closeSTMT(stmt);
-                return null;
+                exceptionOccurred();
             }
         }
         return null;
@@ -53,6 +85,7 @@ public class ConnectionDBMS {
             if(stmt!=null)stmt.close();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+            exceptionOccurred();
         } finally {
             decrem();
             //"GESTIONE CONNESSIONE FALLITA "
@@ -64,6 +97,7 @@ public class ConnectionDBMS {
             closeSTMT(stmt);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+            exceptionOccurred();
         } finally {
             decrem();
             //"GESTIONE CONNESSIONE FALLITA "
@@ -74,9 +108,9 @@ public class ConnectionDBMS {
             if(conn!=null)conn.close();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+            exceptionOccurred();
         } finally {
             decrem();
-            //"GESTIONE CONNESSIONE FALLITA "
         }
     }
 }

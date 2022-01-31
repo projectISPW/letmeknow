@@ -12,15 +12,9 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import progettoispw.letmeknow.controller.ConnectionDBMS;
-import progettoispw.letmeknow.controller.chat.Message;
-import progettoispw.letmeknow.controller.chat.Messages;
-import progettoispw.letmeknow.controller.form.ResultForm;
-import progettoispw.letmeknow.controller.search.Search;
 
 import java.io.IOException;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Optional;
 
 public class MainApplication extends Application {
     private enum ScreenSize{
@@ -31,7 +25,6 @@ public class MainApplication extends Application {
     public void start(Stage stage) throws IOException {
         Parent root;
         if(size==ScreenSize.LAPTOP){
-            //stage.setFullScreen(true);
             root=FXMLLoader.load(getClass().getResource("login/interf2.fxml"));
         }
         else{
@@ -45,24 +38,22 @@ public class MainApplication extends Application {
         Image icon= new Image(getClass().getResourceAsStream("photo/brain.jpg"));
         stage.getIcons().add(icon);
         //Alert in fase di uscita dall'applicazione
-        stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-            @Override
-            public void handle(WindowEvent windowEvent) {
+
+        stage.setOnCloseRequest((WindowEvent windowEvent) ->{
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Exit Confirmation");
                 alert.setHeaderText("Are you sure to exit program?");
                 alert.setContentText("If you want to exit you'll be logged out from application.");
-                if(alert.showAndWait().get() == ButtonType.OK){
+                Optional<ButtonType> result = alert.showAndWait();
+                if(result.isPresent() && result.get() == ButtonType.OK){
                     ConnectionDBMS conn=new ConnectionDBMS();
                     conn.closeCONN();
-                    System.out.println("Prompt: On Log Out phase");
                     Platform.exit();
                     System.exit(0);
-                }else{
-                    System.out.println("Prompt: On Cancel Confirmation Alert. Consume Event");
+                }
+                else{
                     windowEvent.consume();
                 }
-            }
         });
         stage.show();
     }

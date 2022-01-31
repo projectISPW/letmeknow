@@ -113,12 +113,7 @@
                               <Image url="@photo/val4.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="ans6" fitHeight="122.0" fitWidth="218.0" layoutX="467.0" layoutY="1103.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@photo/val3.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="ans5" fitHeight="81.0" fitWidth="221.0" layoutX="459.0" layoutY="802.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="ans3" fitHeight="73.0" fitWidth="227.0" layoutX="454.0" layoutY="426.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@photo/val4.png" />
                            </image>
@@ -128,9 +123,14 @@
                               <Image url="@photo/val2.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="ans3" fitHeight="73.0" fitWidth="227.0" layoutX="454.0" layoutY="426.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="ans5" fitHeight="81.0" fitWidth="221.0" layoutX="459.0" layoutY="802.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@photo/val4.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="ans6" fitHeight="122.0" fitWidth="218.0" layoutX="467.0" layoutY="1103.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@photo/val3.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -172,16 +172,21 @@
                         <Font size="36.0" />
                     </font>
                 </Text>
-                <Text layoutX="83.0" layoutY="420.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Positivity">
+                <Text layoutX="83.0" layoutY="420.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Optimism">
                     <font>
                         <Font size="36.0" />
                     </font>
                 </Text>
-                <Text layoutX="62.0" layoutY="572.0" strokeType="OUTSIDE" strokeWidth="0.0" text="on date : 22/11/2021">
+                <Text layoutX="62.0" layoutY="572.0" strokeType="OUTSIDE" strokeWidth="0.0" text="on date :">
                     <font>
                         <Font size="24.0" />
                     </font>
                 </Text>
+            <Text layoutX="164.0" layoutY="573.0" strokeType="OUTSIDE" strokeWidth="0.0" text="22/11/2021">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
             </children>
         </AnchorPane>
     </children>

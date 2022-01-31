@@ -1,22 +1,21 @@
 package progettoispw.letmeknow.controller.search;
 
-import progettoispw.letmeknow.controller.utenti.SalvaUtenteMeta;
-import progettoispw.letmeknow.controller.utentiusr.UtenteUsr;
+import progettoispw.letmeknow.controller.usruser.UsrUser;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Search {
     private String userid;
     private SearchDAO searchData;
     private Sliders slider;
     private ArrayList<String> foundList;
-    private UtenteUsr touched;
+    private String touched;
     public Search(String who) {
-        foundList= new ArrayList <String>();
+        foundList= new ArrayList <>();
         searchData=new SearchDAO();
         userid=who;
+        touched=null;
     }
     public void setAffinity(Integer val) {
         slider = new Sliders(val);
@@ -34,9 +33,11 @@ public class Search {
     }
     public void goalSearch(String goal) {
         ArrayList<String>inner= (ArrayList<String>) searchData.paramSearch(userid, 1, 1, 1);
+        UsrUser me=new UsrUser(userid);
         for(String elem:inner){
-            UtenteUsr user=new UtenteUsr(elem);
-            if(user.getTag().contains(goal)){
+            UsrUser user=new UsrUser(elem);
+            System.out.println("goal in input"+goal);
+            if((user.getTag()!=null)  && me.getTag()!=null && user.getTag().contains(goal)){
                 foundList.add(elem);
             }
         }
@@ -44,16 +45,16 @@ public class Search {
     public void descrSearch(String descr) {
         ArrayList<String> inner= (ArrayList<String>) searchData.paramSearch(userid, 1, 1, 1);
         for(String elem:inner){
-            UtenteUsr user=new UtenteUsr(elem);
+            UsrUser user=new UsrUser(elem);
             if(user.getDescript().contains(descr)){
                 foundList.add(elem);
             }
         }
     }
-    public ArrayList<String> getArrayList(){
-        ArrayList inner=new ArrayList();
+    public List<String> getArrayList(){
+        List <String>inner=new ArrayList<>();
         if(foundList.isEmpty()){
-            inner=searchData.getVisit(userid);
+            inner= searchData.getVisit(userid);
         }
         for(String str:foundList){
             if(!inner.contains(str))inner.add(str);
@@ -63,17 +64,21 @@ public class Search {
     public boolean setTouched(String userid2) {
         boolean bool;
         bool=searchData.addVisited(userid,userid2);
-        this.touched = new UtenteUsr(userid2);
+        if(userid!=null){
+            this.touched = userid2 ;
+        }
         return bool;
     }
     public int[] getnVisit(){
         int [] inner;
         inner=searchData.getnVisit(userid);
-        System.err.println("numero di visite ricevute"+inner[0]+"numero di utenze nel sistema"+inner[1]);
         return inner;
     }
-    public UtenteUsr getTouched() {
-        return touched;
+    public UsrUser getTouched() {
+        return new UsrUser(touched);
+    }
+    public void reset(){
+        foundList=new ArrayList<>();
     }
 }
 

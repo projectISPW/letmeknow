@@ -7,7 +7,6 @@ import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
-import progettoispw.letmeknow.bean.ISCBean;
 import progettoispw.letmeknow.bean.BeanResultSearch;
 
 public class ResultSearchControllerInterf1 {
@@ -26,38 +25,41 @@ public class ResultSearchControllerInterf1 {
     static final String DESCRIPTION ="About me :";
     private PageMenu controller;
     BeanResultSearch beanVisit;
-    ISCBean chatBean;
     int nval;
     public ResultSearchControllerInterf1(){
         nval=4;
         beanVisit=new BeanResultSearch(nval);
-        chatBean=new ISCBean();
         controller=new PageMenu();
         uids=new String[nval];
     }
+
+    public ResultSearchControllerInterf1(String[] input) {
+        uids=input;
+        beanVisit=new BeanResultSearch();
+    }
+
     public void initialize(){
         visitGroup=new Group[]{group1,group2,group3,group4};
         outputVal();
     }
 
-    public String[] ouputVal_prev(Group [] input, int inputnval, String[] output){
+    public String[] prevOutputVal(Group [] input, int inputnval,BeanResultSearch bean){
         visitGroup=input;
         nval=inputnval;
-        beanVisit=new BeanResultSearch(nval);
         uids=new String[nval];
-
+        this.beanVisit=bean;
         return outputVal();
     }
     @FXML
     public String [] outputVal(){
         for(int i=0;i<nval;i++){
-            System.out.println(i);
             visitGroup[i].setOpacity(1);
         }
-        String [] [] users= beanVisit.exitDes();
+        String [] [] users= beanVisit.getUsers();
         String[] strDes= users[2];
         String[] strGoal=users[1];
         String[] strUid=users[0];
+        for(String str:strUid)System.out.println("exit from bean "+str);
         for(int i=0;i<nval;i++){
             ObservableList<Node> externList= visitGroup[i].getChildren();
             Group group =(Group)externList.get(2);
@@ -71,7 +73,6 @@ public class ResultSearchControllerInterf1 {
                     }
                     else if(text.getText().contains(MSG_WORKON)){
                         text.setText(MSG_WORKON+strGoal[i]);
-                        System.err.println("obiettivo in ingresso" + strGoal[i]);
                     }
                     else if(text.getText().contains(DESCRIPTION))text.setText(DESCRIPTION+strDes[i]);
                 }
@@ -83,36 +84,23 @@ public class ResultSearchControllerInterf1 {
     }
     @FXML
     public void touchChat(ActionEvent event){
-        InitialSearchAndChatControllerInterf1 iscController=new InitialSearchAndChatControllerInterf1();
-        iscController.setUIDS(uids);
+        InitialSearchAndChatControllerInterf1 iscController=new InitialSearchAndChatControllerInterf1(uids);
         iscController.touchChat(event);
     }
     public void setUids(String [] input){
         uids=input;
     }
-    @FXML
-    public void visit(ActionEvent event) {
+    public void touchVisit(ActionEvent event){
         Button button = (Button) event.getTarget();
         if (button.getOpacity() < 1) return;
-        System.out.println(button.getId());
-        switch (button.getId()) {
-            case "home1":
-                System.err.println("andato su home 1");
-                beanVisit.touched(uids[0]);
-                break;
-            case "home2":
-                beanVisit.touched(uids[1]);
-                break;
-            case "home3":
-                beanVisit.touched(uids[2]);
-                break;
-            case "home4":
-                beanVisit.touched(uids[3]);
-                break;
-            default: {
-                event.consume();
-            }
+        for(int i=1;i<7;i++){
+            String compare="home"+i;
+            if(compare.equals(button.getId()))beanVisit.touched(uids[i-1]);
         }
+    }
+    @FXML
+    public void visit(ActionEvent event) {
+        touchVisit(event);
         controller.switchTo("homepageOthers/interf1.fxml",event,"visit");
     }
     @FXML
