@@ -153,10 +153,6 @@ v
 Fsrc/main/database/progettoispw/letmeknow/controller/search/Search.java,7\6\767466ef605e1024bf07e2fe16531b55eb76458c
 â
 Ysrc/main/usecase/search/controllerApplicative/progettoispw/letmeknow/bean/SearchBean.java,2\f\2fde9830751302a38319c5e0e177c227a3d52f34
-ä
-Zsrc/main/usecase/search/controllerView/progettoispw/letmeknow/SearchControllerInterf2.java,3\4\34aaed3e806f2f8b29848155d3f06dc5b6037eae
-ä
-Zsrc/main/usecase/search/controllerView/progettoispw/letmeknow/SearchControllerInterf1.java,6\d\6dc09e0d250368a27d8e18db42b1964756c3dfb0
 s
 Csrc/main/database/progettoispw/letmeknow/controller/chat/Query.java,e\1\e1aec5b7c581abb4a27245f3f670d82c22294d36
 Å
@@ -171,3 +167,7 @@ u
 Esrc/main/database/progettoispw/letmeknow/controller/search/Query.java,a\a\aa15d7f0217d4bce81fee4798b1a61ac2abadf17
 i
 9src/main/java/progettoispw/letmeknow/MainApplication.java,b\4\b4ea8f36ec0b1c2c64d0530d95547727e22bbb93
+ä
+Zsrc/main/usecase/search/controllerView/progettoispw/letmeknow/SearchControllerInterf2.java,3\4\34aaed3e806f2f8b29848155d3f06dc5b6037eae
+ä
+Zsrc/main/usecase/search/controllerView/progettoispw/letmeknow/SearchControllerInterf1.java,6\d\6dc09e0d250368a27d8e18db42b1964756c3dfb0
