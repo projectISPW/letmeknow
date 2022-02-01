@@ -18,6 +18,7 @@ public class Page {
     protected static Stage stage1;
     protected static Scene scene1;
     protected static String title1;
+    private boolean check=true;
     static void prevBack(ActionEvent event){
         stage1 = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene1 = ((Node) event.getSource()).getScene();
@@ -41,8 +42,9 @@ public class Page {
     }
     public void switchTo(String name, ActionEvent event, String title) {
         try {
+            System.out.println(check);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            name=check(name,stage);
+            if(check)name=check(name,stage);
             prevBack(event);
             Parent root = FXMLLoader.load(getClass().getResource(name));
             Scene scene = new Scene(root);
@@ -75,14 +77,18 @@ public class Page {
     }
     public void setSize(String name,ActionEvent event){
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        int index;
+        index= name.indexOf("interf2");
+        if(index==-1) index= name.indexOf("interf1");
         if(stage.getWidth()>500) {
-            stage.setWidth(414);
-            stage.setHeight(736);
+            name=name.substring(0,index);
+            name+="" + "interf1.fxml";
         }
         else{
-            stage.setWidth(1440);
-            stage.setHeight(790);
+            name=name.substring(0,index);
+            name+="" + "interf2.fxml";
         }
+        check=false;
         switchTo(name,event,stage.getTitle());
     }
 }

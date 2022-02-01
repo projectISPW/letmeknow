@@ -159,15 +159,3 @@ Zsrc/main/usecase/search/controllerView/progettoispw/letmeknow/SearchControllerI
 Zsrc/main/usecase/search/controllerView/progettoispw/letmeknow/SearchControllerInterf2.java,3\4\34aaed3e806f2f8b29848155d3f06dc5b6037eae
 ”
 dsrc/main/usecase/recoverPSWD/controllerView/progettoispw/letmeknow/RecoverPswdControllerInterf1.java,b\0\b05b5aa5393e308c3223641af6ae4f857535c684
-p
-@src/main/patterns/singleton/progettoispw/letmeknow/PageMenu.java,2\9\292bb5f6371004e808a8bbd9b4358c2d628ebb3f
-i
-9src/main/java/progettoispw/letmeknow/MainApplication.java,b\4\b4ea8f36ec0b1c2c64d0530d95547727e22bbb93
-l
-<src/main/patterns/singleton/progettoispw/letmeknow/Page.java,f\c\fc63fb650b765b3bf2ae7199ce6cf52a4592ca70
-ˆ
-Xsrc/main/usecase/login/controllerView/progettoispw/letmeknow/LoginControllerInterf1.java,d\7\d7ec9ce4c0ef0e4f9d8c4e08dbb3e34bd77b560c
-Ž
-^src/main/usecase/settings/controllerView/progettoispw/letmeknow/SettingsControllerInterf2.java,e\7\e72ebe196221681cb0660b228f3908730090c759
-Ž
-^src/main/usecase/settings/controllerView/progettoispw/letmeknow/SettingsControllerInterf1.java,c\b\cb8d31428a8e07e7e8d703d8e5c0ed30ce67bc47
