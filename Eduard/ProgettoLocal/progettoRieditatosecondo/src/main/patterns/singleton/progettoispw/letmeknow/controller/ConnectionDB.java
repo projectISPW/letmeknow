@@ -32,7 +32,7 @@ public class ConnectionDB {
     public static Statement getStatement() {
         if (stmt1==null){
             System.out.println("i am here");
-            getConnectionParam();
+
             stmt1 = connection();
         }
         return stmt1;
@@ -50,15 +50,7 @@ public class ConnectionDB {
     }
 
 
-    private static void getConnectionParam(){
-        ConnectionInfo connectionInfo = new ConnectionInfo();
 
-        Map<String, String> parameters = connectionInfo.getConnectionInfo();
-        User=parameters.get("username");
-        Pass=parameters.get("password");
-        DB_URL=parameters.get("url");
-        DRIVER_CLASS_NAME=parameters.get("driverName");
-    }
 
 
     public static void closeConnection() {

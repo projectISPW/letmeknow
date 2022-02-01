@@ -15,14 +15,17 @@ public class ConnectionDBMS {
     private static java.sql.Connection conn;
     private static int numConnection;
     public ConnectionDBMS(){
-        ConnectionInfo connectionInfo = new ConnectionInfo();
 
-        Map<String, String> parameters = connectionInfo.getConnectionInfo();
-        user=parameters.get("username");
-        password=parameters.get("password");
-        dburl=parameters.get("url");
-        driverclassname=parameters.get("driverName");
-        if(conn==null)conn=getConn();
+        if(conn==null){
+            ConnectionInfo connectionInfo = new ConnectionInfo("src/main/resources/progettoispw/letmeknow/connection/ConnectionParameters.xml");
+
+            Map<String, String> parameters = connectionInfo.getConnectionInfo();
+            user=parameters.get("username");
+            password=parameters.get("password");
+            dburl=parameters.get("url");
+            driverclassname=parameters.get("driverName");
+            conn=getConn();
+        }
     }
     private static java.sql.Connection getConn(){
         try {
