@@ -1,0 +1,7 @@
+
+€
+java:S1149
+"eReplace the synchronized class "Vector" by an unsynchronized one such as "ArrayList" or "LinkedList".(ð™¿Àýÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(¼îšìþÿÿÿÿ
+<
+java:S1168#"&Return an empty array instead of null.(¥¹ï

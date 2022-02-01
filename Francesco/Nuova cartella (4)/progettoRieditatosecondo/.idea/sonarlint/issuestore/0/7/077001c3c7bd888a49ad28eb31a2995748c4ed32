@@ -1,0 +1,8 @@
+
+o
+java:S1450"YRemove the "controller" field and declare it as a local variable in the relevant methods.(ÂÐˆ©
+E
+java:S1197"*Move the array designators [] to the type.(œ¬á™ÿÿÿÿÿ
+V	java:S125	"<This block of commented-out lines of code should be removed.(Ö£Îüÿÿÿÿ
+E
+java:S1068"*Remove this unused "userid" private field.(òÈÜÿÿÿÿÿ
