@@ -112,6 +112,11 @@
          </graphic>
       </Button>
       <Text layoutX="35.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="hiperlink_signup" text="9.31" />
+      <Button layoutX="282.0" layoutY="46.0" mnemonicParsing="false" onAction="#setSize" prefWidth="35.0" style="-fx-background-color: transparent;" textFill="WHITE">
+         <graphic>
+            <FontAwesomeIcon glyphName="DESKTOP" size="30" />
+         </graphic>
+      </Button>
 
    </children>
 </AnchorPane>

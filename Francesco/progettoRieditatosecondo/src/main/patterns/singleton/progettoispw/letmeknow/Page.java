@@ -73,4 +73,16 @@ public class Page {
         stage1.setTitle(title1);
         stage1.show();
     }
+    public void setSize(String name,ActionEvent event){
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        if(stage.getWidth()>500) {
+            stage.setWidth(414);
+            stage.setHeight(736);
+        }
+        else{
+            stage.setWidth(1440);
+            stage.setHeight(790);
+        }
+        switchTo(name,event,stage.getTitle());
+    }
 }
