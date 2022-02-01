@@ -36,7 +36,9 @@ public class ISCController {
     }
     private List<LastMessage> getListV1( ){
         //lista utenti con ultimo messaggio per la interfaccia 2
+        System.err.println("i am here");
         ArrayList <Message> lmsgs=(ArrayList<Message>) chat.getLast();
+        if(lmsgs.isEmpty())return new ArrayList<>();
         LastMessage actual;
         ArrayList <LastMessage> formatted  = new ArrayList<>();
         for (Message msg:lmsgs) {
@@ -49,6 +51,7 @@ public class ISCController {
         //ricerca messaggi sulla lista utenti 2
         List <Message>msgs= chat.getLocalSearch(find);
         ArrayList <LastMessage> formatted  = new ArrayList<>();
+        if(msgs.isEmpty())return new ArrayList<>();
         LastMessage actual;
         for (Message msg : msgs) {
             actual = new LastMessage(msg.getSender()+"||"+msg.getReciver(), msg);
@@ -58,7 +61,6 @@ public class ISCController {
     }
     private List<LastMessage>getListV3(){
         //lista utenti con ultimo messaggio per la interfaccia 1
-
         ArrayList <Message> lmsgs=(ArrayList<Message>) chat.getLast();
         if(lmsgs.isEmpty())return new ArrayList<>();
         LastMessage actual;

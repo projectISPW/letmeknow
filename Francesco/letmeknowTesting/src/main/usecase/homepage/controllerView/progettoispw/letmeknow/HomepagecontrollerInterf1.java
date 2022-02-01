@@ -48,13 +48,13 @@ public class HomepagecontrollerInterf1 {
         arrayOut=bean.getData();
         date.setText(" "+arrayOut[0]+"-"+arrayOut[1]+"-"+arrayOut[2]);
         if(bean.getExpired() && expired!=null){
-            Image image= new Image(getClass().getResourceAsStream("photo/expired.png"));
+            Image image= new Image(getClass().getResourceAsStream("progettoispw.letmeknow/photo/expired.png"));
             expired.setImage(image);
         }
     }
     public void  setSlider(ImageView image,int val){
         //ho fatto il controllo sintattico nel bean
-        String url="photo/val";
+        String url= "progettoispw.letmeknow/photo/val";
         url=url+val+".png";
         Image immagine=new Image(getClass().getResourceAsStream(url));
         image.setImage(immagine);

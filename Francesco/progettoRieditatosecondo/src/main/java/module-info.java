@@ -4,8 +4,6 @@ module progettoispw.letmeknow {
     requires java.desktop;
     requires java.sql;
     requires java.mail;
-
-
     opens progettoispw.letmeknow to javafx.fxml;
     exports progettoispw.letmeknow;
     opens progettoispw.letmeknow.photo to javafx.fxml;

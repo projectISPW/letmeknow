@@ -24,9 +24,4 @@ public class Log {
         UserDAO inner=new UserDAO();
         return inner.recover(email)[0];
     }
-    public static void main(String[] args){
-        Log tryLog=new Log();
-        tryLog.testLogin("0000000","password");
-    }
-
 }

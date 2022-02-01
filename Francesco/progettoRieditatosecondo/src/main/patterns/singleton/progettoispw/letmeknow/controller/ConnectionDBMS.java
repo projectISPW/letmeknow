@@ -29,14 +29,13 @@ public class ConnectionDBMS {
     }
     public ConnectionDBMS()  {
        try {
-           setValues();
            if (conn == null || conn.isClosed()) conn = getConn();
        }catch(SQLException throwables){
            closeCONN();
            exceptionOccurred();
        }
     }
-    public void exceptionOccurred(){
+    public static void exceptionOccurred(){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Connection failed ");
         alert.setHeaderText("we found found some trouble during the connection on the Database");
@@ -51,9 +50,9 @@ public class ConnectionDBMS {
     }
     private static java.sql.Connection getConn(){
         try {
+            setValues();
             Class.forName(driverclassname);//recupera dinamicamente il driver , prende la classe dal class path
             java.sql.Connection newConn = DriverManager.getConnection(dburl, user ,password);//quando ho get connection ho il driver caricato
-            System.out.println(" i am stablish again a connection");
             return newConn;
         } catch (Exception e) {
             e.printStackTrace();
@@ -88,7 +87,6 @@ public class ConnectionDBMS {
             exceptionOccurred();
         } finally {
             decrem();
-            //"GESTIONE CONNESSIONE FALLITA "
         }
     }
     public void closeRSTSTMT(ResultSet rst, Statement stmt) {
@@ -100,10 +98,9 @@ public class ConnectionDBMS {
             exceptionOccurred();
         } finally {
             decrem();
-            //"GESTIONE CONNESSIONE FALLITA "
         }
     }
-    public void closeCONN(){
+    public static void closeCONN(){
         try {
             if(conn!=null)conn.close();
         } catch (SQLException throwables) {

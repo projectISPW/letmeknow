@@ -10,7 +10,7 @@ import java.util.Map;
 
 
 public class ConnectionInfo {
-    private static final String FILENAME="src/main/resources/letmeknow/connection/ConnectionParameters.xml";
+    private static final String FILENAME="src/main/resources/progettoispw.letmeknow/connection/ConnectionParameters.xml";
     private static String user;
     private static String pass;
     private static String dbUrl;

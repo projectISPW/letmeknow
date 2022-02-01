@@ -51,19 +51,22 @@ public class Page {
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Invalid resources ");
-            alert.setHeaderText("we found found some trouble during the execution of the program");
-            alert.setContentText("go to settings and report the problem");
-            Optional<ButtonType> result = alert.showAndWait();
-            if(result.isPresent() && result.get() == ButtonType.OK){
-                ConnectionDBMS conn =new ConnectionDBMS();
-                conn.closeCONN();
-                System.exit(0);
-                Platform.exit();
-            }
+            exceptionOccurred();
+        }
+    }
+    public static void exceptionOccurred(){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Invalid resources ");
+        alert.setHeaderText("we found found some trouble during the execution of the program");
+        alert.setContentText("go to settings and report the problem");
+        Optional<ButtonType> result = alert.showAndWait();
+        if(result.isPresent() && result.get() == ButtonType.OK){
+            ConnectionDBMS conn =new ConnectionDBMS();
+            conn.closeCONN();
+            System.exit(0);
             Platform.exit();
         }
+        Platform.exit();
     }
     public void backTo(){
         stage1.setScene(scene1);

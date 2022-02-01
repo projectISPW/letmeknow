@@ -116,10 +116,10 @@ public class InitialSearchAndChatControllerInterf1 {
         if(button.getOpacity()<1)return ;
         uids=getUids(uids);
         for(int i=1;i<7;i++){
-            String compare="chat"+i;
+            String compare= "progettoispw.letmeknow/chat" +i;
             if(compare.equals(button.getId()))bean.touched(uids[i-1]);
         }
-        controller.switchTo("chat/interf1.fxml",event,"chat");
+        controller.switchTo("progettoispw.letmeknow/chat/interf1.fxml",event, "progettoispw.letmeknow/chat");
     }
     public void visit(ActionEvent event) {
         uids=getUids(uids);

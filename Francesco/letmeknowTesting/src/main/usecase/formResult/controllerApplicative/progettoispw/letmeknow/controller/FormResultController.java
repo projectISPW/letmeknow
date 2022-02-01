@@ -11,8 +11,8 @@ public class FormResultController {
         form= ControllerClass.getResultForm();
     }
     public int[] getValResponse(){
-        values=form.getRisposte();
-        return form.getRisposte();
+        values=form.getAnswers();
+        return form.getAnswers();
     }
     public int [] getParam () {
         return form.getParam();

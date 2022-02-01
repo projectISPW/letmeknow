@@ -1,6 +1,7 @@
 package progettoispw.letmeknow;
 
 import org.junit.Test;
+import progettoispw.letmeknow.bean.LoginBean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +11,7 @@ import static org.junit.Assert.assertTrue;
 public class TestLog {
     Random rand=new Random();
     Log log =new Log();
+    public static final String PASSWD="passwordTest";
     public void testloginUsr(String userid,String password){
         //it test the return of the log
         String result= log.testLogin(userid,password);
@@ -28,7 +30,7 @@ public class TestLog {
        return bool;
     }
     @Test
-    public void testGlobalLog(){
+    public List<String> testGlobalLog(){
         //it test the return of a signup and his log
         List<String>emails=new ArrayList<>();
         int val;
@@ -54,5 +56,12 @@ public class TestLog {
                 assertTrue(!listUids.get(i).equals(listUids.get(j)));
             }
         }
+        return listUids;
+    }
+    public List<String> getUsrUids(){
+        List<String>inner=new ArrayList<>();
+        List<String>allUid=testGlobalLog();
+        for(String uid:allUid)if(log.testLogin(uid,PASSWD)=="usr")inner.add(uid);
+        return inner;
     }
 }
