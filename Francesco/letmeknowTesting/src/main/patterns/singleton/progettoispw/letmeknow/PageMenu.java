@@ -1,6 +1,5 @@
 package progettoispw.letmeknow;
 import javafx.event.ActionEvent;
-
 public  class PageMenu extends Page {
     public void switchToChat(ActionEvent event)  {
         this.switchTo("chat/interf1.fxml",event,"Chat");

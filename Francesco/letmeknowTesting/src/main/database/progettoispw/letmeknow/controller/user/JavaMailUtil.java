@@ -1,9 +1,10 @@
 package progettoispw.letmeknow.controller.user;
+import progettoispw.letmeknow.Exceptions;
 
+import java.util.Properties;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import java.util.Properties;
 
 public class JavaMailUtil {
     private String text;
@@ -16,9 +17,10 @@ public class JavaMailUtil {
         properties.put("mail.smtp.ssl.enable", "true");
         properties.put("mail.smtp.auth", "true");
         //configurazione log
-        String myAccount="progettoispw2021@gmail.com";
-        String password="Password2021";
-        Session session = Session.getInstance(properties, new Authenticator() {
+        EmailInfo emailInfo=new EmailInfo();
+        String myAccount=emailInfo.getEmail();
+        String password=emailInfo.getPassword();
+        Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
                protected PasswordAuthentication getPasswordAuthentication() {
                    return new PasswordAuthentication(myAccount, password);
                 }
@@ -26,11 +28,11 @@ public class JavaMailUtil {
         Message message = prepareMessage(session,myAccount,recipient);
         Transport .send(message);
         return true;
-        } catch (Exception e ){
+        } catch (MessagingException e) {
+            Exceptions.exceptionConnectionOccurred();
             return false;
         }
     }
-
     public void setText(String input){
         text=input;
     }

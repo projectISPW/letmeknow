@@ -43,7 +43,7 @@ public class ControllerClass {
     }
     public static Search getSearch(){
         if(search==null){
-            setSearch();
+            controllerChat();
         }
         return search;
     }
@@ -55,7 +55,6 @@ public class ControllerClass {
     public static Messages getChat(){
         if(chat==null){
             controllerChat();
-
         }
        return chat;
     }

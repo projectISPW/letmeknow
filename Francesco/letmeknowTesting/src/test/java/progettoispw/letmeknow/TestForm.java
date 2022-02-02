@@ -10,7 +10,6 @@ import static org.junit.Assert.assertTrue;
 public class TestForm {
     Form form=new Form();
     Random rand=new Random();
-
     public void decrement(String userid){
         int []  older = form.getParam(userid);
         int [] newParam =form.setDecremForm(userid);
@@ -21,7 +20,6 @@ public class TestForm {
         int [] newParam =form.setIncremForm(userid);
         for(int i=0;i<3;i++)assertTrue(newParam[i]>=older[i]);
     }
-
     public void takeForm(List<String>uids){
         int val;
         for(String uid:uids){

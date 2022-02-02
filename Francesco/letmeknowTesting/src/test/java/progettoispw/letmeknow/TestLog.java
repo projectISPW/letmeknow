@@ -5,6 +5,8 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 //CRISTINA MIRABELLI
 public class TestLog {
@@ -21,10 +23,8 @@ public class TestLog {
        Boolean bool;
        if(val%2 ==0){
            bool=log.testSignupPsy(password,mail);
-           System.out.println("Mail input .:"+mail+"    signup as psychologist  status of signup    "+bool);
        }else{
            bool=log.testSignupUsr(password,mail);
-           System.out.println("Mail input .:"+mail+"    signup as normal user   status of signup    "+bool);
        }
        return bool;
     }
@@ -39,7 +39,7 @@ public class TestLog {
             emails.add("trymail"+val+"@gmail.com");
         }
         List<String> listUids=new ArrayList<>();
-        String password = "passwordTest";
+        String password = PASSWD;
         //test on the signup
         for(String email:emails){
             bool=testSignup(email,password);
@@ -52,7 +52,7 @@ public class TestLog {
         //test if every user has a different uid
         for(int i=0;i<listUids.size();i++){
             for(int j=i+1;j<listUids.size();j++){
-                assertTrue(!listUids.get(i).equals(listUids.get(j)));
+                assertNotEquals(listUids.get(i),listUids.get(j));
             }
         }
         return listUids;

@@ -1,8 +1,0 @@
-
-p
-java:S1450
-"SRemove the "size" field and declare it as a local variable in the relevant methods.(”´ï¯8×Áÿªë/
-L
-java:S2696"6Make the enclosing method "static" or remove this set.(Ôôˆ‰
-Y
-java:S2583"CChange this condition so that it does not always evaluate to "true"(±…Œ¹

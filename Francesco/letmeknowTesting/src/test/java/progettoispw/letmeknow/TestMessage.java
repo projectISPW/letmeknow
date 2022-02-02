@@ -13,9 +13,8 @@ public class TestMessage {
             int val;
             String textMsg="Hello";
             String compare;
-            System.err.println(" i am testing the "+userid1);
             for(String uid:uids){
-                if(userid1!=uid){
+                if(!userid1.equals(uid)){
                     val=rand.nextInt(100);
                     if(val%2==0){
                         chat.newMsg(userid1,uid,textMsg+val+"times");
@@ -33,6 +32,7 @@ public class TestMessage {
         //it test the return of a signup and his log
         TestLog log=new TestLog();
         List<String> uids=log.getUsrUids();
+        chat.setSize(Message.ScreenSize.LAPTOP);
         for(String uid:uids){
             sendMsg(uid,uids);
         }

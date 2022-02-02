@@ -61,7 +61,7 @@ public class InitialUser {
         boolean equal=true;
         UserDAO userDataInner=new UserDAO();
         mutex.lock();
-        List<String> uidList=userDataInner.getUID();
+        List<String> uidList=(ArrayList<String> )userDataInner.getUID();
         if(uidList==null)return "0000000";
         while(equal){
             random= (randomno.nextInt(max));

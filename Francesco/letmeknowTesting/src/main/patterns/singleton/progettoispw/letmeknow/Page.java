@@ -1,13 +1,17 @@
 package progettoispw.letmeknow;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
+import progettoispw.letmeknow.controller.ConnectionDBMS;
 
 import java.io.IOException;
+import java.util.Optional;
 
 public class Page {
     protected static Stage stage1;
