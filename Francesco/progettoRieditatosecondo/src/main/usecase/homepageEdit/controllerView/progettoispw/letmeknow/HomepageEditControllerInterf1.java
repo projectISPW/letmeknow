@@ -69,16 +69,7 @@ public class HomepageEditControllerInterf1 {
             initialize();
         }
         else{
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("keep attention ");
-            alert.setHeaderText("We weren't be able edit your data, please try  again!");
-            alert.setContentText("Please,check if " +
-                    "tag and description begin in '#'," +
-                    "the data is in format 'day-month-year'");
-            Optional<ButtonType> result = alert.showAndWait();
-            if(result.isPresent() && result.get() == ButtonType.OK){
-                event.consume();
-            }
+            Exceptions.exceptionEditProfileOccurred(event);
         }
     }
     @FXML

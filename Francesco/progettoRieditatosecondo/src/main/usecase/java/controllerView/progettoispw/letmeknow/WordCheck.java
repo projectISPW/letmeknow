@@ -3,7 +3,6 @@ package progettoispw.letmeknow;
 public class WordCheck {
     private  int goAhead;
     private int delta;
-    private String text;
     public WordCheck(int deltaInput, int goAheadInput){
         delta=deltaInput;
         goAhead=goAheadInput;
@@ -16,25 +15,29 @@ public class WordCheck {
         String add;
         String before;
         int count=goAhead-delta;
+        System.err.println(inputText);
         for (int k = goAhead-delta; k < inputText.length(); k = k+1) {
             if(inputText.toCharArray()[k]=='\n'){
                 count=0;
+                System.out.println("i find go ahead");
             }
             if (count==goAhead){
                 add = inputText.substring(k);
                 before = inputText.substring(0, k);
                 inputText = before + "\n" + add;
                 count =0;
-            } else if(((count%goAhead)>(goAhead-delta)) && inputText.toCharArray()[k]== 32){
+                System.out.println("i have to go ahead");
+            } else if(((count)>(goAhead-delta)) && inputText.toCharArray()[k]== 32){
                 add = inputText.substring(k+1);
                 before = inputText.substring(0, k);
                 inputText = before + "\n" + add;
                 count=0;
+                System.out.println("i can go ahead");
             }else{
                 count++;
             }
         }
-        text=inputText;
+        System.err.println(inputText);
         return  inputText;
     }
     public String check1(String inputText,String immetti){
@@ -55,7 +58,7 @@ public class WordCheck {
         }
         return inputText;
     }
-    public Integer contaInvio(String inputText){
+    public Integer goAheadCounter(String inputText){
         Integer contAhead=1;
         for(char c : inputText.toCharArray()){
             if(c=='\n'){
@@ -64,8 +67,8 @@ public class WordCheck {
         }
         return contAhead;
     }
-    public int highText() {
-        int linee= contaInvio(text);
+    public int highText(String text) {
+        int linee= goAheadCounter(text);
         if(linee>4){
             return linee* 21;
         }
@@ -80,17 +83,6 @@ public class WordCheck {
         else {
             return inputText.substring(0,lenMax)+"...";
         }
-    }
-    public  String checkAhead(String inputText){
-        int k=0;
-        if(inputText==null)return null;
-        for(char c : inputText.toCharArray()){
-            if(c=='\n')
-            {
-                inputText.toCharArray()[k]=' ';
-            }++k;
-        }
-        return inputText;
     }
 }
 //abcdefghilmnopqrstuvz123456789

@@ -82,19 +82,7 @@ public class SignupControllerInterf1 {
         if(desCheck!=null)desCheck.setOpacity(0);
         if(slCheck!=null)slCheck.setOpacity(0);
     }
-    private void exceptionOccurred(ActionEvent event){
-        Alert alert = new Alert(Alert.AlertType.WARNING);
-        alert.setTitle("keep attention ");
-        alert.setHeaderText("We weren't be able to retrieve your data, please try  again!");
-        alert.setContentText("Please, fill Email and Password Fields. They cannot be empty.");
-        Optional<ButtonType> result = alert.showAndWait();
-        if(result.isPresent() && result.get() == ButtonType.OK){
-            event.consume();
-        }
-        else{
-            goToLogin();
-        }
-    }
+
     public void checkMailPswd(ActionEvent event,boolean psyAcces ){
         boolean bool;
         reset();
@@ -106,7 +94,7 @@ public class SignupControllerInterf1 {
             bool= bean.signupPSY(pswd.getText(), email.getText());
             if(bool)goToLogin();
              else {
-                 exceptionOccurred(event);
+                 Exceptions.exceptionSignupOccurred(event);
             }
         }
     }
@@ -126,7 +114,7 @@ public class SignupControllerInterf1 {
         bool=bean.signupUSR(pswd.getText(),email.getText(),val, description.getText(), goal.getText());
         if(bool) goToLogin();
         else{
-            exceptionOccurred(event);
+            Exceptions.exceptionSignupOccurred(event);
         }
     }
 }

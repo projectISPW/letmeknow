@@ -26,8 +26,6 @@ public class MainApplication extends Application {
             if (size == ScreenSize.LAPTOP) {
                 root = FXMLLoader.load(getClass().getResource("login/interf2.fxml"));
             } else {
-                stage.setMaxWidth(414);
-                stage.setMinHeight(736);
                 root = FXMLLoader.load(getClass().getResource("login/interf1.fxml"));
             }
             stage.setScene(new Scene(root));
@@ -54,11 +52,14 @@ public class MainApplication extends Application {
             });
             stage.show();
         } catch (Exception e) {
-            Page.exceptionOccurred();
+            Exceptions.exceptionPageOccurred();
         }
     }
     public static void main(String[] args) {
         size=ScreenSize.LAPTOP;
         launch();
+
+
+
     }
 }
