@@ -6,6 +6,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import progettoispw.letmeknow.controller.ConnectionDBMS;
 
+import java.awt.event.WindowEvent;
 import java.util.Optional;
 
 public class Exceptions {
@@ -35,6 +36,9 @@ public class Exceptions {
         ConnectionDBMS.closeCONN();
         Platform.exit();
     }
+    public static void login(){
+
+    }
     public static void exceptionSignupOccurred(ActionEvent event){
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("keep attention ");
@@ -49,7 +53,6 @@ public class Exceptions {
            controller.backTo();
         }
     }
-
     public static String exceptionInputChatOccurred(String text) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("keep attention ");
@@ -80,5 +83,4 @@ public class Exceptions {
             controller.backTo();
         }
     }
-
 }

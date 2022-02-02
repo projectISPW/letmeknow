@@ -1,5 +1,6 @@
 package progettoispw.letmeknow;
 
+
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -58,7 +59,6 @@ public class MainApplication extends Application {
     public static void main(String[] args) {
         size=ScreenSize.LAPTOP;
         launch();
-
 
 
     }

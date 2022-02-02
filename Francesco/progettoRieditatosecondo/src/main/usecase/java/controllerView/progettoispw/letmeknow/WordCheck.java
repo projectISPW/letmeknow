@@ -40,7 +40,7 @@ public class WordCheck {
         System.err.println(inputText);
         return  inputText;
     }
-    public String check1(String inputText,String immetti){
+    public String replace(String inputText, char old,String immetti){
         if(inputText==null)return null;
         String add;
         String before;
