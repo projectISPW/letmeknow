@@ -1,13 +1,12 @@
 package progettoispw.letmeknow;
 
 import org.junit.Test;
-import progettoispw.letmeknow.bean.LoginBean;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import static org.junit.Assert.assertTrue;
-
+//CRISTINA MIRABELLI
 public class TestLog {
     Random rand=new Random();
     Log log =new Log();

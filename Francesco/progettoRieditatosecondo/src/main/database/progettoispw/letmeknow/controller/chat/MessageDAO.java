@@ -58,7 +58,7 @@ public class MessageDAO {
         try {
             stmt=connDB.connection(stmt);
             String replace= "\\"+"\"";
-            text=text.replaceAll("\"",replace);
+            text=text.replace("\"",replace);
             return query.newMSG(stmt,from,to,text);
         } finally{
             connDB.closeSTMT(stmt);

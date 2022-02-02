@@ -2,15 +2,10 @@ package progettoispw.letmeknow;
 
 import org.junit.Test;
 import progettoispw.letmeknow.controller.Message;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
-import static java.lang.Thread.sleep;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
+//OLENIC EDUARD
 public class TestMessage {
     Random rand=new Random();
     private Message chat=new Message();

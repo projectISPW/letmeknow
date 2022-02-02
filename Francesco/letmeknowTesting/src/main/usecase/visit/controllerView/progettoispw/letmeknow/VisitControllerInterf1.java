@@ -24,6 +24,6 @@ public class VisitControllerInterf1 extends HomepagecontrollerInterf1{
     protected void touchChat(ActionEvent event){
         ISCBean chatBean=new ISCBean();
         chatBean.touched(userid);
-        controller.switchTo("progettoispw.letmeknow/chat/interf1.fxml",event,"Chat");
+        controller.switchTo("chat/interf1.fxml",event,"Chat");
     }
 }

@@ -6,12 +6,10 @@ import progettoispw.letmeknow.controller.form.ResultForm;
 
 public class FormResultController {
     ResultForm form;
-    int [] values;
     public FormResultController(){
         form= ControllerClass.getResultForm();
     }
     public int[] getValResponse(){
-        values=form.getAnswers();
         return form.getAnswers();
     }
     public int [] getParam () {
@@ -20,5 +18,4 @@ public class FormResultController {
     public String getDate () {
         return form.getDate();
     }
-
 }

@@ -1,8 +1,14 @@
 package progettoispw.letmeknow.controller;
 
-import org.w3c.dom.*;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-import javax.xml.parsers.*;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
@@ -15,11 +21,8 @@ public class ConnectionInfo {
     private static String pass;
     private static String dbUrl;
     private static String driverClassName;
-
-
     private static void getElements(){
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-
         try{
 
             DocumentBuilder db = dbf.newDocumentBuilder();
@@ -47,9 +50,7 @@ public class ConnectionInfo {
         }catch (ParserConfigurationException | SAXException | IOException e){
             e.printStackTrace();
         }
-
     }
-
     public Map<String,String> getConnectionInfo(){
 
         getElements();

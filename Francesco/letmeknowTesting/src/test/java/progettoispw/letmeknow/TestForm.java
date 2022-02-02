@@ -6,11 +6,10 @@ import java.util.List;
 import java.util.Random;
 
 import static org.junit.Assert.assertTrue;
-
+//FRANCESCO D'AMATA
 public class TestForm {
     Form form=new Form();
     Random rand=new Random();
-    Log log=new Log();
 
     public void decrement(String userid){
         int []  older = form.getParam(userid);

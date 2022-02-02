@@ -83,13 +83,13 @@ public class SignupControllerInterf1 {
         if(slCheck!=null)slCheck.setOpacity(0);
     }
 
-    public void checkMailPswd(ActionEvent event,boolean psyAcces ){
+    public boolean checkMailPswd(ActionEvent event,boolean psyAcces ){
         boolean bool;
         reset();
         bool = bean.checkEmail(email.getText(), true);
-        if (!check(bool, emailCheck)) return;
+        if (!check(bool, emailCheck)) return false;
         bool = bean.checkPswd(pswd.getText(), confirmpswd.getText());
-        if (!check(bool, pswdCheck)) return;
+        if (!check(bool, pswdCheck)) return false ;
         if(psyAcces){
             bool= bean.signupPSY(pswd.getText(), email.getText());
             if(bool)goToLogin();
@@ -97,6 +97,7 @@ public class SignupControllerInterf1 {
                  Exceptions.exceptionSignupOccurred(event);
             }
         }
+        return bool;
     }
     @FXML
     protected void save(ActionEvent event) {
@@ -104,7 +105,7 @@ public class SignupControllerInterf1 {
         String[] arr;
         int [] val;
         reset();
-        checkMailPswd(event,false);
+        if(!checkMailPswd(event,false))return;
         bool=bean.checkDescription(description.getText());
         if(!check(bool,desCheck))return;
         arr= new String[]{lab1.getText(), lab2.getText(), lab3.getText()};
@@ -112,9 +113,11 @@ public class SignupControllerInterf1 {
         bool=(val.length!=0);
         if(!check(bool,slCheck))return;
         bool=bean.signupUSR(pswd.getText(),email.getText(),val, description.getText(), goal.getText());
-        if(bool) goToLogin();
-        else{
+        if(!bool){
             Exceptions.exceptionSignupOccurred(event);
+        }
+        else{
+            goToLogin();
         }
     }
 }

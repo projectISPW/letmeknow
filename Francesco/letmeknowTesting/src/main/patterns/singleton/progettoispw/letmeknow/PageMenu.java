@@ -3,7 +3,7 @@ import javafx.event.ActionEvent;
 
 public  class PageMenu extends Page {
     public void switchToChat(ActionEvent event)  {
-        this.switchTo("progettoispw.letmeknow/chat/interf1.fxml",event,"Chat");
+        this.switchTo("chat/interf1.fxml",event,"Chat");
     }
     public void switchToPersonalForm(ActionEvent event)  {
         this.switchTo("formCollectionResults/interf1.fxml",event,"Your result");

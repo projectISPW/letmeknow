@@ -91,7 +91,6 @@ public class Messages {
         bool=messageData.newMessage(userid,to,text);
         if(!bool) text=Exceptions.exceptionInputChatOccurred(text);
         else text="";
-        //getAllChat();
         return text;
     }
     public void setTouched(String input) {

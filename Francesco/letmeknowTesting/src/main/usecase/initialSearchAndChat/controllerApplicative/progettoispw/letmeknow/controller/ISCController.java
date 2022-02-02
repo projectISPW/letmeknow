@@ -36,7 +36,6 @@ public class ISCController {
     }
     private List<LastMessage> getListV1( ){
         //lista utenti con ultimo messaggio per la interfaccia 2
-        System.err.println("i am here");
         ArrayList <Message> lmsgs=(ArrayList<Message>) chat.getLast();
         if(lmsgs.isEmpty())return new ArrayList<>();
         LastMessage actual;
@@ -50,8 +49,8 @@ public class ISCController {
     private List<LastMessage> getListV2(String find){
         //ricerca messaggi sulla lista utenti 2
         List <Message>msgs= chat.getLocalSearch(find);
-        ArrayList <LastMessage> formatted  = new ArrayList<>();
         if(msgs.isEmpty())return new ArrayList<>();
+        ArrayList <LastMessage> formatted  = new ArrayList<>();
         LastMessage actual;
         for (Message msg : msgs) {
             actual = new LastMessage(msg.getSender()+"||"+msg.getReciver(), msg);
@@ -61,15 +60,18 @@ public class ISCController {
     }
     private List<LastMessage>getListV3(){
         //lista utenti con ultimo messaggio per la interfaccia 1
+
         ArrayList <Message> lmsgs=(ArrayList<Message>) chat.getLast();
         if(lmsgs.isEmpty())return new ArrayList<>();
         LastMessage actual;
+        Message msg;
         ArrayList<Message>inner=new ArrayList<>();
+
         int index=0;
         ArrayList <LastMessage> formatted  = new ArrayList<>();
         while(index<nVal){
             count = check(count, lmsgs);
-            Message msg=lmsgs.get(count);
+            msg=lmsgs.get(count);
             if(inner.contains(msg))break;
             count++;
             actual = new LastMessage(check(msg),msg);

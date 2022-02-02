@@ -15,39 +15,34 @@ public class WordCheck {
         String add;
         String before;
         int count=goAhead-delta;
-        System.err.println(inputText);
         for (int k = goAhead-delta; k < inputText.length(); k = k+1) {
             if(inputText.toCharArray()[k]=='\n'){
                 count=0;
-                System.out.println("i find go ahead");
             }
             if (count==goAhead){
                 add = inputText.substring(k);
                 before = inputText.substring(0, k);
                 inputText = before + "\n" + add;
                 count =0;
-                System.out.println("i have to go ahead");
             } else if(((count)>(goAhead-delta)) && inputText.toCharArray()[k]== 32){
                 add = inputText.substring(k+1);
                 before = inputText.substring(0, k);
                 inputText = before + "\n" + add;
                 count=0;
-                System.out.println("i can go ahead");
             }else{
                 count++;
             }
         }
-        System.err.println(inputText);
         return  inputText;
     }
     public String replace(String inputText, char old,String immetti){
         if(inputText==null)return null;
         String add;
         String before;
-        int start=inputText.indexOf('#');
+        int start=inputText.indexOf(old);
         int k=0;
         for(char c : inputText.toCharArray()){
-            if(c=='#' && k!=start)
+            if(c==old && k!=start)
             {
                     add = inputText.substring(k);
                     before = inputText.substring(0, k);
@@ -85,4 +80,3 @@ public class WordCheck {
         }
     }
 }
-//abcdefghilmnopqrstuvz123456789

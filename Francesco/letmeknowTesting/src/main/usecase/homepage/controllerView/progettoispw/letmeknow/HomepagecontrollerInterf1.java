@@ -48,13 +48,13 @@ public class HomepagecontrollerInterf1 {
         arrayOut=bean.getData();
         date.setText(" "+arrayOut[0]+"-"+arrayOut[1]+"-"+arrayOut[2]);
         if(bean.getExpired() && expired!=null){
-            Image image= new Image(getClass().getResourceAsStream("progettoispw.letmeknow/photo/expired.png"));
+            Image image= new Image(getClass().getResourceAsStream("photo/expired.png"));
             expired.setImage(image);
         }
     }
     public void  setSlider(ImageView image,int val){
         //ho fatto il controllo sintattico nel bean
-        String url= "progettoispw.letmeknow/photo/val";
+        String url="photo/val";
         url=url+val+".png";
         Image immagine=new Image(getClass().getResourceAsStream(url));
         image.setImage(immagine);
@@ -75,4 +75,8 @@ public class HomepagecontrollerInterf1 {
     protected  void goToHome(ActionEvent event){controller.switchToHome(event);}
     @FXML
     protected void goToPersonalForm (ActionEvent event ){controller.switchToPersonalForm(event);}
+    @FXML
+    protected void setSize(ActionEvent event ){
+        controller.setSize("homepage/interf1.fxml",event);
+    }
 }
