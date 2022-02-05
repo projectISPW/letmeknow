@@ -27,7 +27,6 @@ public class UsrUser extends InitialUser {
                 personalObb.setStrDataAmericanEurope(inner[5]);
         }
     }
-
     public int getEmp(){
         return parameterSliders.getEmp();
     }

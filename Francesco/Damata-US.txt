@@ -1,0 +1,6 @@
+COMPITO
+4.	As a developer, I want to see where data is stored , so that I can have my do  
+	my own opinion about the security of the app.
+5.	As a user, I want to know people near to me, so that I can have more friends.
+6.	As a social person, I want to connect all my social in the app, so that the people 
+	can follow me on every social.

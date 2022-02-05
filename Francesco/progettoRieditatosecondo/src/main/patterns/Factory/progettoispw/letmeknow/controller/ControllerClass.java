@@ -43,18 +43,18 @@ public class ControllerClass {
     }
     public static Search getSearch(){
         if(search==null){
-            controllerChat();
+            setSearch();
         }
         return search;
     }
-    public static void controllerChat(){
+    public static void setChat(){
         if(chat==null){
             chat=new Messages(userU.getUserid());
         }
     }
     public static Messages getChat(){
         if(chat==null){
-            controllerChat();
+            setChat();
         }
        return chat;
     }
@@ -67,5 +67,4 @@ public class ControllerClass {
     public static ResultForm getResultForm(){
         return form;
     }
-
 }

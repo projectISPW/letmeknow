@@ -12,20 +12,19 @@ public class ISCController {
     private Messages chat;
     private String find;
     public ISCController(Integer n){
-        ControllerClass.controllerChat();
-        ControllerClass.setSearch();
+        ControllerClass.setChat();
         chat= ControllerClass.getChat();
         nVal=n;
         count=0;
         find=null;
     }
     public ISCController(){
-        ControllerClass.controllerChat();
+        ControllerClass.setChat();
         if(ControllerClass.getSearch()==null)ControllerClass.setSearch();
-        chat= ControllerClass.getChat();
         nVal=0;
         count=0;
         find=null;
+        chat=ControllerClass.getChat();
     }
     public String getUid(){
         return chat.getUserid();
@@ -60,13 +59,11 @@ public class ISCController {
     }
     private List<LastMessage>getListV3(){
         //lista utenti con ultimo messaggio per la interfaccia 1
-
         ArrayList <Message> lmsgs=(ArrayList<Message>) chat.getLast();
         if(lmsgs.isEmpty())return new ArrayList<>();
         LastMessage actual;
         Message msg;
         ArrayList<Message>inner=new ArrayList<>();
-
         int index=0;
         ArrayList <LastMessage> formatted  = new ArrayList<>();
         while(index<nVal){
@@ -100,7 +97,6 @@ public class ISCController {
         return formatted;
     }
     public List<LastMessage> queryUsers(){
-
         if(find==null){
             if(nVal==0){
                 return getListV1();

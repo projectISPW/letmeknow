@@ -9,7 +9,6 @@ public class Query {
         String sql=String.format(" SELECT * FROM utenti  where userid = '%s' ;",iduser);
         return stmt.executeQuery(sql);
     }
-
     protected boolean setDB(Statement stmt, String iduser ,String what,String edit){
         try {
             String sql=String.format(" UPDATE  `utenti` set `%s`='%s' WHERE (`userid` = '%s') ;",what,edit,iduser);
@@ -20,7 +19,6 @@ public class Query {
             return false;
         }
     }
-
     protected Boolean setParams(Statement stmt,String uid,Integer [] param){
         try {
             String sql=String.format("UPDATE `utenti` SET `empathy` = '%d', `humor` = '%d', `positivity` = '%d' WHERE (`userid` = '%s'); ",param[0],param[1],param[2],uid);

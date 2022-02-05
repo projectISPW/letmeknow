@@ -30,7 +30,9 @@ public class UsrUserDAO {
             stmt=connDB.connection(stmt);
             rst=query.selectUser(stmt,uid);
             while(rst.next()) {
-                for(int i=0;i<7;i++)ret[i]= rst.getString(EMP+i);
+                for(int i=0;i<7;i++){
+                    ret[i]= rst.getString(EMP+i);
+                }
             }
             return ret;
         } catch (SQLException e) {
@@ -81,7 +83,11 @@ public class UsrUserDAO {
 
     }
     private int average(int val,int divisor){
-        val=val/divisor;
+        double div=(double)val/divisor;
+        val=(int)div;
+        if(div>val+0.5){
+            val=(int)div+1;
+        }
         if(val>5)return 5;
         else if(val <1 )return 1;
         else return val;

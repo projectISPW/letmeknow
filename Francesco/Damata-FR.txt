@@ -1,0 +1,4 @@
+COMPITO 
+1.The system shall provide a feedback page so that the users can leave us a review. 
+2.The system shall provide a login page so that every user can have a private access.
+3.The system shall provide a database so that the users can store safely their data.

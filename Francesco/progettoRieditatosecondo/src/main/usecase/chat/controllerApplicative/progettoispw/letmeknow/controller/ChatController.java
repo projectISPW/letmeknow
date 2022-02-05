@@ -9,6 +9,8 @@ import java.util.List;
 public class ChatController {
     private Messages actChat;
     private ArrayList<Message>lastChat;
+    //his functional is to store the last messages that were stored in the chat so that in the next scan of messages the
+    //controller return only new messages
     private String with;
     public ChatController(){
         actChat=ControllerClass.getChat();

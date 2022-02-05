@@ -20,7 +20,7 @@ public class ParameterSliders {
         if(emp!=null)this.emp=Integer.parseInt(emp);
     }
     public void setHum(String  hum) {
-        if(hum!=null)this.emp=Integer.parseInt(hum);
+        if(hum!=null)this.hum=Integer.parseInt(hum);
     }
     public void setOpt(String opt) {
         if(opt!=null)this.opt=Integer.parseInt(opt);
