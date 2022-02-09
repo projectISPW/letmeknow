@@ -1,5 +1,6 @@
 package progettoispw.letmeknow.controller;
 
+import progettoispw.controller.ClassController;
 import progettoispw.letmeknow.bean.LastMessage;
 import progettoispw.letmeknow.controller.chat.Message;
 import progettoispw.letmeknow.controller.chat.Messages;
@@ -12,19 +13,17 @@ public class ISCController {
     private Messages chat;
     private String find;
     public ISCController(Integer n){
-        ControllerClass.setChat();
-        chat= ControllerClass.getChat();
+        chat= ClassController.getChat();
         nVal=n;
         count=0;
         find=null;
     }
     public ISCController(){
-        ControllerClass.setChat();
-        if(ControllerClass.getSearch()==null)ControllerClass.setSearch();
+        ClassController.getChat();
         nVal=0;
         count=0;
         find=null;
-        chat=ControllerClass.getChat();
+        chat= ClassController.getChat();
     }
     public String getUid(){
         return chat.getUserid();
@@ -111,7 +110,7 @@ public class ISCController {
         if(nVal==0){
             return getListV2(find);
         }
-        else {//search activated in list users iterf1
+        else {//searchMessage activated in list users iterf1
             return getListV4(find);
         }
     }
@@ -124,7 +123,7 @@ public class ISCController {
     public void who(String usr){
         chat.setTouched(usr);
     }
-    public void search(String input){
+    public void searchMessage(String input){
         count=0;
         find=input;
     }

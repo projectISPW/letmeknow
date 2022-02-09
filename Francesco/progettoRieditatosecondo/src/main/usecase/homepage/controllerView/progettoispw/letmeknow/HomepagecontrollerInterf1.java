@@ -60,9 +60,7 @@ public class HomepagecontrollerInterf1 {
         image.setImage(immagine);
     }
     @FXML
-    protected void editProfile(ActionEvent event) {
-        controller.switchTo("homepageEdit/interf1.fxml",event,"Edit Profile");
-    }
+    protected void goToEditProfile(ActionEvent event) {controller.switchTo("homepageEdit/interf1.fxml",event,"Edit Profile");}
     @FXML
     protected void goToSettings(ActionEvent event) {
         controller.switchToSettings(event);

@@ -22,7 +22,6 @@ public class SignupPsychologistControllerInterf1 {
     SignupControllerInterf1 signupController;
     public SignupPsychologistControllerInterf1() {
         bean=new SignupBean();
-
     }
 
     public void initialize(){

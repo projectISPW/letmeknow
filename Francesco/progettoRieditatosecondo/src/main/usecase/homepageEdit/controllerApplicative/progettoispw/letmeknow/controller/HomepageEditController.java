@@ -1,12 +1,13 @@
 package progettoispw.letmeknow.controller;
 
+import progettoispw.controller.ClassController;
 import progettoispw.letmeknow.controller.usruser.UsrUser;
 
 public class HomepageEditController {
     UsrUser user;
     HomepageController compare;
     public HomepageEditController(){
-        user = ControllerClass.getUserUSR();
+        user = ClassController.getUserUSR();
         compare=new HomepageController(false);
     }
     public String getUserID(){

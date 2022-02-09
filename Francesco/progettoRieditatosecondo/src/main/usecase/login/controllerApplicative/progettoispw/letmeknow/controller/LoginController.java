@@ -1,18 +1,11 @@
 package progettoispw.letmeknow.controller;
 
-import progettoispw.letmeknow.controller.user.InitialUser;
+import progettoispw.controller.ClassController;
 public class LoginController {
-    private InitialUser utente ;
-    public LoginController(String user){
-        utente=new InitialUser(user);
+    public boolean getLog(String userid, String password){
+        return ClassController.concreteUser(userid,password);
     }
-    public String tornaLog(String password){
-        String str=utente.abscessType(password);
-        if(str!=null){
-            ControllerClass.controllerUser(utente.getUserid());
-        }else{
-            str=null;
-        }
-        return str;
+    public String getType(){
+        return ClassController.getUser().getType();
     }
 }

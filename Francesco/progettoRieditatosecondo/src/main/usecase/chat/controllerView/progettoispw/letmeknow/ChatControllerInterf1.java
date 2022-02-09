@@ -11,6 +11,7 @@ import javafx.scene.layout.AnchorPane;
 
 import javafx.scene.text.Text;
 import javafx.util.Duration;
+import progettoipsw.letmeknow.CSS;
 import progettoispw.letmeknow.bean.ChatBean;
 import progettoispw.letmeknow.bean.BeanResultSearch;
 
@@ -31,7 +32,7 @@ public class ChatControllerInterf1 {
     protected  PageMenu controller;
     protected ChatBean bean;
     protected  String [] message;
-    protected  CSS graphic;
+    protected CSS graphic;
     protected Timeline timeline;
     public ChatControllerInterf1() {
         bean=new ChatBean();

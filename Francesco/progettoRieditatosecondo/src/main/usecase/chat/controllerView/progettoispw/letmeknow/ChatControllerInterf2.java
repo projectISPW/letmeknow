@@ -10,6 +10,7 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
+import progettoipsw.letmeknow.CSS;
 import progettoispw.letmeknow.bean.BeanResultSearch;
 import progettoispw.letmeknow.bean.ISCBean;
 

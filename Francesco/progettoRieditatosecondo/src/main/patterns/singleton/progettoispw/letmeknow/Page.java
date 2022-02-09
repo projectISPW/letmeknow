@@ -14,13 +14,13 @@ import java.io.IOException;
 import java.util.Optional;
 
 public class Page {
-    protected static Stage stage1;
-    protected static Scene scene1;
-    protected static String title1;
-    private boolean check=true;
-    private static final String INTERF1="interf1";
-    private static final String INTERF2="interf2";
-    private static final String FXML=".fxml";
+    static Stage stage1;
+    static Scene scene1;
+    static String title1;
+    boolean check=true;
+    static final String INTERF1="interf1";
+    static final String INTERF2="interf2";
+    static final String FXML=".fxml";
     static void prevBack(ActionEvent event){
         stage1 = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene1 = ((Node) event.getSource()).getScene();

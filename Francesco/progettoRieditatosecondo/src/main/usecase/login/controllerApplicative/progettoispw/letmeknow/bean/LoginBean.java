@@ -3,11 +3,14 @@ package progettoispw.letmeknow.bean;
 import progettoispw.letmeknow.controller.*;
 
 public class LoginBean {
-    private LoginController controller;
-    public LoginBean (String user){
-        controller=new LoginController(user);
+    LoginController controller;
+    public LoginBean(){
+        controller=new LoginController();
     }
-    public String getLog(String password){
-        return  controller.tornaLog(password);
+    public boolean getLog(String user,String password){
+        return controller.getLog(user,password);
+    }
+    public String getType(){
+        return controller.getType();
     }
 }

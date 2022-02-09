@@ -36,7 +36,7 @@ public class ISCBean {
     }
     public void search(String find){
         if(!find.equals("")) {
-            controller.search(find);
+            controller.searchMessage(find);
         }
     }
     public void reset(){

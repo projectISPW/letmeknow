@@ -1,18 +1,13 @@
 package progettoispw.letmeknow.controller;
 
-import progettoispw.letmeknow.controller.chat.Message;
-import progettoispw.letmeknow.controller.chat.Messages;
-import progettoispw.letmeknow.controller.form.ResultForm;
-
-import java.util.ArrayList;
-import java.util.List;
+import progettoispw.controller.ClassController;
 
 public class CollectionFormController {
    public void setTouched(int formid){
-       ControllerClass.setResultForm(formid);
+       ClassController.setResultForm(formid);
    }
     public void  takeForm(){
-       ControllerClass.setResultForm();
+       ClassController.setResultForm();
     }
-    public String getUserid(){return ControllerClass.getUserUSR().getUserid();}
+    public String getUserid(){return ClassController.getUserUSR().getUserid();}
 }

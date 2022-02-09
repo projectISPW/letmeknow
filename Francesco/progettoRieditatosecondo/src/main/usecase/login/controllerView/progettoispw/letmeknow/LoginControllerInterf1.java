@@ -10,6 +10,8 @@ import progettoispw.letmeknow.bean.LoginBean;
 public class LoginControllerInterf1 {
     private Page controller= new Page();
     @FXML
+    private Button loginButton;
+    @FXML
     private PasswordField labPassword;
     @FXML
     private Label show;
@@ -74,25 +76,24 @@ public class LoginControllerInterf1 {
         {
             color(false);
         }else {
-            LoginBean bean=new LoginBean(labUser.getText());
-            String log = bean.getLog(labPassword.getText());
-            if(log==null){
+            LoginBean bean=new LoginBean();
+            boolean log = bean.getLog(labUser.getText(),labPassword.getText());
+            if (log) {
+                switch(bean.getType()){
+                    case "usr":{
+                        controller.switchTo("homepage/interf1.fxml",event,"Home");
+                        break;
+                    }
+                    case "psy":{
+                        controller.switchTo("homepagePsychologist/interf1.fxml",event,"Home");
+                        break;
+                    }
+                    default:{
+                        color(false);
+                    }
+                }
+            }else{
                 color(false);
-                return ;
-            }
-            switch(log){
-                case "usr":{
-                    controller.switchTo("homepage/interf1.fxml",event,"Home");
-                    break;
-                }
-                case "psy":{
-                    controller.switchTo("homepagePsychologist/interf1.fxml",event,"Home");
-                    break;
-                }
-                default:{
-                    color(false);
-                }
-
             }
         }
     }}

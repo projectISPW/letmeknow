@@ -11,4 +11,8 @@ module progettoispw.letmeknow {
     opens progettoispw.letmeknow.bean to javafx.fxml;
     exports progettoispw.letmeknow.controller;
     opens progettoispw.letmeknow.controller to javafx.fxml;
+    exports progettoipsw.letmeknow;
+    opens progettoipsw.letmeknow to javafx.fxml;
+    exports progettoispw.controller;
+    opens progettoispw.controller to javafx.fxml;
 }

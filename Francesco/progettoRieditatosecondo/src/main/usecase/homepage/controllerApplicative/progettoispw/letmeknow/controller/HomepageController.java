@@ -2,13 +2,14 @@
 
 package progettoispw.letmeknow.controller;
 
+import progettoispw.controller.ClassController;
 import progettoispw.letmeknow.controller.usruser.UsrUser;
 
 public class HomepageController {
     UsrUser user;
     public HomepageController(boolean visit){
-        if(!visit)user= ControllerClass.getUserUSR();
-        else user= ControllerClass.getSearch().getTouched();
+        if(!visit)user= ClassController.getUserUSR();
+        else user= new UsrUser(ClassController.getSearch().getTouched());
     }
     public String getUserID(){
         return user.getUserid();
