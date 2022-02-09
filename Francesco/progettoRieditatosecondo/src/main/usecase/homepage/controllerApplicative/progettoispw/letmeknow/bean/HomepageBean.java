@@ -11,7 +11,7 @@ public class HomepageBean {
     public String getUserId() {
         return controller.getUserID();
     }
-    public Integer[] getParam(){
+    public int[] getParam(){
         return controller.getParam();
     }
     public String getDescription(){
@@ -29,7 +29,7 @@ public class HomepageBean {
         String goal= controller.getGoal();
         return checkStr.check(goal);
     }
-    public Integer[] getData(){
+    public int[] getData(){
         return controller.getDate();
     }
     public boolean getExpired(){return controller.getExpired();}

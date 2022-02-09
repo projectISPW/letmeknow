@@ -19,7 +19,7 @@ public final class Exceptions {
         alert.setContentText("go to settings and report the problem");
         Optional<ButtonType> result = alert.showAndWait();
         if(result.isPresent() && result.get() == ButtonType.OK){
-            ConnectionDBMS.closeCONN();
+            ConnectionDBMS.closeConn();
             System.exit(0);
             Platform.exit();
         }
@@ -28,14 +28,14 @@ public final class Exceptions {
     public static void exceptionConnectionOccurred(){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Connection failed ");
-        alert.setHeaderText("We found found some trouble during the connection on the Database");
+        alert.setHeaderText("We found found some trouble during the getSTMT on the Database");
         alert.setContentText("Please retry your access");
         Optional<ButtonType> result = alert.showAndWait();
         if(result.isPresent() && result.get() == ButtonType.OK){
             System.exit(0);
             Platform.exit();
         }
-        ConnectionDBMS.closeCONN();
+        ConnectionDBMS.closeConn();
         Platform.exit();
     }
     public static void exceptionSignupOccurred(ActionEvent event){

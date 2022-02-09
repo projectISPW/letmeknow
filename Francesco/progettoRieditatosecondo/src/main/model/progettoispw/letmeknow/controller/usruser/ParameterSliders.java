@@ -1,16 +1,16 @@
 package progettoispw.letmeknow.controller.usruser;
 
 public class ParameterSliders {
-    private Integer  emp;
-    private Integer hum;
-    private Integer opt;
+    private int  emp;
+    private int hum;
+    private int opt;
     public ParameterSliders() {
         emp=hum=opt=1;
     }
-    public Integer getOpt() {
+    public int getOpt() {
         return opt;
     }
-    public Integer getHum() {
+    public int getHum() {
         return hum;
     }
     public int getEmp() {
@@ -25,7 +25,7 @@ public class ParameterSliders {
     public void setOpt(String opt) {
         if(opt!=null)this.opt=Integer.parseInt(opt);
     }
-    public Integer[] getAll(){
-        return new Integer[]{emp,hum,opt};
+    public int[] getAll(){
+        return new int[]{emp,hum,opt};
     }
 }

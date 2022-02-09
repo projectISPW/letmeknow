@@ -63,7 +63,7 @@ public class ResultSearchControllerInterf1 {
             ObservableList<Node> externList= visitGroup[i].getChildren();
             Group group =(Group)externList.get(2);
             ObservableList<Node>inner=group.getChildren();
-            if(strUid[i]!=null){
+            if(strUid[i]!=null && !strUid[i].equals("null")){
                 for(Node elem:inner){
                     Text text=(Text)elem;
                     if(text.getText().contains(UID_CONTENT)){

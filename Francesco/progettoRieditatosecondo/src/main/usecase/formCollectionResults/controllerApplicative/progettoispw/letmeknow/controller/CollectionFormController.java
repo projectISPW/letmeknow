@@ -1,7 +1,5 @@
 package progettoispw.letmeknow.controller;
 
-import progettoispw.controller.ConcreteUsrUser;
-
 public class CollectionFormController {
    public void setTouched(int formid){
        ConcreteUsrUser.setResultForm(formid);

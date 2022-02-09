@@ -1,6 +1,7 @@
 package progettoispw.letmeknow.controller.user;
 
 import progettoispw.letmeknow.controller.ConnectionDBMS;
+import progettoispw.letmeknow.controller.Dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -8,7 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDAO {
+public class UserDAO implements Dao {
     ConnectionDBMS connDB;
     Query query;
     public static final String UID ="userid";
@@ -16,7 +17,15 @@ public class UserDAO {
     public static final String PASSWORD="password";
     public static final String EMAIL="email";
     public UserDAO() {
-        connDB= new ConnectionDBMS();
+        getConn();
+        getQuery();
+    }
+    @Override
+    public void getConn() {
+        connDB=new ConnectionDBMS();
+    }
+    @Override
+    public void getQuery() {
         query=new Query();
     }
     public String [] selectUser(String uid){
@@ -24,7 +33,7 @@ public class UserDAO {
         ResultSet rst=null;
         String [] ret=new String [4];
         try {
-            stmt=connDB.connection(stmt);
+            stmt=connDB.getSTMT(stmt);
             rst=query.selectUser(stmt,uid);
             while(rst.next()) {
                 ret[0]=rst.getString(UID);
@@ -45,7 +54,7 @@ public class UserDAO {
         ResultSet rst=null;
         String ret=null;
         try {
-            stmt=connDB.connection(stmt);
+            stmt=connDB.getSTMT(stmt);
             rst=query.selectUser(stmt,uid);
             if(rst.next()) {
                 ret=rst.getString(PASSWORD);
@@ -61,7 +70,7 @@ public class UserDAO {
     public boolean setPswd(String userid,String input){
         Statement stmt=null;
         try {
-            stmt=connDB.connection(stmt);
+            stmt=connDB.getSTMT(stmt);
             return query.setDB(stmt,userid,PASSWORD,input);
         }finally{
             connDB.closeSTMT(stmt);
@@ -71,7 +80,7 @@ public class UserDAO {
     public boolean setEmail(String userid,String input){
         Statement stmt=null;
         try {
-            stmt=connDB.connection(stmt);
+            stmt=connDB.getSTMT(stmt);
             return query.setDB(stmt,userid,EMAIL,input);
         }finally{
             connDB.closeSTMT(stmt);
@@ -81,7 +90,7 @@ public class UserDAO {
         Statement stmt=null;
         ResultSet rst=null;
         try {
-            stmt=connDB.connection(stmt);
+            stmt=connDB.getSTMT(stmt);
             rst= query.selectUser(stmt,EMAIL,input);
             return rst.next();
         } catch (SQLException throwables) {
@@ -94,7 +103,7 @@ public class UserDAO {
     public boolean registration(String uid,String password, String type, String email) {
         Statement stmt=null;
         try {
-            stmt=connDB.connection(stmt);
+            stmt=connDB.getSTMT(stmt);
             return query.newLine(stmt,uid,password,type,email);
         } finally{
             connDB.closeRSTSTMT(null,stmt);
@@ -108,7 +117,7 @@ public class UserDAO {
             log[1]=password;
             log[2]=type;
             log[3]=email;
-            stmt=connDB.connection(stmt);
+            stmt=connDB.getSTMT(stmt);
             return  query.newLine(stmt,log,val,description,goal);
         } finally{
             connDB.closeSTMT(stmt);
@@ -117,7 +126,7 @@ public class UserDAO {
     public boolean feed(String userid,String input){
             Statement stmt=null;
             try {
-                stmt=connDB.connection(stmt);
+                stmt=connDB.getSTMT(stmt);
                 return query.feed(stmt,userid,input);
             } finally{
                 connDB.closeSTMT(stmt);
@@ -128,7 +137,7 @@ public class UserDAO {
         Statement stmt=null;
         ResultSet rst=null;
         try {
-            stmt=connDB.connection(stmt);
+            stmt=connDB.getSTMT(stmt);
             ArrayList<String> uid = new ArrayList<>();
             rst = query.queryUid(stmt);
             while (rst.next()) {
@@ -146,7 +155,7 @@ public class UserDAO {
         ResultSet rst=null;
         String [] ret=new String[2];
         try{
-            stmt=connDB.connection(stmt);
+            stmt=connDB.getSTMT(stmt);
             rst=query.selectUser(stmt,EMAIL,email);
             while(rst.next()){
                 ret [0]=rst.getString(UID);

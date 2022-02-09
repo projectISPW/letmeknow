@@ -1,6 +1,6 @@
 package progettoispw.letmeknow.controller.form;
 
-import progettoispw.controller.ConcreteUsrUser;
+import progettoispw.letmeknow.controller.ConcreteUsrUser;
 import progettoispw.letmeknow.controller.usruser.UsrUser;
 
 public class ResultForm {
@@ -14,7 +14,6 @@ public class ResultForm {
     public String getUserid() {
         return userid;
     }
-
     public ResultForm(String useridinp, int formidinp){
         formData=new FormDAO();
         userid=useridinp;

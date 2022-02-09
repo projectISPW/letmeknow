@@ -22,7 +22,7 @@ public class VisitControllerInterf1 extends HomepagecontrollerInterf1{
     }
     @FXML
     protected void touchChat(ActionEvent event){
-        ISCBean chatBean=new ISCBean();
+        ISCBean chatBean=new ISCBean(0);
         chatBean.touched(userid);
         controller.switchTo("chat/interf1.fxml",event,"Chat");
     }

@@ -1,6 +1,7 @@
 package progettoispw.letmeknow.controller.form;
 
 import progettoispw.letmeknow.controller.ConnectionDBMS;
+import progettoispw.letmeknow.controller.Dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class FormDAO {
+public class FormDAO implements Dao {
     ConnectionDBMS connDB;
     Query query;
     private static final String FORM1="112233";
@@ -19,7 +20,15 @@ public class FormDAO {
     private static final  String [] FORM={FORM1,FORM2,FORM3};
     private static final Integer [] FORMSID={1,2,3};
     public FormDAO() {
-        connDB= new ConnectionDBMS();
+        getConn();
+        getQuery();
+    }
+    @Override
+    public void getConn() {
+        connDB=new ConnectionDBMS();
+    }
+    @Override
+    public void getQuery() {
         query=new Query();
     }
     public int [] queryResult (String userid, int formid){
@@ -28,7 +37,7 @@ public class FormDAO {
         int [] array=new int[6];
         boolean bool=true;
         try {
-            stmt=connDB.connection(stmt);
+            stmt=connDB.getSTMT(stmt);
             rst=query.queryResults(stmt, userid, formid);
             if(!rst.next()){
                 bool= query.insertForm(stmt,userid,formid,FORM[formid-1]);
@@ -54,7 +63,7 @@ public class FormDAO {
     public Boolean setAnswer(String userid, int formid, int[] answer, int complete){
         Statement stmt=null;
         try {
-            stmt=connDB.connection(stmt);
+            stmt=connDB.getSTMT(stmt);
             return query.setResults(stmt,userid,formid,answer,complete);
         }finally{
             connDB.closeSTMT(stmt);
@@ -66,7 +75,7 @@ public class FormDAO {
         int[] param = new int[3];
         int indice = 0;
         try {
-            stmt=connDB.connection(stmt);
+            stmt=connDB.getSTMT(stmt);
             rst = query.takeParamForm(stmt, userid, formid);
             while (rst.next() && rst.getString(indice+1)!=null) {
                 param[indice++] = Integer.parseInt(rst.getString(indice));
@@ -84,7 +93,7 @@ public class FormDAO {
     private int [] queryParam (String userid){
         Statement stmt=null;
         ResultSet rst = null;
-        stmt=connDB.connection(stmt);
+        stmt=connDB.getSTMT(stmt);
         try{
             int [] param=new int[3];
             int indice=0;
@@ -107,7 +116,7 @@ public class FormDAO {
         Statement stmt=null;
         boolean bool;
         int [] param=queryParam(userid);
-        stmt=connDB.connection(stmt);
+        stmt=connDB.getSTMT(stmt);
         bool=query.close(stmt,userid,formid,param);
         connDB.closeSTMT(stmt);
         return bool;
@@ -118,7 +127,7 @@ public class FormDAO {
         int [] data=new int [3];
         String out=null;
         try {
-            stmt=connDB.connection(stmt);
+            stmt=connDB.getSTMT(stmt);
             rst=query.takeDate(stmt,userid,formid);
             if(rst.next() && rst.getString(1)!=null){
                 //conversione data da formato americano a italiano
@@ -144,7 +153,7 @@ public class FormDAO {
     public Boolean setCalculated(String userid,int formid){
         Statement stmt=null;
         try {
-            stmt=connDB.connection(stmt);
+            stmt=connDB.getSTMT(stmt);
             return query.setCalculated(stmt,userid,formid);
         }finally{
             connDB.closeSTMT(stmt);
@@ -156,7 +165,7 @@ public class FormDAO {
         Integer val;
         List<Integer> formid =new ArrayList<>(Arrays.asList(FORMSID));
         try {
-            stmt=connDB.connection(stmt);
+            stmt=connDB.getSTMT(stmt);
             rst=query.newForm(stmt,userid);
             while(rst.next()){
                 val=Integer.parseInt(rst.getString(1));

@@ -1,6 +1,7 @@
 package progettoispw.letmeknow.controller.search;
 
 import progettoispw.letmeknow.controller.ConnectionDBMS;
+import progettoispw.letmeknow.controller.Dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -8,13 +9,21 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchDAO {
+public class SearchDAO implements Dao {
     ConnectionDBMS connDB;
     Query query;
     public static final String UID ="userid";
     public SearchDAO() {
-        connDB = new ConnectionDBMS();
-        query = new Query();
+        getConn();
+        getQuery();
+    }
+    @Override
+    public void getConn() {
+        connDB=new ConnectionDBMS();
+    }
+    @Override
+    public void getQuery() {
+        query=new Query();
     }
     public void attach(String input, List<String> list) {
         boolean bool = true;
@@ -28,7 +37,7 @@ public class SearchDAO {
         ResultSet rst = null;
         List<String> ret = new ArrayList<>();
         try {
-            stmt = connDB.connection(stmt);
+            stmt = connDB.getSTMT(stmt);
             rst = query.searchAll(stmt, uid, emp, hum, pos);
             while (rst.next()) {
                 attach(rst.getString(UID), ret);
@@ -42,21 +51,16 @@ public class SearchDAO {
         }
     }
     public void attach(String input,String check,List<String> list){
-        if(input!=null) {
-            if (!list.contains(input) && !input.equals(check)) list.add(input);
-        }
-        else
-        {
-            list.add(null);
-        }
+            if (input!=null && !list.contains(input) && !input.equals(check)) list.add(input);
     }
     public boolean addVisited(String userid, String userid2) {
         Statement stmt = null;
         ResultSet rst = null;
         boolean bool = false;
-        ArrayList<String>prev=new ArrayList<>();
+        List<String>prev=new ArrayList<>();
+        String [] toQuery=new String[3];
         try {
-            stmt = connDB.connection(stmt);
+            stmt = connDB.getSTMT(stmt);
             rst = query.getVisited(stmt, userid);
             prev.add(userid2);
             if (rst.next()) {
@@ -67,10 +71,10 @@ public class SearchDAO {
             }
             if(!bool){
                 bool=query.newLine(stmt,userid);
-                prev.add(null);
-                prev.add(null);
             }
-            if(bool)bool=query.setVisited(stmt, userid,prev);
+            int index=0;
+            for(String str:prev)toQuery[index++]=str;
+            if(bool)bool=query.setVisited(stmt, userid,toQuery);
             if(bool)bool=query.incremVisit(stmt,userid2);
             return bool;
         } catch (SQLException throwables) {
@@ -85,7 +89,7 @@ public class SearchDAO {
         boolean bool=true;
         int [] ret = new int [2];
         try {
-            stmt = connDB.connection(stmt);
+            stmt = connDB.getSTMT(stmt);
             query.newLine(stmt,userid);
             
             rst = query.getnVisit(stmt, userid);
@@ -111,7 +115,7 @@ public class SearchDAO {
         ResultSet rst = null;
         ArrayList<String> users = new ArrayList<>();
         try {
-            stmt = connDB.connection(stmt);
+            stmt = connDB.getSTMT(stmt);
             rst = query.getVisited(stmt, userid);
             while (rst.next()) {
                 users.add(rst.getString (1));

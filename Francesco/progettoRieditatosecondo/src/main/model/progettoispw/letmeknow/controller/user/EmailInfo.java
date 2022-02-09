@@ -24,7 +24,7 @@ public class EmailInfo {
             if(node.getNodeType() == Node.ELEMENT_NODE){
                 Element element = (Element) node;
                 //Get attributes
-                //Actual connection parameters from XML
+                //Actual getSTMT parameters from XML
                 email = element.getElementsByTagName("email").item(0).getTextContent();
                 password = element.getElementsByTagName("password").item(0).getTextContent();
             }

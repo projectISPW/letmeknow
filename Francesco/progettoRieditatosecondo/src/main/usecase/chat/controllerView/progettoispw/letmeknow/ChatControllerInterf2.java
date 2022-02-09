@@ -10,7 +10,6 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
-import progettoipsw.letmeknow.CSS;
 import progettoispw.letmeknow.bean.BeanResultSearch;
 import progettoispw.letmeknow.bean.ISCBean;
 
@@ -30,7 +29,7 @@ public class ChatControllerInterf2 extends ChatControllerInterf1{
     public ChatControllerInterf2(){
         super();
         iscBean=new ISCBean();
-        graphic=new CSS(false);
+        graphic=new Decorator(false);
         userid=bean.getUid();
         timeline=new Timeline(new KeyFrame(Duration.millis(5000),this::recivemsgArr));
         timeline.setCycleCount(Animation.INDEFINITE);//never stop

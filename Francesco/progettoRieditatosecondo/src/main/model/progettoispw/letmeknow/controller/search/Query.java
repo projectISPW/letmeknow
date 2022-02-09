@@ -52,9 +52,9 @@ public class Query {
             return null;
         }
     }
-    public boolean setVisited(Statement stmt, String userid, List<String> input) {
+    public boolean setVisited(Statement stmt, String userid, String[] input) {
         try{
-            String sql=String.format("UPDATE `recently_visited` SET `visit1` = '%s',`visit2` = '%s',`visit3` = '%s' WHERE `userid` = '%s' ",input.get(0),input.get(1),input.get(2),userid);
+            String sql=String.format("UPDATE `recently_visited` SET `visit1` = '%s',`visit2` = '%s',`visit3` = '%s' WHERE `userid` = '%s' ",input[0],input[1],input[2],userid);
             stmt.executeUpdate(sql);
             return true;
         } catch (SQLException throwables) {

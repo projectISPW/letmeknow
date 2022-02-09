@@ -1,6 +1,5 @@
 package progettoispw.letmeknow.controller;
 
-import progettoispw.controller.ConcretePsyUser;
 import progettoispw.letmeknow.controller.psyuser.Form;
 import progettoispw.letmeknow.controller.psyuser.PsyUser;
 

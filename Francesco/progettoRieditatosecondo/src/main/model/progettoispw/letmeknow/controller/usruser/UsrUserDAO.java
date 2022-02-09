@@ -1,7 +1,7 @@
 package progettoispw.letmeknow.controller.usruser;
 
 import progettoispw.letmeknow.controller.ConnectionDBMS;
-import progettoispw.letmeknow.controller.user.UserDAO;
+import progettoispw.letmeknow.controller.Dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,7 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UsrUserDAO {
+public class UsrUserDAO implements Dao {
     ConnectionDBMS connDB;
     Query query;
     public static final int EMP=5;
@@ -20,7 +20,15 @@ public class UsrUserDAO {
     public static final int ABOUT=14;
     public static final int CALCULATED=15;
     public UsrUserDAO() {
-        connDB= new ConnectionDBMS();
+        getConn();
+        getQuery();
+    }
+    @Override
+    public void getConn() {
+        connDB=new ConnectionDBMS();
+    }
+    @Override
+    public void getQuery() {
         query=new Query();
     }
     public String [] selectUsrUser(String uid){
@@ -28,7 +36,7 @@ public class UsrUserDAO {
         ResultSet rst=null;
         String [] ret=new String [7];
         try {
-            stmt=connDB.connection(stmt);
+            stmt=connDB.getSTMT(stmt);
             rst=query.selectUser(stmt,uid);
             while(rst.next()) {
                 for(int i=0;i<7;i++){
@@ -46,7 +54,7 @@ public class UsrUserDAO {
     public boolean setDescription(String userid,String input){
         Statement stmt=null;
         try {
-            stmt=connDB.connection(stmt);
+            stmt=connDB.getSTMT(stmt);
             return query.setDB(stmt,userid,DESCRIPTION,input);
         }finally{
             connDB.closeSTMT(stmt);
@@ -56,7 +64,7 @@ public class UsrUserDAO {
     public boolean setGoal(String userid,String input){
         Statement stmt=null;
         try {
-            stmt=connDB.connection(stmt);
+            stmt=connDB.getSTMT(stmt);
             return query.setDB(stmt,userid,GOAL,input);
         }finally{
             connDB.closeSTMT(stmt);
@@ -66,7 +74,7 @@ public class UsrUserDAO {
     public boolean setTag(String userid,String input){
         Statement stmt=null;
         try {
-            stmt=connDB.connection(stmt);
+            stmt=connDB.getSTMT(stmt);
             return query.setDB(stmt,userid,TAG,input);
         }finally{
             connDB.closeSTMT(stmt);
@@ -76,7 +84,7 @@ public class UsrUserDAO {
     public boolean setData(String userid,String input){
         Statement stmt=null;
         try {
-            stmt=connDB.connection(stmt);
+            stmt=connDB.getSTMT(stmt);
             return query.setDB(stmt,userid,BY,input);
         } finally{
             connDB.closeSTMT(stmt);
@@ -93,17 +101,17 @@ public class UsrUserDAO {
         else if(val <1 )return 1;
         else return val;
     }
-    public boolean getResult(String userid,Integer [] params){
+    public boolean getResult(String userid,int [] params){
         Statement stmt=null;
         ResultSet rst=null;
         List<Integer> calculated=new ArrayList<>();
         char[] about;
         boolean edited=false;
         boolean check;
-        Integer []  currentVal=new Integer[]{0,0,0};
+        int []  currentVal=new int[]{0,0,0};
         int size;
         try {
-            stmt=connDB.connection(stmt);
+            stmt=connDB.getSTMT(stmt);
             rst=query.queryResult(stmt,userid);
             while (rst.next()) {
                 if (rst.getString(CALCULATED).equals("1")) {
@@ -143,11 +151,11 @@ public class UsrUserDAO {
         }
         return check;
     }
-    private boolean setParams(String userid,Integer [] oldParam,Integer [] newParam,int size){
+    private boolean setParams(String userid,int [] oldParam,int [] newParam,int size){
         Statement stmt=null;
         try{
             for(int i=0;i<3;i++)oldParam[i]=average(oldParam[i]+newParam[i],size+1 );
-            stmt=connDB.connection(stmt);
+            stmt=connDB.getSTMT(stmt);
             return query.setParams(stmt,userid,oldParam);
         }finally{
             connDB.closeSTMT(stmt);
@@ -157,7 +165,7 @@ public class UsrUserDAO {
         Statement stmt=null;
         boolean check=true;
         try{
-            stmt=connDB.connection(stmt);
+            stmt=connDB.getSTMT(stmt);
             for(Integer id :calculated)if(check) check=query.setCalculated(stmt,userid,id);
             return check;
         }finally{

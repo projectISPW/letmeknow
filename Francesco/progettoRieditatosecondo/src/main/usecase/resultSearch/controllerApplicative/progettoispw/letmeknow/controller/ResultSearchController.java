@@ -1,8 +1,6 @@
 package progettoispw.letmeknow.controller;
 
 
-import progettoispw.controller.ConcreteUsrUser;
-import progettoispw.letmeknow.bean.InnerUsers;
 import progettoispw.letmeknow.controller.search.Search;
 import progettoispw.letmeknow.controller.usruser.UsrUser;
 

@@ -41,15 +41,15 @@ public class HomepageEditControllerInterf1 {
     public void initialize() {
 
         userName.setText("User : "+bean.getUserid());
-        Integer [] listaValori=homepageBean.getParam();
-        home.setSlider(empathySlider,listaValori[0]);
-        home.setSlider(humorSlider,listaValori[1]);
-        home.setSlider(positivitySlider,listaValori[2]);
+        int[] arrayValue=homepageBean.getParam();
+        home.setSlider(empathySlider,arrayValue[0]);
+        home.setSlider(humorSlider,arrayValue[1]);
+        home.setSlider(positivitySlider,arrayValue[2]);
         personalDes.setPromptText(homepageBean.getDescription());
         goal.setPromptText(homepageBean.getGoal());
         tag.setPromptText(homepageBean.getTag());
-        listaValori=homepageBean.getData();
-        date.setPromptText(" "+listaValori[0]+"-"+listaValori[1]+"-"+listaValori[2]);
+        arrayValue=homepageBean.getData();
+        date.setPromptText(" "+arrayValue[0]+"-"+arrayValue[1]+"-"+arrayValue[2]);
     }
 
     @FXML

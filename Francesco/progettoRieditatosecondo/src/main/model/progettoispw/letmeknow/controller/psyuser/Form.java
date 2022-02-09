@@ -45,7 +45,6 @@ public class Form  {
         for(Form elem:input)if(elem.getFormid()==val)return elem;
         return null;
     }
-
     public List<Form> getSum(List<Form> input) {
         int[] ids = new int[FORMSID.length];
         int[] innerAnswer;

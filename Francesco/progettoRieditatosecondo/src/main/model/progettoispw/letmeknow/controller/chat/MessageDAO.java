@@ -1,6 +1,7 @@
 package progettoispw.letmeknow.controller.chat;
 
 import progettoispw.letmeknow.controller.ConnectionDBMS;
+import progettoispw.letmeknow.controller.Dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -8,7 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MessageDAO {
+public class MessageDAO implements Dao {
     ConnectionDBMS connDB;
     Query query;
     public static final String TEXT="text";
@@ -16,8 +17,16 @@ public class MessageDAO {
     public static final String RECIVER="reciver";
     public static final String DATETIME="datetime";
     public MessageDAO() {
-        connDB= new ConnectionDBMS();
-        query= new Query();
+        getConn();
+        getQuery();
+    }
+    @Override
+    public void getConn() {
+        connDB=new ConnectionDBMS();
+    }
+    @Override
+    public void getQuery() {
+        query=new Query();
     }
     private void scanner(ResultSet rst, Statement stmt, ArrayList<Message>list) {
         try{
@@ -38,7 +47,7 @@ public class MessageDAO {
     public List<Message> getRecivedSentMessage(String userid) {
         Statement stmt = null;
         ResultSet rst;
-        stmt= connDB.connection(stmt);
+        stmt= connDB.getSTMT(stmt);
         ArrayList<Message> ret = new ArrayList<>();
         rst = query.selectUserRSALL(stmt, userid);
         scanner(rst,stmt,ret);
@@ -47,7 +56,7 @@ public class MessageDAO {
     public List<Message> getRecivedSentMessage(String userid1,String userid2){
         Statement stmt = null;
         ResultSet rst;
-        stmt= connDB.connection(stmt);
+        stmt= connDB.getSTMT(stmt);
         ArrayList<Message> ret = new ArrayList<>();
         rst = query.selectUserRS(stmt, userid1,userid2);
         scanner(rst,stmt,ret);
@@ -56,7 +65,7 @@ public class MessageDAO {
     public boolean newMessage(String from,String to,String text) {
         Statement stmt=null;
         try {
-            stmt=connDB.connection(stmt);
+            stmt=connDB.getSTMT(stmt);
             String replace= "\\"+"\"";
             text=text.replace("\"",replace);
             return query.newMSG(stmt,from,to,text);
@@ -64,4 +73,7 @@ public class MessageDAO {
             connDB.closeSTMT(stmt);
         }
     }
+
+
+
 }

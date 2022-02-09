@@ -2,7 +2,6 @@
 
 package progettoispw.letmeknow.controller;
 
-import progettoispw.controller.ConcreteUsrUser;
 import progettoispw.letmeknow.controller.usruser.UsrUser;
 
 public class HomepageController {
@@ -14,8 +13,8 @@ public class HomepageController {
     public String getUserID(){
         return user.getUserid();
     }
-    public Integer[] getParam(){
-        Integer [] ret=new Integer[3];
+    public int[] getParam(){
+        int [] ret=new int[3];
         ret[0]=user.getEmp();
         ret[1]=user.getHum();
         ret[2]=user.getOpt();
@@ -29,7 +28,7 @@ public class HomepageController {
         return user.getTag();
     }
     public String getGoal(){return user.getGoal();}
-    public Integer[] getDate(){
+    public int[] getDate(){
         return user.getDate();
    }
    public boolean getExpired(){

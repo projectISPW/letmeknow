@@ -25,7 +25,7 @@ public class ConnectionInfo {
                 if(node.getNodeType() == Node.ELEMENT_NODE){
                     Element element = (Element) node;
                     //Get attributes
-                    //Actual connection parameters from XML
+                    //Actual getSTMT parameters from XML
                     user = element.getElementsByTagName("username").item(0).getTextContent();
                     pass = element.getElementsByTagName("password").item(0).getTextContent();
                     dbUrl = element.getElementsByTagName("url").item(0).getTextContent();

@@ -37,7 +37,7 @@ public class HomepagecontrollerInterf1 {
     public void initialize(){
         userName.setText("User : #"+userid);
 
-        Integer[] arrayOut= bean.getParam();
+        int[] arrayOut= bean.getParam();
         setSlider(empathySlider,arrayOut[0]);
         setSlider(humorSlider,arrayOut[1]);
         setSlider(positivitySlider,arrayOut[2]);

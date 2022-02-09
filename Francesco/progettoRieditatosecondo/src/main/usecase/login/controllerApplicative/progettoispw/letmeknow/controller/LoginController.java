@@ -1,5 +1,4 @@
 package progettoispw.letmeknow.controller;
-import progettoispw.controller.Factory;
 
 public class LoginController {
     public boolean getLog(String userid, String password){

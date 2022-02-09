@@ -60,7 +60,7 @@ public class UsrUser implements User {
     public String getGoal(){
         return personalObb.getObiettivo();
     }
-    public Integer[] getDate(){
+    public int[] getDate(){
         return personalObb.getDataEuropean();
     }
     public boolean setPersonalDes(String newS)  {

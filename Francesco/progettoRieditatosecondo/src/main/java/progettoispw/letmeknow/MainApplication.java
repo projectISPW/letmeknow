@@ -43,7 +43,7 @@ public class MainApplication extends Application {
                 Optional<ButtonType> result = alert.showAndWait();
                 if(result.isPresent() && result.get() == ButtonType.OK){
                     ConnectionDBMS conn=new ConnectionDBMS();
-                    conn.closeCONN();
+                    conn.closeConn();
                     Platform.exit();
                     System.exit(0);
                 }

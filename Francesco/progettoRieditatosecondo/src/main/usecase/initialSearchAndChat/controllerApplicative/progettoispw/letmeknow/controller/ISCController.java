@@ -1,7 +1,5 @@
 package progettoispw.letmeknow.controller;
 
-import progettoispw.controller.ConcreteUsrUser;
-import progettoispw.letmeknow.bean.LastMessage;
 import progettoispw.letmeknow.controller.chat.Message;
 import progettoispw.letmeknow.controller.chat.Messages;
 

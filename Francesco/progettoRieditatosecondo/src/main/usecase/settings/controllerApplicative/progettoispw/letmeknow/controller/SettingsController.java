@@ -1,8 +1,6 @@
 package progettoispw.letmeknow.controller;
 
 
-import progettoispw.controller.ConcreteUsrUser;
-import progettoispw.controller.Factory;
 import progettoispw.letmeknow.controller.user.InitialUser;
 
 public class SettingsController {
@@ -11,7 +9,7 @@ public class SettingsController {
         user=new InitialUser(Factory.getUser().getUserid());
     }
     public void closeConnection(){
-        ConnectionDBMS.closeCONN();
+        ConnectionDBMS.closeConn();
     }
     public boolean setPassword(String input){
        return user.setPassword(input);

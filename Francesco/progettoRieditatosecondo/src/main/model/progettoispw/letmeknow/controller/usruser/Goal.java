@@ -5,11 +5,11 @@ import java.time.LocalDate;
 public class Goal {
     private  String obiettivo;
     private   String tag;
-    private  Integer[] dataEuropean;//EUROPEAN FORMAT DD-MM-YYYY
+    private  int[] dataEuropean;//EUROPEAN FORMAT DD-MM-YYYY
     public Goal(){
         obiettivo= "";
         tag="#";
-        dataEuropean=new Integer[]{1,1,1};
+        dataEuropean=new int[]{1,1,1};
     }
     public void setObiettivo(String string){
         obiettivo=string;
@@ -56,7 +56,7 @@ public class Goal {
     public String getObiettivo(){
         return obiettivo;
     }
-    public Integer[] getDataEuropean(){return dataEuropean;}
+    public int[] getDataEuropean(){return dataEuropean;}
     public String getTag(){
         return tag;
     }

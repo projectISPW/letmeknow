@@ -1,5 +1,6 @@
 package progettoispw.letmeknow.bean;
 
+import progettoispw.letmeknow.controller.InnerUsers;
 import progettoispw.letmeknow.controller.ResultSearchController;
 
 import java.util.List;

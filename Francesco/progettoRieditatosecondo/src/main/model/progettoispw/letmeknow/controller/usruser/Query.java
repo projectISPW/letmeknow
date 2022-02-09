@@ -19,7 +19,7 @@ public class Query {
             return false;
         }
     }
-    protected Boolean setParams(Statement stmt,String uid,Integer [] param){
+    protected Boolean setParams(Statement stmt, String uid, int[] param){
         try {
             String sql=String.format("UPDATE `utenti` SET `empathy` = '%d', `humor` = '%d', `positivity` = '%d' WHERE (`userid` = '%s'); ",param[0],param[1],param[2],uid);
             stmt.executeUpdate(sql);
