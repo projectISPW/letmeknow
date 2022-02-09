@@ -51,9 +51,9 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/usecase/homepagePsycologist/controllerView" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/model" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/model/user1" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/patterns/abstractfactory" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/patterns/decorator" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/patterns/facade" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/patterns/factory" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />

@@ -1,6 +1,6 @@
 package progettoispw.letmeknow.controller;
 
-import progettoispw.controller.ClassController;
+import progettoispw.controller.ConcreteUsrUser;
 import progettoispw.letmeknow.controller.chat.Message;
 import progettoispw.letmeknow.controller.chat.Messages;
 
@@ -14,7 +14,7 @@ public class ChatController {
     //controller return only new messages
     private String with;
     public ChatController(){
-        actChat= ClassController.getChat();
+        actChat= ConcreteUsrUser.getChat();
         with=actChat.getTouched();
     }
     public String  newMSG(String text){

@@ -1,13 +1,13 @@
 package progettoispw.letmeknow.controller;
 
-import progettoispw.controller.ClassController;
+import progettoispw.controller.ConcreteUsrUser;
 
 public class CollectionFormController {
    public void setTouched(int formid){
-       ClassController.setResultForm(formid);
+       ConcreteUsrUser.setResultForm(formid);
    }
     public void  takeForm(){
-       ClassController.setResultForm();
+       ConcreteUsrUser.setResultForm();
     }
-    public String getUserid(){return ClassController.getUserUSR().getUserid();}
+    public String getUserid(){return ConcreteUsrUser.getUser().getUserid();}
 }

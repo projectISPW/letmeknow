@@ -1,6 +1,6 @@
 package progettoispw.letmeknow.controller.form;
 
-import progettoispw.controller.ClassController;
+import progettoispw.controller.ConcreteUsrUser;
 import progettoispw.letmeknow.controller.usruser.UsrUser;
 
 public class ResultForm {
@@ -47,7 +47,7 @@ public class ResultForm {
         return formid;
     }
     private void queryComplete(){
-        UsrUser user= ClassController.getUserUSR();
+        UsrUser user= ConcreteUsrUser.getUser();
         date= formData.queryData(userid,formid);
         if(date ==null){
             formData.setCalculated(userid,formid);

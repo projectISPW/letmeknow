@@ -1,6 +1,6 @@
 package progettoispw.letmeknow.controller.usruser;
 
-import progettoispw.controller.User;
+import progettoispw.letmeknow.controller.User;
 import progettoispw.letmeknow.controller.user.UserDAO;
 
 public class UsrUser implements User {

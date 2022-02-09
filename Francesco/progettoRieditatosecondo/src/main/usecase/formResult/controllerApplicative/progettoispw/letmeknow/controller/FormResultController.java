@@ -2,13 +2,13 @@
 
 package progettoispw.letmeknow.controller;
 
-import progettoispw.controller.ClassController;
+import progettoispw.controller.ConcreteUsrUser;
 import progettoispw.letmeknow.controller.form.ResultForm;
 
 public class FormResultController {
     ResultForm form;
     public FormResultController(){
-        form= ClassController.getResultForm();
+        form= ConcreteUsrUser.getResultForm();
     }
     public int[] getValResponse(){
         return form.getAnswers();

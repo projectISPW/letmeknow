@@ -1,6 +1,7 @@
 package progettoispw.letmeknow.controller;
 
-import progettoispw.controller.ClassController;
+
+import progettoispw.controller.ConcreteUsrUser;
 import progettoispw.letmeknow.bean.InnerUsers;
 import progettoispw.letmeknow.controller.search.Search;
 import progettoispw.letmeknow.controller.usruser.UsrUser;
@@ -15,10 +16,10 @@ public class ResultSearchController {
     public ResultSearchController(Integer n){
         nVal=n;
         count=0;
-        search= ClassController.getSearch();
+        search= ConcreteUsrUser.getSearch();
     }
     public ResultSearchController(){
-        search= ClassController.getSearch();
+        search= ConcreteUsrUser.getSearch();
     }
     public void attach(InnerUsers elem,List <InnerUsers>formatted ){
         formatted.add(elem);

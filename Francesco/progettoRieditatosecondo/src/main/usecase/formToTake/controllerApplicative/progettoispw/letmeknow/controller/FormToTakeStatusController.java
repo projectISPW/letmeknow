@@ -1,12 +1,12 @@
 package progettoispw.letmeknow.controller;
 
-import progettoispw.controller.ClassController;
+import progettoispw.controller.ConcreteUsrUser;
 import progettoispw.letmeknow.controller.form.ResultForm;
 
 public class FormToTakeStatusController {
     ResultForm form;
     public FormToTakeStatusController(){
-        form= ClassController.getResultForm();
+        form= ConcreteUsrUser.getResultForm();
     }
     public int getFormId(){
         return form.getFormid();

@@ -1,12 +1,12 @@
 package progettoispw.letmeknow.controller;
 
-import progettoispw.controller.ClassController;
+import progettoispw.controller.ConcretePsyUser;
 import progettoispw.letmeknow.controller.psyuser.PsyUser;
 
 public class FormPsychologistResultController {
     PsyUser user;
     public FormPsychologistResultController(){
-        user= ClassController.getUserPsy();
+        user= ConcretePsyUser.getUser();
     }
     public float [] getSelected(){
         return user.getSelected();

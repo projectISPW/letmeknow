@@ -1,10 +1,6 @@
 
 ®
 xsrc/main/usecase/formPsicologistResult/controllerApplicative/progettoispw/letmeknow/bean/FormPsychologistResultBean.java,4\6\46e12a75dfe1bf48f139a1142d60402f64dc7081
-µ
-Ñsrc/main/usecase/formPsicologistResult/controllerApplicative/progettoispw/letmeknow/controller/FormPsychologistResultController.java,6\f\6fc32ea0df4f249d2a8696007c54049fe997de62
-ó
-gsrc/main/usecase/formToTake/controllerApplicative/progettoispw/letmeknow/bean/FormToTakeStatusBean.java,d\4\d42bc8ef62879f199d12f6040082a3bd15def67b
 §
 tsrc/main/usecase/HomepagePsycologist/controllerApplicative/progettoispw/letmeknow/bean/HomepagePsychologistBean.java,3\e\3e405e138599de017ba33475260ca62924f0372d
 ±
@@ -19,8 +15,6 @@ nsrc/main/usecase/formCollectionResults/controllerView/progettoispw/letmeknow/Fo
 `src/main/usecase/formToTake/controllerView/progettoispw/letmeknow/TakeFormControllerInterf2.java,a\6\a60b50c012450e34177f761185f1bbf2d02ffa6e
 â
 Ysrc/main/usecase/formToTake/controllerView/progettoispw/letmeknow/FormSectionInterf2.java,0\a\0ada1468c177812ad34ab01ceca7a85ebf59b270
-¨
-|src/main/usecase/formCollectionResults/controllerApplicative/progettoispw/letmeknow/controller/CollectionFormController.java,d\e\dedabb4c8a20c6d95a1b584300696b71f58cf04f
 †
 psrc/main/usecase/formCollectionResults/controllerApplicative/progettoispw/letmeknow/bean/CollectionFormBean.java,f\7\f7b917cf7c1d809e6de622e4069d8702d95007c5
 û
@@ -52,8 +46,6 @@ Zsrc/main/usecase/search/controllerView/progettoispw/letmeknow/SearchControllerI
 î
 dsrc/main/usecase/recoverPSWD/controllerView/progettoispw/letmeknow/RecoverPswdControllerInterf1.java,b\0\b05b5aa5393e308c3223641af6ae4f857535c684
 é
-^src/main/usecase/settings/controllerView/progettoispw/letmeknow/SettingsControllerInterf1.java,c\b\cb8d31428a8e07e7e8d703d8e5c0ed30ce67bc47
-é
 ^src/main/usecase/settings/controllerView/progettoispw/letmeknow/SettingsControllerInterf2.java,e\7\e72ebe196221681cb0660b228f3908730090c759
 ñ
 fsrc/main/usecase/homepageEdit/controllerView/progettoispw/letmeknow/HomepageEditControllerInterf2.java,5\e\5e2e117b99a7549d725c4dcde5f3ad316dd261d6
@@ -63,10 +55,6 @@ fsrc/main/usecase/homepageEdit/controllerView/progettoispw/letmeknow/HomepageEdi
 Qsrc/main/usecase/java/controllerView/progettoispw/letmeknow/ButtonBarInterf2.java,d\5\d5ef137f1860d962bcbb997a837df96328416578
 à
 Xsrc/main/usecase/formResult/controllerView/progettoispw/letmeknow/FormResultInterf1.java,5\b\5bba620df5d76f1580f77f67267901e7c042a90c
-ù
-msrc/main/usecase/formResult/controllerApplicative/progettoispw/letmeknow/controller/FormResultController.java,4\2\42758b3985024f5ca4ccdc1d6bf85811265bd2c1
-£
-ssrc/main/usecase/formToTake/controllerApplicative/progettoispw/letmeknow/controller/FormToTakeStatusController.java,8\6\864bc7bfbb72c9f6d4b42a5f289b664a4b7b3bf3
 N
 src/main/java/module-info.java,1\c\1c89a5491fbfda3fb050196d6a239f20200296e7
 ä

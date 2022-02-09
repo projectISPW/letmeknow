@@ -1,7 +1,7 @@
 package progettoispw.letmeknow.controller.user;
 
 
-import progettoispw.controller.User;
+import progettoispw.letmeknow.controller.User;
 
 import java.util.List;
 import java.util.Random;

@@ -1,5 +1,5 @@
 package progettoispw.letmeknow.controller.psyuser;
-import progettoispw.controller.User;
+import progettoispw.letmeknow.controller.User;
 import progettoispw.letmeknow.controller.user.UserDAO;
 
 import java.util.List;

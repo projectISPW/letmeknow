@@ -1,7 +1,9 @@
 
-b
-2src/test/java/seleniumtest/seleniumtest/check.java,1\8\189865dd1c3abd8ba61533f899c8f2b97e8f8a19
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-a
-1src/test/java/seleniumtest/seleniumtest/test.java,5\7\570cf5379c8570aafe4044e2603b3b43ee170954
+r
+Bsrc/test/java/seleniumtest/seleniumtest/TopItialianUniversity.java,c\e\ceb35df9eb5c932b8abf5e6c00536e165f847c02
+l
+<src/test/java/seleniumtest/seleniumtest/BinaryConverter.java,3\4\345eadfaf56d80426cdfbe1a063bdfd1cd4f4dad
+j
+:src/test/java/seleniumtest/seleniumtest/ScholarQuotes.java,3\3\33e3d4514b662b974cb45549e79c0925976ab80e

@@ -1,6 +1,6 @@
 package progettoispw.letmeknow.controller;
 
-import progettoispw.controller.ClassController;
+import progettoispw.controller.ConcretePsyUser;
 import progettoispw.letmeknow.controller.psyuser.Form;
 import progettoispw.letmeknow.controller.psyuser.PsyUser;
 
@@ -12,7 +12,7 @@ public class HomepagePsychologistController {
     private int index;
     static final Integer [] FORMSID={1,2,3};
     public HomepagePsychologistController(){
-        user= ClassController.getUserPsy();
+        user= ConcretePsyUser.getUser();
         innerList=null;
     }
     public float[] getList(){
