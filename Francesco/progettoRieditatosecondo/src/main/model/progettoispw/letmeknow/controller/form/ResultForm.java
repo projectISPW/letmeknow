@@ -46,7 +46,7 @@ public class ResultForm {
         return formid;
     }
     private void queryComplete(){
-        UsrUser user= ConcreteUsrUser.getUser();
+        UsrUser user= ConcreteUsrUser.getUsrUser();
         date= formData.queryData(userid,formid);
         if(date ==null){
             formData.setCalculated(userid,formid);

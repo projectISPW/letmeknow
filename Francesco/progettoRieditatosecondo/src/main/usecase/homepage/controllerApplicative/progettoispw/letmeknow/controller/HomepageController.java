@@ -7,7 +7,7 @@ import progettoispw.letmeknow.controller.usruser.UsrUser;
 public class HomepageController {
     UsrUser user;
     public HomepageController(boolean visit){
-        if(!visit)user= ConcreteUsrUser.getUser();
+        if(!visit)user= ConcreteUsrUser.getUsrUser();
         else user= new UsrUser(ConcreteUsrUser.getSearch().getTouched());
     }
     public String getUserID(){

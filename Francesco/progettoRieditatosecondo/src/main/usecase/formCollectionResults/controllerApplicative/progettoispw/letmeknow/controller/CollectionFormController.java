@@ -7,5 +7,5 @@ public class CollectionFormController {
     public void  takeForm(){
        ConcreteUsrUser.setResultForm();
     }
-    public String getUserid(){return ConcreteUsrUser.getUser().getUserid();}
+    public String getUserid(){return ConcreteUsrUser.getUsrUser().getUserid();}
 }
