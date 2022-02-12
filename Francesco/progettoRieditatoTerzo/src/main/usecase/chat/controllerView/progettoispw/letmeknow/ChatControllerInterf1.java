@@ -16,7 +16,8 @@ import progettoispw.letmeknow.bean.BeanResultSearch;
 
 import javafx.animation.Timeline;
 import progettoispw.letmeknow.bean.ChatBean;
-import progettoispw.letmeknow.bean.NewMessageBean;
+import progettoispw.letmeknow.bean.MessageBean;
+import progettoispw.letmeknow.bean.MessageTextModel;
 import progettoispw.letmeknow.controller.ChatController;
 
 
@@ -45,11 +46,13 @@ public class ChatControllerInterf1 {
     }
     @FXML
     protected void sendMsg() {
-        NewMessageBean messageBean=new NewMessageBean();
+        MessageTextModel beanMsg=new MessageTextModel();
+        MessageBean messageBean=new MessageBean();
         messageBean.setText(inputmsg.getText());
-        messageBean.setReciver(withName.getText());
+        messageBean.setReciver(bean.getWith());
         ChatController controller=new ChatController();
         controller.newMSG(messageBean);
+        inputmsg.setText(beanMsg.getTextMsg());
         recivemsgArr();
     }
     private  void action(ActionEvent event ){
@@ -95,8 +98,8 @@ public class ChatControllerInterf1 {
     }
     @FXML
     protected void touchedHome(ActionEvent event){
-        BeanResultSearch visitBean=new BeanResultSearch();
-        visitBean.touched(bean.getWith());
+        ResultSearchControllerInterf1 rscView=new ResultSearchControllerInterf1();
+        rscView.setTouchedHome(bean.getWith());
         timeline.stop();
         pageSwitch.switchTo("homepageOthers/interf1.fxml",event,"Visit");
     }

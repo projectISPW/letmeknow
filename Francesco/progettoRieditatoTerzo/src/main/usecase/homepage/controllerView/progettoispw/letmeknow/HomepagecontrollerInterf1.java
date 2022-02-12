@@ -9,7 +9,7 @@ import progettoispw.letmeknow.bean.HomepageBean;
 
 public class HomepagecontrollerInterf1 {
     protected String userid;
-    protected PageMenu PageSwitch;
+    protected PageMenu pageSwitch;
     @FXML
     protected ImageView empathySlider;
     @FXML
@@ -30,8 +30,9 @@ public class HomepagecontrollerInterf1 {
     protected ImageView expired;
     protected HomepageBean bean;
     public HomepagecontrollerInterf1(){
-        PageSwitch =new PageMenu();
+        pageSwitch =new PageMenu();
         bean =new HomepageBean(false);
+        userid=bean.getUserID();
     }
     public void initialize(){
         userName.setText("User : #"+userid);
@@ -58,23 +59,23 @@ public class HomepagecontrollerInterf1 {
     }
     @FXML
     protected void goToEditProfile(ActionEvent event) {
-        PageSwitch.switchTo("homepageEdit/interf1.fxml",event,"Edit Profile");}
+        pageSwitch.switchTo("homepageEdit/interf1.fxml",event,"Edit Profile");}
     @FXML
     protected void goToSettings(ActionEvent event) {
-        PageSwitch.switchToSettings(event);
+        pageSwitch.switchToSettings(event);
     }
     @FXML
     protected  void goToISC(ActionEvent event){
-        PageSwitch.switchToISC(event);
+        pageSwitch.switchToISC(event);
     }
     @FXML
     protected  void goToHome(ActionEvent event){
-        PageSwitch.switchToHome(event);}
+        pageSwitch.switchToHome(event);}
     @FXML
     protected void goToPersonalForm (ActionEvent event ){
-        PageSwitch.switchToPersonalForm(event);}
+        pageSwitch.switchToPersonalForm(event);}
     @FXML
     protected void setSize(ActionEvent event ){
-        PageSwitch.setSize("homepage/interf1.fxml",event);
+        pageSwitch.setSize("homepage/interf1.fxml",event);
     }
 }

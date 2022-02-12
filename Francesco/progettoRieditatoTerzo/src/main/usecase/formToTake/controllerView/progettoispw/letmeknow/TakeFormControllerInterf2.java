@@ -8,7 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
-import progettoispw.letmeknow.bean.FormSetAnswer;
+import progettoispw.letmeknow.bean.FormToTakeStatusBean;
 
 import java.io.IOException;
 
@@ -17,8 +17,9 @@ public class TakeFormControllerInterf2 extends TakeFormControllerInterf1{
     private AnchorPane status;
     @FXML
     ScrollPane scrollAnswers;
+    FormToTakeStatusBean bean;
     public TakeFormControllerInterf2(){
-        bean=new FormSetAnswer();
+        bean=new FormToTakeStatusBean();
     }
     public void initialize(){
         setValues();
@@ -30,7 +31,7 @@ public class TakeFormControllerInterf2 extends TakeFormControllerInterf1{
     public void setSection(){
         try {
             status.getChildren().removeAll(status.getChildren());
-            if(bean.getComplete()==6){
+            if(bean.getValComplete()==6){
             status.getChildren().add((Node) FXMLLoader.load(getClass().getResource("formCollectionResults/resultFormSectionInterf2.fxml")));
             }
             else{

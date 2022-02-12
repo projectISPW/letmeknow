@@ -10,7 +10,7 @@
         <TextField fx:id="email" layoutX="376.0" layoutY="208.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="451.0" promptText="mariorossi@gmail.com" styleClass="textField" />
         <PasswordField fx:id="confirmpswd" layoutX="601.0" layoutY="307.0" maxWidth="-Infinity" prefHeight="50.0" prefWidth="234.0" promptText="confirm password" styleClass="textField" />
         <PasswordField fx:id="pswd" layoutX="376.0" layoutY="307.0" maxWidth="-Infinity" prefHeight="50.0" prefWidth="218.0" promptText="password" styleClass="textField" />
-        <TextField fx:id="description" layoutX="385.0" layoutY="409.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="451.0" promptText="#Lovely#Quite#Hardworking#Ambicius" styleClass="textField" />
+        <TextField fx:id="description" layoutX="385.0" layoutY="409.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="451.0" promptText="#Lovely#Quite#Hardworking#Ambitious" styleClass="textField" />
         <Slider fx:id="sl1" layoutX="1112.0" layoutY="269.0" majorTickUnit="1.0" max="5.0" maxWidth="-Infinity" min="1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="192.0" showTickLabels="true" value="5.0" />
         <TextField fx:id="goal" layoutX="35.0" layoutY="573.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="583.0" promptText="i want to become a better person" style="-fx-opacity: 0.5;" styleClass="textField" />
         <Button layoutX="737.0" layoutY="676.0" mnemonicParsing="false" onAction="#save" prefHeight="50.0" prefWidth="130.0" style="-fx-font-size: 18;" styleClass="Button" text="Save account" />
@@ -62,7 +62,7 @@
             </font>
         </Text>
         <Button layoutX="566.0" layoutY="676.0" mnemonicParsing="false" onAction="#goToLogin" prefHeight="50.0" prefWidth="130.0" style="-fx-font-size: 18;" styleClass="Button" text="Go back" />
-      <Label fx:id="emailCheck" layoutX="123.0" layoutY="266.0" style="-fx-text-fill: #7836ea; -fx-font-size: 20;" text="email must not be already in the sistem and must be valid " />
+      <Label fx:id="emailCheck" layoutX="123.0" layoutY="266.0" style="-fx-text-fill: #7836ea; -fx-font-size: 20;" text="email could not be already in the sistem and must be valid " />
       <Label fx:id="pswdCheck" layoutX="176.0" layoutY="366.0" style="-fx-text-fill: #7836ea; -fx-font-size: 20;" text="the two password must match each other  " />
       <Label fx:id="desCheck" layoutX="225.0" layoutY="466.0" style="-fx-text-fill: #7836ea; -fx-font-size: 20;" text="each trait must begin with #" />
       <Label fx:id="slCheck" layoutX="1019.0" layoutY="437.0" style="-fx-text-fill: #7836ea; -fx-font-size: 20;" text="each value must be entered" />
@@ -74,5 +74,6 @@
             <Image url="@photo/img.png" />
          </image>
       </ImageView>
+      <Label fx:id="goalCheck" layoutX="242.0" layoutY="639.0" style="-fx-text-fill: #7836ea; -fx-font-size: 20;" text="goal could not be null" />
     </children>
 </AnchorPane>

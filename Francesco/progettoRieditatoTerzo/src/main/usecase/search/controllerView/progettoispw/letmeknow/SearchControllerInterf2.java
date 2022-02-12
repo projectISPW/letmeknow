@@ -28,7 +28,7 @@ public class SearchControllerInterf2 extends SearchControllerInterf1 {
             ButtonBarInterf2 barController=loader.getController();
             barController.setSearch();
             HomepageBean beanVisit =new HomepageBean(true);
-            if(beanVisit.getUserId()!=null)visit();
+            if(beanVisit.getUserID()!=null)visit();
         } catch (IOException e) {
             buttonBar.getChildren().removeAll(buttonBar.getChildren());
         }

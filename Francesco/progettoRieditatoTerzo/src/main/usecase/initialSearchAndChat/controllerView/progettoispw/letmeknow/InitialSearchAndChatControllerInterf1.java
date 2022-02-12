@@ -9,10 +9,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import progettoispw.letmeknow.bean.ISCBean;
+import progettoispw.letmeknow.bean.StringBean;
+import progettoispw.letmeknow.controller.ISCController;
 
 public class InitialSearchAndChatControllerInterf1 {
-    private PageMenu controller ;
+    private PageMenu pageSwitch;
     private String userid;
+    private ISCController controller;
     private static final String UID="userid";
     @FXML
     Group group1;
@@ -41,13 +44,13 @@ public class InitialSearchAndChatControllerInterf1 {
         nval=4;
         bean=new ISCBean(nval);
         uids=new String[4];
-        controller=new PageMenu();
+        pageSwitch =new PageMenu();
+        controller= bean.getController();
     }
-
     public InitialSearchAndChatControllerInterf1(String[] input) {
         uids=input;
         bean=new ISCBean(nval);
-        controller=new PageMenu();
+        pageSwitch =new PageMenu();
     }
     public void initialize(){
         userid=bean.getUserid();
@@ -56,7 +59,7 @@ public class InitialSearchAndChatControllerInterf1 {
         outputValChat();
         searchBar.textProperty().addListener((observableValue, s, t1) -> {
             if(searchBar.getText().equals("")){
-                bean.reset();
+                controller.reset();
             }
         });
     }
@@ -69,7 +72,6 @@ public class InitialSearchAndChatControllerInterf1 {
     }
     @FXML
     public  String [] outputValChat(){
-
         for(int i=0;i<nval;i++){
             chatExtGroup[i].setOpacity(1);
         }
@@ -117,40 +119,48 @@ public class InitialSearchAndChatControllerInterf1 {
         uids=getUids(uids);
         for(int i=1;i<7;i++){
             String compare="chat"+i;
-            if(compare.equals(button.getId()))bean.touched(uids[i-1]);
+            if(compare.equals(button.getId())){
+                touchChat(uids[i-1],event);
+            }
         }
-        controller.switchTo("chat/interf1.fxml",event,"chat");
+
+    }
+    public void touchChat(String userid,ActionEvent event){
+        StringBean stringBean =new StringBean();
+        stringBean.setPass(userid);
+        controller.setTouched(stringBean);
+        pageSwitch.switchTo("chat/interf1.fxml",event,"chat");
     }
     public void visit(ActionEvent event) {
         uids=getUids(uids);
        ResultSearchControllerInterf1 resultSearch =new ResultSearchControllerInterf1(uids);
-
        resultSearch.setUids(uids);
        resultSearch.visit(event);
     }
     @FXML
     protected void searchMessage(){
-        bean.search(searchBar.getText());
+        StringBean stringBeanbean=new StringBean();
+        stringBeanbean.setPass(searchBar.getText());
+        controller.searchMessage(stringBeanbean);
         outputValChat();
     }
     @FXML
     protected void goToHome(ActionEvent event)  {
-        controller.switchToHome(event);
+        pageSwitch.switchToHome(event);
     }
     @FXML
     protected void goToPersonalForm(ActionEvent event){
-        controller.switchToPersonalForm(event);
+        pageSwitch.switchToPersonalForm(event);
     }
     @FXML
     protected void goToSettings(ActionEvent event) {
-        controller.switchToSettings(event);
+        pageSwitch.switchToSettings(event);
     }
     @FXML
     protected void goToSearch(ActionEvent event) {
-        controller.switchToSearch(event);
+        pageSwitch.switchToSearch(event);
     }
-
     public void goToISC(ActionEvent event) {
-        controller.switchToISC(event);
+        pageSwitch.switchToISC(event);
     }
 }

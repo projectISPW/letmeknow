@@ -1,6 +1,7 @@
 package progettoispw.letmeknow.bean;
 
 import progettoispw.letmeknow.controller.ISCController;
+import progettoispw.letmeknow.controller.LastMessage;
 
 import java.util.ArrayList;
 
@@ -27,19 +28,11 @@ public class ISCBean {
         for(LastMessage usr : actual){
             index =actual.indexOf(usr);
             arrStr[0][index]=usr.getUserid();
-            arrStr[1][index]= usr.getLastmsg();
+            arrStr[1][index]= usr.getText();
         }
         return arrStr;
     }
-    public void touched(String user){
-        controller.who(user);
-    }
-    public void search(String find){
-        if(!find.equals("")) {
-            controller.search(find);
-        }
-    }
-    public void reset(){
-        controller.reset();
+    public ISCController getController(){
+        return controller;
     }
 }

@@ -1,3 +1,5 @@
 
->
-java:S1604%"(Make this anonymous inner class a lambda(‡ÁÜğ
+G
+java:S1602&",Remove useless curly braces around statement(€ ¤ úÿÿÿÿ
+T
+java:S1128">Remove this unused import 'javafx.beans.value.ChangeListener'.(¸÷Í

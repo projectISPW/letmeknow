@@ -8,7 +8,6 @@ import progettoispw.letmeknow.bean.SignupBean;
 import java.util.Optional;
 
 public class SignupPsychologistControllerInterf1 {
-    protected SignupBean bean;
     @FXML
     protected TextField email;
     @FXML
@@ -20,10 +19,6 @@ public class SignupPsychologistControllerInterf1 {
     @FXML
     Label pswdCheck;
     SignupControllerInterf1 signupController;
-    public SignupPsychologistControllerInterf1() {
-        bean=new SignupBean();
-
-    }
 
     public void initialize(){
         signupController=new SignupControllerInterf1(email,new PasswordField[]{pswd,confirmpswd},new Label[]{emailCheck,pswdCheck});

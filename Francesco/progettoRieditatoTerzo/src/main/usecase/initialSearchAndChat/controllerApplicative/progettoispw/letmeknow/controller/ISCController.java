@@ -1,5 +1,6 @@
 package progettoispw.letmeknow.controller;
 
+import progettoispw.letmeknow.bean.StringBean;
 import progettoispw.letmeknow.controller.chat.Message;
 import progettoispw.letmeknow.controller.chat.Messages;
 
@@ -118,15 +119,16 @@ public class ISCController {
         }
         return count;
     }
-    public void who(String usr){
-        chat.setTouched(usr);
+    public void setTouched(StringBean bean){
+        chat.setTouched(bean.getPass());
     }
-    public void searchMessage(String input){
+    public void searchMessage(StringBean bean){
         count=0;
-        find=input;
+        find=bean.getPass();
     }
     public void reset(){
         count=0;
         find=null;
     }
+
 }

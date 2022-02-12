@@ -1,18 +1,13 @@
 package progettoispw.letmeknow.controller;
 
-import progettoispw.letmeknow.controller.user.InitialUser;
+import progettoispw.letmeknow.bean.LogBean;
+
 public class LoginController {
-    private InitialUser utente ;
-    public LoginController(String user){
-        utente=new InitialUser(user);
+    Factory factory;
+    public LoginController(){
+        factory=new Factory();
     }
-    public String tornaLog(String password){
-        String str=utente.abscessType(password);
-        if(str!=null){
-            ControllerClass.controllerUser(utente.getUserid());
-        }else{
-            str=null;
-        }
-        return str;
+    public boolean getLog(LogBean bean){
+        return factory.tryLog(bean.getUserid(),bean.getPassword());
     }
 }

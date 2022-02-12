@@ -35,7 +35,7 @@ public class WordCheck {
         }
         return  inputText;
     }
-    public String replace(String inputText, char old,String immetti){
+    public String replace(String inputText, char old,String replaceString){
         if(inputText==null)return null;
         String add;
         String before;
@@ -46,7 +46,7 @@ public class WordCheck {
             {
                     add = inputText.substring(k);
                     before = inputText.substring(0, k);
-                    inputText = before + immetti + add;
+                    inputText = before + replaceString + add;
                     ++k;
 
             }++k;

@@ -24,6 +24,6 @@ public class HomepageEditControllerInterf2 extends HomepageEditControllerInterf1
     @Override
     @FXML
     protected void takeForm(ActionEvent event){
-        controller.switchToPersonalForm(event);
+        pageSwitch.switchToPersonalForm(event);
     }
 }

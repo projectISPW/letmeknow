@@ -41,10 +41,10 @@ public class FormSectionInterf2 {
                 }
             });
         }
-        by.setText(bean.getData());
+        by.setText(bean.getDate());
     }
     public void setProgress(){
         FormToTakeStatusBean bean= new FormToTakeStatusBean();
-        progressBar.setProgress(bean.getComplete()*0.17);
+        progressBar.setProgress(bean.getValComplete()*0.17);
     }
 }

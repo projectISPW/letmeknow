@@ -1,5 +1,6 @@
 package progettoispw.letmeknow.bean;
 
+import progettoispw.letmeknow.controller.InnerUsers;
 import progettoispw.letmeknow.controller.ResultSearchController;
 
 import java.util.List;
@@ -14,7 +15,6 @@ public class BeanResultSearch {
     public BeanResultSearch(){
         controller=new ResultSearchController();
     }
-
     public String[][] getUsers(){
         int index;
         String [][] arrStr=new String[3][nval];
@@ -28,14 +28,7 @@ public class BeanResultSearch {
         }
         return arrStr;
     }
-
-    public void touched(String user){
-        controller.who(user);
-    }
     public int[] getnval(){
         return controller.nVisit();
-    }
-    public void reset(){
-        controller.reset();
     }
 }

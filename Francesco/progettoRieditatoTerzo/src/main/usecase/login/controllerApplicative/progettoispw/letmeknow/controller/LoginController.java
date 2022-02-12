@@ -1,14 +1,13 @@
 package progettoispw.letmeknow.controller;
 
+import progettoispw.letmeknow.bean.LogBean;
+
 public class LoginController {
     Factory factory;
     public LoginController(){
         factory=new Factory();
     }
-    public boolean getLog(String userid, String password){
-        return factory.tryLog(userid,password);
-    }
-    public String getType(){
-        return factory.getUser().getType();
+    public boolean getLog(LogBean bean){
+        return factory.tryLog(bean.getUserid(),bean.getPassword());
     }
 }

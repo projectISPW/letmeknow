@@ -8,7 +8,7 @@ import javafx.scene.control.Slider;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import progettoispw.letmeknow.bean.FormResultBean;
-import progettoispw.letmeknow.bean.FormSetAnswer;
+import progettoispw.letmeknow.bean.FormToTakeStatusBean;
 
 public class FormSectionInterf2 {
     @FXML
@@ -41,10 +41,10 @@ public class FormSectionInterf2 {
                 }
             });
         }
-        by.setText(bean.getData());
+        by.setText(bean.getDate());
     }
     public void setProgress(){
-        FormSetAnswer bean= new FormSetAnswer();
-        progressBar.setProgress(bean.getComplete()*0.17);
+        FormToTakeStatusBean bean= new FormToTakeStatusBean();
+        progressBar.setProgress(bean.getValComplete()*0.17);
     }
 }

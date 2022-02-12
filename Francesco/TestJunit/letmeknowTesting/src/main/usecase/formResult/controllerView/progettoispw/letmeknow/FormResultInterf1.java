@@ -43,7 +43,7 @@ public class FormResultInterf1 {
     public void initialize(){
         HomepagecontrollerInterf1 homepage=new HomepagecontrollerInterf1();
         controller=new PageMenu();
-        values=bean.exitValStatus();
+        values=bean.getValResponse();
         images= new ImageView[]{ans1,ans2,ans3,ans4,ans5,ans6};
         param=new ImageView[]{empathySlider,humorSlider, optimismSlider};
         int indice=0;
@@ -55,7 +55,7 @@ public class FormResultInterf1 {
         for(ImageView image:param){
             homepage.setSlider(image,values[indice++]);
         }
-        by.setText(bean.getData());
+        by.setText(bean.getDate());
     }
     @FXML
     protected  void goToISC(ActionEvent event){

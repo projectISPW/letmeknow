@@ -1,6 +1,7 @@
 package progettoispw.letmeknow.controller;
 
 
+import progettoispw.letmeknow.bean.StringBean;
 import progettoispw.letmeknow.controller.search.Search;
 import progettoispw.letmeknow.controller.usruser.UsrUser;
 
@@ -49,8 +50,8 @@ public class ResultSearchController {
         }
         return count;
     }
-    public void who(String usr){
-        search.setTouched(usr);
+    public void touched(StringBean bean){
+        search.setTouched(bean.getPass());
     }
     public int[] nVisit(){
         return search.getnVisit();

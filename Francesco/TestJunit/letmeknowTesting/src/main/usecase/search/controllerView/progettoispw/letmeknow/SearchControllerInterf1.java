@@ -4,10 +4,14 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import progettoispw.letmeknow.bean.SearchBean;
+import progettoispw.letmeknow.bean.IntBean;
+import progettoispw.letmeknow.bean.ParamBean;
+import progettoispw.letmeknow.bean.StringBean;
+import progettoispw.letmeknow.controller.SearchController;
 
 public class SearchControllerInterf1 {
-   PageMenu controller= new PageMenu();
+   PageMenu pageSwitch;
+    SearchController controller;
     @FXML
     protected Slider posSL;
     @FXML
@@ -35,6 +39,13 @@ public class SearchControllerInterf1 {
     protected Button   buttonSearch;
     protected Slider [] sl ;
     protected Label[] labels;
+    protected double progress;
+    public SearchControllerInterf1(){
+        progress=0;
+        clicked= new boolean[]{false, false, false, false, false, false, false};
+        pageSwitch=new PageMenu();
+        controller=new SearchController();
+    }
     protected void incremProgress(int index){
         if(!clicked[index]){
             progress=progress+0.17;
@@ -42,11 +53,6 @@ public class SearchControllerInterf1 {
             progressBar.setProgress(progress);
             buttonSearch.setOpacity(progress);
         }
-    }
-    protected double progress;
-    public SearchControllerInterf1(){
-        progress=0;
-        clicked= new boolean[]{false, false, false, false, false, false, false};
     }
     public void initialize(){
         labels= new Label[]{lb1, lb2, lb3,lb4};
@@ -63,16 +69,17 @@ public class SearchControllerInterf1 {
         inputTraits.textProperty().addListener((observableValue, s, t1) ->incremProgress(4));
         inputGoal.textProperty().addListener((observableValue, s, t1) -> incremProgress(5));
     }
-    SearchBean bean= new SearchBean();
     protected void researchByParameter(){
-        Integer [] paramS=new Integer[labels.length-1];
+        IntBean beanAff=new IntBean();
+        ParamBean beanParam=new ParamBean();
+        int [] paramS=new int[labels.length-1];
         for(int i=0;i<4;i++){
                 if (i==3){
                     if (clicked[3]) {
-                        bean.enterAffinity(2-(int)sl[i].getValue());
+                        beanAff.setVal((int)sl[i].getValue());
                     }
                     else{
-                        bean.enterAffinity(0);
+                        beanAff.setVal(0);
                     }
                 }
                 else{
@@ -80,22 +87,31 @@ public class SearchControllerInterf1 {
                     else paramS[i]=0;
                 }
             }
-        bean.enterParamSearch(paramS);
+       beanParam.setParam(paramS);
+       controller.enterParamSearch(beanParam);
+       controller.enterAffinity(beanAff);
     }
     protected void researchByGoal(){
-        if (clicked[5])bean.enterGoalSearch(inputGoal.getText());
-    }
+        if (clicked[5]){
+            StringBean bean=new StringBean();
+            bean.setPass(inputGoal.getText());
+            controller.enterGoal(bean);
+    }}
     protected void researchByDescripription(){
-        if (clicked[4]) bean.enterDescrSearch(inputTraits.getText());
+        if (clicked[4]){
+            StringBean bean=new StringBean();
+            bean.setPass(inputTraits.getText());
+            controller.enterDes(bean);
+        }
     }
     @FXML
     protected  void affinity(ActionEvent event ){
-        bean.toMe();
+        controller.toMe();
         goResult(event);
     }
     @FXML
     public void search(ActionEvent actionEvent) {
-        bean.reset();
+        controller.reset();
         researchByParameter();
         researchByDescripription();
         researchByGoal();
@@ -103,19 +119,19 @@ public class SearchControllerInterf1 {
     }
     @FXML
     protected void goToHome(ActionEvent event) {
-        controller.switchToHome(event);
+        pageSwitch.switchToHome(event);
     }
     @FXML
     protected void goToPersonalForm(ActionEvent event)  {
-        controller.switchToPersonalForm(event);
+        pageSwitch.switchToPersonalForm(event);
     }
     @FXML
     protected void goResult(ActionEvent event) {
-        controller.switchTo("resultSearch/interf1.fxml",event,"your research result");
+        pageSwitch.switchTo("resultSearch/interf1.fxml",event,"your research result");
     }
     @FXML
     protected void goBack()  {
-        controller.backTo();
+        pageSwitch.backTo();
     }
 
 }

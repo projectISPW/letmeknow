@@ -29,7 +29,7 @@
       <PasswordField fx:id="pswd" layoutX="20.0" layoutY="214.0" maxWidth="-Infinity" prefHeight="50.0" prefWidth="182.0" promptText="password" styleClass="textField" />
       <Label fx:id="pswdCheck" layoutX="99.0" layoutY="267.0" opacity="0.0" style="-fx-text-fill: #7836ea;" text="the two password must match each other  " />
       <Text layoutX="30.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signup" text="About your traits:" />
-      <TextField fx:id="description" layoutX="22.0" layoutY="319.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="370.0" promptText="#Lovely#Quite#Hardworking#Ambicius" styleClass="textField" />
+      <TextField fx:id="description" layoutX="22.0" layoutY="319.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="370.0" promptText="#Lovely#Quite#Hardworking#Ambitious" styleClass="textField" />
       <Slider fx:id="sl1" layoutX="199.0" layoutY="427.0" majorTickUnit="1.0" max="5.0" maxWidth="-Infinity" min="1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="14.0" prefWidth="150.0" showTickLabels="true" value="5.0" />
       <Slider fx:id="sl2" layoutX="197.0" layoutY="458.0" majorTickUnit="1.0" max="5.0" maxWidth="-Infinity" min="1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="14.0" prefWidth="150.0" showTickLabels="true" value="5.0" />
       <Text layoutX="56.0" layoutY="427.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: 100;" styleClass="param" text="Emotional:" />
@@ -50,5 +50,6 @@
       <Label fx:id="desCheck" layoutX="123.0" layoutY="361.0" opacity="0.0" style="-fx-text-fill: #7836ea;" text="each trait must begin with #" />
       <Label fx:id="emailCheck" layoutX="62.0" layoutY="165.0" opacity="0.0" style="-fx-text-fill: #7836ea;" text="email must not be already in the sistem and must be valid " />
       <Label fx:id="slCheck" layoutX="217.0" layoutY="385.0" opacity="0.0" style="-fx-text-fill: #7836ea;" text="each value must be entered" />
+      <Label fx:id="goalCheck" layoutX="159.0" layoutY="610.0" opacity="0.0" style="-fx-text-fill: #7836ea;" text="goal could not be null" />
     </children>
 </AnchorPane>

@@ -32,15 +32,7 @@ public class ISCBean {
         }
         return arrStr;
     }
-    public void touched(String user){
-        controller.who(user);
-    }
-    public void search(String find){
-        if(!find.equals("")) {
-            controller.searchMessage(find);
-        }
-    }
-    public void reset(){
-        controller.reset();
+    public ISCController getController(){
+        return controller;
     }
 }

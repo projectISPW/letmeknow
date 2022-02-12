@@ -10,8 +10,7 @@ public class CollectionFormController {
        }
        else ConcreteUsrUser.setResultForm(1);
    }
-    public void  takeForm(){
+   public void  takeForm(){
        ConcreteUsrUser.setResultForm();
     }
-    public String getUserid(){return ConcreteUsrUser.getUsrUser().getUserid();}
 }

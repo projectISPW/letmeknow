@@ -1,39 +1,60 @@
 package progettoispw.letmeknow.controller;
 
+import progettoispw.letmeknow.bean.DateBean;
+import progettoispw.letmeknow.bean.HomepageBean;
+import progettoispw.letmeknow.bean.StringBean;
 import progettoispw.letmeknow.controller.usruser.UsrUser;
 
 public class HomepageEditController {
     UsrUser user;
-    HomepageController compare;
-    public HomepageEditController(){
-        user = ControllerClass.getUserUSR();
-        compare=new HomepageController(false);
+    HomepageBean compare;
+
+    public HomepageEditController() {
+        user = ConcreteUsrUser.getUsrUser();
+        compare = new HomepageBean(false);
     }
-    public String getUserID(){
-        return user.getUserid();
-    }
-    public boolean setDes(String input) {
-        if(!compare.getDescription().equals(input)){
-            return user.setPersonalDes(input);
+    public void setDes(StringBean bean) {
+        String pass = bean.getPass();
+        if (pass != null) {
+            if (!pass.contains("#")) {
+                user.setErrorOccurred(true);
+            } else if (!user.getDescript().equals(pass)) {
+                reset();
+                user.setPersonalDes(pass);
+            }
         }
-        return true;
     }
-    public boolean setGoal(String input){
-        if(!compare.getGoal().equals(input)){
-            return user.setPersonalGoal(input);
-        }
-        return true;
+    public void setGoal(StringBean bean) {
+        String pass = bean.getPass();
+            if (pass!=null &&user.getGoal() == null || !user.getGoal().equals(pass)) {
+                reset();
+                user.setPersonalGoal(pass);
+            }
     }
-    public boolean setDate(String input){
-        return user.setPersonalData(input);
+    public void setDate(DateBean bean) {
+        String pass = bean.getDate();
+        if(pass!=null){
+            reset();
+            user.setPersonalData(pass);
+         }
     }
-    public boolean setTag(String input){
-        if(compare.getTag()==null){
-            return user.setPersonalTag(input);
+    public void setTag(StringBean bean) {
+        String pass = bean.getPass();
+        if (pass != null) {
+            if (!pass.contains("#")) {
+                user.setErrorOccurred(true);
+                return;
+            }
+            if (user.getTag() == null) user.setPersonalTag(pass);
+            else if (!user.getTag().equals(pass)) {
+                user.setErrorOccurred(false);
+                user.setPersonalTag(pass);
+            }
         }
-        if(!compare.getTag().equals(input)){
-            return user.setPersonalTag(input);
-        }
-        return true;
+    }
+    public void reset(){
+        user.setErrorOccurred(false);
     }
 }
+
+

@@ -2,6 +2,7 @@
 
 package progettoispw.letmeknow.bean;
 
+import progettoispw.letmeknow.WordCheck;
 import progettoispw.letmeknow.controller.ConcreteUsrUser;
 import progettoispw.letmeknow.controller.usruser.UsrUser;
 
@@ -26,9 +27,17 @@ public class HomepageBean {
         return user.getDescript();
     }
     public String getTag(){
-        return user.getTag();
+        WordCheck checkStr=new WordCheck(3,20);
+        String tag=user.getTag();
+        tag=checkStr.replace(tag,'#',"\n");
+        tag=checkStr.check(tag);
+        return tag;
     }
-    public String getGoal(){return user.getGoal();}
+    public String getGoal() {
+        WordCheck checkStr = new WordCheck(3, 20);
+        String goal = user.getGoal();
+        return checkStr.check(goal);
+    }
     public int[] getDate(){
         return user.getDate();
    }

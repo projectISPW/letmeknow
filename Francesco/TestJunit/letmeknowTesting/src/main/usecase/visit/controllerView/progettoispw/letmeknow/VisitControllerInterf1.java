@@ -10,7 +10,7 @@ public class VisitControllerInterf1 extends HomepagecontrollerInterf1{
     private AnchorPane currentPage;
     public VisitControllerInterf1() {
         bean=new HomepageBean(true);
-        userid=bean.getUserId();
+        userid=bean.getUserID();
     }
     public void initialize(){
         super.initialize();
@@ -18,12 +18,11 @@ public class VisitControllerInterf1 extends HomepagecontrollerInterf1{
     }
     @FXML
     protected void goToSearch(ActionEvent event){
-        controller.switchToSearch(event);
+        pageSwitch.switchToSearch(event);
     }
     @FXML
     protected void touchChat(ActionEvent event){
-        ISCBean chatBean=new ISCBean();
-        chatBean.touched(userid);
-        controller.switchTo("chat/interf1.fxml",event,"Chat");
+      InitialSearchAndChatControllerInterf1 interfISC=new InitialSearchAndChatControllerInterf1();
+      interfISC.touchChat(bean.getUserID(),event);
     }
 }

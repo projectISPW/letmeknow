@@ -39,12 +39,8 @@ msrc/main/usecase/formResult/controllerApplicative/progettoispw/letmeknow/contro
 Qsrc/main/usecase/java/controllerView/progettoispw/letmeknow/ButtonBarInterf2.java,d\5\d5ef137f1860d962bcbb997a837df96328416578
 z
 Jsrc/main/usecase/java/controllerView/progettoispw/letmeknow/WordCheck.java,7\a\7a59cf650660cd78a1e850911af42208283cc887
-]
--src/main/java/progettoispw/letmeknow/Log.java,d\0\d0b86a1c46f344352c76807cb738fa9cabd231f1
 z
 Jsrc/main/database/progettoispw/letmeknow/controller/user/JavaMailUtil.java,7\7\7759637b062282d45b7f94296232b17c56e18cf5
-i
-9src/main/java/progettoispw/letmeknow/controller/Form.java,7\4\74d4fd7da065df6914df0d67fb750c2cfd3b85d0
 a
 1src/test/java/progettoispw/letmeknow/TestLog.java,6\1\6128a5aac9af0b921a3c1678490d113119d1d771
 u
@@ -57,8 +53,6 @@ b
 2src/test/java/progettoispw/letmeknow/TestForm.java,2\2\2259c882163df2de4cb9b2a92f26c582559e0016
 €
 Psrc/main/patterns/Factory/progettoispw/letmeknow/controller/ControllerClass.java,5\d\5d4095505ed3d7af9370223a3b588b718ac4887f
-l
-<src/main/java/progettoispw/letmeknow/controller/Message.java,d\3\d3a26ff395187f7e5d7df9291203ec8e7159b0f0
 †
 Vsrc/main/usecase/chat/controllerView/progettoispw/letmeknow/ChatControllerInterf1.java,3\e\3e92f7ccbc28b568dc2e1c15beafdc692f49d4ac
 …
@@ -69,3 +63,13 @@ asrc/main/usecase/chat/controllerApplicative/progettoispw/letmeknow/controller/C
 psrc/main/usecase/initialSearchAndChat/controllerApplicative/progettoispw/letmeknow/controller/ISCController.java,9\e\9e44ea8d1ef7471755a6946d9ba84e5d459103d3
 e
 5src/test/java/progettoispw/letmeknow/TestMessage.java,3\2\32dfec044c79653b1a0c4db9ed3e98d793cb7cf4
+i
+9src/main/model/progettoispw/letmeknow/controller/Dao.java,7\7\77dbd818ef51ef11710e7c2b4cec95f0665a1da0
+l
+<src/main/java/progettoispw/letmeknow/controller/Message.java,d\3\d3a26ff395187f7e5d7df9291203ec8e7159b0f0
+h
+8src/main/java/progettoispw/letmeknow/controller/Log.java,6\5\65bf932f685a7f3c7aa8ad44f738504c7ed11e5b
+…
+Usrc/main/usecase/login/controllerApplicative/progettoispw/letmeknow/bean/LogBean.java,b\a\bafa453319031053bf574f1050ae71f49ec7856a
+‰
+Ysrc/main/usecase/login/controllerApplicative/progettoispw/letmeknow/bean/FactoryBean.java,f\f\ffc626a0dcfa2ad4a3d29a86fd9d10f2760a720d

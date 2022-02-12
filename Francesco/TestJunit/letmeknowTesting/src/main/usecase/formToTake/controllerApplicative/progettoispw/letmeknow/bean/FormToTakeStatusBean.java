@@ -1,29 +1,26 @@
 package progettoispw.letmeknow.bean;
 
-import progettoispw.letmeknow.controller.FormToTakeStatusController;
+import progettoispw.letmeknow.controller.ConcreteUsrUser;
+import progettoispw.letmeknow.controller.form.ResultForm;
 
 public class FormToTakeStatusBean {
-    FormToTakeStatusController controller;
+    ResultForm form;
     public FormToTakeStatusBean(){
-        controller=new FormToTakeStatusController();
-    }
-    public int[] exitValStatus(){
-        return controller.getValResponse();
-    }
-    public void inputValStatus(int [] inputint){
-        controller.setValResponse(inputint);
-    }
-    public int getComplete(){
-        return controller.getValComplete();
-    }
-    public boolean[] exitStatus() {
-        return controller.getStatus();
+        form= ConcreteUsrUser.getResultForm();
     }
     public int getFormId(){
-        int val=controller.getFormId();
-        if(val>=1 && val <=3){
-            return val;
-        }
-        return 1;
+        return form.getFormid();
+    }
+    public int[] getValResponse(){
+        return form.getAnswers();
+    }
+    public String getUserid(){
+        return form.getUserid();
+    }
+    public int getValComplete() {
+        return form.getComplete();
+    }
+    public boolean[] getStatus() {
+        return form.getStatus();
     }
 }

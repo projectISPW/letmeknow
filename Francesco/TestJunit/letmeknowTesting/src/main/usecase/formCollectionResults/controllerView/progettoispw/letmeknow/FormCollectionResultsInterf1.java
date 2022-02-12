@@ -5,38 +5,42 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
-import progettoispw.letmeknow.bean.CollectionFormBean;
 import progettoispw.letmeknow.bean.FormToTakeStatusBean;
+import progettoispw.letmeknow.bean.FormTouchedBean;
+import progettoispw.letmeknow.bean.HomepageBean;
+import progettoispw.letmeknow.controller.CollectionFormController;
 
 public class FormCollectionResultsInterf1 {
-    PageMenu controller;
-    CollectionFormBean bean;
+    PageMenu pageSwitch;
     public static final String INTERF="interf1.fxml";
     @FXML
     protected Text idUser;
     public FormCollectionResultsInterf1(){
-        bean=new CollectionFormBean();
-        controller=new PageMenu();
+        pageSwitch =new PageMenu();
     }
     public void initialize(){
-        idUser.setText("User"+ bean.getUid());
+        HomepageBean bean=new HomepageBean(false);
+        idUser.setText("User"+ bean.getUserID());
     }
     @FXML
     protected void goToSettings(ActionEvent event) {
-        controller.switchToSettings(event);
+        pageSwitch.switchToSettings(event);
     }
     protected  void which(int i,ActionEvent event){
-        bean.setTouched(i);
+        FormTouchedBean bean=new FormTouchedBean();
+        bean.setFormTouched(i);
+        CollectionFormController controller=new CollectionFormController();
+        controller.setTouched(bean);
         String name;
         String title;
         FormToTakeStatusBean formBean=new FormToTakeStatusBean();
-        if(formBean.getComplete()==6){
+        if(formBean.getValComplete()==6){
             name="formResult/form"+i+INTERF;
         }
         else{
             name="formToTake/form"+i+INTERF;
         } title="form"+i;
-        controller.switchTo(name,event,title);
+        pageSwitch.switchTo(name,event,title);
     }
     @FXML
     protected void urResult(ActionEvent event) {
@@ -62,24 +66,26 @@ public class FormCollectionResultsInterf1 {
     }
     @FXML
     public void takeForm(ActionEvent event){
-        bean.takeForm();
+        CollectionFormController controller=new CollectionFormController();
+        controller.takeForm();
         FormToTakeStatusBean innerBean=new FormToTakeStatusBean();
         int val = innerBean.getFormId();
-        if(innerBean.getComplete()<=6){
-            controller.switchTo("formToTake/form"+val+INTERF,event,"form"+val);
+        if(innerBean.getValComplete()<=6){
+            pageSwitch.switchTo("formToTake/form"+val+INTERF,event,"form"+val);
         }
         else{
-            controller.switchTo("formResult/form"+val+INTERF,event,"form"+val);
+            pageSwitch.switchTo("formResult/form"+val+INTERF,event,"form"+val);
         }
     }
     @FXML
     protected  void goToISC(ActionEvent event){
-        controller.switchToISC(event);
+        pageSwitch.switchToISC(event);
     }
     @FXML
     protected  void goToPersonalForm(ActionEvent event){
-        controller.switchToHome(event);
+        pageSwitch.switchToHome(event);
     }
     @FXML
-    protected  void goToHome(ActionEvent event){controller.switchToHome(event);}
+    protected  void goToHome(ActionEvent event){
+        pageSwitch.switchToHome(event);}
 }

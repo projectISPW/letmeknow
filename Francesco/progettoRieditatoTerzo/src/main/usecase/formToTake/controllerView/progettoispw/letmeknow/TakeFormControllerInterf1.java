@@ -10,8 +10,8 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.control.Slider;
 import javafx.scene.text.Text;
 
-import progettoispw.letmeknow.bean.FormSetAnswer;
 import progettoispw.letmeknow.bean.FormToTakeStatusBean;
+import progettoispw.letmeknow.bean.ParamBean;
 import progettoispw.letmeknow.controller.FormToTakeStatusController;
 
 public class TakeFormControllerInterf1 {
@@ -77,6 +77,7 @@ public class TakeFormControllerInterf1 {
     public void setValues(){
         FormToTakeStatusBean bean=new FormToTakeStatusBean();
         locked=bean.getStatus();
+        response= bean.getValResponse();
         sl=new Slider[] {sl1,sl2,sl3,sl4,sl5,sl6};
         labels= new Label[]{lb1, lb2, lb3, lb4, lb5, lb6};
         values=not(locked);
@@ -107,8 +108,8 @@ public class TakeFormControllerInterf1 {
                 response[i]=(int)sl[i].getValue();
             }
         }
-        FormSetAnswer bean=new FormSetAnswer();
-        bean.setAnswers(response);
+        ParamBean bean=new ParamBean();
+        bean.setParam(response);
         FormToTakeStatusController controller=new FormToTakeStatusController();
         controller.setValResponse(bean);
         initialize();

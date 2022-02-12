@@ -8,15 +8,20 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import progettoispw.letmeknow.bean.EmailCheck;
 import progettoispw.letmeknow.bean.SettingsBean;
+import progettoispw.letmeknow.bean.StringBean;
+import progettoispw.letmeknow.bean.TwoStringsBean;
+import progettoispw.letmeknow.controller.SettingsController;
 
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class SettingsControllerInterf1 implements Initializable {
-    private PageMenu controller;
+    private PageMenu pageSwitch;
     private SettingsBean bean;
+    private SettingsController controller;
     private static final String DEFAULTBORDER="-fx-border-color: rgba(55, 125, 255,0.7)";
     private static final String REDBORDER="-fx-border-color:red";
     @FXML
@@ -32,7 +37,8 @@ public class SettingsControllerInterf1 implements Initializable {
     private boolean bool;
     public SettingsControllerInterf1(){
         bean=new SettingsBean();
-        controller=new PageMenu();
+        controller=new SettingsController();
+        pageSwitch =new PageMenu();
         bool=false;
     }
     @Override
@@ -41,25 +47,30 @@ public class SettingsControllerInterf1 implements Initializable {
     }
     @FXML
     protected void goBack() {
-        controller.backTo();
+        pageSwitch.backTo();
     }
     @FXML
     protected void goEditProf(ActionEvent event){
-        controller.switchTo("homepageEdit/interf1.fxml", event,"Edit");
+        pageSwitch.switchTo("homepageEdit/interf1.fxml", event,"Edit");
     }
     @FXML
     protected void goToHome(ActionEvent event)  {
-        controller.switchToHome(event);
+        pageSwitch.switchToHome(event);
     }
     @FXML
     protected void goToChat(ActionEvent event) {
-        controller.switchToISC(event);
+        pageSwitch.switchToISC(event);
     }
     @FXML
     protected void setPswd()  {
         pswd.setStyle(DEFAULTBORDER);
         confirmpswd.setStyle(DEFAULTBORDER);
-        bool=bean.setPassword(pswd.getText(),pswd.getText());
+        TwoStringsBean stringBean=new TwoStringsBean();
+        bool=stringBean.setStrings(pswd.getText(),confirmpswd.getText());
+        if(bool){
+            controller.setPassword(stringBean);
+            bool= !bean.getInfo();
+        }
         if(!bool){
             pswd.setStyle(REDBORDER);
             confirmpswd.setStyle(REDBORDER);
@@ -70,14 +81,19 @@ public class SettingsControllerInterf1 implements Initializable {
     }
     @FXML
     protected void signOut(ActionEvent event){
-        bean.closeConnection();
-        controller.switchTo("login/interf1.fxml",event,"login");
+        controller.closeConnection();
+        pageSwitch.switchTo("login/interf1.fxml",event,"login");
     }
     @FXML
     protected void setMail (){
         email.setStyle(DEFAULTBORDER);
-        bool=bean.setEmail(email.getText());
-        if(!bool){
+        EmailCheck emailBean=new EmailCheck();
+        bool=emailBean.setEmail(email.getText());
+        if(bool){
+            controller.setEmail(emailBean);
+            bool=bean.getInfo();
+        }
+        if(bool){
             email.setStyle(REDBORDER);
         }else{
             email.setText("");
@@ -86,8 +102,11 @@ public class SettingsControllerInterf1 implements Initializable {
     @FXML
     protected void setFeed(){
         feedback.setStyle("-fx-border-color: white");
-        bool=bean.setFeed(feedback.getText());
-        if(!bool){
+        StringBean stringBean=new StringBean();
+        stringBean.setPass(feedback.getText());
+        controller.feed(stringBean);
+        bool= bean.getInfo();
+        if(bool){
             feedback.setStyle(REDBORDER);
         }else{
             feedback.setText("");
@@ -95,12 +114,7 @@ public class SettingsControllerInterf1 implements Initializable {
     }
     @FXML
     protected void goToPersonalForm(ActionEvent event) {
-        controller.switchToPersonalForm(event);
+        pageSwitch.switchToPersonalForm(event);
     }
-    @FXML
-    protected void setSize(ActionEvent event ){
-        controller.setSize("settings/interf1.fxml",event);
-    }
-
 }
 

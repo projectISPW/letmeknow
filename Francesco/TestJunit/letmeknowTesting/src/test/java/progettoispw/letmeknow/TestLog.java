@@ -1,6 +1,7 @@
 package progettoispw.letmeknow;
 
 import org.junit.Test;
+import progettoispw.letmeknow.controller.Log;
 
 import java.util.ArrayList;
 import java.util.List;

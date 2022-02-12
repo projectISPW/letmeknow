@@ -5,7 +5,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
-import progettoispw.letmeknow.bean.FormSetAnswer;
+import progettoispw.letmeknow.bean.FormToTakeStatusBean;
+import progettoispw.letmeknow.bean.FormTouchedBean;
+import progettoispw.letmeknow.controller.CollectionFormController;
 
 import java.io.IOException;
 
@@ -31,7 +33,10 @@ public class FormCollectionResultsInterf2 extends FormCollectionResultsInterf1 {
     @Override
     protected  void which(int i,ActionEvent event){
         try {
-            bean.setTouched(i);
+            FormTouchedBean bean=new FormTouchedBean();
+            bean.setFormTouched(i);
+            CollectionFormController controller=new CollectionFormController();
+            controller.setTouched(bean);
             anchorSelected.getChildren().removeAll(anchorSelected.getChildren());
             anchorSelected.getChildren().add((Node) FXMLLoader.load(getClass().getResource("formCollectionResults/formSelected"+i+".fxml")));
         } catch (IOException e) {
@@ -40,8 +45,9 @@ public class FormCollectionResultsInterf2 extends FormCollectionResultsInterf1 {
     }
     public void takeForm(){
         try {
-            bean.takeForm();
-            FormSetAnswer innerBean=new FormSetAnswer();
+            CollectionFormController controller=new CollectionFormController();
+            controller.takeForm();
+            FormToTakeStatusBean innerBean=new FormToTakeStatusBean();
             int val= innerBean.getFormId();
             anchorSelected.getChildren().removeAll(anchorSelected.getChildren());
             anchorSelected.getChildren().add((Node) FXMLLoader.load(getClass().getResource("formCollectionResults/formSelected"+val+".fxml")));

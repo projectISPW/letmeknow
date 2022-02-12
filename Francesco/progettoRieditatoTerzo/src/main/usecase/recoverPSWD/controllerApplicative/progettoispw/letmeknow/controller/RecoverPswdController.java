@@ -1,13 +1,16 @@
 package progettoispw.letmeknow.controller;
 
+import progettoispw.letmeknow.bean.EmailCheck;
 import progettoispw.letmeknow.controller.user.InitialUser;
 
 public class RecoverPswdController {
         InitialUser user;
         public RecoverPswdController(){
-            user=new InitialUser();
+            Factory factory=new Factory();
+            user=factory.getInitialUser();
         }
-        public boolean sendMail(String input){
-            return user.composeMail(input);
+        public void sendMail(EmailCheck bean){
+            user.setErrorOccurred(false);
+            user.composeMail(bean.getEmail());
         }
 }

@@ -1,55 +1,23 @@
 package progettoispw.letmeknow.bean;
-
-import progettoispw.letmeknow.controller.HomepagePsychologistController;
-
-
-import java.time.LocalDate;
+import progettoispw.letmeknow.controller.ConcretePsyUser;
+import progettoispw.letmeknow.controller.psyuser.PsyUser;
 
 public class HomepagePsychologistBean {
-    HomepagePsychologistController controller;
-    int month;
-    int year;
-    String [] monthNames;
+    PsyUser user;
     public HomepagePsychologistBean(){
-        LocalDate currentdate = LocalDate.now();
-        month=currentdate.getMonthValue();
-        year=currentdate.getYear();
-        monthNames = new String[]{"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
-        controller=new HomepagePsychologistController();
-        controller.getLists(month,year);
+        user=ConcretePsyUser.getPsyUser();
+        user.getLists();
     }
     public String getMonth(){
-        return monthNames[month-1];
+        return user.getMonthName();
     }
-    public void decremMonth(){
-        if(month==1){
-            month=12;
-            year--;
+    public int[] getForms(){
+        int[] ret=new int[3];
+        float[] current;
+        for(int i=0;i<3;i++){
+            current=user.getList();
+            if(current.length!=0)ret[i]=(int)current[0];
         }
-        else{
-            month-=1;
-        }
-        controller.getLists(month,year);
-    }
-    public void incremMonth(){
-        if(month==12){
-            month=1;
-            year++;
-        }else{
-            month+=1;
-        }
-        controller.getLists(month,year);
-    }
-    public float  getForms(){
-        float[] ret=controller.getList();
-        if(ret.length==0)return 0;
-        return ret[0];
-    }
-    public void setSelected(int selected) {
-        controller.setSelected(selected);
-    }
-    public boolean suggestForm(String input){
-        if(!input.equals(""))return controller.setFeed(input);
-        return false;
+        return ret;
     }
 }

@@ -11,11 +11,14 @@ import javafx.scene.layout.AnchorPane;
 
 import javafx.scene.text.Text;
 import javafx.util.Duration;
-import progettoispw.letmeknow.bean.ChatBean;
 import progettoispw.letmeknow.bean.BeanResultSearch;
 
 
 import javafx.animation.Timeline;
+import progettoispw.letmeknow.bean.ChatBean;
+import progettoispw.letmeknow.bean.MessageBean;
+import progettoispw.letmeknow.bean.MessageTextModel;
+import progettoispw.letmeknow.controller.ChatController;
 
 
 public class ChatControllerInterf1 {
@@ -28,22 +31,28 @@ public class ChatControllerInterf1 {
     @FXML
     protected Text withName;
     protected  boolean initializated;
-    protected  PageMenu controller;
+    protected  PageMenu pageSwitch;
     protected ChatBean bean;
     protected  String [] message;
-    protected  CSS graphic;
+    protected Decorator graphic;
     protected Timeline timeline;
     public ChatControllerInterf1() {
         bean=new ChatBean();
-        graphic=new CSS(true);
+        graphic=new Decorator(true);
         initializated=false;
-        controller=new PageMenu();
+        pageSwitch =new PageMenu();
         timeline=new Timeline(new KeyFrame(Duration.millis(5000),this::action));
         timeline.setCycleCount(Animation.INDEFINITE);//never stop
     }
     @FXML
     protected void sendMsg() {
-        inputmsg.setText(bean.newMsg(inputmsg.getText()));
+        MessageTextModel beanMsg=new MessageTextModel();
+        MessageBean messageBean=new MessageBean();
+        messageBean.setText(inputmsg.getText());
+        messageBean.setReciver(bean.getWith());
+        ChatController controller=new ChatController();
+        controller.newMSG(messageBean);
+        inputmsg.setText(beanMsg.getTextMsg());
         recivemsgArr();
     }
     private  void action(ActionEvent event ){
@@ -75,23 +84,23 @@ public class ChatControllerInterf1 {
     @FXML
     protected void goToHome(ActionEvent event){
         timeline.stop();
-        controller.switchToHome(event);
+        pageSwitch.switchToHome(event);
     }
     @FXML
     protected void goBack(ActionEvent event) {
         timeline.stop();
-        controller.switchToISC(event);
+        pageSwitch.switchToISC(event);
     }
     @FXML
     protected void goToPersonalForm(ActionEvent event)  {
         timeline.stop();
-        controller.switchToPersonalForm(event);
+        pageSwitch.switchToPersonalForm(event);
     }
     @FXML
     protected void touchedHome(ActionEvent event){
-        BeanResultSearch visitBean=new BeanResultSearch();
-        visitBean.touched(bean.getWith());
+        ResultSearchControllerInterf1 rscView=new ResultSearchControllerInterf1();
+        rscView.setTouchedHome(bean.getWith());
         timeline.stop();
-        controller.switchTo("homepageOthers/interf1.fxml",event,"Visit");
+        pageSwitch.switchTo("homepageOthers/interf1.fxml",event,"Visit");
     }
 }

@@ -4,11 +4,13 @@ package progettoispw.letmeknow;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import progettoispw.letmeknow.bean.LoginBean;
+import progettoispw.letmeknow.bean.FactoryBean;
+import progettoispw.letmeknow.bean.LogBean;
+import progettoispw.letmeknow.controller.LoginController;
 
 
 public class LoginControllerInterf1 {
-    private Page controller= new Page();
+    private Page pageSwitch;
     @FXML
     private PasswordField labPassword;
     @FXML
@@ -19,18 +21,22 @@ public class LoginControllerInterf1 {
     private ScrollPane scroll;
     private boolean clicked;
     public LoginControllerInterf1(){
+        pageSwitch =new Page();
         clicked=false;
     }
     @FXML
     protected void switchToSignup(ActionEvent event) {
-        controller.switchTo("signup/interf1.fxml",event,"Signup");
+        pageSwitch.switchTo("signup/interf1.fxml",event,"Signup");
     }
     @FXML
-    protected void switchToSignUpPsych(ActionEvent event) {controller.switchTo("signupPsychologist/interf1.fxml",event,"Signup");}
+    protected void switchToSignUpPsych(ActionEvent event) {
+        pageSwitch.switchTo("signupPsychologist/interf1.fxml",event,"Signup");}
     @FXML
-    protected void switchToRecoverPswd(ActionEvent event) {controller.switchTo("recoverpassword/interf1.fxml",event,"Recover password");}
+    protected void switchToRecoverPswd(ActionEvent event) {
+        pageSwitch.switchTo("recoverpassword/interf1.fxml",event,"Recover password");}
     @FXML
-    protected void setSize(ActionEvent event ){controller.setSize("login/interf1.fxml",event);}
+    protected void setSize(ActionEvent event ){
+        pageSwitch.setSize("login/interf1.fxml",event);}
     public void initialize(){
         labUser.textProperty().addListener((observableValue, s, t1) -> {
             if(labUser.getText().equals("")){
@@ -74,25 +80,29 @@ public class LoginControllerInterf1 {
         {
             color(false);
         }else {
-            LoginBean bean=new LoginBean(labUser.getText());
-            String log = bean.getLog(labPassword.getText());
-            if(log==null){
-                color(false);
-                return ;
-            }
-            switch(log){
-                case "usr":{
-                    controller.switchTo("homepage/interf1.fxml",event,"Home");
-                    break;
+            LogBean bean=new LogBean();
+            bean.setUserid(labUser.getText());
+            bean.setPassword(labPassword.getText());
+            LoginController controller=new LoginController();
+            controller.getLog(bean);
+            FactoryBean factoryBean=new FactoryBean();
+            switch(factoryBean.getType()){
+                    case null:{
+                        color(false);
+                        break;
+                    }
+                    case "usr":{
+                        pageSwitch.switchTo("homepage/interf1.fxml",event,"Home");
+                        break;
+                    }
+                    case "psy":{
+                        pageSwitch.switchTo("homepagePsychologist/interf1.fxml",event,"Home");
+                        break;
+                    }
+                    default:{
+                        color(false);
+                    }
                 }
-                case "psy":{
-                    controller.switchTo("homepagePsychologist/interf1.fxml",event,"Home");
-                    break;
-                }
-                default:{
-                    color(false);
-                }
-
             }
         }
-    }}
+    }

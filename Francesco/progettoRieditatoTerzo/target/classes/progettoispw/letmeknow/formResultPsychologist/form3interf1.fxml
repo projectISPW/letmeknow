@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.Slider?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="736.0" prefWidth="414.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="progettoispw.letmeknow.FormPsychologistResultInterf1">
+<AnchorPane prefHeight="736.0" prefWidth="414.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="progettoispw.letmeknow.FormPsychologistResultInterf1">
    <children>
       <Text fx:id="idForm" layoutX="143.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" styleClass="textContent_signup" text="Form 3 " wrappingWidth="140.99024963378906" />
       <Button layoutX="41.0" layoutY="58.0" mnemonicParsing="false" onAction="#goBack" prefHeight="30.0" prefWidth="35.0" styleClass="Back_Row">
@@ -52,9 +47,9 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Text>
-                  <Slider fx:id="sl3" blockIncrement="1.0" layoutX="119.0" layoutY="463.0" majorTickUnit="1.0" max="5.0" maxWidth="-Infinity" min="1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="23.0" prefWidth="139.0" showTickLabels="true" value="5.0" />
-                  <Text fill="#030303" layoutX="36.0" layoutY="458.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 14;" styleClass="param" text="Strongly &#10;Disagree" wrappingWidth="67.23201751708984" />
-                  <Text fill="#030303" layoutX="275.0" layoutY="465.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 14;" styleClass="param" text="Strongly &#10;Agree" textAlignment="RIGHT" wrappingWidth="67.23201751708984" />
+                  <Slider fx:id="sl3" blockIncrement="1.0" layoutX="118.0" layoutY="479.0" majorTickUnit="1.0" max="5.0" maxWidth="-Infinity" min="1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="23.0" prefWidth="139.0" showTickLabels="true" value="5.0" />
+                  <Text fill="#030303" layoutX="36.0" layoutY="475.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 14;" styleClass="param" text="Strongly &#10;Disagree" wrappingWidth="67.23201751708984" />
+                  <Text fill="#030303" layoutX="275.0" layoutY="477.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 14;" styleClass="param" text="Strongly &#10;Agree" textAlignment="RIGHT" wrappingWidth="67.23201751708984" />
                   <Text fill="#387eff" layoutX="30.0" layoutY="579.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textSubFormTitle" text="If something can go wrong for me, it will." textAlignment="CENTER" wrappingWidth="329.6320343017578">
                      <font>
                         <Font name="System Bold" size="12.0" />
@@ -79,13 +74,13 @@
                   <Slider fx:id="sl6" blockIncrement="1.0" layoutX="119.0" layoutY="1031.0" majorTickUnit="1.0" max="5.0" maxWidth="-Infinity" min="1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="23.0" prefWidth="139.0" showTickLabels="true" value="5.0" />
                   <Text fill="#030303" layoutX="36.0" layoutY="1040.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 14;" styleClass="param" text="Not at All" wrappingWidth="67.23201751708984" />
                   <Text fill="#030303" layoutX="275.0" layoutY="1038.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 14;" styleClass="param" text="Very Often" textAlignment="RIGHT" wrappingWidth="67.23201751708984" />
-                  <Label fx:id="lb1" layoutX="180.0" layoutY="92.0" prefHeight="26.0" prefWidth="16.0" styleClass="textLab" textFill="#b108d4">
+                  <Label fx:id="lb1" layoutX="180.0" layoutY="92.0" prefHeight="26.0" prefWidth="35.0" styleClass="textLab" text="2" textFill="#b108d4">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
                   <Label fx:id="lb2" layoutX="177.0" layoutY="257.0" styleClass="textLab" textFill="#aa38e8" />
-                  <Label fx:id="lb3" layoutX="176.0" layoutY="442.0" styleClass="textLab" />
+                  <Label fx:id="lb3" layoutX="175.0" layoutY="458.0" styleClass="textLab" />
                   <Label fx:id="lb4" layoutX="176.0" layoutY="621.0" styleClass="textLab" />
                   <Label fx:id="lb5" layoutX="176.0" layoutY="802.0" styleClass="textLab" />
                   <Label fx:id="lb6" layoutX="175.0" layoutY="1010.0" styleClass="textLab" />

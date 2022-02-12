@@ -34,12 +34,10 @@ public class FormSectionInterf2 {
         for(int i=0;i<3;i++){
             int finalI = i;
             sliders[i].setValue(val[i]);
-            sliders[i].valueProperty().addListener(new ChangeListener<Number>() {
-                @Override
-                public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+            sliders[i].valueProperty().addListener(
+                    (ObservableValue<? extends Number> observableValue, Number number, Number t1) ->{
                    sliders[finalI].setValue(val[finalI]);
-                }
-            });
+                });
         }
         by.setText(bean.getData());
     }

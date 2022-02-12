@@ -1,6 +1,6 @@
 package progettoispw.letmeknow.controller;
 
-import progettoispw.letmeknow.bean.LastMessage;
+import progettoispw.letmeknow.bean.StringBean;
 import progettoispw.letmeknow.controller.chat.Message;
 import progettoispw.letmeknow.controller.chat.Messages;
 
@@ -12,20 +12,17 @@ public class ISCController {
     private Messages chat;
     private String find;
     public ISCController(Integer n){
-        ControllerClass.setChat();
-        ControllerClass.setSearch();
-        chat= ControllerClass.getChat();
+        chat= ConcreteUsrUser.getChat();
         nVal=n;
         count=0;
         find=null;
     }
     public ISCController(){
-        ControllerClass.setChat();
-        if(ControllerClass.getSearch()==null)ControllerClass.setSearch();
-        chat= ControllerClass.getChat();
+        ConcreteUsrUser.getChat();
         nVal=0;
         count=0;
         find=null;
+        chat= ConcreteUsrUser.getChat();
     }
     public String getUid(){
         return chat.getUserid();
@@ -65,7 +62,6 @@ public class ISCController {
         LastMessage actual;
         Message msg;
         ArrayList<Message>inner=new ArrayList<>();
-
         int index=0;
         ArrayList <LastMessage> formatted  = new ArrayList<>();
         while(index<nVal){
@@ -99,7 +95,6 @@ public class ISCController {
         return formatted;
     }
     public List<LastMessage> queryUsers(){
-
         if(find==null){
             if(nVal==0){
                 return getListV1();
@@ -114,7 +109,7 @@ public class ISCController {
         if(nVal==0){
             return getListV2(find);
         }
-        else {//search activated in list users iterf1
+        else {//searchMessage activated in list users iterf1
             return getListV4(find);
         }
     }
@@ -124,15 +119,16 @@ public class ISCController {
         }
         return count;
     }
-    public void who(String usr){
-        chat.setTouched(usr);
+    public void setTouched(StringBean bean){
+        chat.setTouched(bean.getPass());
     }
-    public void search(String input){
+    public void searchMessage(StringBean bean){
         count=0;
-        find=input;
+        find=bean.getPass();
     }
     public void reset(){
         count=0;
         find=null;
     }
+
 }

@@ -1,14 +1,16 @@
-//took out unused libraries
-
 package progettoispw.letmeknow.bean;
 
 import progettoispw.letmeknow.controller.ChatController;
+import progettoispw.letmeknow.controller.Factory;
 import progettoispw.letmeknow.controller.chat.Message;
+import progettoispw.letmeknow.controller.chat.Messages;
+import progettoispw.letmeknow.controller.search.Search;
+import progettoispw.letmeknow.controller.usruser.UsrUser;
+
 import java.util.ArrayList;
 
 public class ChatBean{
     private ChatController controller;
-    private ArrayList<Message> chat;
     private String with;
     public ChatBean() {
         controller=new ChatController();
@@ -18,7 +20,7 @@ public class ChatBean{
         return with;
     }
     public String[]getMSG(){
-        chat= (ArrayList<Message>) controller.getChat();
+        ArrayList<Message> chat= (ArrayList<Message>) controller.getChat();
         String [] returnStr =new String[chat.size()*2];
         int index=0;
         for(Message msg:chat){
@@ -31,7 +33,5 @@ public class ChatBean{
     public String getUid(){
         return controller.getUID();
     }
-    public String newMsg(String input){
-        return controller.newMSG(input);
-    }
+
 }

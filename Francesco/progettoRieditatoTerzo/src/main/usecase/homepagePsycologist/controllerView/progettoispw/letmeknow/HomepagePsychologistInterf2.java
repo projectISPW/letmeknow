@@ -15,6 +15,7 @@ import java.io.IOException;
 public class HomepagePsychologistInterf2 extends HomepagePsychologistInterf1{
     @FXML
     AnchorPane anchorSelected;
+
     @Override
     @FXML
     public void select(ActionEvent event){
@@ -40,14 +41,14 @@ public class HomepagePsychologistInterf2 extends HomepagePsychologistInterf1{
     @FXML
     public void increm() {
         anchorSelected.getChildren().removeAll(anchorSelected.getChildren());
-        bean.incremMonth();
+        controller.increm();
         initialize();
     }
     @Override
     @FXML
     public void decrem() {
         anchorSelected.getChildren().removeAll(anchorSelected.getChildren());
-        bean.decremMonth();
+        controller.decrem();
         initialize();
     }
 }

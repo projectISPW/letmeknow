@@ -1,14 +1,14 @@
 package progettoispw.letmeknow.bean;
 
-import progettoispw.letmeknow.controller.FormPsychologistResultController;
-
+import progettoispw.letmeknow.controller.ConcretePsyUser;
+import progettoispw.letmeknow.controller.psyuser.PsyUser;
 
 public class FormPsychologistResultBean {
-    FormPsychologistResultController controller;
+    PsyUser user;
     public FormPsychologistResultBean(){
-        controller=new FormPsychologistResultController();
+        user= ConcretePsyUser.getPsyUser();
     }
     public float [] getSelected(){
-        return controller.getSelected();
+        return user.getSelected();
     }
 }

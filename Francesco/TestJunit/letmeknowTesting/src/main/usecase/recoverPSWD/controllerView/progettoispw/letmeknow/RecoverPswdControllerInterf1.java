@@ -3,36 +3,45 @@ package progettoispw.letmeknow;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import progettoispw.letmeknow.bean.RecoverPswdBean;
+import progettoispw.letmeknow.bean.EmailCheck;
+import progettoispw.letmeknow.bean.InitialUserBean;
+import progettoispw.letmeknow.controller.RecoverPswdController;
 
 
 public class RecoverPswdControllerInterf1
 {
-    private Page controller;
     @FXML
     TextField email;
     @FXML
     Label show;
-    private  RecoverPswdBean bean;
     public void initialize(){
-        controller= new PageMenu();
-        bean=new RecoverPswdBean();
         show.setOpacity(0);
     }
     @FXML
     public void sendMail( ){
+        InitialUserBean initialUserBean=new InitialUserBean();
         show.setOpacity(0);
         String address=email.getText();
-        boolean bool=bean.sendMail(address);
-        if(!bool){
+        RecoverPswdController controller=new RecoverPswdController();
+        EmailCheck bean=new EmailCheck();
+        boolean bool= bean.setEmail(address);
+        if(bool)controller.sendMail(bean);
+        else {
+            show.setOpacity(1);
+            return ;
+        }
+        bool=initialUserBean.getInfo();
+        if(bool){
             show.setOpacity(1);
         }
-        else controller.backTo();
+        else {
+           backToLogin();
+        }
     }
     @FXML
     protected void backToLogin()  {
-
-        controller.backTo();
+        Page pageSwitch=new Page();
+        pageSwitch.backTo();
     }
 
 }

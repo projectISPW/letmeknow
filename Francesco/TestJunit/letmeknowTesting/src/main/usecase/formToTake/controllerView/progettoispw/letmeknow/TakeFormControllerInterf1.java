@@ -11,6 +11,9 @@ import javafx.scene.control.Slider;
 import javafx.scene.text.Text;
 
 import progettoispw.letmeknow.bean.FormToTakeStatusBean;
+import progettoispw.letmeknow.bean.ParamBean;
+import progettoispw.letmeknow.controller.FormToTakeStatusController;
+
 public class TakeFormControllerInterf1 {
     @FXML
     protected Text idForm;
@@ -40,18 +43,16 @@ public class TakeFormControllerInterf1 {
     protected Label lb6;
     @FXML
     protected ProgressBar progressBar;
-    protected PageMenu controller;
+    protected PageMenu pageSwitch;
     protected Slider[] sl;
     protected Label[] labels;
     protected boolean [] values;
     protected  boolean [] locked;
     protected int [] response;
     protected double progress;
-    protected FormToTakeStatusBean bean;
     public TakeFormControllerInterf1() {
         progress=0;
-        controller=new PageMenu();
-        bean=new FormToTakeStatusBean();
+        pageSwitch =new PageMenu();
     }
 
     private boolean[] not(boolean []bool){
@@ -63,17 +64,20 @@ public class TakeFormControllerInterf1 {
         return currbool;
     }
     public void initialize(){
-       if(bean.getComplete()==6){
+       FormToTakeStatusBean bean=new FormToTakeStatusBean();
+       int completed=bean.getValComplete();
+       if(completed==6){
             goBack();
         }
-        progress= bean.getComplete()*0.17;
+        progress= completed*0.17;
         progressBar.setProgress(progress);
         setValues();
         progressBar.setProgress(progress);
     }
     public void setValues(){
-        response=bean.exitValStatus();
-        locked=bean.exitStatus();
+        FormToTakeStatusBean bean=new FormToTakeStatusBean();
+        locked=bean.getStatus();
+        response= bean.getValResponse();
         sl=new Slider[] {sl1,sl2,sl3,sl4,sl5,sl6};
         labels= new Label[]{lb1, lb2, lb3, lb4, lb5, lb6};
         values=not(locked);
@@ -104,18 +108,22 @@ public class TakeFormControllerInterf1 {
                 response[i]=(int)sl[i].getValue();
             }
         }
-        bean.inputValStatus(response);
+        ParamBean bean=new ParamBean();
+        bean.setParam(response);
+        FormToTakeStatusController controller=new FormToTakeStatusController();
+        controller.setValResponse(bean);
         initialize();
     }
     @FXML
     protected void goBack() {
-        controller.backTo();
+        pageSwitch.backTo();
     }
     @FXML
     protected  void goToISC(ActionEvent event){
-        controller.switchToISC(event);
+        pageSwitch.switchToISC(event);
     }
     @FXML
-    protected  void goToHome(ActionEvent event){controller.switchToHome(event);}
+    protected  void goToHome(ActionEvent event){
+        pageSwitch.switchToHome(event);}
 
 }

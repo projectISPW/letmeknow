@@ -4,10 +4,8 @@ package progettoispw.letmeknow;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-
-import progettoispw.letmeknow.bean.SignupBean;
-
-import java.util.Optional;
+import progettoispw.letmeknow.bean.*;
+import progettoispw.letmeknow.controller.SignupController;
 
 
 public class SignupControllerInterf1 {
@@ -42,12 +40,14 @@ public class SignupControllerInterf1 {
     Label desCheck;
     @FXML
     Label slCheck;
-    SignupBean bean;
+    @FXML
+    Label goalCheck;
+    InitialUserBean bean;
     public SignupControllerInterf1(){
-        bean=new SignupBean();
+        bean=new InitialUserBean();
     }
     public SignupControllerInterf1(TextField  email,PasswordField [] passwords,Label []labels){
-        bean=new SignupBean();
+        bean=new InitialUserBean();
         this.email=email;
         this.pswd=passwords[0];
         this.confirmpswd=passwords[1];
@@ -69,11 +69,11 @@ public class SignupControllerInterf1 {
     }
     @FXML
     protected void goToLogin() {
-        Page controller=new Page();
-        controller.backTo();
+        Page pageSwitch=new Page();
+        pageSwitch.backTo();
     }
     private boolean check(boolean bool,Label lab){
-        if(!bool)lab.setOpacity(1);
+        if(bool)lab.setOpacity(1);
         return bool;
     }
     public  void reset(){
@@ -81,18 +81,32 @@ public class SignupControllerInterf1 {
         pswdCheck.setOpacity(0);
         if(desCheck!=null)desCheck.setOpacity(0);
         if(slCheck!=null)slCheck.setOpacity(0);
+        if(goalCheck!=null)goalCheck.setOpacity(0);
     }
 
     public boolean checkMailPswd(ActionEvent event,boolean psyAcces ){
+        SignupController controller=new SignupController();
         boolean bool;
         reset();
-        bool = bean.checkEmail(email.getText(), true);
-        if (!check(bool, emailCheck)) return false;
-        bool = bean.checkPswd(pswd.getText(), confirmpswd.getText());
-        if (!check(bool, pswdCheck)) return false ;
+        EmailCheck emailBean=new EmailCheck();
+        bool=emailBean.setEmail(email.getText());
+        if(bool){
+            controller.checkMail(emailBean);
+            bool= bean.getInfo();
+        }else{
+            bool=true;
+        }
+        if (check(bool, emailCheck)) return false;
+        TwoStringsBean twoStringsBean=new TwoStringsBean();
+        bool=twoStringsBean.setStrings(pswd.getText(),confirmpswd.getText());
+        if(check(!bool,pswdCheck))return false;
         if(psyAcces){
-            bool= bean.signupPSY(pswd.getText(), email.getText());
-            if(bool)goToLogin();
+            SignupBean signupBean=new SignupBean();
+            signupBean.setEmail(email.getText());
+            signupBean.setPassword(pswd.getText());
+            controller.signup(signupBean);
+            bool=bean.getInfo();
+            if(!bool)goToLogin();
              else {
                  Exceptions.exceptionSignupOccurred(event);
             }
@@ -103,17 +117,34 @@ public class SignupControllerInterf1 {
     protected void save(ActionEvent event) {
         boolean bool;
         String[] arr;
-        int [] val;
         reset();
-        if(!checkMailPswd(event,false))return;
-        bool=bean.checkDescription(description.getText());
-        if(!check(bool,desCheck))return;
+        SignupBean signupBean=new SignupBean();
+        SignupController controller=new SignupController();
+        bool=checkMailPswd(event,false);//da tornare false
+        if(!bool)return;
+        StringBean stringBean=new StringBean();
+        stringBean.setPass(description.getText());
+        controller.checkDescription(stringBean);
+        bool=bean.getInfo();
+        if(check(bool,desCheck))return;
         arr= new String[]{lab1.getText(), lab2.getText(), lab3.getText()};
-        val=bean.checkVal(arr);
-        bool=(val.length!=0);
-        if(!check(bool,slCheck))return;
-        bool=bean.signupUSR(pswd.getText(),email.getText(),val, description.getText(), goal.getText());
-        if(!bool){
+        ParamBean paramBean =new ParamBean();
+        paramBean.setParam(arr);
+        controller.checkParam(paramBean);
+        bool=bean.getInfo();
+        if(check(bool,slCheck))return;
+        stringBean=new StringBean();
+        stringBean.setPass(goal.getText());
+        controller.checkGoal(stringBean);
+        bool=bean.getInfo();
+        if(check(bool,goalCheck))return;
+        signupBean.setEmail(email.getText());
+        signupBean.setDescription(description.getText());
+        signupBean.setGoal(goal.getText());
+        signupBean.setPassword(pswd.getText());
+        controller.signup(signupBean,paramBean);
+        bool= bean.getInfo();
+        if(bool){
             Exceptions.exceptionSignupOccurred(event);
         }
         else{

@@ -9,7 +9,6 @@
     <JAVADOC />
     <SOURCES>
       <root url="file://$PROJECT_DIR$/src/main/database" />
-      <root url="file://$PROJECT_DIR$/src/main/java" />
       <root url="file://$PROJECT_DIR$/src/main/patterns/Factory" />
       <root url="file://$PROJECT_DIR$/src/main/patterns/singleton" />
       <root url="file://$PROJECT_DIR$/src/main/usecase/HomepagePsycologist/controllerApplicative" />
@@ -46,6 +45,7 @@
       <root url="file://$PROJECT_DIR$/src/main/usecase/signup/controllerView" />
       <root url="file://$PROJECT_DIR$/src/main/usecase/visit/controllerView" />
       <root url="file://$PROJECT_DIR$/src/test/java" />
+      <root url="file://$PROJECT_DIR$/.idea/java" />
     </SOURCES>
   </library>
 </component>

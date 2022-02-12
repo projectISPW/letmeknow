@@ -1,4 +1,4 @@
-//spelling check + same line variables
+//spelling checkActive + same line variables
 package progettoispw.letmeknow;
 
 import javafx.beans.value.ChangeListener;
@@ -36,7 +36,6 @@ public class FormPsychologistResultInterf1 {
     Label lb5;
     @FXML
     Label lb6;
-
 
     FormPsychologistResultBean bean;
     Page controller;

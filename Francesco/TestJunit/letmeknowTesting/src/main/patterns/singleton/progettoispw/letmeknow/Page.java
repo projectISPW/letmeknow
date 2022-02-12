@@ -1,26 +1,22 @@
 package progettoispw.letmeknow;
 
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
-import progettoispw.letmeknow.controller.ConnectionDBMS;
 
 import java.io.IOException;
-import java.util.Optional;
 
 public class Page {
-    protected static Stage stage1;
-    protected static Scene scene1;
-    protected static String title1;
-    private boolean check=true;
-    private static final String INTERF1="interf1";
-    private static final String INTERF2="interf2";
-    private static final String FXML=".fxml";
+    static Stage stage1;
+    static Scene scene1;
+    static String title1;
+    boolean checkActive =true;
+    static final String INTERF1="interf1";
+    static final String INTERF2="interf2";
+    static final String FXML=".fxml";
     static void prevBack(ActionEvent event){
         stage1 = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene1 = ((Node) event.getSource()).getScene();
@@ -45,7 +41,7 @@ public class Page {
     public void switchTo(String name, ActionEvent event, String title) {
         try {
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            if(check)name=check(name,stage);
+            if(checkActive)name=check(name,stage);
             prevBack(event);
             Parent root = FXMLLoader.load(getClass().getResource(name));
             Scene scene = new Scene(root);
@@ -75,7 +71,7 @@ public class Page {
             name=name.substring(0,index);
             name+="" + INTERF2+FXML;
         }
-        check=false;
+        checkActive =false;
         switchTo(name,event,stage.getTitle());
     }
 }

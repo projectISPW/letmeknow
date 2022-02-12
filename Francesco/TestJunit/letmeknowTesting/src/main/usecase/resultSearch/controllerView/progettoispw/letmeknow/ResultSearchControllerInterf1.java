@@ -8,6 +8,8 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 import progettoispw.letmeknow.bean.BeanResultSearch;
+import progettoispw.letmeknow.bean.StringBean;
+import progettoispw.letmeknow.controller.ResultSearchController;
 
 public class ResultSearchControllerInterf1 {
     @FXML
@@ -23,13 +25,13 @@ public class ResultSearchControllerInterf1 {
     static final String UID_CONTENT ="Userid  : #";
     static final String MSG_WORKON ="Working On :";
     static final String DESCRIPTION ="About me :";
-    private PageMenu controller;
+    private PageMenu pageSwitch;
     BeanResultSearch beanVisit;
     int nval;
     public ResultSearchControllerInterf1(){
         nval=4;
         beanVisit=new BeanResultSearch(nval);
-        controller=new PageMenu();
+        pageSwitch=new PageMenu();
         uids=new String[nval];
     }
 
@@ -63,7 +65,7 @@ public class ResultSearchControllerInterf1 {
             ObservableList<Node> externList= visitGroup[i].getChildren();
             Group group =(Group)externList.get(2);
             ObservableList<Node>inner=group.getChildren();
-            if(strUid[i]!=null){
+            if(strUid[i]!=null && !strUid[i].equals("null")){
                 for(Node elem:inner){
                     Text text=(Text)elem;
                     if(text.getText().contains(UID_CONTENT)){
@@ -94,25 +96,33 @@ public class ResultSearchControllerInterf1 {
         if (button.getOpacity() < 1) return;
         for(int i=1;i<7;i++){
             String compare="home"+i;
-            if(compare.equals(button.getId()))beanVisit.touched(uids[i-1]);
+            if(compare.equals(button.getId())){
+                setTouchedHome(uids[i-1]);
+            }
         }
     }
     @FXML
     public void visit(ActionEvent event) {
         touchVisit(event);
-        controller.switchTo("homepageOthers/interf1.fxml",event,"visit");
+        pageSwitch.switchTo("homepageOthers/interf1.fxml",event,"visit");
     }
     @FXML
     protected void goBack()  {
-        controller.backTo();
+        pageSwitch.backTo();
     }
     @FXML
     protected void goToHome(ActionEvent event) {
-        controller.switchToHome(event);
+        pageSwitch.switchToHome(event);
     }
     @FXML
     protected void goToPersonalForm(ActionEvent event){
-        controller.switchToPersonalForm(event);
+        pageSwitch.switchToPersonalForm(event);
+    }
+    public void setTouchedHome(String user){
+        ResultSearchController controller=new ResultSearchController();
+        StringBean stringBean=new StringBean();
+        stringBean.setPass(user);
+        controller.touched(stringBean);
     }
 
 }

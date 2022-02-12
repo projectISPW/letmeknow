@@ -1,20 +1,22 @@
+//utenteusr never used. should I cancel it with also library?
+
 package progettoispw.letmeknow.bean;
 
-import progettoispw.letmeknow.controller.FormResultController;
+import progettoispw.letmeknow.controller.ConcreteUsrUser;
+import progettoispw.letmeknow.controller.form.ResultForm;
 
 public class FormResultBean {
-    FormResultController controller;
+    ResultForm form;
     public FormResultBean(){
-        controller=new FormResultController();
+        form= ConcreteUsrUser.getResultForm();
     }
-    public int[] exitValStatus(){
-        return controller.getValResponse();
+    public int[] getValResponse(){
+        return form.getAnswers();
     }
-    public int [] getParam(){
-        return controller.getParam();
+    public int [] getParam () {
+        return form.getParam();
     }
-    public String getData(){
-        return controller.getDate();
+    public String getDate () {
+        return form.getDate();
     }
 }
-

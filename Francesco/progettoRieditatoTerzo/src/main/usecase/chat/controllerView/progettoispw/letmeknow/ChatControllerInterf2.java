@@ -10,8 +10,9 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
-import progettoispw.letmeknow.bean.BeanResultSearch;
 import progettoispw.letmeknow.bean.ISCBean;
+import progettoispw.letmeknow.bean.StringBean;
+import progettoispw.letmeknow.controller.ISCController;
 
 import java.io.IOException;
 
@@ -25,7 +26,8 @@ public class ChatControllerInterf2 extends ChatControllerInterf1{
     @FXML
     AnchorPane buttonBar;
     ISCBean iscBean;
-    private String userid;
+    String userid;
+    ISCController controller;
     public ChatControllerInterf2(){
         super();
         iscBean=new ISCBean();
@@ -33,6 +35,7 @@ public class ChatControllerInterf2 extends ChatControllerInterf1{
         userid=bean.getUid();
         timeline=new Timeline(new KeyFrame(Duration.millis(5000),this::recivemsgArr));
         timeline.setCycleCount(Animation.INDEFINITE);//never stop
+        controller= iscBean.getController();
     }
     private void recivemsgArr(ActionEvent event){
         if(initializated) {
@@ -76,7 +79,9 @@ public class ChatControllerInterf2 extends ChatControllerInterf1{
         Button button=(Button)event.getTarget();
         String who=button.getText();
         who=checkUsrId(who);
-        iscBean.touched(who);
+        StringBean stringBean=new StringBean();
+        stringBean.setPass(who);
+        controller.setTouched(stringBean);
         pageSwitch.switchToChat(event);
     }
     public  void addUser(){
@@ -96,14 +101,16 @@ public class ChatControllerInterf2 extends ChatControllerInterf1{
         }
         searchBar.textProperty().addListener((observableValue, s, t1) -> {
             if(searchBar.getText().equals("")){
-                iscBean.reset();
+                controller.reset();
                 timeline.play();
             }
         });
     }
     @FXML
     public void searchMessage(){
-        iscBean.search(searchBar.getText());
+        StringBean stringBean=new StringBean();
+        stringBean.setPass(searchBar.getText());
+        controller.searchMessage(stringBean);
         timeline.stop();
         addUser();
     }
@@ -121,8 +128,9 @@ public class ChatControllerInterf2 extends ChatControllerInterf1{
     }
     @FXML@Override
     protected void touchedHome(ActionEvent event){
-        BeanResultSearch visitBean=new BeanResultSearch();
-        visitBean.touched(bean.getWith());
+        ResultSearchControllerInterf1 resultSearchControllerInterf1=new ResultSearchControllerInterf1();
+        resultSearchControllerInterf1.setTouchedHome(bean.getWith());
+        timeline.stop();
         goToSearch(event);
     }
 }

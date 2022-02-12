@@ -2,17 +2,19 @@ package progettoispw.letmeknow;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
-import progettoispw.letmeknow.bean.*;
 
-import java.util.Optional;
+import progettoispw.letmeknow.bean.DateBean;
+import progettoispw.letmeknow.bean.UsrUserBean;
+import progettoispw.letmeknow.bean.HomepageBean;
+import progettoispw.letmeknow.bean.StringBean;
+import progettoispw.letmeknow.controller.HomepageEditController;
 
 
 public class HomepageEditControllerInterf1 {
-    protected  PageMenu controller;
+    protected  PageMenu pageSwitch;
     @FXML
     protected ImageView empathySlider;
     @FXML
@@ -29,37 +31,53 @@ public class HomepageEditControllerInterf1 {
     private TextField date;
     @FXML
     private Text userName;
-    private HomepagecontrollerInterf1 home;
-    private HomepageEditBean bean;
-    private HomepageBean homepageBean;
     public HomepageEditControllerInterf1(){
-        bean=new HomepageEditBean();
-        homepageBean=new HomepageBean(false);
-        home =new HomepagecontrollerInterf1();
-        controller=new PageMenu();
+        pageSwitch =new PageMenu();
     }
     public void initialize() {
-
-        userName.setText("User : "+bean.getUserid());
-        int[] arrayValue=homepageBean.getParam();
+        HomepageBean bean=new HomepageBean(false);
+        HomepagecontrollerInterf1 home=new HomepagecontrollerInterf1();
+        userName.setText("User : "+bean.getUserID());
+        int[] arrayValue=bean.getParam();
         home.setSlider(empathySlider,arrayValue[0]);
         home.setSlider(humorSlider,arrayValue[1]);
         home.setSlider(positivitySlider,arrayValue[2]);
-        personalDes.setPromptText(homepageBean.getDescription());
-        goal.setPromptText(homepageBean.getGoal());
-        tag.setPromptText(homepageBean.getTag());
-        arrayValue=homepageBean.getData();
+        personalDes.setPromptText(bean.getDescription());
+        goal.setPromptText(bean.getGoal());
+        tag.setPromptText(bean.getTag());
+        arrayValue=home.bean.getDate();
         date.setPromptText(" "+arrayValue[0]+"-"+arrayValue[1]+"-"+arrayValue[2]);
     }
 
     @FXML
     public void saveChanges(ActionEvent event)  {
         boolean bool;
-        bool=bean.setGoal(goal.getText());
-        if(bool)bool=bean.setDescription(personalDes.getText());
-        if(bool)bool=bean.setTag(tag.getText());
-        if(bool)bool=bean.setGoal(goal.getText());
-        if(bool)bool=bean.setDate(date.getText());
+        StringBean bean;
+        HomepageEditController controller=new HomepageEditController();
+        UsrUserBean beanModel=new UsrUserBean();
+        controller.reset();
+        bean=new StringBean();
+        bean.setPass(goal.getText());
+        controller.setGoal(bean);
+        bool=!beanModel.getInfo();
+        if(bool){
+            bean=new StringBean();
+            bean.setPass(personalDes.getText());
+            controller.setDes(bean);
+            bool= !beanModel.getInfo();
+        }
+        if(bool){
+            bean=new StringBean();
+            bean.setPass(tag.getText());
+            controller.setTag(bean);
+            bool=!beanModel.getInfo();
+        }
+        if(bool){
+            DateBean dateBean=new DateBean();
+            dateBean.setDate(date.getText());
+            controller.setDate(dateBean);
+            bool= !beanModel.getInfo();
+        }
         if(bool){
             goal.setText("");
             tag.setText("");
@@ -73,15 +91,15 @@ public class HomepageEditControllerInterf1 {
     }
     @FXML
     protected void goToHome(ActionEvent event) {
-        controller.switchToHome(event);
+        pageSwitch.switchToHome(event);
     }
     @FXML
     protected void goToISC(ActionEvent event) {
-        controller.switchToISC(event);
+        pageSwitch.switchToISC(event);
     }
     @FXML
     protected void goToPersonalForm(ActionEvent event){
-        controller.switchToPersonalForm(event);
+        pageSwitch.switchToPersonalForm(event);
     }
     @FXML
     protected void takeForm(ActionEvent event){

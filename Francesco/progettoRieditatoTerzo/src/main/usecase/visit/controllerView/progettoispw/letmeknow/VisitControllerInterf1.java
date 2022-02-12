@@ -18,12 +18,11 @@ public class VisitControllerInterf1 extends HomepagecontrollerInterf1{
     }
     @FXML
     protected void goToSearch(ActionEvent event){
-        PageSwitch.switchToSearch(event);
+        pageSwitch.switchToSearch(event);
     }
     @FXML
     protected void touchChat(ActionEvent event){
-        ISCBean chatBean=new ISCBean(0);
-        chatBean.touched(userid);
-        PageSwitch.switchTo("chat/interf1.fxml",event,"Chat");
+      InitialSearchAndChatControllerInterf1 interfISC=new InitialSearchAndChatControllerInterf1();
+      interfISC.touchChat(bean.getUserID(),event);
     }
 }
